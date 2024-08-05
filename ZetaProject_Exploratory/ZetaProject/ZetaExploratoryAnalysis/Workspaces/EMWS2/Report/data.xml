@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SASReport version="1.2" xmlns:style="http://www.sas.com/sasreportmodel/styles">
+<Data version="9.4">
+  <DataModel name="StatGraphDataModelIDX">
+    <IQData type="2DEmbedded" name="StatGraphDataIDX">
+      <EmbeddedData>
+      <Variables>
+        <Variable name="NODE" label="Node" type="Numeric" encoding="Text"/>
+        <Variable name="PARENT" label="Parent Id" type="Numeric" encoding="Text"/>
+        <Variable name="NODETEXT" label="Node Text" type="String" length="800"/>
+        <Variable name="NODECOLOR" label="Node Color" type="Numeric" encoding="Text"/>
+        <Variable name="ABOVETEXT" label="Above Text" type="String" length="256"/>
+        <Variable name="BELOWTEXT" label="Below Text" type="String" length="20"/>
+        <Variable name="LINKWIDTH" label="Link Width" type="Numeric" encoding="Text"/>
+      </Variables>
+        <ValuesList valuesCount="29">
+          <V>1</V>
+          <V M="."></V>
+          <V>          3:        63.0%
+ Count:       223088</V>
+          <V>62.96</V>
+          <V>Non-Missing Values</V>
+          <V>DiffWalk</V>
+          <V>10</V>
+          <V>2</V>
+          <V>1</V>
+          <V>          1:        88.5%
+ Count:        35853</V>
+          <V>88.46</V>
+          <V>1</V>
+          <V>AnyHealthcare</V>
+          <V>1.60712364627411</V>
+          <V>3</V>
+          <V>1</V>
+          <V>          3:        73.8%
+ Count:       187235</V>
+          <V>73.78</V>
+          <V>0 Or Missing</V>
+          <V>AnyHealthcare</V>
+          <V>8.39287635372588</V>
+          <V>4</V>
+          <V>2</V>
+          <V>          1:        91.1%
+ Count:        34247</V>
+          <V>91.1</V>
+          <V>1 Or Missing</V>
+          <V>CholCheck</V>
+          <V>1.5351341174783</V>
+          <V>5</V>
+          <V>2</V>
+          <V>          2:        67.9%
+ Count:         1606</V>
+          <V>67.93</V>
+          <V>0</V>
+          <V>NoDocbcCost</V>
+          <V>0.07198952879581</V>
+          <V>6</V>
+          <V>3</V>
+          <V>          3:        77.6%
+ Count:       178064</V>
+          <V>77.58</V>
+          <V>1 Or Missing</V>
+          <V>CholCheck</V>
+          <V>7.9817829735351</V>
+          <V>7</V>
+          <V>3</V>
+          <V>          2:        98.9%
+ Count:         9171</V>
+          <V>98.9</V>
+          <V>0</V>
+          <V M=" "></V>
+          <V>0.41109338019077</V>
+          <V>8</V>
+          <V>4</V>
+          <V>          1:        92.2%
+ Count:        33663</V>
+          <V>92.23</V>
+          <V>1 Or Missing</V>
+          <V>GenHlth</V>
+          <V>1.5089561070071</V>
+          <V>9</V>
+          <V>4</V>
+          <V>          2:        73.6%
+ Count:          584</V>
+          <V>73.63</V>
+          <V>0</V>
+          <V M=" "></V>
+          <V>0.0261780104712</V>
+          <V>10</V>
+          <V>5</V>
+          <V>          1:        55.3%
+ Count:          716</V>
+          <V>55.31</V>
+          <V>0</V>
+          <V>HighBP</V>
+          <V>0.03209495804346</V>
+          <V>11</V>
+          <V>5</V>
+          <V>          2:        86.6%
+ Count:          890</V>
+          <V>86.63</V>
+          <V>1 Or Missing</V>
+          <V M=" "></V>
+          <V>0.03989457075234</V>
+          <V>12</V>
+          <V>6</V>
+          <V>          3:        80.4%
+ Count:       171714</V>
+          <V>80.45</V>
+          <V>1 Or Missing</V>
+          <V>NoDocbcCost</V>
+          <V>7.69714193502115</V>
+          <V>13</V>
+          <V>6</V>
+          <V>          2:        99.6%
+ Count:         6350</V>
+          <V>99.57</V>
+          <V>0</V>
+          <V M=" "></V>
+          <V>0.28464103851394</V>
+          <V>16</V>
+          <V>8</V>
+          <V>          1:        66.9%
+ Count:         5048</V>
+          <V>66.86</V>
+          <V>&lt; 3</V>
+          <V>NoDocbcCost</V>
+          <V>0.22627841927849</V>
+          <V>17</V>
+          <V>8</V>
+          <V>          1:        96.7%
+ Count:        28615</V>
+          <V>96.7</V>
+          <V>&gt;= 3 Or Missing</V>
+          <V M=" "></V>
+          <V>1.2826776877286</V>
+          <V>20</V>
+          <V>10</V>
+          <V>          1:        76.5%
+ Count:          430</V>
+          <V>76.51</V>
+          <V>1 Or Missing</V>
+          <V M=" "></V>
+          <V>0.01927490497023</V>
+          <V>21</V>
+          <V>10</V>
+          <V>          2:        76.6%
+ Count:          286</V>
+          <V>76.57</V>
+          <V>0</V>
+          <V M=" "></V>
+          <V>0.01282005307322</V>
+          <V>24</V>
+          <V>12</V>
+          <V>          3:        84.5%
+ Count:       162505</V>
+          <V>84.49</V>
+          <V>0 Or Missing</V>
+          <V>GenHlth</V>
+          <V>7.28434519113533</V>
+          <V>25</V>
+          <V>12</V>
+          <V>          2:        71.3%
+ Count:         9209</V>
+          <V>71.32</V>
+          <V>1</V>
+          <V>HeartDiseaseorAttack</V>
+          <V>0.41279674388582</V>
+          <V>30</V>
+          <V>16</V>
+          <V>          1:        66.9%
+ Count:         4650</V>
+          <V>66.9</V>
+          <V>0 Or Missing</V>
+          <V>Income</V>
+          <V>0.20843792584092</V>
+          <V>31</V>
+          <V>16</V>
+          <V>          1:        66.3%
+ Count:          398</V>
+          <V>66.33</V>
+          <V>1</V>
+          <V M=" "></V>
+          <V>0.01784049343756</V>
+          <V>36</V>
+          <V>24</V>
+          <V>          3:        96.6%
+ Count:       101589</V>
+          <V>96.61</V>
+          <V>&lt; 3 Or Missing</V>
+          <V M=" "></V>
+          <V>4.55376353725884</V>
+          <V>37</V>
+          <V>24</V>
+          <V>          3:        64.3%
+ Count:        60916</V>
+          <V>64.26</V>
+          <V>&gt;= 3</V>
+          <V>HeartDiseaseorAttack</V>
+          <V>2.73058165387649</V>
+          <V>38</V>
+          <V>25</V>
+          <V>          2:        76.2%
+ Count:         8505</V>
+          <V>76.2</V>
+          <V>0 Or Missing</V>
+          <V M=" "></V>
+          <V>0.3812396901671</V>
+          <V>39</V>
+          <V>25</V>
+          <V>          1:        83.9%
+ Count:          704</V>
+          <V>83.95</V>
+          <V>1</V>
+          <V M=" "></V>
+          <V>0.03155705371871</V>
+          <V>46</V>
+          <V>30</V>
+          <V>          1:        81.8%
+ Count:         2820</V>
+          <V>81.84</V>
+          <V>&lt; 7 Or Missing</V>
+          <V M=" "></V>
+          <V>0.12640751631643</V>
+          <V>47</V>
+          <V>30</V>
+          <V>          3:        56.1%
+ Count:         1830</V>
+          <V>56.12</V>
+          <V>&gt;= 7</V>
+          <V M=" "></V>
+          <V>0.08203040952449</V>
+          <V>54</V>
+          <V>37</V>
+          <V>          3:        71.0%
+ Count:        53420</V>
+          <V>70.97</V>
+          <V>0 Or Missing</V>
+          <V M=" "></V>
+          <V>2.39457075234884</V>
+          <V>55</V>
+          <V>37</V>
+          <V>          1:        83.5%
+ Count:         7496</V>
+          <V>83.51</V>
+          <V>1</V>
+          <V M=" "></V>
+          <V>0.33601090152764</V>
+        </ValuesList>
+      </EmbeddedData>
+    </IQData>
+  </DataModel>
+</Data>
+</SASReport>

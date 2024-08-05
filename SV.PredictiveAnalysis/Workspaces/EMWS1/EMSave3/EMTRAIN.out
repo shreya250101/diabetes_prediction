@@ -1,0 +1,21 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+         Measurement    Frequency
+Role        Level         Count
+
+ID        INTERVAL           1   
+INPUT     INTERVAL          21   
+INPUT     NOMINAL            1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+Saved Data Properties
+
+  Data                                                                                                                                  Total           Saved        Number of
+Library                                                        Output Location                                                       Observations    Observations    Variables
+
+ZETADATA    \\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\ZetaDiabetes_TRAIN.sas7bdat       200573           MAX            23    

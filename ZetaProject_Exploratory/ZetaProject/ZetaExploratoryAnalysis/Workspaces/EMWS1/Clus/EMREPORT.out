@@ -1,0 +1,25 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Importance
+
+                                 Number of    Number of
+                                 Splitting    Surrogate
+Variable Name           Label      Rules        Rules      Importance
+
+GenHlth                              2            3          1.00000 
+PhysHlth                             0            3          0.98110 
+DiffWalk                             1            0          0.92710 
+BMI                                  0            5          0.72147 
+AnyHealthcare                        2            0          0.62902 
+CholCheck                            2            0          0.53836 
+NoDocbcCost                          3            0          0.52387 
+HeartDiseaseorAttack                 2            0          0.35367 
+HighBP                               2            0          0.15784 
+Age                                  0            4          0.15730 
+HighChol                             0            2          0.12670 
+Income                               1            2          0.11528 
+Education                            0            1          0.07909 
+HvyAlcoholConsump                    0            1          0.07478 
+MentHlth                             0            1          0.05036 

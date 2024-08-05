@@ -1,0 +1,44 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Summary Statistics for Class Targets
+
+Data=DATA
+
+                       Numeric     Formatted     Frequency
+     Variable           Value        Value         Count      Percent    Label
+
+Diabetes_Prediction       .       diabetes          27348     13.6350         
+Diabetes_Prediction       .       no diabetes      169553     84.5347         
+Diabetes_Prediction       .       prediabetes        3671      1.8303         
+
+
+Data=TEST
+
+                       Numeric     Formatted     Frequency
+     Variable           Value        Value         Count      Percent    Label
+
+Diabetes_Prediction       .       diabetes          8206      13.6367         
+Diabetes_Prediction       .       no diabetes      50867      84.5304         
+Diabetes_Prediction       .       prediabetes       1103       1.8330         
+
+
+Data=TRAIN
+
+                       Numeric     Formatted     Frequency
+     Variable           Value        Value         Count      Percent    Label
+
+Diabetes_Prediction       .       diabetes         10939      13.6351         
+Diabetes_Prediction       .       no diabetes      67821      84.5364         
+Diabetes_Prediction       .       prediabetes       1467       1.8286         
+
+
+Data=VALIDATE
+
+                       Numeric     Formatted     Frequency
+     Variable           Value        Value         Count      Percent    Label
+
+Diabetes_Prediction       .       diabetes          8203      13.6333         
+Diabetes_Prediction       .       no diabetes      50865      84.5369         
+Diabetes_Prediction       .       prediabetes       1101       1.8298         

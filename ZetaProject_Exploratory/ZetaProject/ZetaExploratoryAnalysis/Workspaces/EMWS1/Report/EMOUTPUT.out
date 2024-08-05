@@ -1,0 +1,49 @@
+*------------------------------------------------------------*
+User:                bkris2
+Date:                March 04, 2024
+Time:                09:08:49
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+INPUT        BINARY            14
+INPUT        INTERVAL           2
+INPUT        ORDINAL            5
+REJECTED     INTERVAL           1
+REJECTED     NOMINAL            2
+SEGMENT      NOMINAL            1
+ 
+ 
+ 
+                                                                                                2
+User       = bkris2
+Date       = 09:08:42  March 04
+Project    = ZetaExploratoryAnalysis
+Diagram    = ExploratoryAnalysis
+ 
+Start Node = Report
+Node label = Ward Clustering
+Nodes      = PATH
+Showall    = N
+ 
+Format     = PDF
+Graphics   = GIF
+Style      = LISTING
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

@@ -1,0 +1,32 @@
+<PFDNode x="1142" y="272" id="CNTRL" title="Control Point"></PFDNode>
+<PFDNode x="1146" y="539" id="CNTRL2" title="Control Point (2)"></PFDNode>
+<PFDNode x="726" y="183" id="Clus" title="Ward Clustering"></PFDNode>
+<PFDNode x="719" y="275" id="Clus2" title="Centroid Clustering"></PFDNode>
+<PFDNode x="720" y="367" id="Clus3" title="Average Clustering"></PFDNode>
+<PFDNode x="846" y="466" id="Clus4" title="90% Ward Clustering"></PFDNode>
+<PFDNode x="852" y="551" id="Clus5" title="90% Centroid Clustering"></PFDNode>
+<PFDNode x="857" y="635" id="Clus6" title="90% Average Clustering"></PFDNode>
+<PFDNode x="229" y="245" id="Filter" title="Filter"></PFDNode>
+<PFDNode x="12" y="241" id="Ids" title="ZETADIABITIES_TRAIN"></PFDNode>
+<PFDNode x="1421" y="363" id="Report" title="Reporter"></PFDNode>
+<PFDNode x="377" y="507" id="Smpl" title="Sample(90%)"></PFDNode>
+<PFDNode x="441" y="245" id="Varsel" title="Variable Selection"></PFDNode>
+<PFDNode x="579" y="510" id="Varsel2" title="Variable Selection (2)"></PFDNode>
+<PFDLink id='1' fromId='Filter' toId='Varsel'></PFDLink>
+<PFDLink id='2' fromId='Filter' toId='Smpl'></PFDLink>
+<PFDLink id='3' fromId='Smpl' toId='Varsel2'></PFDLink>
+<PFDLink id='4' fromId='Ids' toId='Filter'></PFDLink>
+<PFDLink id='5' fromId='Varsel2' toId='Clus6'></PFDLink>
+<PFDLink id='6' fromId='Varsel2' toId='Clus5'></PFDLink>
+<PFDLink id='7' fromId='Varsel2' toId='Clus4'></PFDLink>
+<PFDLink id='8' fromId='Varsel' toId='Clus3'></PFDLink>
+<PFDLink id='9' fromId='Varsel' toId='Clus2'></PFDLink>
+<PFDLink id='10' fromId='Varsel' toId='Clus'></PFDLink>
+<PFDLink id='11' fromId='Clus' toId='CNTRL'></PFDLink>
+<PFDLink id='12' fromId='Clus2' toId='CNTRL'></PFDLink>
+<PFDLink id='13' fromId='Clus3' toId='CNTRL'></PFDLink>
+<PFDLink id='14' fromId='Clus4' toId='CNTRL2'></PFDLink>
+<PFDLink id='15' fromId='Clus5' toId='CNTRL2'></PFDLink>
+<PFDLink id='16' fromId='Clus6' toId='CNTRL2'></PFDLink>
+<PFDLink id='17' fromId='CNTRL2' toId='Report'></PFDLink>
+<PFDLink id='18' fromId='CNTRL' toId='Report'></PFDLink>

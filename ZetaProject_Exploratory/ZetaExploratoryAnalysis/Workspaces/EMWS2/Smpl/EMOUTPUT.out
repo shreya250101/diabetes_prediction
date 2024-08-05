@@ -1,0 +1,42 @@
+*------------------------------------------------------------*
+User:                bkris2
+Date:                March 03, 2024
+Time:                20:05:41
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+INPUT        BINARY            8
+INPUT        INTERVAL          2
+INPUT        ORDINAL           5
+REJECTED     BINARY            6
+REJECTED     NOMINAL           1
+ 
+ 
+ 
+ 
+Sampling Summary
+ 
+                                  Number of
+ Type          Data Set         Observations
+ 
+DATA      EMWS2.Filter_TRAIN       247875
+SAMPLE    EMWS2.Smpl_DATA          223088
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

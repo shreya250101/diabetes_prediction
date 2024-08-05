@@ -1,0 +1,167 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+1 
+Traverser: Traverser invoked.  MPCONNECT command is sas. 
+Traverser: Beginning flow traversal 
+*------------------------------------------------------------* 
+* 
+* Ids : Beginning Update 
+* datetime : 09MAR2024:15:10:13 
+* 
+*------------------------------------------------------------* 
+15266      %let _HPDMGRIDHOST=;
+15267      %let _HPDMGRIDINSTALLLOC=;
+15268      %let _HPDMGRIDDATASERVER=;
+15269      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Ids : End Update 
+* datetime : 09MAR2024:15:10:14 
+* 
+*------------------------------------------------------------* 
+Traverser: WaitingNode "SMPL" 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Filter : Beginning Update 
+* datetime : 09MAR2024:15:10:14 
+* 
+*------------------------------------------------------------* 
+15288      *------------------------------------------------------------*;
+15289      * Filter: Update Variables Set;
+15290      *------------------------------------------------------------*;
+
+15291      proc sort data=EMWS2.Ids_CMeta_DATA out=_SortedVar;
+15292      by name;
+15293      run;
+
+NOTE: There were 22 observations read from the data set EMWS2.IDS_CMETA_DATA.
+NOTE: The data set WORK._SORTEDVAR has 22 observations and 20 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.03 seconds
+      
+
+15298      proc sort data=EMWS2.Filter_VariableSet;
+15299      by name;
+15300      run;
+
+NOTE: There were 22 observations read from the data set EMWS2.FILTER_VARIABLESET.
+NOTE: The data set EMWS2.FILTER_VARIABLESET has 22 observations and 26 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.01 seconds
+      
+
+15301      data EMWS2.Filter_VariableSet;
+15302      merge _SortedVar(in=_a) EMWS2.Filter_VariableSet(in=_b rename=(ROLE = OLDROLE) keep=NAME ROLE CALCMETHOD KEEPMISSING MINFREQ MAXVALUES INTERVALMIN INTERVALMAX REPORT);
+15303      by name;
+15304      drop OLDROLE;
+15305      if _b and ^_a then delete;
+15306      run;
+
+NOTE: There were 22 observations read from the data set WORK._SORTEDVAR.
+NOTE: There were 22 observations read from the data set EMWS2.FILTER_VARIABLESET.
+NOTE: The data set EMWS2.FILTER_VARIABLESET has 22 observations and 26 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.04 seconds
+      
+
+15307      * Filter: End of Update Variables Set;
+15308      *------------------------------------------------------------*;
+
+15309      *------------------------------------------------------------*;
+15310      * Filter: Computing metadata for TRAIN data;
+15311      *------------------------------------------------------------*;
+
+15654      %let _HPDMGRIDHOST=;
+15655      %let _HPDMGRIDINSTALLLOC=;
+15656      %let _HPDMGRIDDATASERVER=;
+15657      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Filter : End Update 
+* datetime : 09MAR2024:15:10:17 
+* 
+*------------------------------------------------------------* 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Smpl : Beginning Update 
+* datetime : 09MAR2024:15:10:18 
+* 
+*------------------------------------------------------------* 
+NOTE: This SAS session is using a registry in WORK.  All changes will be lost at the end of this session.
+15679      data _null_;
+15680      set EMWS2.Filter_CMeta_TRAIN (obs=1);
+15681      run;
+
+NOTE: There were 1 observations read from the data set EMWS2.FILTER_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+15682      *------------------------------------------------------------*;
+15683      * Smpl: Update Variables Set;
+15684      *------------------------------------------------------------*;
+
+15685      data EMWS2.Smpl_VariableSet;
+15686      length SAMPLEROLE $14;
+15687      set EMWS2.Filter_CMeta_TRAIN;
+15688      run;
+
+NOTE: Variable SAMPLEROLE is uninitialized.
+NOTE: There were 22 observations read from the data set EMWS2.FILTER_CMETA_TRAIN.
+NOTE: The data set EMWS2.SMPL_VARIABLESET has 22 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.04 seconds
+      
+
+15689      * Smpl: End of Update Variables Set;
+15690      *------------------------------------------------------------*;
+
+15691      *------------------------------------------------------------*;
+15692      * Smpl: Computing metadata for DATA data;
+15693      *------------------------------------------------------------*;
+
+15704      %let _HPDMGRIDHOST=;
+15705      %let _HPDMGRIDINSTALLLOC=;
+15706      %let _HPDMGRIDDATASERVER=;
+15707      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Smpl : End Update 
+* datetime : 09MAR2024:15:10:19 
+* 
+*------------------------------------------------------------* 
+Traverser: Run Completed 
+15708      proc printto;
+15709      run;
+

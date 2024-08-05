@@ -1,0 +1,242 @@
+*------------------------------------------------------------*
+User:                shre2
+Date:                March 04, 2024
+Time:                12:23:19
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+Role         Level         Count
+ 
+ID         INTERVAL           1
+INPUT      BINARY            14
+INPUT      INTERVAL           2
+INPUT      ORDINAL            5
+TARGET     NOMINAL            1
+ 
+ 
+ 
+ 
+Model Events
+ 
+                                                     Number
+                                      Measurement      of
+      Target              Event          Level       Levels      Order              Label
+ 
+Diabetes_Prediction    PREDIABETES      NOMINAL         3      Descending    Diabetes Prediction
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type         Variable                            Label
+ 
+TARGET       Diabetes_Prediction                 Diabetes Prediction
+PREDICTED    P_Diabetes_Predictionprediabetes    Predicted: Diabetes_Prediction=prediabetes
+RESIDUAL     R_Diabetes_Predictionprediabetes    Residual: Diabetes_Prediction=prediabetes
+PREDICTED    P_Diabetes_Predictionno_diabetes    Predicted: Diabetes_Prediction=no diabetes
+RESIDUAL     R_Diabetes_Predictionno_diabetes    Residual: Diabetes_Prediction=no diabetes
+PREDICTED    P_Diabetes_Predictiondiabetes       Predicted: Diabetes_Prediction=diabetes
+RESIDUAL     R_Diabetes_Predictiondiabetes       Residual: Diabetes_Prediction=diabetes
+FROM         F_Diabetes_Prediction               From: Diabetes_Prediction
+INTO         I_Diabetes_Prediction               Into: Diabetes_Prediction
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+Variable Importance
+ 
+                                                                               Ratio of
+                     Number of                                               Validation
+Variable             Splitting                            Validation        to Training
+  Name      Label      Rules           Importance         Importance         Importance
+ 
+GenHlth                  1                 1.0000             1.0000             1.0000
+HighBP                   1                 0.4192             0.4214             1.0052
+BMI                      1                 0.3148             0.3513             1.1161
+HighChol                 1                 0.1701             0.1679             0.9870
+ 
+ 
+ 
+Tree Leaf Report
+ 
+                                   Training                      Validation
+Node               Training        Percent       Validation       Percent
+ Id     Depth    Observations    PREDIABETES    Observations    PREDIABETES
+ 
+  2       1          42730           0.01           32095           0.01
+  3       1          23897           0.02           17939           0.02
+ 24       3           4735           0.04            3477           0.04
+ 10       2           4557           0.03            3461           0.03
+ 64       4           2136           0.04            1640           0.05
+ 23       3           1201           0.02             835           0.02
+ 65       4            972           0.05             722           0.03
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+   Fit
+Statistics    Statistics Label                  Train    Validation         Test
+ 
+  _NOBS_      Sum of Frequencies             80228.00      60169.00     60176.00
+  _MISC_      Misclassification Rate             0.15          0.15         0.15
+  _MAX_       Maximum Absolute Error             0.99          0.99         0.99
+  _SSE_       Sum of Squared Errors          19183.43      14304.81     14384.08
+  _ASE_       Average Squared Error              0.08          0.08         0.08
+  _RASE_      Root Average Squared Error         0.28          0.28         0.28
+  _DIV_       Divisor for ASE               240684.00     180507.00    180528.00
+  _DFT_       Total Degrees of Freedom      160456.00           .            .
+ 
+ 
+ 
+ 
+Classification Table
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                Target        Outcome     Frequency       Total
+  Target         Outcome      Percentage    Percentage      Count      Percentage
+ 
+DIABETES       DIABETES         56.0393       10.9245        1197         1.4920
+NO DIABETES    DIABETES         39.9813        1.2593         854         1.0645
+PREDIABETES    DIABETES          3.9794        5.8379          85         0.1059
+DIABETES       NO DIABETES      12.4981       89.0755        9760        12.1653
+NO DIABETES    NO DIABETES      85.7463       98.7407       66961        83.4634
+PREDIABETES    NO DIABETES       1.7556       94.1621        1371         1.7089
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                Target        Outcome     Frequency       Total
+  Target         Outcome      Percentage    Percentage      Count      Percentage
+ 
+DIABETES       DIABETES         57.8659       11.5478         949         1.5772
+NO DIABETES    DIABETES         37.3171        1.2033         612         1.0171
+PREDIABETES    DIABETES          4.8171        7.2411          79         0.1313
+DIABETES       NO DIABETES      12.4195       88.4522        7269        12.0810
+NO DIABETES    NO DIABETES      85.8515       98.7967       50248        83.5114
+PREDIABETES    NO DIABETES       1.7291       92.7589        1012         1.6819
+ 
+ 
+ 
+ 
+Event Classification Table
+ 
+Data Role=TRAIN Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+  False       True        False       True
+Negative    Negative    Positive    Positive
+ 
+  1456        78772         0           0
+ 
+ 
+Data Role=VALIDATE Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+  False       True        False       True
+Negative    Negative    Positive    Positive
+ 
+  1091        59078         0           0
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                                                                           Mean
+                               Cumulative        %       Cumulative      Number of      Posterior
+Depth       Gain      Lift        Lift       Response    % Response    Observations    Probability
+ 
+   5     128.090    2.28090      2.28090      4.13944      4.13944         4012          0.041394
+  10     110.695    1.93296      2.10695      3.50798      3.82375         4011          0.035080
+  15      89.231    1.46309      1.89231      2.65526      3.43422         4012          0.026553
+  20      73.759    1.27335      1.73759      2.31091      3.15343         4011          0.023109
+  25      64.095    1.25435      1.64095      2.27644      2.97805         4011          0.022764
+  30      57.651    1.25435      1.57651      2.27644      2.86110         4012          0.022764
+  35      53.049    1.25435      1.53049      2.27644      2.77758         4011          0.022764
+  40      49.597    1.25435      1.49597      2.27644      2.71493         4012          0.022764
+  45      46.913    1.25435      1.46913      2.27644      2.66622         4011          0.022764
+  50      39.908    0.76856      1.39908      1.39480      2.53909         4011          0.013948
+  55      32.651    0.60092      1.32651      1.09057      2.40739         4012          0.010906
+  60      26.605    0.60092      1.26605      1.09057      2.29766         4011          0.010906
+  65      21.488    0.60092      1.21488      1.09057      2.20480         4012          0.010906
+  70      17.103    0.60092      1.17103      1.09057      2.12522         4011          0.010906
+  75      13.303    0.60092      1.13303      1.09057      2.05625         4011          0.010906
+  80       9.977    0.60092      1.09977      1.09057      1.99588         4012          0.010906
+  85       7.042    0.60092      1.07042      1.09057      1.94264         4011          0.010906
+  90       4.434    0.60092      1.04434      1.09057      1.89529         4012          0.010906
+  95       2.100    0.60092      1.02100      1.09057      1.85294         4011          0.010906
+ 100       0.000    0.60092      1.00000      1.09057      1.81483         4011          0.010906
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                                                                           Mean
+                               Cumulative        %       Cumulative      Number of      Posterior
+Depth       Gain      Lift        Lift       Response    % Response    Observations    Probability
+ 
+   5     132.779    2.32779      2.32779      4.22081      4.22081         3009          0.041414
+  10     116.935    2.01086      2.16935      3.64614      3.93352         3008          0.034952
+  15      92.956    1.45007      1.92956      2.62930      3.49873         3009          0.026553
+  20      75.197    1.21906      1.75197      2.21044      3.17671         3008          0.023109
+  25      64.074    1.19591      1.64074      2.16846      2.97504         3009          0.022764
+  30      56.662    1.19591      1.56662      2.16846      2.84063         3008          0.022764
+  35      51.365    1.19591      1.51365      2.16846      2.74459         3009          0.022764
+  40      47.394    1.19591      1.47394      2.16846      2.67259         3008          0.022764
+  45      44.304    1.19591      1.44304      2.16846      2.61656         3009          0.022764
+  50      37.107    0.72322      1.37107      1.31136      2.48607         3008          0.013833
+  55      30.361    0.62891      1.30361      1.14036      2.36375         3008          0.010906
+  60      24.738    0.62891      1.24738      1.14036      2.26178         3009          0.010906
+  65      19.981    0.62891      1.19981      1.14036      2.17553         3008          0.010906
+  70      15.903    0.62891      1.15903      1.14036      2.10158         3009          0.010906
+  75      12.369    0.62891      1.12369      1.14036      2.03751         3008          0.010906
+  80       9.276    0.62891      1.09276      1.14036      1.98143         3009          0.010906
+  85       6.548    0.62891      1.06548      1.14036      1.93196         3008          0.010906
+  90       4.122    0.62891      1.04122      1.14036      1.88798         3009          0.010906
+  95       1.953    0.62891      1.01953      1.14036      1.84863         3008          0.010906
+ 100       0.000    0.62891      1.00000      1.14036      1.81323         3008          0.010906
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+ Posterior     Number                     Mean
+Probability      of      Number of     Posterior
+   Range       Events    Nonevents    Probability    Percentage
+ 
+ 0.05-0.10        49         923        0.050412        1.2115
+ 0.00-0.05      1407       77849        0.017753       98.7885
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+ Posterior     Number                     Mean
+Probability      of      Number of     Posterior
+   Range       Events    Nonevents    Probability    Percentage
+ 
+ 0.05-0.10        24         698        0.050412        1.2000
+ 0.00-0.05      1067       58380        0.017745       98.8000

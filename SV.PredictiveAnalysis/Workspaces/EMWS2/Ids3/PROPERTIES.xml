@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="cleanzetadiabetestrain" Scope="LOCAL" Role="RAW" Library="ZETADATA" Table="CLEANZETADIABETES_TRAIN"
+ NCols="22" NObs="200572" NBytes="37094400" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="cleanzetadiabetestrain"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="shre2" DsCreateDate="2025129977.5"
+ DsModifiedBy="shre2" DsModifyDate="2025129977.8" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="2025133105.8" CreateTime="04MAR2024:00:58:26"
+ Description="" Data="ZETADATA.CLEANZETADIABETES_TRAIN" CMeta="WORK.M12BVFD5" RunId="d13aec80-70ca-4d32-99e2-47e57aadaebf"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+EMNOTES
+]]>
+</FILEPROPERTIES></_ROOT_>

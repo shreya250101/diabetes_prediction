@@ -1,0 +1,44 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Summary Statistics for Class Targets
+
+Data=DATA
+
+                       Numeric     Formatted     Frequency
+     Variable           Value        Value         Count      Percent           Label
+
+Diabetes_Prediction       .       diabetes          27394     13.6579    Diabetes Prediction
+Diabetes_Prediction       .       no diabetes      169538     84.5268    Diabetes Prediction
+Diabetes_Prediction       .       prediabetes        3641      1.8153    Diabetes Prediction
+
+
+Data=TEST
+
+                       Numeric     Formatted     Frequency
+     Variable           Value        Value         Count      Percent           Label
+
+Diabetes_Prediction       .       diabetes          8219      13.6583    Diabetes Prediction
+Diabetes_Prediction       .       no diabetes      50863      84.5237    Diabetes Prediction
+Diabetes_Prediction       .       prediabetes       1094       1.8180    Diabetes Prediction
+
+
+Data=TRAIN
+
+                       Numeric     Formatted     Frequency
+     Variable           Value        Value         Count      Percent           Label
+
+Diabetes_Prediction       .       diabetes         10957      13.6573    Diabetes Prediction
+Diabetes_Prediction       .       no diabetes      67815      84.5278    Diabetes Prediction
+Diabetes_Prediction       .       prediabetes       1456       1.8148    Diabetes Prediction
+
+
+Data=VALIDATE
+
+                       Numeric     Formatted     Frequency
+     Variable           Value        Value         Count      Percent           Label
+
+Diabetes_Prediction       .       diabetes          8218      13.6582    Diabetes Prediction
+Diabetes_Prediction       .       no diabetes      50860      84.5286    Diabetes Prediction
+Diabetes_Prediction       .       prediabetes       1091       1.8132    Diabetes Prediction

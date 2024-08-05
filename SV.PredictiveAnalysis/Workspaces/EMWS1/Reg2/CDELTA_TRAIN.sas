@@ -1,0 +1,22 @@
+if ROLE in('INPUT', 'REJECTED') then do;
+if upcase(NAME) in(
+'AGE'
+'BMI'
+'CHOLCHECK'
+'EDUCATION'
+'GENHLTH'
+'HEARTDISEASEORATTACK'
+'HIGHBP'
+'HIGHCHOL'
+'HVYALCOHOLCONSUMP'
+'INCOME'
+'NODOCBCCOST'
+'PHYSACTIVITY'
+'SEX'
+'STROKE'
+) then ROLE='INPUT';
+else do;
+ROLE='REJECTED';
+COMMENT = "Reg2: Rejected using forward selection";
+end;
+end;

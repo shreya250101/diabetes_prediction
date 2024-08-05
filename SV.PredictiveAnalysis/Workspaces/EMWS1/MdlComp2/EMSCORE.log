@@ -1,0 +1,1485 @@
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "March 04, 2024" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "12:33:18" );
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Score Log";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+*------------------------------------------------------------*
+* Score Log
+Date:                March 04, 2024
+Time:                12:33:18
+*------------------------------------------------------------*
+MPRINT(EM_DIAGRAM):    filename O0ER6GST "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O0ER6GST new;
+MPRINT(EM_DIAGRAM):   run;
+NOTE: View EMWS1.REG_TRAIN.VIEW used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.06 seconds
+      
+NOTE: View EMWS1.REG_TRAIN.VIEW used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.12 seconds
+      
+293435     /* Generate assessment metadata, which will be used to generate assessment data step */
+293436     /* code, such as retrieving names of temporary variables and summary variables,      */
+293437     /* labels, etc.  It is used in almost all the assessment computations such as lift,  */
+293438     /* roc, index, scoreDist and could be thought as a global variable in assessment     */
+293439     /* computation.                                                                      */
+293440     data work.ASSESS_0FZB2UL_assessMeta_hGyXAq;
+MPRINT(EM_DIAGRAM):    data work.ASSESS_0FZB2UL_assessMeta_hGyXAq;
+293441     length VARIABLE $32 FORMAT $44 TYPE $32 PARENT $32 LEVEL $32 PROPERTY $32 MEASUREMENT $10 LAST_LEVEL $32 GEN_VAR_IN_TEMP_DATA $32 RESULT_MEAN $32 RESULT_MEAN_LABEL $100 RESULT_MIN $32 RESULT_MIN_LABEL $100 MIN_ADJUSTED $32 RESULT_MAX $32
+293441   ! RESULT_MAX_LABEL
+293442        $100 MAX_ADJUSTED $32 RESULT_COUNT $32 RESULT_COUNT_LABEL $100 TEMPORARY_VARIABLE $32;
+MPRINT(EM_DIAGRAM):   length VARIABLE $32 FORMAT $44 TYPE $32 PARENT $32 LEVEL $32 PROPERTY $32 MEASUREMENT $10 LAST_LEVEL $32 GEN_VAR_IN_TEMP_DATA $32 RESULT_MEAN $32 RESULT_MEAN_LABEL $100 RESULT_MIN $32 RESULT_MIN_LABEL $100 MIN_ADJUSTED $32 RESULT_MAX 
+$32 RESULT_MAX_LABEL $100 MAX_ADJUSTED $32 RESULT_COUNT $32 RESULT_COUNT_LABEL $100 TEMPORARY_VARIABLE $32;
+293443     VARIABLE = "Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   VARIABLE = "Diabetes_Prediction";
+293444     PARENT = "";
+MPRINT(EM_DIAGRAM):   PARENT = "";
+293445     FORMAT = "";
+MPRINT(EM_DIAGRAM):   FORMAT = "";
+293446     TYPE = "";
+MPRINT(EM_DIAGRAM):   TYPE = "";
+293447     LEVEL = '';
+MPRINT(EM_DIAGRAM):   LEVEL = '';
+293448     PROPERTY = "TARGET";
+MPRINT(EM_DIAGRAM):   PROPERTY = "TARGET";
+293449     MEASUREMENT = "NOMINAL";
+MPRINT(EM_DIAGRAM):   MEASUREMENT = "NOMINAL";
+293450     LAST_LEVEL = '';
+MPRINT(EM_DIAGRAM):   LAST_LEVEL = '';
+293451     GEN_VAR_IN_TEMP_DATA = "Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   GEN_VAR_IN_TEMP_DATA = "Diabetes_Prediction";
+293452     RESULT_MEAN = "";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN = "";
+293453     RESULT_MEAN_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN_LABEL = "";
+293454     RESULT_MIN = "";
+MPRINT(EM_DIAGRAM):   RESULT_MIN = "";
+293455     RESULT_MIN_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MIN_LABEL = "";
+293456     MIN_ADJUSTED = "";
+MPRINT(EM_DIAGRAM):   MIN_ADJUSTED = "";
+293457     RESULT_MAX = "";
+MPRINT(EM_DIAGRAM):   RESULT_MAX = "";
+293458     RESULT_MAX_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MAX_LABEL = "";
+293459     MAX_ADJUSTED = "";
+MPRINT(EM_DIAGRAM):   MAX_ADJUSTED = "";
+293460     RESULT_COUNT = "";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT = "";
+293461     RESULT_COUNT_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT_LABEL = "";
+293462     TEMPORARY_VARIABLE = "Diabetes_Predict_YEMf9xeSZCticec";
+MPRINT(EM_DIAGRAM):   TEMPORARY_VARIABLE = "Diabetes_Predict_YEMf9xeSZCticec";
+293463     output;
+MPRINT(EM_DIAGRAM):   output;
+293464     VARIABLE = "F_Diabetes_Predi_PREDIABETES";
+MPRINT(EM_DIAGRAM):   VARIABLE = "F_Diabetes_Predi_PREDIABETES";
+293465     FORMAT = "";
+MPRINT(EM_DIAGRAM):   FORMAT = "";
+293466     TYPE = "";
+MPRINT(EM_DIAGRAM):   TYPE = "";
+293467     PARENT = "F_Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   PARENT = "F_Diabetes_Prediction";
+293468     LEVEL = "PREDIABETES";
+MPRINT(EM_DIAGRAM):   LEVEL = "PREDIABETES";
+293469     PROPERTY = "TARGET_LEVEL";
+MPRINT(EM_DIAGRAM):   PROPERTY = "TARGET_LEVEL";
+293470     MEASUREMENT = "INTERVAL";
+MPRINT(EM_DIAGRAM):   MEASUREMENT = "INTERVAL";
+293471     LAST_LEVEL = "DIABETES";
+MPRINT(EM_DIAGRAM):   LAST_LEVEL = "DIABETES";
+293472     GEN_VAR_IN_TEMP_DATA = "F_Diabetes_Predi_91ps9ZudMMNZui9";
+MPRINT(EM_DIAGRAM):   GEN_VAR_IN_TEMP_DATA = "F_Diabetes_Predi_91ps9ZudMMNZui9";
+293473     RESULT_MEAN = "F_Diabetes_mean_8hpeeQmMRKzMhmQ";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN = "F_Diabetes_mean_8hpeeQmMRKzMhmQ";
+293474     /* adjust for tied cases */
+293475     RESULT_MEAN_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN_LABEL = "";
+293476     RESULT_MIN = "";
+MPRINT(EM_DIAGRAM):   RESULT_MIN = "";
+293477     RESULT_MIN_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MIN_LABEL = "";
+293478     RESULT_MAX = "";
+MPRINT(EM_DIAGRAM):   RESULT_MAX = "";
+293479     RESULT_MAX_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MAX_LABEL = "";
+293480     RESULT_COUNT = "NumberOfEvents";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT = "NumberOfEvents";
+293481     RESULT_COUNT_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_NumEvent_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT_LABEL = "Number of Events";
+293482     TEMPORARY_VARIABLE = "F_Diabetes_Predi_etAjWsfqmvDocHp";
+MPRINT(EM_DIAGRAM):   TEMPORARY_VARIABLE = "F_Diabetes_Predi_etAjWsfqmvDocHp";
+293483     output;
+MPRINT(EM_DIAGRAM):   output;
+293484     VARIABLE = "F_Diabetes_Predi_NO_DIABETES";
+MPRINT(EM_DIAGRAM):   VARIABLE = "F_Diabetes_Predi_NO_DIABETES";
+293485     FORMAT = "";
+MPRINT(EM_DIAGRAM):   FORMAT = "";
+293486     TYPE = "";
+MPRINT(EM_DIAGRAM):   TYPE = "";
+293487     PARENT = "F_Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   PARENT = "F_Diabetes_Prediction";
+293488     LEVEL = "NO DIABETES";
+MPRINT(EM_DIAGRAM):   LEVEL = "NO DIABETES";
+293489     PROPERTY = "TARGET_LEVEL";
+MPRINT(EM_DIAGRAM):   PROPERTY = "TARGET_LEVEL";
+293490     MEASUREMENT = "INTERVAL";
+MPRINT(EM_DIAGRAM):   MEASUREMENT = "INTERVAL";
+293491     LAST_LEVEL = "DIABETES";
+MPRINT(EM_DIAGRAM):   LAST_LEVEL = "DIABETES";
+293492     GEN_VAR_IN_TEMP_DATA = "F_Diabetes_Predi_lHjJ6vKhH5Hhdfh";
+MPRINT(EM_DIAGRAM):   GEN_VAR_IN_TEMP_DATA = "F_Diabetes_Predi_lHjJ6vKhH5Hhdfh";
+293493     RESULT_MEAN = "F_Diabetes_mean_WMfAuBjgcviUnGn";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN = "F_Diabetes_mean_WMfAuBjgcviUnGn";
+293494     /* adjust for tied cases */
+293495     RESULT_MEAN_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN_LABEL = "";
+293496     RESULT_MIN = "";
+MPRINT(EM_DIAGRAM):   RESULT_MIN = "";
+293497     RESULT_MIN_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MIN_LABEL = "";
+293498     RESULT_MAX = "";
+MPRINT(EM_DIAGRAM):   RESULT_MAX = "";
+293499     RESULT_MAX_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MAX_LABEL = "";
+293500     RESULT_COUNT = "NumberOfEvents";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT = "NumberOfEvents";
+293501     RESULT_COUNT_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_NumEvent_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT_LABEL = "Number of Events";
+293502     TEMPORARY_VARIABLE = "F_Diabetes_Predi_WlXYE3lWoWnTmHp";
+MPRINT(EM_DIAGRAM):   TEMPORARY_VARIABLE = "F_Diabetes_Predi_WlXYE3lWoWnTmHp";
+293503     output;
+MPRINT(EM_DIAGRAM):   output;
+293504     VARIABLE = "F_Diabetes_Prediction_DIABETES";
+MPRINT(EM_DIAGRAM):   VARIABLE = "F_Diabetes_Prediction_DIABETES";
+293505     FORMAT = "";
+MPRINT(EM_DIAGRAM):   FORMAT = "";
+293506     TYPE = "";
+MPRINT(EM_DIAGRAM):   TYPE = "";
+293507     PARENT = "F_Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   PARENT = "F_Diabetes_Prediction";
+293508     LEVEL = "DIABETES";
+MPRINT(EM_DIAGRAM):   LEVEL = "DIABETES";
+293509     PROPERTY = "TARGET_LEVEL";
+MPRINT(EM_DIAGRAM):   PROPERTY = "TARGET_LEVEL";
+293510     MEASUREMENT = "INTERVAL";
+MPRINT(EM_DIAGRAM):   MEASUREMENT = "INTERVAL";
+293511     LAST_LEVEL = "DIABETES";
+MPRINT(EM_DIAGRAM):   LAST_LEVEL = "DIABETES";
+293512     GEN_VAR_IN_TEMP_DATA = "F_Diabetes_Predi_jgizTWgCdMyhAVm";
+MPRINT(EM_DIAGRAM):   GEN_VAR_IN_TEMP_DATA = "F_Diabetes_Predi_jgizTWgCdMyhAVm";
+293513     RESULT_MEAN = "F_Diabetes_mean_gR9RSsDG2jNA5Wr";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN = "F_Diabetes_mean_gR9RSsDG2jNA5Wr";
+293514     /* adjust for tied cases */
+293515     RESULT_MEAN_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN_LABEL = "";
+293516     RESULT_MIN = "";
+MPRINT(EM_DIAGRAM):   RESULT_MIN = "";
+293517     RESULT_MIN_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MIN_LABEL = "";
+293518     RESULT_MAX = "";
+MPRINT(EM_DIAGRAM):   RESULT_MAX = "";
+293519     RESULT_MAX_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_MAX_LABEL = "";
+293520     RESULT_COUNT = "NumberOfEvents";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT = "NumberOfEvents";
+293521     RESULT_COUNT_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_NumEvent_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT_LABEL = "Number of Events";
+293522     TEMPORARY_VARIABLE = "F_Diabetes_Predi_EE48qdhG0GnwtWy";
+MPRINT(EM_DIAGRAM):   TEMPORARY_VARIABLE = "F_Diabetes_Predi_EE48qdhG0GnwtWy";
+293523     output;
+MPRINT(EM_DIAGRAM):   output;
+293524     VARIABLE = "P_Diabetes_Predictionprediabetes";
+MPRINT(EM_DIAGRAM):   VARIABLE = "P_Diabetes_Predictionprediabetes";
+293525     FORMAT = "";
+MPRINT(EM_DIAGRAM):   FORMAT = "";
+293526     TYPE = "";
+MPRINT(EM_DIAGRAM):   TYPE = "";
+293527     PARENT = "";
+MPRINT(EM_DIAGRAM):   PARENT = "";
+293528     LEVEL = "PREDIABETES";
+MPRINT(EM_DIAGRAM):   LEVEL = "PREDIABETES";
+293529     PROPERTY = "POSTERIOR_LEVEL";
+MPRINT(EM_DIAGRAM):   PROPERTY = "POSTERIOR_LEVEL";
+293530     MEASUREMENT = "INTERVAL";
+MPRINT(EM_DIAGRAM):   MEASUREMENT = "INTERVAL";
+293531     LAST_LEVEL = "";
+MPRINT(EM_DIAGRAM):   LAST_LEVEL = "";
+293532     GEN_VAR_IN_TEMP_DATA = "P_Diabetes_Predictionprediabetes";
+MPRINT(EM_DIAGRAM):   GEN_VAR_IN_TEMP_DATA = "P_Diabetes_Predictionprediabetes";
+293533     RESULT_MEAN = "_meanP_";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN = "_meanP_";
+293534     RESULT_MEAN_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMean_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN_LABEL = "Mean Posterior Probability";
+293535     RESULT_MIN = "_minP_";
+MPRINT(EM_DIAGRAM):   RESULT_MIN = "_minP_";
+293536     RESULT_MIN_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMin_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MIN_LABEL = "Min Posterior Probability";
+293537     MIN_ADJUSTED = "P_Diabet_minAdjusted_dV45H1rFo";
+MPRINT(EM_DIAGRAM):   MIN_ADJUSTED = "P_Diabet_minAdjusted_dV45H1rFo";
+293538     RESULT_MAX = "_maxP_";
+MPRINT(EM_DIAGRAM):   RESULT_MAX = "_maxP_";
+293539     RESULT_MAX_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMax_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MAX_LABEL = "Max Posterior Probability";
+293540     MAX_ADJUSTED = "P_Diabet_maxAdjusted_DqKXsKSnD";
+MPRINT(EM_DIAGRAM):   MAX_ADJUSTED = "P_Diabet_maxAdjusted_DqKXsKSnD";
+293541     RESULT_COUNT = "";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT = "";
+293542     RESULT_COUNT_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT_LABEL = "";
+293543     TEMPORARY_VARIABLE = "P_Diabetes_Predi_QW2aqmBephwgp6H";
+MPRINT(EM_DIAGRAM):   TEMPORARY_VARIABLE = "P_Diabetes_Predi_QW2aqmBephwgp6H";
+293544     output;
+MPRINT(EM_DIAGRAM):   output;
+293545     VARIABLE = "P_Diabetes_Predictionno_diabetes";
+MPRINT(EM_DIAGRAM):   VARIABLE = "P_Diabetes_Predictionno_diabetes";
+293546     FORMAT = "";
+MPRINT(EM_DIAGRAM):   FORMAT = "";
+293547     TYPE = "";
+MPRINT(EM_DIAGRAM):   TYPE = "";
+293548     PARENT = "";
+MPRINT(EM_DIAGRAM):   PARENT = "";
+293549     LEVEL = "NO DIABETES";
+MPRINT(EM_DIAGRAM):   LEVEL = "NO DIABETES";
+293550     PROPERTY = "POSTERIOR_LEVEL";
+MPRINT(EM_DIAGRAM):   PROPERTY = "POSTERIOR_LEVEL";
+293551     MEASUREMENT = "INTERVAL";
+MPRINT(EM_DIAGRAM):   MEASUREMENT = "INTERVAL";
+293552     LAST_LEVEL = "";
+MPRINT(EM_DIAGRAM):   LAST_LEVEL = "";
+293553     GEN_VAR_IN_TEMP_DATA = "P_Diabetes_Predictionno_diabetes";
+MPRINT(EM_DIAGRAM):   GEN_VAR_IN_TEMP_DATA = "P_Diabetes_Predictionno_diabetes";
+293554     RESULT_MEAN = "_meanP_";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN = "_meanP_";
+293555     RESULT_MEAN_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMean_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN_LABEL = "Mean Posterior Probability";
+293556     RESULT_MIN = "_minP_";
+MPRINT(EM_DIAGRAM):   RESULT_MIN = "_minP_";
+293557     RESULT_MIN_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMin_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MIN_LABEL = "Min Posterior Probability";
+293558     MIN_ADJUSTED = "P_Diabet_minAdjusted_ddmS78u7i";
+MPRINT(EM_DIAGRAM):   MIN_ADJUSTED = "P_Diabet_minAdjusted_ddmS78u7i";
+293559     RESULT_MAX = "_maxP_";
+MPRINT(EM_DIAGRAM):   RESULT_MAX = "_maxP_";
+293560     RESULT_MAX_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMax_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MAX_LABEL = "Max Posterior Probability";
+293561     MAX_ADJUSTED = "P_Diabet_maxAdjusted_sevJoHNHA";
+MPRINT(EM_DIAGRAM):   MAX_ADJUSTED = "P_Diabet_maxAdjusted_sevJoHNHA";
+293562     RESULT_COUNT = "";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT = "";
+293563     RESULT_COUNT_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT_LABEL = "";
+293564     TEMPORARY_VARIABLE = "P_Diabetes_Predi_ooLCncNqVvhJ9xG";
+MPRINT(EM_DIAGRAM):   TEMPORARY_VARIABLE = "P_Diabetes_Predi_ooLCncNqVvhJ9xG";
+293565     output;
+MPRINT(EM_DIAGRAM):   output;
+293566     VARIABLE = "P_Diabetes_Predictiondiabetes";
+MPRINT(EM_DIAGRAM):   VARIABLE = "P_Diabetes_Predictiondiabetes";
+293567     FORMAT = "";
+MPRINT(EM_DIAGRAM):   FORMAT = "";
+293568     TYPE = "";
+MPRINT(EM_DIAGRAM):   TYPE = "";
+293569     PARENT = "";
+MPRINT(EM_DIAGRAM):   PARENT = "";
+293570     LEVEL = "DIABETES";
+MPRINT(EM_DIAGRAM):   LEVEL = "DIABETES";
+293571     PROPERTY = "POSTERIOR_LEVEL";
+MPRINT(EM_DIAGRAM):   PROPERTY = "POSTERIOR_LEVEL";
+293572     MEASUREMENT = "INTERVAL";
+MPRINT(EM_DIAGRAM):   MEASUREMENT = "INTERVAL";
+293573     LAST_LEVEL = "";
+MPRINT(EM_DIAGRAM):   LAST_LEVEL = "";
+293574     GEN_VAR_IN_TEMP_DATA = "P_Diabetes_Predictiondiabetes";
+MPRINT(EM_DIAGRAM):   GEN_VAR_IN_TEMP_DATA = "P_Diabetes_Predictiondiabetes";
+293575     RESULT_MEAN = "_meanP_";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN = "_meanP_";
+293576     RESULT_MEAN_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMean_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MEAN_LABEL = "Mean Posterior Probability";
+293577     RESULT_MIN = "_minP_";
+MPRINT(EM_DIAGRAM):   RESULT_MIN = "_minP_";
+293578     RESULT_MIN_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMin_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MIN_LABEL = "Min Posterior Probability";
+293579     MIN_ADJUSTED = "P_Diabet_minAdjusted_gm88aElNH";
+MPRINT(EM_DIAGRAM):   MIN_ADJUSTED = "P_Diabet_minAdjusted_gm88aElNH";
+293580     RESULT_MAX = "_maxP_";
+MPRINT(EM_DIAGRAM):   RESULT_MAX = "_maxP_";
+293581     RESULT_MAX_LABEL = "%sysfunc(sasmsg(sashelp.dmine, assmt_probMax_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   RESULT_MAX_LABEL = "Max Posterior Probability";
+293582     MAX_ADJUSTED = "P_Diabet_maxAdjusted_E6fhCKpV0";
+MPRINT(EM_DIAGRAM):   MAX_ADJUSTED = "P_Diabet_maxAdjusted_E6fhCKpV0";
+293583     RESULT_COUNT = "";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT = "";
+293584     RESULT_COUNT_LABEL = "";
+MPRINT(EM_DIAGRAM):   RESULT_COUNT_LABEL = "";
+293585     TEMPORARY_VARIABLE = "P_Diabetes_Predi_CLlRbh1E2bxrVXd";
+MPRINT(EM_DIAGRAM):   TEMPORARY_VARIABLE = "P_Diabetes_Predi_CLlRbh1E2bxrVXd";
+293586     output;
+MPRINT(EM_DIAGRAM):   output;
+293587     run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set WORK.ASSESS_0FZB2UL_ASSESSMETA_HGYXAQ has 7 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+
+293588     /* Generate temporary dataset and obtain summary statistics such as total number of   */
+293589     /* obserations, frequency of target.  However, summary statistics for class reporting */
+293590     /* variabels are not computed here since if there exist class reporting variables,    */
+293591     /* then PROC DMDB will be called. And there is no need to compute interval reporting  */
+293592     /* summary statisitcs, if any.                                                        */
+293593     data work.ASSESS_0FZB2UL_normSD_I1MAFc(drop=
+293594     _numberOfObservation_
+293595     _levelFrequency_1
+293596     _levelFrequency_2
+293597     _levelFrequency_3
+293598     )
+293599     work.ASSESS_0FZB2UL_meansAndTi_bOFIIX (keep=
+293600     _numberOfObservation_
+293601     _levelFrequency_1
+293602     _levelFrequency_2
+293603     _levelFrequency_3
+293604     );
+MPRINT(EM_DIAGRAM):    data work.ASSESS_0FZB2UL_normSD_I1MAFc(drop= _numberOfObservation_ _levelFrequency_1 _levelFrequency_2 _levelFrequency_3 ) work.ASSESS_0FZB2UL_meansAndTi_bOFIIX (keep= _numberOfObservation_ _levelFrequency_1 _levelFrequency_2 
+_levelFrequency_3 );
+293605     set EMWS1.Reg_TRAIN(
+293606     where=(
+293607     (Diabetes_Prediction ^= ' ')
+293608     )
+293609     ) end=_lastObservation_;
+MPRINT(EM_DIAGRAM):   set EMWS1.Reg_TRAIN( where=( (Diabetes_Prediction ^= ' ') ) ) end=_lastObservation_;
+293610     keep frequency_QSUJuo;
+MPRINT(EM_DIAGRAM):   keep frequency_QSUJuo;
+293611     frequency_QSUJuo = 1;
+MPRINT(EM_DIAGRAM):   frequency_QSUJuo = 1;
+293612     keep I_Diabetes_Prediction F_Diabetes_Prediction;
+MPRINT(EM_DIAGRAM):   keep I_Diabetes_Prediction F_Diabetes_Prediction;
+293613     keep F_Diabetes_Predi_91ps9ZudMMNZui9;
+MPRINT(EM_DIAGRAM):   keep F_Diabetes_Predi_91ps9ZudMMNZui9;
+293614     if (F_Diabetes_Prediction = 'PREDIABETES') then do;
+MPRINT(EM_DIAGRAM):   if (F_Diabetes_Prediction = 'PREDIABETES') then do;
+293615     F_Diabetes_Predi_91ps9ZudMMNZui9 = 1;
+MPRINT(EM_DIAGRAM):   F_Diabetes_Predi_91ps9ZudMMNZui9 = 1;
+293616     end;
+MPRINT(EM_DIAGRAM):   end;
+293617     else do;
+MPRINT(EM_DIAGRAM):   else do;
+293618     F_Diabetes_Predi_91ps9ZudMMNZui9 = 0;
+MPRINT(EM_DIAGRAM):   F_Diabetes_Predi_91ps9ZudMMNZui9 = 0;
+293619     end;
+MPRINT(EM_DIAGRAM):   end;
+293620     keep F_Diabetes_Predi_lHjJ6vKhH5Hhdfh;
+MPRINT(EM_DIAGRAM):   keep F_Diabetes_Predi_lHjJ6vKhH5Hhdfh;
+293621     if (F_Diabetes_Prediction = 'NO DIABETES') then do;
+MPRINT(EM_DIAGRAM):   if (F_Diabetes_Prediction = 'NO DIABETES') then do;
+293622     F_Diabetes_Predi_lHjJ6vKhH5Hhdfh = 1;
+MPRINT(EM_DIAGRAM):   F_Diabetes_Predi_lHjJ6vKhH5Hhdfh = 1;
+293623     end;
+MPRINT(EM_DIAGRAM):   end;
+293624     else do;
+MPRINT(EM_DIAGRAM):   else do;
+293625     F_Diabetes_Predi_lHjJ6vKhH5Hhdfh = 0;
+MPRINT(EM_DIAGRAM):   F_Diabetes_Predi_lHjJ6vKhH5Hhdfh = 0;
+293626     end;
+MPRINT(EM_DIAGRAM):   end;
+293627     keep F_Diabetes_Predi_jgizTWgCdMyhAVm;
+MPRINT(EM_DIAGRAM):   keep F_Diabetes_Predi_jgizTWgCdMyhAVm;
+293628     if (F_Diabetes_Prediction = 'DIABETES') then do;
+MPRINT(EM_DIAGRAM):   if (F_Diabetes_Prediction = 'DIABETES') then do;
+293629     F_Diabetes_Predi_jgizTWgCdMyhAVm = 1;
+MPRINT(EM_DIAGRAM):   F_Diabetes_Predi_jgizTWgCdMyhAVm = 1;
+293630     end;
+MPRINT(EM_DIAGRAM):   end;
+293631     else do;
+MPRINT(EM_DIAGRAM):   else do;
+293632     F_Diabetes_Predi_jgizTWgCdMyhAVm = 0;
+MPRINT(EM_DIAGRAM):   F_Diabetes_Predi_jgizTWgCdMyhAVm = 0;
+293633     end;
+MPRINT(EM_DIAGRAM):   end;
+293634     keep P_Diabetes_Predictionprediabetes;
+MPRINT(EM_DIAGRAM):   keep P_Diabetes_Predictionprediabetes;
+293635     keep P_Diabetes_Predictionno_diabetes;
+MPRINT(EM_DIAGRAM):   keep P_Diabetes_Predictionno_diabetes;
+293636     keep P_Diabetes_Predictiondiabetes;
+MPRINT(EM_DIAGRAM):   keep P_Diabetes_Predictiondiabetes;
+293637     output work.ASSESS_0FZB2UL_normSD_I1MAFc;
+MPRINT(EM_DIAGRAM):   output work.ASSESS_0FZB2UL_normSD_I1MAFc;
+293638     keep _numberOfObservation_;
+MPRINT(EM_DIAGRAM):   keep _numberOfObservation_;
+293639     retain _numberOfObservation_ 0;
+MPRINT(EM_DIAGRAM):   retain _numberOfObservation_ 0;
+293640     _numberOfObservation_ + frequency_QSUJuo;
+MPRINT(EM_DIAGRAM):   _numberOfObservation_ + frequency_QSUJuo;
+293641     keep _levelFrequency_1;
+MPRINT(EM_DIAGRAM):   keep _levelFrequency_1;
+293642     retain _levelFrequency_1 0;
+MPRINT(EM_DIAGRAM):   retain _levelFrequency_1 0;
+293643     if (F_Diabetes_Prediction = 'PREDIABETES') then do;
+MPRINT(EM_DIAGRAM):   if (F_Diabetes_Prediction = 'PREDIABETES') then do;
+293644     _levelFrequency_1 + frequency_QSUJuo;
+MPRINT(EM_DIAGRAM):   _levelFrequency_1 + frequency_QSUJuo;
+293645     end;
+MPRINT(EM_DIAGRAM):   end;
+293646     keep _levelFrequency_2;
+MPRINT(EM_DIAGRAM):   keep _levelFrequency_2;
+293647     retain _levelFrequency_2 0;
+MPRINT(EM_DIAGRAM):   retain _levelFrequency_2 0;
+293648     if (F_Diabetes_Prediction = 'NO DIABETES') then do;
+MPRINT(EM_DIAGRAM):   if (F_Diabetes_Prediction = 'NO DIABETES') then do;
+293649     _levelFrequency_2 + frequency_QSUJuo;
+MPRINT(EM_DIAGRAM):   _levelFrequency_2 + frequency_QSUJuo;
+293650     end;
+MPRINT(EM_DIAGRAM):   end;
+293651     keep _levelFrequency_3;
+MPRINT(EM_DIAGRAM):   keep _levelFrequency_3;
+293652     retain _levelFrequency_3 0;
+MPRINT(EM_DIAGRAM):   retain _levelFrequency_3 0;
+293653     if (F_Diabetes_Prediction = 'DIABETES') then do;
+MPRINT(EM_DIAGRAM):   if (F_Diabetes_Prediction = 'DIABETES') then do;
+293654     _levelFrequency_3 + frequency_QSUJuo;
+MPRINT(EM_DIAGRAM):   _levelFrequency_3 + frequency_QSUJuo;
+293655     end;
+MPRINT(EM_DIAGRAM):   end;
+293656     if _lastObservation_ then do;
+MPRINT(EM_DIAGRAM):   if _lastObservation_ then do;
+293657     output work.ASSESS_0FZB2UL_meansAndTi_bOFIIX;
+MPRINT(EM_DIAGRAM):   output work.ASSESS_0FZB2UL_meansAndTi_bOFIIX;
+293658     end;
+MPRINT(EM_DIAGRAM):   end;
+293659     run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: View EMWS1.REG_TRAIN.VIEW used (Total process time):
+      real time           0.61 seconds
+      cpu time            0.56 seconds
+      
+NOTE: There were 80228 observations read from the data set EMWS1.PART_TRAIN.
+NOTE: There were 80228 observations read from the data set EMWS1.REG_TRAIN.
+      WHERE Diabetes_Prediction not = ' ';
+NOTE: The data set WORK.ASSESS_0FZB2UL_NORMSD_I1MAFC has 80228 observations and 9 variables.
+NOTE: The data set WORK.ASSESS_0FZB2UL_MEANSANDTI_BOFIIX has 1 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.65 seconds
+      cpu time            0.59 seconds
+      
+
+293660     data WORK._EMRANK;
+MPRINT(EM_DIAGRAM):    data WORK._EMRANK;
+293661     set EMWS1.MdlComp2_EMRANK;
+MPRINT(EM_DIAGRAM):   set EMWS1.MdlComp2_EMRANK;
+293662     where MODEL = "Reg" and TARGET = "Diabetes_Prediction" and dataRole="TRAIN";
+MPRINT(EM_DIAGRAM):   where MODEL = "Reg" and TARGET = "Diabetes_Prediction" and dataRole="TRAIN";
+293663     run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 20 observations read from the data set EMWS1.MDLCOMP2_EMRANK.
+      WHERE (MODEL='Reg') and (TARGET='Diabetes_Prediction') and (dataRole='TRAIN');
+NOTE: The data set WORK._EMRANK has 20 observations and 38 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+293664     data work._augment;
+MPRINT(EM_DIAGRAM):    data work._augment;
+293665     do BIN= 1 to 20;
+MPRINT(EM_DIAGRAM):   do BIN= 1 to 20;
+293666     DECILE = BIN*5;
+MPRINT(EM_DIAGRAM):   DECILE = BIN*5;
+293667     output;
+MPRINT(EM_DIAGRAM):   output;
+293668     end;
+MPRINT(EM_DIAGRAM):   end;
+293669     run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set WORK._AUGMENT has 20 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+293670     data WORK._EMRANK;
+MPRINT(EM_DIAGRAM):   data WORK._EMRANK;
+293671     merge WORK._AUGMENT WORK._EMRANK;
+MPRINT(EM_DIAGRAM):   merge WORK._AUGMENT WORK._EMRANK;
+293672     by BIN;
+MPRINT(EM_DIAGRAM):   by BIN;
+293673     run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 20 observations read from the data set WORK._AUGMENT.
+NOTE: There were 20 observations read from the data set WORK._EMRANK.
+NOTE: The data set WORK._EMRANK has 20 observations and 38 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+293674     data WORK._EMRANK;
+MPRINT(EM_DIAGRAM):    data WORK._EMRANK;
+293675     set WORK._EMRANK end=_lastObservation_;
+MPRINT(EM_DIAGRAM):   set WORK._EMRANK end=_lastObservation_;
+293676     retain _previousMinP_ _previousMaxP_;
+MPRINT(EM_DIAGRAM):   retain _previousMinP_ _previousMaxP_;
+293677     retain _group_ 1;
+MPRINT(EM_DIAGRAM):   retain _group_ 1;
+293678     keep event;
+MPRINT(EM_DIAGRAM):   keep event;
+293679     keep bin _cutoff_ _group_;
+MPRINT(EM_DIAGRAM):   keep bin _cutoff_ _group_;
+293680     if (bin > 1) then do;
+MPRINT(EM_DIAGRAM):   if (bin > 1) then do;
+293681     bin = bin - 1;
+MPRINT(EM_DIAGRAM):   bin = bin - 1;
+293682     _cutoff_ = (_maxP_ + _previousMinP_) / 2;
+MPRINT(EM_DIAGRAM):   _cutoff_ = (_maxP_ + _previousMinP_) / 2;
+293683     if (abs(_previousMaxP_ - _previousMinP_) < 1E-6) then do;
+MPRINT(EM_DIAGRAM):   if (abs(_previousMaxP_ - _previousMinP_) < 1E-6) then do;
+293684     /* tied */
+293685     _cutoff_ = max((_minP_ + _maxP_)/2, min(_cutoff_, _previousMinP_/*-1E-6*/
+293686     ));
+MPRINT(EM_DIAGRAM):   _cutoff_ = max((_minP_ + _maxP_)/2, min(_cutoff_, _previousMinP_ ));
+293687     end;
+MPRINT(EM_DIAGRAM):   end;
+293688     else if (abs(_maxP_ - _minP_) < 1E-6) then do;
+MPRINT(EM_DIAGRAM):   else if (abs(_maxP_ - _minP_) < 1E-6) then do;
+293689     /* next tied */
+293690     _cutoff_ = min((_previousMinP_ + _previousMaxP_)/2, max(_cutoff_, _maxP_/*+ 1E-6*/
+293691     ));
+MPRINT(EM_DIAGRAM):   _cutoff_ = min((_previousMinP_ + _previousMaxP_)/2, max(_cutoff_, _maxP_ ));
+293692     end;
+MPRINT(EM_DIAGRAM):   end;
+293693     output;
+MPRINT(EM_DIAGRAM):   output;
+293694     *if ( abs((_maxP_ +_minP_)/2 - (_previousMaxP_ + _previousMinP_)/2) > 1E-6) then do;
+MPRINT(EM_DIAGRAM):   *if ( abs((_maxP_ +_minP_)/2 - (_previousMaxP_ + _previousMinP_)/2) > 1E-6) then do;
+293695     * _group_ + 1;
+MPRINT(EM_DIAGRAM):   * _group_ + 1;
+293696     *end;
+MPRINT(EM_DIAGRAM):   *end;
+293697     if (_maxP_ le _previousMinP_ - 1E-6) then do;
+MPRINT(EM_DIAGRAM):   if (_maxP_ le _previousMinP_ - 1E-6) then do;
+293698     _group_ + 1;
+MPRINT(EM_DIAGRAM):   _group_ + 1;
+293699     end;
+MPRINT(EM_DIAGRAM):   end;
+293700     else if (abs(_maxP_ - _previousMinP_) < 1E-6) then do;
+MPRINT(EM_DIAGRAM):   else if (abs(_maxP_ - _previousMinP_) < 1E-6) then do;
+293701     if (abs(_maxP_ - _minP_) > 1E-6) then do;
+MPRINT(EM_DIAGRAM):   if (abs(_maxP_ - _minP_) > 1E-6) then do;
+293702     _group_ + 1;
+MPRINT(EM_DIAGRAM):   _group_ + 1;
+293703     end;
+MPRINT(EM_DIAGRAM):   end;
+293704     end;
+MPRINT(EM_DIAGRAM):   end;
+293705     bin + 1;
+MPRINT(EM_DIAGRAM):   bin + 1;
+293706     /* correct the previous change */
+293707     end;
+MPRINT(EM_DIAGRAM):   end;
+293708     if (_lastObservation_) then do;
+MPRINT(EM_DIAGRAM):   if (_lastObservation_) then do;
+293709     _cutoff_ = .;
+MPRINT(EM_DIAGRAM):   _cutoff_ = .;
+293710     output;
+MPRINT(EM_DIAGRAM):   output;
+293711     end;
+MPRINT(EM_DIAGRAM):   end;
+293712     _previousMinP_ = _minP_;
+MPRINT(EM_DIAGRAM):   _previousMinP_ = _minP_;
+293713     _previousMaxP_ = _maxP_;
+MPRINT(EM_DIAGRAM):   _previousMaxP_ = _maxP_;
+293714     run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 20 observations read from the data set WORK._EMRANK.
+NOTE: The data set WORK._EMRANK has 20 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+293715     data WORK._EMRANK;
+MPRINT(EM_DIAGRAM):    data WORK._EMRANK;
+293716     set WORK._EMRANK;
+MPRINT(EM_DIAGRAM):   set WORK._EMRANK;
+293717     by _group_;
+MPRINT(EM_DIAGRAM):   by _group_;
+293718     retain _start_;
+MPRINT(EM_DIAGRAM):   retain _start_;
+293719     if (first._group_) then do;
+MPRINT(EM_DIAGRAM):   if (first._group_) then do;
+293720     _start_ = _n_;
+MPRINT(EM_DIAGRAM):   _start_ = _n_;
+293721     end;
+MPRINT(EM_DIAGRAM):   end;
+293722     if (last._group_) then do;
+MPRINT(EM_DIAGRAM):   if (last._group_) then do;
+293723     _end_ = _n_;
+MPRINT(EM_DIAGRAM):   _end_ = _n_;
+293724     output;
+MPRINT(EM_DIAGRAM):   output;
+293725     end;
+MPRINT(EM_DIAGRAM):   end;
+293726     run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 20 observations read from the data set WORK._EMRANK.
+NOTE: The data set WORK._EMRANK has 20 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+293727     filename emflow "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas";
+MPRINT(EM_DIAGRAM):    filename emflow "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas";
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * MdlComp2: Scoring REG_TRAIN data;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+293728     *------------------------------------------------------------*;
+293729     * MdlComp2: Scoring REG_TRAIN data;
+293730     *------------------------------------------------------------*;
+293731     data EMWS1.MdlComp2_TRAIN
+293732     / view=EMWS1.MdlComp2_TRAIN
+293733     ;
+MPRINT(EM_DIAGRAM):   data EMWS1.MdlComp2_TRAIN / view=EMWS1.MdlComp2_TRAIN ;
+293734     set EMWS1.Reg_TRAIN
+293735     ;
+MPRINT(EM_DIAGRAM):   set EMWS1.Reg_TRAIN ;
+293736     %inc emflow;
+NOTE: %INCLUDE (level 1) file EMFLOW is file \\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas.
+293737    +if (P_Diabetes_Predictionprediabetes ge 0.04522988394788) then do;
+MPRINT(EM_DIAGRAM):   if (P_Diabetes_Predictionprediabetes ge 0.04522988394788) then do;
+293738    +b_Diabetes_Prediction = 1;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 1;
+293739    +end;
+MPRINT(EM_DIAGRAM):   end;
+293740    +else
+293741    +if (P_Diabetes_Predictionprediabetes ge 0.03786464557396) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.03786464557396) then do;
+293742    +b_Diabetes_Prediction = 2;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 2;
+293743    +end;
+MPRINT(EM_DIAGRAM):   end;
+293744    +else
+293745    +if (P_Diabetes_Predictionprediabetes ge 0.03294595277874) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.03294595277874) then do;
+293746    +b_Diabetes_Prediction = 3;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 3;
+293747    +end;
+MPRINT(EM_DIAGRAM):   end;
+293748    +else
+293749    +if (P_Diabetes_Predictionprediabetes ge 0.0292246823927) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.0292246823927) then do;
+293750    +b_Diabetes_Prediction = 4;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 4;
+293751    +end;
+MPRINT(EM_DIAGRAM):   end;
+293752    +else
+293753    +if (P_Diabetes_Predictionprediabetes ge 0.02604130355216) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02604130355216) then do;
+293754    +b_Diabetes_Prediction = 5;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 5;
+293755    +end;
+MPRINT(EM_DIAGRAM):   end;
+293756    +else
+293757    +if (P_Diabetes_Predictionprediabetes ge 0.02328562950279) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02328562950279) then do;
+293758    +b_Diabetes_Prediction = 6;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 6;
+293759    +end;
+MPRINT(EM_DIAGRAM):   end;
+293760    +else
+293761    +if (P_Diabetes_Predictionprediabetes ge 0.02074111529573) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02074111529573) then do;
+293762    +b_Diabetes_Prediction = 7;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 7;
+293763    +end;
+MPRINT(EM_DIAGRAM):   end;
+293764    +else
+293765    +if (P_Diabetes_Predictionprediabetes ge 0.01841352931974) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01841352931974) then do;
+293766    +b_Diabetes_Prediction = 8;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 8;
+293767    +end;
+MPRINT(EM_DIAGRAM):   end;
+293768    +else
+293769    +if (P_Diabetes_Predictionprediabetes ge 0.0163030263603) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.0163030263603) then do;
+293770    +b_Diabetes_Prediction = 9;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 9;
+293771    +end;
+MPRINT(EM_DIAGRAM):   end;
+293772    +else
+293773    +if (P_Diabetes_Predictionprediabetes ge 0.01435268656014) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01435268656014) then do;
+293774    +b_Diabetes_Prediction = 10;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 10;
+293775    +end;
+MPRINT(EM_DIAGRAM):   end;
+293776    +else
+293777    +if (P_Diabetes_Predictionprediabetes ge 0.01259511347117) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01259511347117) then do;
+293778    +b_Diabetes_Prediction = 11;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 11;
+293779    +end;
+MPRINT(EM_DIAGRAM):   end;
+293780    +else
+293781    +if (P_Diabetes_Predictionprediabetes ge 0.01100265603705) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01100265603705) then do;
+293782    +b_Diabetes_Prediction = 12;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 12;
+293783    +end;
+MPRINT(EM_DIAGRAM):   end;
+293784    +else
+293785    +if (P_Diabetes_Predictionprediabetes ge 0.00952505388486) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00952505388486) then do;
+293786    +b_Diabetes_Prediction = 13;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 13;
+293787    +end;
+MPRINT(EM_DIAGRAM):   end;
+293788    +else
+293789    +if (P_Diabetes_Predictionprediabetes ge 0.00814984001604) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00814984001604) then do;
+293790    +b_Diabetes_Prediction = 14;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 14;
+293791    +end;
+MPRINT(EM_DIAGRAM):   end;
+293792    +else
+293793    +if (P_Diabetes_Predictionprediabetes ge 0.00686958969009) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00686958969009) then do;
+293794    +b_Diabetes_Prediction = 15;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 15;
+293795    +end;
+MPRINT(EM_DIAGRAM):   end;
+293796    +else
+293797    +if (P_Diabetes_Predictionprediabetes ge 0.00569261937814) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00569261937814) then do;
+293798    +b_Diabetes_Prediction = 16;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 16;
+293799    +end;
+MPRINT(EM_DIAGRAM):   end;
+293800    +else
+293801    +if (P_Diabetes_Predictionprediabetes ge 0.00464665502168) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00464665502168) then do;
+293802    +b_Diabetes_Prediction = 17;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 17;
+293803    +end;
+MPRINT(EM_DIAGRAM):   end;
+293804    +else
+293805    +if (P_Diabetes_Predictionprediabetes ge 0.00364597189998) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00364597189998) then do;
+293806    +b_Diabetes_Prediction = 18;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 18;
+293807    +end;
+MPRINT(EM_DIAGRAM):   end;
+293808    +else
+293809    +if (P_Diabetes_Predictionprediabetes ge 0.00261786347185) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00261786347185) then do;
+293810    +b_Diabetes_Prediction = 19;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 19;
+293811    +end;
+MPRINT(EM_DIAGRAM):   end;
+293812    +else
+293813    +do;
+MPRINT(EM_DIAGRAM):   else do;
+293814    +b_Diabetes_Prediction = 20;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 20;
+293815    +end;
+MPRINT(EM_DIAGRAM):   end;
+NOTE: %INCLUDE (level 1) ending.
+MPRINT(EM_DIAGRAM):   run;
+293816     run;
+
+NOTE: DATA STEP view saved on file EMWS1.MDLCOMP2_TRAIN.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: View EMWS1.REG_TRAIN.VIEW used (Total process time):
+      real time           0.21 seconds
+      cpu time            0.06 seconds
+      
+NOTE: DATA statement used (Total process time):
+      real time           0.22 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+293817     quit;
+293818     filename emflow;
+MPRINT(EM_DIAGRAM):   filename emflow;
+NOTE: Fileref EMFLOW has been deassigned.
+293819     filename emflow "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas";
+MPRINT(EM_DIAGRAM):    filename emflow "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas";
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * MdlComp2: Scoring REG_VALIDATE data;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+293820     *------------------------------------------------------------*;
+293821     * MdlComp2: Scoring REG_VALIDATE data;
+293822     *------------------------------------------------------------*;
+293823     data EMWS1.MdlComp2_VALIDATE
+293824     / view=EMWS1.MdlComp2_VALIDATE
+293825     ;
+MPRINT(EM_DIAGRAM):   data EMWS1.MdlComp2_VALIDATE / view=EMWS1.MdlComp2_VALIDATE ;
+293826     set EMWS1.Reg_VALIDATE
+293827     ;
+MPRINT(EM_DIAGRAM):   set EMWS1.Reg_VALIDATE ;
+293828     %inc emflow;
+NOTE: %INCLUDE (level 1) file EMFLOW is file \\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas.
+293829    +if (P_Diabetes_Predictionprediabetes ge 0.04522988394788) then do;
+MPRINT(EM_DIAGRAM):   if (P_Diabetes_Predictionprediabetes ge 0.04522988394788) then do;
+293830    +b_Diabetes_Prediction = 1;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 1;
+293831    +end;
+MPRINT(EM_DIAGRAM):   end;
+293832    +else
+293833    +if (P_Diabetes_Predictionprediabetes ge 0.03786464557396) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.03786464557396) then do;
+293834    +b_Diabetes_Prediction = 2;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 2;
+293835    +end;
+MPRINT(EM_DIAGRAM):   end;
+293836    +else
+293837    +if (P_Diabetes_Predictionprediabetes ge 0.03294595277874) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.03294595277874) then do;
+293838    +b_Diabetes_Prediction = 3;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 3;
+293839    +end;
+MPRINT(EM_DIAGRAM):   end;
+293840    +else
+293841    +if (P_Diabetes_Predictionprediabetes ge 0.0292246823927) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.0292246823927) then do;
+293842    +b_Diabetes_Prediction = 4;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 4;
+293843    +end;
+MPRINT(EM_DIAGRAM):   end;
+293844    +else
+293845    +if (P_Diabetes_Predictionprediabetes ge 0.02604130355216) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02604130355216) then do;
+293846    +b_Diabetes_Prediction = 5;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 5;
+293847    +end;
+MPRINT(EM_DIAGRAM):   end;
+293848    +else
+293849    +if (P_Diabetes_Predictionprediabetes ge 0.02328562950279) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02328562950279) then do;
+293850    +b_Diabetes_Prediction = 6;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 6;
+293851    +end;
+MPRINT(EM_DIAGRAM):   end;
+293852    +else
+293853    +if (P_Diabetes_Predictionprediabetes ge 0.02074111529573) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02074111529573) then do;
+293854    +b_Diabetes_Prediction = 7;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 7;
+293855    +end;
+MPRINT(EM_DIAGRAM):   end;
+293856    +else
+293857    +if (P_Diabetes_Predictionprediabetes ge 0.01841352931974) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01841352931974) then do;
+293858    +b_Diabetes_Prediction = 8;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 8;
+293859    +end;
+MPRINT(EM_DIAGRAM):   end;
+293860    +else
+293861    +if (P_Diabetes_Predictionprediabetes ge 0.0163030263603) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.0163030263603) then do;
+293862    +b_Diabetes_Prediction = 9;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 9;
+293863    +end;
+MPRINT(EM_DIAGRAM):   end;
+293864    +else
+293865    +if (P_Diabetes_Predictionprediabetes ge 0.01435268656014) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01435268656014) then do;
+293866    +b_Diabetes_Prediction = 10;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 10;
+293867    +end;
+MPRINT(EM_DIAGRAM):   end;
+293868    +else
+293869    +if (P_Diabetes_Predictionprediabetes ge 0.01259511347117) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01259511347117) then do;
+293870    +b_Diabetes_Prediction = 11;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 11;
+293871    +end;
+MPRINT(EM_DIAGRAM):   end;
+293872    +else
+293873    +if (P_Diabetes_Predictionprediabetes ge 0.01100265603705) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01100265603705) then do;
+293874    +b_Diabetes_Prediction = 12;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 12;
+293875    +end;
+MPRINT(EM_DIAGRAM):   end;
+293876    +else
+293877    +if (P_Diabetes_Predictionprediabetes ge 0.00952505388486) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00952505388486) then do;
+293878    +b_Diabetes_Prediction = 13;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 13;
+293879    +end;
+MPRINT(EM_DIAGRAM):   end;
+293880    +else
+293881    +if (P_Diabetes_Predictionprediabetes ge 0.00814984001604) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00814984001604) then do;
+293882    +b_Diabetes_Prediction = 14;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 14;
+293883    +end;
+MPRINT(EM_DIAGRAM):   end;
+293884    +else
+293885    +if (P_Diabetes_Predictionprediabetes ge 0.00686958969009) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00686958969009) then do;
+293886    +b_Diabetes_Prediction = 15;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 15;
+293887    +end;
+MPRINT(EM_DIAGRAM):   end;
+293888    +else
+293889    +if (P_Diabetes_Predictionprediabetes ge 0.00569261937814) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00569261937814) then do;
+293890    +b_Diabetes_Prediction = 16;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 16;
+293891    +end;
+MPRINT(EM_DIAGRAM):   end;
+293892    +else
+293893    +if (P_Diabetes_Predictionprediabetes ge 0.00464665502168) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00464665502168) then do;
+293894    +b_Diabetes_Prediction = 17;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 17;
+293895    +end;
+MPRINT(EM_DIAGRAM):   end;
+293896    +else
+293897    +if (P_Diabetes_Predictionprediabetes ge 0.00364597189998) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00364597189998) then do;
+293898    +b_Diabetes_Prediction = 18;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 18;
+293899    +end;
+MPRINT(EM_DIAGRAM):   end;
+293900    +else
+293901    +if (P_Diabetes_Predictionprediabetes ge 0.00261786347185) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00261786347185) then do;
+293902    +b_Diabetes_Prediction = 19;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 19;
+293903    +end;
+MPRINT(EM_DIAGRAM):   end;
+293904    +else
+293905    +do;
+MPRINT(EM_DIAGRAM):   else do;
+293906    +b_Diabetes_Prediction = 20;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 20;
+293907    +end;
+MPRINT(EM_DIAGRAM):   end;
+NOTE: %INCLUDE (level 1) ending.
+MPRINT(EM_DIAGRAM):   run;
+293908     run;
+
+NOTE: DATA STEP view saved on file EMWS1.MDLCOMP2_VALIDATE.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: View EMWS1.REG_VALIDATE.VIEW used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.09 seconds
+      
+NOTE: DATA statement used (Total process time):
+      real time           0.19 seconds
+      cpu time            0.14 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+293909     quit;
+293910     filename emflow;
+MPRINT(EM_DIAGRAM):   filename emflow;
+NOTE: Fileref EMFLOW has been deassigned.
+293911     filename emflow "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas";
+MPRINT(EM_DIAGRAM):    filename emflow "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas";
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * MdlComp2: Scoring REG_TEST data;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+293912     *------------------------------------------------------------*;
+293913     * MdlComp2: Scoring REG_TEST data;
+293914     *------------------------------------------------------------*;
+293915     data EMWS1.MdlComp2_TEST
+293916     / view=EMWS1.MdlComp2_TEST
+293917     ;
+MPRINT(EM_DIAGRAM):   data EMWS1.MdlComp2_TEST / view=EMWS1.MdlComp2_TEST ;
+293918     set EMWS1.Reg_TEST
+293919     ;
+MPRINT(EM_DIAGRAM):   set EMWS1.Reg_TEST ;
+293920     %inc emflow;
+NOTE: %INCLUDE (level 1) file EMFLOW is file \\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\EMFLOWSCORE.sas.
+293921    +if (P_Diabetes_Predictionprediabetes ge 0.04522988394788) then do;
+MPRINT(EM_DIAGRAM):   if (P_Diabetes_Predictionprediabetes ge 0.04522988394788) then do;
+293922    +b_Diabetes_Prediction = 1;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 1;
+293923    +end;
+MPRINT(EM_DIAGRAM):   end;
+293924    +else
+293925    +if (P_Diabetes_Predictionprediabetes ge 0.03786464557396) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.03786464557396) then do;
+293926    +b_Diabetes_Prediction = 2;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 2;
+293927    +end;
+MPRINT(EM_DIAGRAM):   end;
+293928    +else
+293929    +if (P_Diabetes_Predictionprediabetes ge 0.03294595277874) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.03294595277874) then do;
+293930    +b_Diabetes_Prediction = 3;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 3;
+293931    +end;
+MPRINT(EM_DIAGRAM):   end;
+293932    +else
+293933    +if (P_Diabetes_Predictionprediabetes ge 0.0292246823927) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.0292246823927) then do;
+293934    +b_Diabetes_Prediction = 4;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 4;
+293935    +end;
+MPRINT(EM_DIAGRAM):   end;
+293936    +else
+293937    +if (P_Diabetes_Predictionprediabetes ge 0.02604130355216) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02604130355216) then do;
+293938    +b_Diabetes_Prediction = 5;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 5;
+293939    +end;
+MPRINT(EM_DIAGRAM):   end;
+293940    +else
+293941    +if (P_Diabetes_Predictionprediabetes ge 0.02328562950279) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02328562950279) then do;
+293942    +b_Diabetes_Prediction = 6;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 6;
+293943    +end;
+MPRINT(EM_DIAGRAM):   end;
+293944    +else
+293945    +if (P_Diabetes_Predictionprediabetes ge 0.02074111529573) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.02074111529573) then do;
+293946    +b_Diabetes_Prediction = 7;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 7;
+293947    +end;
+MPRINT(EM_DIAGRAM):   end;
+293948    +else
+293949    +if (P_Diabetes_Predictionprediabetes ge 0.01841352931974) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01841352931974) then do;
+293950    +b_Diabetes_Prediction = 8;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 8;
+293951    +end;
+MPRINT(EM_DIAGRAM):   end;
+293952    +else
+293953    +if (P_Diabetes_Predictionprediabetes ge 0.0163030263603) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.0163030263603) then do;
+293954    +b_Diabetes_Prediction = 9;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 9;
+293955    +end;
+MPRINT(EM_DIAGRAM):   end;
+293956    +else
+293957    +if (P_Diabetes_Predictionprediabetes ge 0.01435268656014) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01435268656014) then do;
+293958    +b_Diabetes_Prediction = 10;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 10;
+293959    +end;
+MPRINT(EM_DIAGRAM):   end;
+293960    +else
+293961    +if (P_Diabetes_Predictionprediabetes ge 0.01259511347117) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01259511347117) then do;
+293962    +b_Diabetes_Prediction = 11;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 11;
+293963    +end;
+MPRINT(EM_DIAGRAM):   end;
+293964    +else
+293965    +if (P_Diabetes_Predictionprediabetes ge 0.01100265603705) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.01100265603705) then do;
+293966    +b_Diabetes_Prediction = 12;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 12;
+293967    +end;
+MPRINT(EM_DIAGRAM):   end;
+293968    +else
+293969    +if (P_Diabetes_Predictionprediabetes ge 0.00952505388486) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00952505388486) then do;
+293970    +b_Diabetes_Prediction = 13;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 13;
+293971    +end;
+MPRINT(EM_DIAGRAM):   end;
+293972    +else
+293973    +if (P_Diabetes_Predictionprediabetes ge 0.00814984001604) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00814984001604) then do;
+293974    +b_Diabetes_Prediction = 14;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 14;
+293975    +end;
+MPRINT(EM_DIAGRAM):   end;
+293976    +else
+293977    +if (P_Diabetes_Predictionprediabetes ge 0.00686958969009) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00686958969009) then do;
+293978    +b_Diabetes_Prediction = 15;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 15;
+293979    +end;
+MPRINT(EM_DIAGRAM):   end;
+293980    +else
+293981    +if (P_Diabetes_Predictionprediabetes ge 0.00569261937814) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00569261937814) then do;
+293982    +b_Diabetes_Prediction = 16;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 16;
+293983    +end;
+MPRINT(EM_DIAGRAM):   end;
+293984    +else
+293985    +if (P_Diabetes_Predictionprediabetes ge 0.00464665502168) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00464665502168) then do;
+293986    +b_Diabetes_Prediction = 17;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 17;
+293987    +end;
+MPRINT(EM_DIAGRAM):   end;
+293988    +else
+293989    +if (P_Diabetes_Predictionprediabetes ge 0.00364597189998) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00364597189998) then do;
+293990    +b_Diabetes_Prediction = 18;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 18;
+293991    +end;
+MPRINT(EM_DIAGRAM):   end;
+293992    +else
+293993    +if (P_Diabetes_Predictionprediabetes ge 0.00261786347185) then do;
+MPRINT(EM_DIAGRAM):   else if (P_Diabetes_Predictionprediabetes ge 0.00261786347185) then do;
+293994    +b_Diabetes_Prediction = 19;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 19;
+293995    +end;
+MPRINT(EM_DIAGRAM):   end;
+293996    +else
+293997    +do;
+MPRINT(EM_DIAGRAM):   else do;
+293998    +b_Diabetes_Prediction = 20;
+MPRINT(EM_DIAGRAM):   b_Diabetes_Prediction = 20;
+293999    +end;
+MPRINT(EM_DIAGRAM):   end;
+NOTE: %INCLUDE (level 1) ending.
+MPRINT(EM_DIAGRAM):   run;
+294000     run;
+
+NOTE: DATA STEP view saved on file EMWS1.MDLCOMP2_TEST.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: View EMWS1.REG_TEST.VIEW used (Total process time):
+      real time           0.16 seconds
+      cpu time            0.07 seconds
+      
+NOTE: DATA statement used (Total process time):
+      real time           0.19 seconds
+      cpu time            0.10 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+294001     quit;
+294002     filename emflow;
+MPRINT(EM_DIAGRAM):   filename emflow;
+NOTE: Fileref EMFLOW has been deassigned.
+294003     *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+294004     * MdlComp2: Computing metadata for TRAIN data;
+MPRINT(EM_DIAGRAM):   * MdlComp2: Computing metadata for TRAIN data;
+294005     *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+NOTE: View EMWS1.MDLCOMP2_TRAIN.VIEW used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.14 seconds
+      
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * &nodeid: Computing Metadata for TRAIN data;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EMADVISECOLUMNS):   proc display c=sashelp.emmeta.advisecolumns.scl;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    options validvarname=any;
+MPRINT(EMADVISECOLUMNS):   proc contents data=EMWS1.MdlComp2_TRAIN out=_tempAdvisor noprint;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):   options validvarname=V7;
+MPRINT(EMADVISECOLUMNS):    data _null_;
+MPRINT(EMADVISECOLUMNS):   dsid = open('EMWS1.MdlComp2_TRAIN');
+MPRINT(EMADVISECOLUMNS):   call symput('_dsidTable', strip(put(dsid, best.)));
+MPRINT(EMADVISECOLUMNS):   if dsid then do;
+MPRINT(EMADVISECOLUMNS):   call symput('_engineTable', attrc(dsid, 'ENGINE'));
+MPRINT(EMADVISECOLUMNS):   dsid = close(dsid);
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    proc contents data=EMWS1.MdlComp2_TRAIN out=WORK.M23XRHZ8 noprint;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    data WORK.M23XRHZ8;
+MPRINT(EMADVISECOLUMNS):   length NAME $ 64 TYPE $ 1 LABEL $ 200 FORMAT $ 36 INFORMAT $36 INDEX $ 1 INDEXTYPE $ 9;
+MPRINT(EMADVISECOLUMNS):   label NAME =;
+MPRINT(EMADVISECOLUMNS):   set WORK.M23XRHZ8(keep=name type length label format formatl formatd informat informl informd idxusage rename=(type=itype));
+MPRINT(EMADVISECOLUMNS):   if itype = 1 then type = 'N';
+MPRINT(EMADVISECOLUMNS):   else type = 'C';
+MPRINT(EMADVISECOLUMNS):   if formatl > 0 then do;
+MPRINT(EMADVISECOLUMNS):   if format ne '' then do;
+MPRINT(EMADVISECOLUMNS):   if type='N' then format = strip(format)!!strip(put(formatl, best12.))!!'.'!!strip(put(formatd, best12.));
+MPRINT(EMADVISECOLUMNS):   else format = strip(format)!!strip(put(formatl, best12.))!!'.';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else format = strip(put(formatl, best12.))!!'.'!!strip(put(formatd, best12.));
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else if format ne '' then format = strip(format)!!'.';
+MPRINT(EMADVISECOLUMNS):   if informl > 0 then do;
+MPRINT(EMADVISECOLUMNS):   if informat ne ' ' then do;
+MPRINT(EMADVISECOLUMNS):   if type='N' then informat = strip(informat)!!strip(put(informl, best12.))!!'.'!!strip(put(informd, best12.));
+MPRINT(EMADVISECOLUMNS):   else informat = strip(informat)!!strip(put(informl, best12.))!!'.';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else informat = strip(put(informl, best12.))!!'.'!!strip(put(informd, best12.));
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else if informat ne '' then informat = strip(informat)!!'.';
+MPRINT(EMADVISECOLUMNS):   if idxusage = 'NONE' then index ="N";
+MPRINT(EMADVISECOLUMNS):   else index = "Y";
+MPRINT(EMADVISECOLUMNS):   indextype = idxusage;
+MPRINT(EMADVISECOLUMNS):   drop idxusage itype formatl formatd informl informd;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    data WORK.M23XRHZ8;
+MPRINT(EMADVISECOLUMNS):   length UNAME $64;
+MPRINT(EMADVISECOLUMNS):   set WORK.M23XRHZ8;
+MPRINT(EMADVISECOLUMNS):   UNAME = upcase(NAME);
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    proc sort data=WORK.M28IN1UB NOTHREADS;
+MPRINT(EMADVISECOLUMNS):   by UNAME;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    data WORK.M28IN1UB;
+MPRINT(EMADVISECOLUMNS):   drop UNAME;
+MPRINT(EMADVISECOLUMNS):   set WORK.M28IN1UB;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    data WORK.M1X_UZS6(keep=NAME ATTR);
+MPRINT(EMADVISECOLUMNS):   length ATTR $ 20;
+MPRINT(EMADVISECOLUMNS):   set WORK.M28IN1UB;
+MPRINT(EMADVISECOLUMNS):   if level ne "INTERVAL" then do;
+MPRINT(EMADVISECOLUMNS):   if order = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   attr = 'ORDER';
+MPRINT(EMADVISECOLUMNS):   output;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if format ne ' ' and formattype = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   attr = 'FORMATTYPE';
+MPRINT(EMADVISECOLUMNS):   output;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if role = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   attr = 'ROLE';
+MPRINT(EMADVISECOLUMNS):   output;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if level = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   attr = 'LEVEL';
+MPRINT(EMADVISECOLUMNS):   output;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if type = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   attr = 'TYPE';
+MPRINT(EMADVISECOLUMNS):   output;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if index = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   attr = 'INDEX';
+MPRINT(EMADVISECOLUMNS):   output;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if report = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   attr = 'REPORT';
+MPRINT(EMADVISECOLUMNS):   output;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):   proc sort NOTHREADS;
+MPRINT(EMADVISECOLUMNS):   by attr;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    data WORK.M28IN1UB;
+MPRINT(EMADVISECOLUMNS):   length NAME $64 ROLE $ 32 LEVEL $ 10 ORDER $ 8 CREATOR $32 FORMATTYPE $ 10 FAMILY $ 10 LOWERLIMIT 8 UPPERLIMIT 8 REPORT $1 DISTRIBUTION $ 20 COMMENT $64;
+MPRINT(EMADVISECOLUMNS):   length levelAssigned 8 roleAssigned 8 PRICE 8;
+MPRINT(EMADVISECOLUMNS):   set WORK.M28IN1UB;
+MPRINT(EMADVISECOLUMNS):   if formattype = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   if format ne ' ' then do;
+MPRINT(EMADVISECOLUMNS):   if type = 'N' then do;
+MPRINT(EMADVISECOLUMNS):   pos = indexc(format,'.1234567890');
+MPRINT(EMADVISECOLUMNS):   if pos > 1 then tempfmt = substr(format,1, pos-1);
+MPRINT(EMADVISECOLUMNS):   else tempfmt = ' ';
+MPRINT(EMADVISECOLUMNS):   flen = length(tempfmt);
+MPRINT(EMADVISECOLUMNS):   select;
+MPRINT(EMADVISECOLUMNS):   when(tempfmt in ("DATE" "DAY" "DDMMYY" "DOWNAME" "JULDAY" "JULIAN" "MMDDYY" "MMDDYYD" "MMDDYYC" "MMDDYYN" "MMDDYYP" "MMDDYYS" "MONNAME" "MONTH" "MONYY" "NENGO" "QTR" "QTRR" "WEEKDATE" "WEEKDATX" "WEEKDAY" "WORDDATE" "WORDDATX" 
+"YEAR" "YYMMDD" "YYMON" "YYMMDDC" "YYMMDDD" "YYMMDDN" "YYMMDDP" "YYMMDDS" "EURDFDE" "NJDATE" "NLDATE" "EURDFDD" "EURDFDWN" "EURDFMN" "EURDFMY" "EURDFWK" "EURDFWKX" "EURDFWDX" "EURDFDN" "EURDFDE" )) formattype = 'DATE';
+MPRINT(EMADVISECOLUMNS):   when(tempfmt in ("DATETIME" "EURDFDT" "TOD" )) formattype = "DATETIME";
+MPRINT(EMADVISECOLUMNS):   when(tempfmt in ("HHMM" "HOUR" "MMSS" "TIME" "TIMEAMPM" )) formattype = "TIME";
+MPRINT(EMADVISECOLUMNS):   when(tempfmt in ("COMMA" "COMMAX" "DOLLAR" "DOLLARX" "E" "FRACT" "NEGPAREN" "PERCENT")) formattype="QUANTITY";
+MPRINT(EMADVISECOLUMNS):   when(tempfmt in ("BINARY" "HEX" "IB" "OCTAL" "PD" "PIB" "PK" "RB" "SSN" "Z" "ZD")) formattype = "CODING";
+MPRINT(EMADVISECOLUMNS):   otherwise do;
+MPRINT(EMADVISECOLUMNS):   formattype = "USER";
+MPRINT(EMADVISECOLUMNS):   if compress(tempfmt, '0123456789.', '') = '' then formattype='NUM';
+MPRINT(EMADVISECOLUMNS):   else if substr(tempfmt, 1, 6)='NLDATE' then formattype = "DATE";
+MPRINT(EMADVISECOLUMNS):   else if substr(tempfmt, 1, 6)='NLDATM' then formattype = "DATETIME";
+MPRINT(EMADVISECOLUMNS):   else if substr(tempfmt, 1, 4)='NLTIM' then formattype = "TIME";
+MPRINT(EMADVISECOLUMNS):   else if flen >= 4 then do;
+MPRINT(EMADVISECOLUMNS):   str = substr(tempfmt,1,4);
+MPRINT(EMADVISECOLUMNS):   if str in ("MMYY" "YYMM" "YYQR") then formattype ="DATE";
+MPRINT(EMADVISECOLUMNS):   else if str = "S370" then formattype = "CODING";
+MPRINT(EMADVISECOLUMNS):   else if str = "BEST" then formattype = "NUM";
+MPRINT(EMADVISECOLUMNS):   drop str;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else if flen >=3 and substr(tempfmt,1,3) = "YYQ" then formatType = "DATE";
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   drop flen tempfmt pos;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else do;
+MPRINT(EMADVISECOLUMNS):   formatType = "CATEGORY";
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if formatType = "NUM" then do;
+MPRINT(EMADVISECOLUMNS):   if index = "Y" then formatType = "DISCRETE";
+MPRINT(EMADVISECOLUMNS):   else formatType = "QUANTITY";
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if level = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   if formatType in ("CATEGORY", "CODING", "ID") or type = "C" then level = "NOMINAL";
+MPRINT(EMADVISECOLUMNS):   else level = "INTERVAL";
+MPRINT(EMADVISECOLUMNS):   levelAssigned = 1;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else level = upcase(level);
+MPRINT(EMADVISECOLUMNS):   if role = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   length name_prefix $8 _uname $64;
+MPRINT(EMADVISECOLUMNS):   drop name_prefix _uname _freqflag;
+MPRINT(EMADVISECOLUMNS):   retain _freqflag;
+MPRINT(EMADVISECOLUMNS):   if LENGTH> 80 then ROLE = 'TEXT';
+MPRINT(EMADVISECOLUMNS):   _uname = upcase(NAME);
+MPRINT(EMADVISECOLUMNS):   select(_uname);
+MPRINT(EMADVISECOLUMNS):   when('_PARTIND_') do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'ID';
+MPRINT(EMADVISECOLUMNS):   LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   when('_WARN_') ROLE = 'ASSESS';
+MPRINT(EMADVISECOLUMNS):   when('EM_SEGMENT') do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'SEGMENT';
+MPRINT(EMADVISECOLUMNS):   LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   when('_NODE_') do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'SEGMENT';
+MPRINT(EMADVISECOLUMNS):   LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   when('EM_CLASSTARGET') ROLE = 'ASSESS';
+MPRINT(EMADVISECOLUMNS):   when('EM_VALUETARGET') ROLE = 'ASSESS';
+MPRINT(EMADVISECOLUMNS):   when('EM_PREDICTION') ROLE = 'PREDICT';
+MPRINT(EMADVISECOLUMNS):   when('EM_PROBABILITY') ROLE = 'PREDICT';
+MPRINT(EMADVISECOLUMNS):   when('EM_EVENTPROBABILITY') ROLE = 'PREDICT';
+MPRINT(EMADVISECOLUMNS):   when('EM_CLASSIFICATION') ROLE = 'CLASSIFICATION';
+MPRINT(EMADVISECOLUMNS):   when('EM_DECISION') ROLE = 'DECISION';
+MPRINT(EMADVISECOLUMNS):   when('EM_PROFIT') ROLE = 'ASSESS';
+MPRINT(EMADVISECOLUMNS):   when('EM_LOSS') ROLE = 'ASSESS';
+MPRINT(EMADVISECOLUMNS):   when('EM_ROI') ROLE = 'ASSESS';
+MPRINT(EMADVISECOLUMNS):   when('URI') ROLE = 'URL';
+MPRINT(EMADVISECOLUMNS):   when('FILTERED') ROLE = 'TEXTLOC';
+MPRINT(EMADVISECOLUMNS):   otherwise do;
+MPRINT(EMADVISECOLUMNS):   if upcase(NAME) =: 'ZIP' then do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'REJECTED';
+MPRINT(EMADVISECOLUMNS):   LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   COMMENT = 'Rejected by: Exceed the maximum class level of %s';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else if upcase(NAME) in('FREQ', 'FREQUENCY') then do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'FREQ';
+MPRINT(EMADVISECOLUMNS):   if TYPE = 'C' then ROLE = 'INPUT';
+MPRINT(EMADVISECOLUMNS):   else if _freqflag =1 then ROLE='REJECTED';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else do;
+MPRINT(EMADVISECOLUMNS):   name_prefix = scan(_uname, 1, '_');
+MPRINT(EMADVISECOLUMNS):   if scan(_uname, 2, '_') = '' then name_prefix='';
+MPRINT(EMADVISECOLUMNS):   if name_prefix in('F', 'I', 'U') then do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'CLASSIFICATION';
+MPRINT(EMADVISECOLUMNS):   LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else if name_prefix in('Q') then ROLE = 'ASSESS';
+MPRINT(EMADVISECOLUMNS):   else if name_prefix in('P', 'V') then ROLE = 'PREDICT';
+MPRINT(EMADVISECOLUMNS):   else if name_prefix in('R', 'RS', 'RT', 'RD', 'RDS', 'RDT', 'RA', 'RAS', 'RAT') then ROLE = 'RESIDUAL';
+MPRINT(EMADVISECOLUMNS):   else if name_prefix ='D' then do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'DECISION';
+MPRINT(EMADVISECOLUMNS):   LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else if name_prefix ='B' then do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'SEGMENT';
+MPRINT(EMADVISECOLUMNS):   LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else if name_prefix in('EP', 'BP', 'CP', 'EL', 'CL', 'BL', 'ROI', 'IC') then ROLE = 'ASSESS';
+MPRINT(EMADVISECOLUMNS):   else do;
+MPRINT(EMADVISECOLUMNS):   array _ROLE_ (19) $32 _TEMPORARY_ ('ASSESS','CLASSIFICATION','CENSOR', 'COST', 'CROSSID', 'DECISION', 'ID','INPUT', 'LABEL', 'MISSING','PREDICT','REFERRER','REJECTED', 'RESIDUAL','SEGMENT', 'SEQUENCE','TARGET', 'TEXT', 'TIMEID');
+MPRINT(EMADVISECOLUMNS):   drop _found_ i;
+MPRINT(EMADVISECOLUMNS):   _found_=0;
+MPRINT(EMADVISECOLUMNS):   do i=1 to 19 until(_found_=1);
+MPRINT(EMADVISECOLUMNS):   if index(_uname, trim(_ROLE_{i}))=1 then do;
+MPRINT(EMADVISECOLUMNS):   ROLE=_ROLE_{i};
+MPRINT(EMADVISECOLUMNS):   if ROLE = 'ID' then LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   else if ROLE = 'SEGMENT' then LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   else if ROLE = 'TIMEID' and TYPE='N' then LEVEL = 'INTERVAL';
+MPRINT(EMADVISECOLUMNS):   _found_=1;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if length(_uname)>2 then do;
+MPRINT(EMADVISECOLUMNS):   if substr(reverse(trim(_uname)), 1, 3) = 'DI_' then do;
+MPRINT(EMADVISECOLUMNS):   ROLE = 'ID';
+MPRINT(EMADVISECOLUMNS):   LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if ROLE='FREQ' then _freqflag=1;
+MPRINT(EMADVISECOLUMNS):   else if ROLE = 'CLASSIFICATION' then LEVEL = 'NOMINAL';
+MPRINT(EMADVISECOLUMNS):   if symexist('RATEMKG_ROLE') then do;
+MPRINT(EMADVISECOLUMNS):   if upcase(symget('RATEMKG_ROLE')) in('Y', 'YES') then do;
+MPRINT(EMADVISECOLUMNS):   if _uname =: 'POLICY' then ROLE = 'POLICYID';
+MPRINT(EMADVISECOLUMNS):   else if _uname in ('PARTITION', '_PARTIND_') then ROLE = 'PARTITION';
+MPRINT(EMADVISECOLUMNS):   else if type = 'N' then do;
+MPRINT(EMADVISECOLUMNS):   if _uname = 'EXPOSURE' then ROLE = 'EXPOSURE';
+MPRINT(EMADVISECOLUMNS):   else if _uname = 'YEAR' then ROLE = 'YEAR';
+MPRINT(EMADVISECOLUMNS):   else if _uname = 'WEIGHT' then ROLE = 'WEIGHT';
+MPRINT(EMADVISECOLUMNS):   else if _uname = 'OFFSET' then ROLE = 'OFFSET';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   if role = ' ' then do;
+MPRINT(EMADVISECOLUMNS):   if formattype in('DATE', 'DATETIME', 'TIME') then role = 'TIMEID';
+MPRINT(EMADVISECOLUMNS):   else role = 'INPUT';
+MPRINT(EMADVISECOLUMNS):   roleAssigned = 1;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   else role = upcase(role);
+MPRINT(EMADVISECOLUMNS):   if REPORT = '' then REPORT = 'N';
+MPRINT(EMADVISECOLUMNS):   if symexist('dmwb_product') then do;
+MPRINT(EMADVISECOLUMNS):   if upcase(symget('dmwb_product')) = 'FACTORYMINER_DATASOURCE' then do;
+MPRINT(EMADVISECOLUMNS):   if ROLE ^in('INPUT', 'TARGET', 'REJECTED', 'SEGMENT', 'FREQ', 'ID', 'KEY') then ROLE='REJECTED';
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   end;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):    data WORK.M28IN1UB;
+MPRINT(EMADVISECOLUMNS):   set WORK.M28IN1UB;
+MPRINT(EMADVISECOLUMNS):   label NAME = "Variable Name" TYPE = "Type" ROLE = "Role" LEVEL= "Measurement Level" ORDER= "Order" CREATOR= "Creator" FORMATTYPE= "Format Type" FAMILY= "Family" DISTRIBUTION= "Distribution" PRICE= "Price" LOWERLIMIT= "Lower 
+limit" UPPERLIMIT= "Upper Limit" REPORT= "Report" COMMENT= "Comment" INDEX= "Index" INDEXTYPE= "IndexType" LABEL= "Label" LENGTH= "Length";
+MPRINT(EMADVISECOLUMNS):   drop levelAssigned roleAssigned;
+MPRINT(EMADVISECOLUMNS):   run;
+MPRINT(EMADVISECOLUMNS):   
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.COLUMNMETA;
+MPRINT(EM_DIAGRAM):   by NAME;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * &nodeid: Merge incoming metadata;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   proc contents data=EMWS1.Reg_TRAIN noprint out=_temp2(keep=NAME);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=_temp2;
+MPRINT(EM_DIAGRAM):   by NAME;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Reg_CMeta_TRAIN out=_temp;
+MPRINT(EM_DIAGRAM):   by NAME;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data EMWS1.MdlComp2_CMeta_TRAIN;
+MPRINT(EM_DIAGRAM):   merge WORK.COLUMNMETA(in=_a) _temp2(in=_b) _temp(drop=FORMAT INFORMAT LENGTH INDEX INDEXTYPE in=_c) end=_eof_;
+MPRINT(EM_DIAGRAM):   by NAME;
+MPRINT(EM_DIAGRAM):   if (^_a and _b) or (^_c and _a and _b) then delete;
+MPRINT(EM_DIAGRAM):   if ^_b then CREATOR = "MdlComp2";
+MPRINT(EM_DIAGRAM):   run;
+NOTE: View EMWS1.MDLCOMP2_TRAIN.VIEW used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.14 seconds
+      
+NOTE: View EMWS1.MDLCOMP2_VALIDATE.VIEW used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.15 seconds
+      
+NOTE: View EMWS1.MDLCOMP2_TEST.VIEW used (Total process time):
+      real time           0.21 seconds
+      cpu time            0.17 seconds
+      
+MPRINT(EM_DIAGRAM):    proc printto;
+MPRINT(EM_DIAGRAM):   run;

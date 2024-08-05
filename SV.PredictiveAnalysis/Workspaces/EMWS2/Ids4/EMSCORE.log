@@ -1,0 +1,94 @@
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "March 04, 2024" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "01:26:44" );
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Score Log";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+*------------------------------------------------------------*
+* Score Log
+Date:                March 04, 2024
+Time:                01:26:44
+*------------------------------------------------------------*
+MPRINT(EM_DIAGRAM):    filename O2VT4X7O "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS2\Ids4\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O2VT4X7O new;
+MPRINT(EM_DIAGRAM):   run;
+22726      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+22727      * Ids4: Computing metadata for DATA data;
+MPRINT(EM_DIAGRAM):   * Ids4: Computing metadata for DATA data;
+22728      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+NOTE: View EMWS2.IDS4_DATA.VIEW used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+22729      data EMWS2.Ids4_EMINFO;
+MPRINT(EM_DIAGRAM):    data EMWS2.Ids4_EMINFO;
+22730      length TARGET KEY $32 DATA $43;
+MPRINT(EM_DIAGRAM):   length TARGET KEY $32 DATA $43;
+22731      TARGET="";
+MPRINT(EM_DIAGRAM):   TARGET="";
+22732      KEY="IDSTABLE";
+MPRINT(EM_DIAGRAM):   KEY="IDSTABLE";
+22733      DATA="ZETADATA.SCOREDIABETES_TRAIN";
+MPRINT(EM_DIAGRAM):   DATA="ZETADATA.SCOREDIABETES_TRAIN";
+22734      output;
+MPRINT(EM_DIAGRAM):   output;
+22735      TARGET="Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   TARGET="Diabetes_Prediction";
+22736      KEY="DECDATA";
+MPRINT(EM_DIAGRAM):   KEY="DECDATA";
+22737      DATA="EMWS2.Ids4_Diabetes_Predict_DD";
+MPRINT(EM_DIAGRAM):   DATA="EMWS2.Ids4_Diabetes_Predict_DD";
+22738      output;
+MPRINT(EM_DIAGRAM):   output;
+22739      TARGET="Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   TARGET="Diabetes_Prediction";
+22740      KEY="DECMETA";
+MPRINT(EM_DIAGRAM):   KEY="DECMETA";
+22741      DATA="EMWS2.Ids4_Diabetes_Predict_DM";
+MPRINT(EM_DIAGRAM):   DATA="EMWS2.Ids4_Diabetes_Predict_DM";
+22742      output;
+MPRINT(EM_DIAGRAM):   output;
+22743      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set EMWS2.IDS4_EMINFO has 3 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.07 seconds
+      
+
+NOTE: View EMWS2.IDS4_DATA.VIEW used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.04 seconds
+      
+22744      data EMWS2.Ids4_CMeta_DATA;
+MPRINT(EM_DIAGRAM):    data EMWS2.Ids4_CMeta_DATA;
+22745      set EMWS2.Ids4_VariableSet;
+MPRINT(EM_DIAGRAM):   set EMWS2.Ids4_VariableSet;
+22746      drop DROP;
+MPRINT(EM_DIAGRAM):   drop DROP;
+22747      where DROP='N';
+MPRINT(EM_DIAGRAM):   where DROP='N';
+22748      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 22 observations read from the data set EMWS2.IDS4_VARIABLESET.
+      WHERE DROP='N';
+NOTE: The data set EMWS2.IDS4_CMETA_DATA has 22 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_DIAGRAM):    proc printto;
+MPRINT(EM_DIAGRAM):   run;

@@ -1,0 +1,93 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+1 
+Traverser: Traverser invoked.  MPCONNECT command is sas. 
+Traverser: Beginning flow traversal 
+*------------------------------------------------------------* 
+* 
+* Ids : Beginning Update 
+* datetime : 02MAR2024:22:27:17 
+* 
+*------------------------------------------------------------* 
+35245      *------------------------------------------------------------*;
+35246      * Ids: Update Variables Set;
+35247      *------------------------------------------------------------*;
+
+35248      data EMWS1.Ids_VariableSet;
+35249      length ROLE $32;
+35250      length LEVEL $10;
+35251      length REPORT $1;
+35252      label REPORT = "Report";
+35253      length ORDER $8;
+35254      length DROP $1;
+35255      length LOWERLIMIT 8;
+35256      length UPPERLIMIT 8;
+35257      set EMWS1.Ids_EMCMETADEFAULT;
+35258      run;
+
+NOTE: There were 22 observations read from the data set EMWS1.IDS_EMCMETADEFAULT.
+NOTE: The data set EMWS1.IDS_VARIABLESET has 22 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.06 seconds
+      
+
+35259      * Ids: End of Update Variables Set;
+35260      *------------------------------------------------------------*;
+
+35261      *------------------------------------------------------------*;
+35262      * Ids: Computing metadata for DATA data;
+35263      *------------------------------------------------------------*;
+
+35273      data EMWS1.Ids_EMINFO;
+35274      length TARGET KEY $32 DATA $43;
+35275      TARGET="";
+35276      KEY="IDSTABLE";
+35277      DATA="ZETADATA.ZETADIABITIES_TRAIN";
+35278      output;
+35279      run;
+
+NOTE: The data set EMWS1.IDS_EMINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.01 seconds
+      
+
+35280      data EMWS1.Ids_CMeta_DATA;
+35281      set EMWS1.Ids_VariableSet;
+35282      drop DROP;
+35283      where DROP='N';
+35284      run;
+
+NOTE: There were 22 observations read from the data set EMWS1.IDS_VARIABLESET.
+      WHERE DROP='N';
+NOTE: The data set EMWS1.IDS_CMETA_DATA has 22 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.04 seconds
+      
+
+35286      %let _HPDMGRIDHOST=;
+35287      %let _HPDMGRIDINSTALLLOC=;
+35288      %let _HPDMGRIDDATASERVER=;
+35289      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Ids : End Update 
+* datetime : 02MAR2024:22:27:18 
+* 
+*------------------------------------------------------------* 
+Traverser: Run Completed 
+35290      proc printto;
+35291      run;
+

@@ -1,0 +1,72 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+         Measurement    Frequency
+Role        Level         Count
+
+INPUT     INTERVAL          22   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The CONTENTS Procedure
+
+Data Set Name        EMWS1.FIMPORT_DATA            Observations          250716
+Member Type          DATA                          Variables             22    
+Engine               V9                            Indexes               0     
+Created              03/02/2024 22:24:27           Observation Length    176   
+Last Modified        03/02/2024 22:24:27           Deleted Observations  0     
+Protection                                         Compressed            NO    
+Data Set Type                                      Sorted                NO    
+Label                                                                          
+Data Representation  WINDOWS_64                                                
+Encoding             wlatin1  Western (Windows)                                
+
+
+                                                          Engine/Host Dependent Information
+
+Data Set Page Size          65536                                                                                                                    
+Number of Data Set Pages    676                                                                                                                      
+First Data Page             1                                                                                                                        
+Max Obs per Page            371                                                                                                                      
+Obs in First Data Page      353                                                                                                                      
+Number of Data Set Repairs  0                                                                                                                        
+ExtendObsCounter            YES                                                                                                                      
+Filename                    \\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS1\fimport_data.sas7bdat
+Release Created             9.0401M7                                                                                                                 
+Host Created                X64_10PRO                                                                                                                
+Owner Name                  UISAD\bkris2                                                                                                             
+File Size                   42MB                                                                                                                     
+File Size (bytes)           44367872                                                                                                                 
+
+
+           Alphabetic List of Variables and Attributes
+ 
+ #    Variable                Type    Len    Format     Informat
+
+20    Age                     Num       8    BEST12.    BEST32. 
+13    AnyHealthcare           Num       8    BEST12.    BEST32. 
+ 5    BMI                     Num       8    BEST12.    BEST32. 
+ 4    CholCheck               Num       8    BEST12.    BEST32. 
+ 1    Diabetes_012            Num       8    BEST12.    BEST32. 
+18    DiffWalk                Num       8    BEST12.    BEST32. 
+21    Education               Num       8    BEST12.    BEST32. 
+10    Fruits                  Num       8    BEST12.    BEST32. 
+15    GenHlth                 Num       8    BEST12.    BEST32. 
+ 8    HeartDiseaseorAttack    Num       8    BEST12.    BEST32. 
+ 2    HighBP                  Num       8    BEST12.    BEST32. 
+ 3    HighChol                Num       8    BEST12.    BEST32. 
+12    HvyAlcoholConsump       Num       8    BEST12.    BEST32. 
+22    Income                  Num       8    BEST12.    BEST32. 
+16    MentHlth                Num       8    BEST12.    BEST32. 
+14    NoDocbcCost             Num       8    BEST12.    BEST32. 
+ 9    PhysActivity            Num       8    BEST12.    BEST32. 
+17    PhysHlth                Num       8    BEST12.    BEST32. 
+19    Sex                     Num       8    BEST12.    BEST32. 
+ 6    Smoker                  Num       8    BEST12.    BEST32. 
+ 7    Stroke                  Num       8    BEST12.    BEST32. 
+11    Veggies                 Num       8    BEST12.    BEST32. 

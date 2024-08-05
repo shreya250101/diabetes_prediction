@@ -1,0 +1,42 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+Role         Level         Count
+
+ID         INTERVAL           1   
+INPUT      BINARY            14   
+INPUT      INTERVAL           2   
+INPUT      ORDINAL            5   
+TARGET     NOMINAL            1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Model Events
+
+                                                     Number
+                                      Measurement      of
+      Target              Event          Level       Levels      Order       Label
+
+Diabetes_Prediction    PREDIABETES      NOMINAL         3      Descending         
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type         Variable                            Label
+
+TARGET       Diabetes_Prediction                                                           
+PREDICTED    P_Diabetes_Predictionprediabetes    Predicted: Diabetes_Prediction=prediabetes
+RESIDUAL     R_Diabetes_Predictionprediabetes    Residual: Diabetes_Prediction=prediabetes 
+PREDICTED    P_Diabetes_Predictionno_diabetes    Predicted: Diabetes_Prediction=no diabetes
+RESIDUAL     R_Diabetes_Predictionno_diabetes    Residual: Diabetes_Prediction=no diabetes 
+PREDICTED    P_Diabetes_Predictiondiabetes       Predicted: Diabetes_Prediction=diabetes   
+RESIDUAL     R_Diabetes_Predictiondiabetes       Residual: Diabetes_Prediction=diabetes    
+FROM         F_Diabetes_Prediction               From: Diabetes_Prediction                 
+INTO         I_Diabetes_Prediction               Into: Diabetes_Prediction                 

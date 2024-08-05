@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  NumberOfReportedLevels="1E-6" NormalizeReportingVariables="Y" DecileBin="20" LiftEpsilon="1E-6"
+ ProfitEpsilon="1E-6" RoiEpsilon="1E-6" ScoreDistBin="20" RocChart="Y" RocEpsilon="0.01"
+ AssessAllTargetLevels="N" SelectionData="DEFAULT" HPCriteria="DEFAULT" intervalViyaCriteria="DEFAULT"
+ classViyaCriteria="DEFAULT" SelectionTable="TRAIN" SelectionCriteria="DEFAULT" SelectionDepth="10"
+ NumberofBins="20" RecomputeAssess="N" TargetName="Diabetes_Prediction" ModelId="Tree4"
+ ModelDescription="ClassDec Tree B3D6" ModelCriteria="Valid: Misclassification Rate"
+ ForceRun="N" RunAction="Train" Component="ModelCompare" RawCreateTime="2024271781"
+ CreateTime="23FEB2024:01:43:01" RunId="4521ecf8-974c-4af4-b9f9-f4fc4fbbc4a2" StatisticUsed="_VMISC_"
+ TargetLabel="Diabetes Prediction">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

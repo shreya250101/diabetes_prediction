@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="scorezetatrain" Scope="LOCAL" Role="RAW" Library="ZETADATA" Table="SCOREZETA_TRAIN"
+ NCols="23" NObs="50143" NBytes="9700352" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="scorezetatrain"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="shre2" DsCreateDate="2025170996"
+ DsModifiedBy="shre2" DsModifyDate="2025170996.3" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="2025171003.4" CreateTime="04MAR2024:11:30:03"
+ Description="" Data="ZETADATA.SCOREZETA_TRAIN" CMeta="WORK.M3LIOYUC" RunId="c2fbca68-1c0f-4aa8-9fb0-25b5a2f3ffab"
+ RawLastTimeRun="2025173195.6" RawRunTime="13.499000072" LastTimeRun="04MAR2024:12:06:36"
+ RunTime="0 Hr. 0 Min. 13.50 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

@@ -1,0 +1,176 @@
+*------------------------------------------------------------*;
+* Clus5: Preliminary Clustering;
+*------------------------------------------------------------*;
+*------------------------------------------------------------* ;
+* Clus5: DMDBClass Macro ;
+*------------------------------------------------------------* ;
+%macro DMDBClass;
+    AnyHealthcare(ASC) CholCheck(ASC) DiffWalk(ASC) Education(ASC) Fruits(ASC)
+   GenHlth(ASC) HeartDiseaseorAttack(ASC) HighBP(ASC) HighChol(ASC)
+   HvyAlcoholConsump(ASC) Income(ASC) MentHlth(ASC) NoDocbcCost(ASC)
+   PhysActivity(ASC) PhysHlth(ASC) Sex(ASC) Smoker(ASC) Stroke(ASC) Veggies(ASC)
+%mend DMDBClass;
+*------------------------------------------------------------* ;
+* Clus5: DMDBVar Macro ;
+*------------------------------------------------------------* ;
+%macro DMDBVar;
+    Age BMI
+%mend DMDBVar;
+*------------------------------------------------------------*;
+* Clus5: Create DMDB;
+*------------------------------------------------------------*;
+proc dmdb batch data=EMWS1.Smpl_DATA
+dmdbcat=WORK.Clus5_DMDB
+maxlevel = 513
+out=WORK.Clus5_DMDB
+;
+class %DMDBClass;
+var %DMDBVar;
+run;
+quit;
+*------------------------------------------------------------* ;
+* Clus5: Interval Inputs Macro ;
+*------------------------------------------------------------* ;
+%macro DMVQINTERVAL;
+    Age BMI
+%mend DMVQINTERVAL;
+*------------------------------------------------------------* ;
+* Clus5: Nominal Inputs Macro ;
+*------------------------------------------------------------* ;
+%macro DMVQNOMINAL;
+    AnyHealthcare CholCheck DiffWalk Fruits HeartDiseaseorAttack HighBP HighChol
+   HvyAlcoholConsump NoDocbcCost PhysActivity Sex Smoker Stroke Veggies
+%mend DMVQNOMINAL;
+*------------------------------------------------------------* ;
+* Clus5: Ordinal Inputs Macro ;
+*------------------------------------------------------------* ;
+%macro DMVQORDINAL;
+    Education GenHlth Income MentHlth PhysHlth
+%mend DMVQORDINAL;
+*------------------------------------------------------------*;
+* Clus5: Run DMVQ procedure;
+*------------------------------------------------------------*;
+title;
+options nodate;
+proc dmvq data=WORK.Clus5_DMDB dmdbcat=WORK.Clus5_DMDB std=STD nominal=GLM ordinal=RANK
+;
+input %DMVQINTERVAL / level=interval;
+input %DMVQNOMINAL / level=nominal;
+input %DMVQORDINAL / level=ordinal;
+VQ maxc = 50 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
+MAKE outvar=EMWS1.Clus5_OUTVAR;
+INITIAL radius=0
+;
+TRAIN tech=FORGY
+;
+SAVE outstat=WORK.Clus5_OUTSTAT outmean=EMWS1.Clus5_OUTMEAN;
+code file="\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS1\Clus5\DMVQSCORECODE.sas"
+group=Clus5
+;
+run;
+quit;
+*------------------------------------------------------------* ;
+* Clus5: DMVQ Variables;
+*------------------------------------------------------------* ;
+%macro dmvqvars;
+    Age BMI AnyHealthcare0 AnyHealthcare1 CholCheck0 CholCheck1 DiffWalk0
+   DiffWalk1 Fruits0 Fruits1 HeartDiseaseorAttack0 HeartDiseaseorAttack1 HighBP0
+   HighBP1 HighChol0 HighChol1 HvyAlcoholConsump0 HvyAlcoholConsump1 NoDocbcCost0
+   NoDocbcCost1 PhysActivity0 PhysActivity1 Sex0 Sex1 Smoker0 Smoker1 Stroke0
+   Stroke1 Veggies0 Veggies1 T_Education T_GenHlth T_Income T_MentHlth T_PhysHlth
+%mend ;
+*------------------------------------------------------------*;
+* Clus5: Determining the number of clusters;
+*------------------------------------------------------------*;
+proc cluster data=EMWS1.Clus5_OUTMEAN method=CENTROID pseudo outtree=EMWS1.Clus5_CLUSSEED
+;
+var %dmvqvars;
+copy _SEGMENT_;
+run;
+quit;
+proc sort data =EMWS1.Clus5_CLUSSEED out=WORK._SEED_;
+by _ncl_;
+where (_ccc_ > -99999.0);
+run;
+data WORK._SEED2_;
+retain oJump occc oncl;
+set WORK._SEED_;
+_lccc_=lag(_ccc_);
+if _lccc_ > . then jump = _ccc_ - _lccc_;
+if jump<0 and ojump>0 then do;
+* Have a local Max;
+numclus = oncl;
+cccvalue = occc;
+output;
+end;
+ojump = jump;
+occc = _ccc_;
+oncl = _ncl_;
+run;
+proc print data=WORK._SEED2_ label;
+var numclus cccvalue;
+label numclus="%sysfunc(sasmsg(sashelp.dmine, rpt_numclus_vlabel ,  NOQUOTE))";
+label cccvalue="%sysfunc(sasmsg(sashelp.dmine, rpt_ccc_vlabel ,     NOQUOTE))";
+title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_OptClus_title, NOQUOTE))";
+run;
+title10;
+data WORK._SEED2_;
+length msg $200;
+set WORK._SEED2_ end=eof;
+retain select cccSelect 0 numSel;
+if _N_=1 then numSel = numClus;
+if cccvalue>=3 then do;
+if 20>= numclus >= 2 and cccSelect<1 then do;
+cccSelect = 1;
+select =1;
+numSel = numClus;
+end;
+end;
+else if 20>= numclus >= 2 and select<1 then do;
+select = 1;
+numSel = numClus;
+end;
+if eof then do;
+if ^(select=1 and cccselect=1) then do;
+put "*------------------------------------------------------------*";
+put '*;';
+put "WARNING: The number of clusters selected based on the CCC values may not be valid.  Please refer to the documentation on the Cubic Clustering Criterion.";
+put '*;';
+put "*------------------------------------------------------------*";
+end;
+if select<1 then do;
+msg = sasmsg('sashelp.dmine', 'rpt_noCCCclusternum_note', 'NOQUOTE');
+put msg;
+end;
+if cccselect<1 then do;
+msg = sasmsg('sashelp.dmine', 'rpt_noValidclusterNum_note', 'NOQUOTE');
+put msg;
+end;
+call symput('em_maxC', strip(put(numSel,best.)));
+end;
+run;
+*------------------------------------------------------------*;
+* Clus5: Training;
+*------------------------------------------------------------*;
+*------------------------------------------------------------*;
+* Clus5: Run DMVQ procedure;
+*------------------------------------------------------------*;
+title;
+options nodate;
+proc dmvq data=WORK.Clus5_DMDB dmdbcat=WORK.Clus5_DMDB std=STD nominal=GLM ordinal=RANK
+;
+input %DMVQINTERVAL / level=interval;
+input %DMVQNOMINAL / level=nominal;
+input %DMVQORDINAL / level=ordinal;
+VQ maxc = 4 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
+MAKE outvar=EMWS1.Clus5_OUTVAR;
+INITIAL radius=0
+;
+TRAIN tech=FORGY
+;
+SAVE outstat=EMWS1.Clus5_OUTSTAT outmean=EMWS1.Clus5_OUTMEAN;
+code file="\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS1\Clus5\DMVQSCORECODE.sas"
+group=Clus5
+;
+run;
+quit;

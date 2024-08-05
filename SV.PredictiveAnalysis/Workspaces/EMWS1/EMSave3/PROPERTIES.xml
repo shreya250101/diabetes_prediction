@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  Location="CATALOG" Catalog="Sashelp.Emutil.Savext.Source" Type="SAS7BDAT" Replace="Y"
+ AllObs="Y" OutObs="1000" AllRoles="Y" Train="Y" Validate="Y" Test="Y" Score="Y" Transaction="Y"
+ ForceRun="N" RunAction="Train" Component="EMSave" Lib="ZETADATA" DirectorySelector=""
+ Name="ZetaDiabetes" RawCreateTime="2025170596.7" CreateTime="04MAR2024:11:23:17"
+ RunId="dea51008-2dd1-43d0-9230-5b13036ebe8e">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+USERTRAINCODE
+USERSCORECODE
+USERREPORTCODE
+]]>
+</FILEPROPERTIES></_ROOT_>

@@ -1,0 +1,173 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.00 seconds
+      
+
+1 
+Traverser: Traverser invoked.  MPCONNECT command is sas. 
+Traverser: Beginning flow traversal 
+*------------------------------------------------------------* 
+* 
+* Ids4 : Beginning Update 
+* datetime : 04MAR2024:01:00:13 
+* 
+*------------------------------------------------------------* 
+15252      *------------------------------------------------------------*;
+15253      * Ids4: Update Variables Set;
+15254      *------------------------------------------------------------*;
+
+15255      data EMWS2.Ids4_VariableSet;
+15256      length ROLE $32;
+15257      length LEVEL $10;
+15258      length REPORT $1;
+15259      label REPORT = "Report";
+15260      length ORDER $8;
+15261      length DROP $1;
+15262      length LOWERLIMIT 8;
+15263      length UPPERLIMIT 8;
+15264      set EMWS2.Ids4_EMCMETADEFAULT;
+15265      run;
+
+NOTE: Variable DROP is uninitialized.
+NOTE: There were 22 observations read from the data set EMWS2.IDS4_EMCMETADEFAULT.
+NOTE: The data set EMWS2.IDS4_VARIABLESET has 22 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.03 seconds
+      
+
+15266      data EMWS2.Ids4_VariableSet;
+15267      set EMWS2.Ids4_VariableSet;
+15268      if upcase(NAME) = 'ANYHEALTHCARE' then do;
+15269      LEVEL = 'BINARY';
+15270      end;
+15271      if upcase(NAME) = 'CHOLCHECK' then do;
+15272      LEVEL = 'BINARY';
+15273      end;
+15274      if upcase(NAME) = 'DIABETES_PREDICTION' then do;
+15275      ROLE = 'TARGET';
+15276      end;
+15277      if upcase(NAME) = 'DIFFWALK' then do;
+15278      LEVEL = 'BINARY';
+15279      end;
+15280      if upcase(NAME) = 'EDUCATION' then do;
+15281      LEVEL = 'ORDINAL';
+15282      end;
+15283      if upcase(NAME) = 'FRUITS' then do;
+15284      LEVEL = 'BINARY';
+15285      end;
+15286      if upcase(NAME) = 'GENHLTH' then do;
+15287      LEVEL = 'ORDINAL';
+15288      end;
+15289      if upcase(NAME) = 'HEARTDISEASEORATTACK' then do;
+15290      LEVEL = 'BINARY';
+15291      end;
+15292      if upcase(NAME) = 'HIGHBP' then do;
+15293      LEVEL = 'BINARY';
+15294      end;
+15295      if upcase(NAME) = 'HIGHCHOL' then do;
+15296      LEVEL = 'BINARY';
+15297      end;
+15298      if upcase(NAME) = 'HVYALCOHOLCONSUMP' then do;
+15299      LEVEL = 'BINARY';
+15300      end;
+15301      if upcase(NAME) = 'INCOME' then do;
+15302      LEVEL = 'ORDINAL';
+15303      end;
+15304      if upcase(NAME) = 'MENTHLTH' then do;
+15305      LEVEL = 'ORDINAL';
+15306      end;
+15307      if upcase(NAME) = 'NODOCBCCOST' then do;
+15308      LEVEL = 'BINARY';
+15309      end;
+15310      if upcase(NAME) = 'PHYSACTIVITY' then do;
+15311      LEVEL = 'BINARY';
+15312      end;
+15313      if upcase(NAME) = 'PHYSHLTH' then do;
+15314      LEVEL = 'ORDINAL';
+15315      end;
+15316      if upcase(NAME) = 'SEX' then do;
+15317      LEVEL = 'BINARY';
+15318      end;
+15319      if upcase(NAME) = 'SMOKER' then do;
+15320      LEVEL = 'BINARY';
+15321      end;
+15322      if upcase(NAME) = 'STROKE' then do;
+15323      LEVEL = 'BINARY';
+15324      end;
+15325      if upcase(NAME) = 'VEGGIES' then do;
+15326      LEVEL = 'BINARY';
+15327      end;
+15328      run;
+
+NOTE: There were 22 observations read from the data set EMWS2.IDS4_VARIABLESET.
+NOTE: The data set EMWS2.IDS4_VARIABLESET has 22 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.09 seconds
+      
+
+15329      * Ids4: End of Update Variables Set;
+15330      *------------------------------------------------------------*;
+
+15331      *------------------------------------------------------------*;
+15332      * Ids4: Computing metadata for DATA data;
+15333      *------------------------------------------------------------*;
+
+15343      data EMWS2.Ids4_EMINFO;
+15344      length TARGET KEY $32 DATA $43;
+15345      TARGET="";
+15346      KEY="IDSTABLE";
+15347      DATA="ZETADATA.SCOREDIABETES_TRAIN";
+15348      output;
+15349      TARGET="Diabetes_Prediction";
+15350      KEY="DECDATA";
+15351      DATA="EMWS2.Ids4_Diabetes_Predict_DD";
+15352      output;
+15353      TARGET="Diabetes_Prediction";
+15354      KEY="DECMETA";
+15355      DATA="EMWS2.Ids4_Diabetes_Predict_DM";
+15356      output;
+15357      run;
+
+NOTE: The data set EMWS2.IDS4_EMINFO has 3 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.06 seconds
+      
+
+15358      data EMWS2.Ids4_CMeta_DATA;
+15359      set EMWS2.Ids4_VariableSet;
+15360      drop DROP;
+15361      where DROP='N';
+15362      run;
+
+NOTE: There were 22 observations read from the data set EMWS2.IDS4_VARIABLESET.
+      WHERE DROP='N';
+NOTE: The data set EMWS2.IDS4_CMETA_DATA has 22 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.19 seconds
+      cpu time            0.06 seconds
+      
+
+15364      %let _HPDMGRIDHOST=;
+15365      %let _HPDMGRIDINSTALLLOC=;
+15366      %let _HPDMGRIDDATASERVER=;
+15367      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Ids4 : End Update 
+* datetime : 04MAR2024:01:00:15 
+* 
+*------------------------------------------------------------* 
+Traverser: Run Completed 
+15368      proc printto;
+15369      run;
+

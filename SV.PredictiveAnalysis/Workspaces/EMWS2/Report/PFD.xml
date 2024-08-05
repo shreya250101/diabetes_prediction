@@ -1,0 +1,40 @@
+<PFDNode x="1339" y="561" id="EMSave" title="Save Data"></PFDNode>
+<PFDNode x="159" y="128" id="Ids3" title="CLEANZETADIABETES_TRAIN"></PFDNode>
+<PFDNode x="1171" y="479" id="Ids4" title="SCOREDIABETES_TRAIN"></PFDNode>
+<PFDNode x="881" y="280" id="MdlComp" title="RegTree Model Comparison"></PFDNode>
+<PFDNode x="983" y="539" id="MdlComp2" title="MLR ModelComparison"></PFDNode>
+<PFDNode x="1167" y="381" id="MdlComp3" title="Predict Model Comparison"></PFDNode>
+<PFDNode x="395" y="109" id="Part" title="Data Partition"></PFDNode>
+<PFDNode x="592" y="501" id="Reg" title="Exhaustive Regression"></PFDNode>
+<PFDNode x="598" y="578" id="Reg2" title="Forward Regression"></PFDNode>
+<PFDNode x="643" y="650" id="Reg3" title="Backward Regression"></PFDNode>
+<PFDNode x="701" y="741" id="Reg4" title="Stepwise Regression"></PFDNode>
+<PFDNode x="1486" y="486" id="Report" title="Reporter"></PFDNode>
+<PFDNode x="1360" y="404" id="Score" title="Score"></PFDNode>
+<PFDNode x="586" y="110" id="Tree" title="RegTree B2D6"></PFDNode>
+<PFDNode x="582" y="222" id="Tree2" title="RegTree B2D4"></PFDNode>
+<PFDNode x="588" y="328" id="Tree3" title="RegTree B2D2"></PFDNode>
+<PFDNode x="590" y="426" id="Tree4" title="RegTree B3D6"></PFDNode>
+<PFDLink id='1' fromId='Part' toId='Tree'></PFDLink>
+<PFDLink id='2' fromId='Part' toId='Tree2'></PFDLink>
+<PFDLink id='3' fromId='Part' toId='Tree3'></PFDLink>
+<PFDLink id='4' fromId='Part' toId='Tree4'></PFDLink>
+<PFDLink id='5' fromId='Part' toId='Reg'></PFDLink>
+<PFDLink id='6' fromId='Part' toId='Reg2'></PFDLink>
+<PFDLink id='7' fromId='Part' toId='Reg3'></PFDLink>
+<PFDLink id='8' fromId='Part' toId='Reg4'></PFDLink>
+<PFDLink id='9' fromId='Reg4' toId='MdlComp2'></PFDLink>
+<PFDLink id='10' fromId='Reg3' toId='MdlComp2'></PFDLink>
+<PFDLink id='11' fromId='Reg2' toId='MdlComp2'></PFDLink>
+<PFDLink id='12' fromId='Reg' toId='MdlComp2'></PFDLink>
+<PFDLink id='13' fromId='Tree4' toId='MdlComp'></PFDLink>
+<PFDLink id='14' fromId='Tree3' toId='MdlComp'></PFDLink>
+<PFDLink id='15' fromId='Tree2' toId='MdlComp'></PFDLink>
+<PFDLink id='16' fromId='Tree' toId='MdlComp'></PFDLink>
+<PFDLink id='17' fromId='MdlComp' toId='MdlComp3'></PFDLink>
+<PFDLink id='18' fromId='MdlComp3' toId='Score'></PFDLink>
+<PFDLink id='19' fromId='MdlComp2' toId='MdlComp3'></PFDLink>
+<PFDLink id='20' fromId='Score' toId='EMSave'></PFDLink>
+<PFDLink id='21' fromId='Ids4' toId='Score'></PFDLink>
+<PFDLink id='22' fromId='Ids3' toId='Part'></PFDLink>
+<PFDLink id='23' fromId='Score' toId='Report'></PFDLink>

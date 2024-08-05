@@ -1,0 +1,35 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+                  Measurement    Frequency
+Role                 Level         Count
+
+ASSESS             INTERVAL           3   
+ASSESS             NOMINAL            2   
+CLASSIFICATION     NOMINAL            3   
+ID                 INTERVAL           1   
+INPUT              BINARY             2   
+INPUT              INTERVAL           1   
+INPUT              ORDINAL            1   
+PREDICT            INTERVAL           5   
+REJECTED           BINARY            12   
+REJECTED           INTERVAL           4   
+REJECTED           NOMINAL            1   
+REJECTED           ORDINAL            4   
+RESIDUAL           INTERVAL           3   
+SEGMENT            NOMINAL            3   
+TARGET             NOMINAL            1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+Saved Data Properties
+
+                                                                                                                                             Total           Saved        Number of
+                                                           Output Location                                                                Observations    Observations    Variables
+
+\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\EMSave\em_save_TRAIN.csv          80228            MAX            25    
+\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\EMSave\em_save_VALIDATE.csv       60169            MAX            25    
+\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\EMSave\em_save_TEST.csv           60176            MAX            25    

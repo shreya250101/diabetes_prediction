@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SASReport version="1.2" xmlns:style="http://www.sas.com/sasreportmodel/styles">
+<Data version="9.4">
+  <DataModel name="StatGraphDataModelIDX">
+    <IQData type="2DEmbedded" name="StatGraphDataIDX">
+      <EmbeddedData>
+      <Variables>
+        <Variable name="NODE" label="Node Id" type="Numeric" encoding="Text"/>
+        <Variable name="PARENT" label="Parent Id" type="Numeric" encoding="Text"/>
+        <Variable name="NODECOLOR" label="Node Color" type="Numeric" encoding="Text"/>
+        <Variable name="N" label="N" type="Numeric" encoding="Text"/>
+      </Variables>
+        <ValuesList valuesCount="15">
+          <V>1</V>
+          <V M="."></V>
+          <V>0.84536378027347</V>
+          <V>80227</V>
+          <V>2</V>
+          <V>1</V>
+          <V>0.93206610035742</V>
+          <V>43086</V>
+          <V>3</V>
+          <V>1</V>
+          <V>0.79996648653177</V>
+          <V>23871</V>
+          <V>4</V>
+          <V>1</V>
+          <V>0.6455162019593</V>
+          <V>13270</V>
+          <V>9</V>
+          <V>4</V>
+          <V>0.56875849569551</V>
+          <V>8828</V>
+          <V>10</V>
+          <V>4</V>
+          <V>0.79806393516434</V>
+          <V>4442</V>
+          <V>23</V>
+          <V>9</V>
+          <V>0.69124719461365</V>
+          <V>3119</V>
+          <V>24</V>
+          <V>9</V>
+          <V>0.55485161720573</V>
+          <V>2999</V>
+          <V>25</V>
+          <V>9</V>
+          <V>0.51881918819188</V>
+          <V>2710</V>
+          <V>65</V>
+          <V>25</V>
+          <V>0.58355722729715</V>
+          <V>1861</V>
+          <V>66</V>
+          <V>25</V>
+          <V>0.59363957597173</V>
+          <V>849</V>
+          <V>132</V>
+          <V>65</V>
+          <V>0.546875</V>
+          <V>1280</V>
+          <V>133</V>
+          <V>65</V>
+          <V>0.6643717728055</V>
+          <V>581</V>
+          <V>209</V>
+          <V>132</V>
+          <V>0.55600322320709</V>
+          <V>1241</V>
+          <V>210</V>
+          <V>132</V>
+          <V>0.66666666666666</V>
+          <V>39</V>
+        </ValuesList>
+      </EmbeddedData>
+    </IQData>
+  </DataModel>
+</Data>
+</SASReport>

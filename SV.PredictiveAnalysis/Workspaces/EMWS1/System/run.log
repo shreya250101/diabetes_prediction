@@ -1,0 +1,4196 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: Traverser invoked.  MPCONNECT command is !sascmdv -nosyntaxcheck -noasynchio -noobjectserver. 
+Traverser: Beginning flow traversal 
+17189      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17190      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17191      put '<Node Id="Ids6" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids6" Event="Run" Pid="11268" Gridid=""/>';
+17192      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+17193      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Ids6 : Beginning update before running 
+* datetime : 09MAR2024:14:38:51 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Ids6\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+17195      %let _HPDMGRIDHOST=;
+17196      %let _HPDMGRIDINSTALLLOC=;
+17197      %let _HPDMGRIDDATASERVER=;
+17198      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Ids6 : End update 
+* datetime : 09MAR2024:14:38:52 
+* 
+*------------------------------------------------------------* 
+17199      %em_getactionstatus(emlib =EMWS1, nodeid=Ids6);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+17200      %let em_Train = N;
+17201      %let em_Score = N;
+17202      %let em_Report = N;
+17203      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Ids6" has already run. 
+Node "Ids6" succeeded. 
+17204      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17205      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17206      put '<Node Id="Ids6" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids6" Event="Complete" Pid="11268" Gridid=""/>';
+17207      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "REG" 
+Traverser: WaitingNode "REG2" 
+Traverser: WaitingNode "REG3" 
+Traverser: WaitingNode "REG4" 
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "TREE" 
+Traverser: WaitingNode "TREE2" 
+Traverser: WaitingNode "TREE3" 
+Traverser: WaitingNode "TREE4" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "NEURAL7" 
+Traverser: WaitingNode "NEURAL4" 
+Traverser: WaitingNode "NEURAL2" 
+Traverser: WaitingNode "PART" 
+Traverser: WaitingNode "NEURAL" 
+Traverser: WaitingNode "MDLCOMP4" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+17208      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17209      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17210      put '<Node Id="Ids5" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids5" Event="Run" Pid="11268" Gridid=""/>';
+17211      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+17212      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Ids5 : Beginning update before running 
+* datetime : 09MAR2024:14:38:53 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Ids5\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+17214      %let _HPDMGRIDHOST=;
+17215      %let _HPDMGRIDINSTALLLOC=;
+17216      %let _HPDMGRIDDATASERVER=;
+17217      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Ids5 : End update 
+* datetime : 09MAR2024:14:38:53 
+* 
+*------------------------------------------------------------* 
+17218      %em_getactionstatus(emlib =EMWS1, nodeid=Ids5);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+17219      %let em_Train = N;
+17220      %let em_Score = N;
+17221      %let em_Report = N;
+17222      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.04 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Ids5" has already run. 
+Node "Ids5" succeeded. 
+17223      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17224      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17225      put '<Node Id="Ids5" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids5" Event="Complete" Pid="11268" Gridid=""/>';
+17226      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "REG" 
+Traverser: WaitingNode "REG2" 
+Traverser: WaitingNode "REG3" 
+Traverser: WaitingNode "REG4" 
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "TREE" 
+Traverser: WaitingNode "TREE2" 
+Traverser: WaitingNode "TREE3" 
+Traverser: WaitingNode "TREE4" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "NEURAL7" 
+Traverser: WaitingNode "NEURAL4" 
+Traverser: WaitingNode "NEURAL2" 
+Traverser: WaitingNode "NEURAL" 
+Traverser: WaitingNode "MDLCOMP4" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+17227      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17228      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17229      put '<Node Id="Part" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Part" Event="Run" Pid="11268" Gridid=""/>';
+17230      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+17231      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Part : Beginning update before running 
+* datetime : 09MAR2024:14:38:54 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Part_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Ids5_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "DOCUMENT" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Part\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+17250      %let _HPDMGRIDHOST=;
+17251      %let _HPDMGRIDINSTALLLOC=;
+17252      %let _HPDMGRIDDATASERVER=;
+17253      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Part : End update 
+* datetime : 09MAR2024:14:38:55 
+* 
+*------------------------------------------------------------* 
+17254      %em_getactionstatus(emlib =EMWS1, nodeid=Part);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+17255      %let em_Train = N;
+17256      %let em_Score = N;
+17257      %let em_Report = N;
+17258      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Part" has already run. 
+Node "Part" succeeded. 
+17259      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17260      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17261      put '<Node Id="Part" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Part" Event="Complete" Pid="11268" Gridid=""/>';
+17262      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "MDLCOMP4" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+17263      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17264      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17265      put '<Node Id="Neural7" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Neural7" Event="Run" Pid="11268" Gridid=""/>';
+17266      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 54.
+      The maximum record length was 54.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+17267      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Neural7 : Beginning update before running 
+* datetime : 09MAR2024:14:38:56 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Neural7_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Neural7\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+17287      %let _HPDMGRIDHOST=;
+17288      %let _HPDMGRIDINSTALLLOC=;
+17289      %let _HPDMGRIDDATASERVER=;
+17290      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Neural7 : End update 
+* datetime : 09MAR2024:14:38:56 
+* 
+*------------------------------------------------------------* 
+17291      %em_getactionstatus(emlib =EMWS1, nodeid=Neural7);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+17292      %let em_Train = N;
+17293      %let em_Score = N;
+17294      %let em_Report = N;
+17295      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.06 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Neural7" has already run. 
+Node "Neural7" succeeded. 
+17296      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17297      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17298      put '<Node Id="Neural7" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Neural7" Event="Complete" Pid="11268" Gridid=""/>';
+17299      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 59.
+      The maximum record length was 59.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "MDLCOMP4" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+17300      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17301      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17302      put '<Node Id="Neural4" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Neural4" Event="Run" Pid="11268" Gridid=""/>';
+17303      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 54.
+      The maximum record length was 54.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+17304      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Neural4 : Beginning update before running 
+* datetime : 09MAR2024:14:38:57 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Neural4_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Neural4\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+17324      %let _HPDMGRIDHOST=;
+17325      %let _HPDMGRIDINSTALLLOC=;
+17326      %let _HPDMGRIDDATASERVER=;
+17327      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Neural4 : End update 
+* datetime : 09MAR2024:14:38:58 
+* 
+*------------------------------------------------------------* 
+17328      %em_getactionstatus(emlib =EMWS1, nodeid=Neural4);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+17329      %let em_Train = N;
+17330      %let em_Score = N;
+17331      %let em_Report = N;
+17332      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Neural4" has already run. 
+Node "Neural4" succeeded. 
+17333      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17334      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17335      put '<Node Id="Neural4" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Neural4" Event="Complete" Pid="11268" Gridid=""/>';
+17336      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 59.
+      The maximum record length was 59.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "MDLCOMP4" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+17337      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17338      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17339      put '<Node Id="Neural2" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Neural2" Event="Run" Pid="11268" Gridid=""/>';
+17340      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 54.
+      The maximum record length was 54.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+17341      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Neural2 : Beginning update before running 
+* datetime : 09MAR2024:14:38:59 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Neural2_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Neural2\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+17361      %let _HPDMGRIDHOST=;
+17362      %let _HPDMGRIDINSTALLLOC=;
+17363      %let _HPDMGRIDDATASERVER=;
+17364      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Neural2 : End update 
+* datetime : 09MAR2024:14:39:00 
+* 
+*------------------------------------------------------------* 
+17365      %em_getactionstatus(emlib =EMWS1, nodeid=Neural2);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+17366      %let em_Train = N;
+17367      %let em_Score = N;
+17368      %let em_Report = N;
+17369      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.06 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Neural2" has already run. 
+Node "Neural2" succeeded. 
+17370      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17371      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17372      put '<Node Id="Neural2" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Neural2" Event="Complete" Pid="11268" Gridid=""/>';
+17373      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 59.
+      The maximum record length was 59.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "MDLCOMP4" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+17374      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17375      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17376      put '<Node Id="Neural" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Neural" Event="Run" Pid="11268" Gridid=""/>';
+17377      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 53.
+      The maximum record length was 53.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+17378      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Neural : Beginning update before running 
+* datetime : 09MAR2024:14:39:01 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Neural_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Neural\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+17398      %let _HPDMGRIDHOST=;
+17399      %let _HPDMGRIDINSTALLLOC=;
+17400      %let _HPDMGRIDDATASERVER=;
+17401      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Neural : End update 
+* datetime : 09MAR2024:14:39:01 
+* 
+*------------------------------------------------------------* 
+17402      %em_getactionstatus(emlib =EMWS1, nodeid=Neural);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+17403      %let em_Train = N;
+17404      %let em_Score = N;
+17405      %let em_Report = N;
+17406      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Neural" has already run. 
+Node "Neural" succeeded. 
+17407      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17408      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17409      put '<Node Id="Neural" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Neural" Event="Complete" Pid="11268" Gridid=""/>';
+17410      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 58.
+      The maximum record length was 58.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+17411      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17412      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17413      put '<Node Id="Tree" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Tree" Event="Run" Pid="11268" Gridid=""/>';
+17414      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+17415      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Tree : Beginning update before running 
+* datetime : 09MAR2024:14:39:02 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Tree_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" "SCORE" "TRANSACTION" "DOCUMENT" "RULES" "REPORTFIT" "RANK" "SCOREDIST" "ESTIMATE" "TREE" "CLUSSTAT" "CLUSMEAN" "VARMAP" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DIAGRAM):   label DECISION1= "PREDIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION2= "NO DIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION3= "DIABETES";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Tree: Generation of macros and macro variables;
+MPRINT(EM_DIAGRAM):   * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Tree: EM Macro Variables and Macros;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * System Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   length string $2000;
+MPRINT(EM_DIAGRAM):   string = 'SV.PredictiveAnalysis';
+MPRINT(EM_DIAGRAM):   call symput('EM_PROJECTNAME', trim(string));
+MPRINT(EM_DIAGRAM):   string = 'Zeta.Predective';
+MPRINT(EM_DIAGRAM):   call symput('EM_WSNAME', trim(string));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Properties Macro Variables ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Files Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Import Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Export Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Decision Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_decdata.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DECDATA):   proc display cat=sashelp.emutil.makedecdata.scl;
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   *------------------------------------------------------------*;
+MPRINT(EM_DECDATA):   * Tree: Create decision matrix;
+MPRINT(EM_DECDATA):   *------------------------------------------------------------*;
+MPRINT(EM_DECDATA):   data WORK.Diabetes_Prediction;
+MPRINT(EM_DECDATA):   length Diabetes_Prediction $ 32 COUNT 8 DATAPRIOR 8 TRAINPRIOR 8 DECPRIOR 8 DECISION1 8 DECISION2 8 DECISION3 8 ;
+MPRINT(EM_DECDATA):   label COUNT= "Level Counts" DATAPRIOR= "Data Proportions" TRAINPRIOR= "Training Proportions" DECPRIOR= "Decision Priors" DECISION1= "PREDIABETES" DECISION2= "NO DIABETES" DECISION3= "DIABETES" ;
+MPRINT(EM_DECDATA):   format COUNT 10. ;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="PREDIABETES";
+MPRINT(EM_DECDATA):   COUNT=3641;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.01815299167884;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.01815299167884;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=1;
+MPRINT(EM_DECDATA):   DECISION2=0;
+MPRINT(EM_DECDATA):   DECISION3=0;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="NO DIABETES";
+MPRINT(EM_DECDATA):   COUNT=169538;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.84526830630244;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.84526830630244;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=0;
+MPRINT(EM_DECDATA):   DECISION2=1;
+MPRINT(EM_DECDATA):   DECISION3=0;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="DIABETES";
+MPRINT(EM_DECDATA):   COUNT=27394;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.13657870201871;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.13657870201871;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=0;
+MPRINT(EM_DECDATA):   DECISION2=0;
+MPRINT(EM_DECDATA):   DECISION3=1;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   ;
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   proc datasets lib=work nolist;
+MPRINT(EM_DECDATA):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DECDATA):   label DECISION1= 'PREDIABETES';
+MPRINT(EM_DECDATA):   label DECISION2= 'NO DIABETES';
+MPRINT(EM_DECDATA):   label DECISION3= 'DIABETES';
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   quit;
+MPRINT(EM_DECDATA):   
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DIAGRAM):   label DECISION1= "PREDIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION2= "NO DIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION3= "DIABETES";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Statement Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   set EMWS1.Ids5_EMINFO;
+MPRINT(EM_DIAGRAM):   where key in('HPDMSAMPLE', 'IDSTABLE');
+MPRINT(EM_DIAGRAM):   if key = 'HPDMSAMPLE' then call symput('_ForceGrid', '1');
+MPRINT(EM_DIAGRAM):   else call symput('_IDS_TABLE', DATA);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+MPRINT(HPDM_ISGRID):  ;
+MPRINT(HPDM_PERFORMANCE):  ;
+PERFORMANCE  DETAILS
+MPRINT(EM_DIAGRAM):  ;
+17833      data EM_TARGETDECINFO;
+MPRINT(EM_DIAGRAM):    data EM_TARGETDECINFO;
+17834      length TARGET $32 DECDATA DECMETA $43;
+MPRINT(EM_DIAGRAM):   length TARGET $32 DECDATA DECMETA $43;
+17835      TARGET="Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   TARGET="Diabetes_Prediction";
+17836      DECDATA="EMWS1.Ids5_Diabetes_Predict_DD";
+MPRINT(EM_DIAGRAM):   DECDATA="EMWS1.Ids5_Diabetes_Predict_DD";
+17837      DECMETA="EMWS1.Ids5_Diabetes_Predict_DM";
+MPRINT(EM_DIAGRAM):   DECMETA="EMWS1.Ids5_Diabetes_Predict_DM";
+17838      output;
+MPRINT(EM_DIAGRAM):   output;
+17839      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set WORK.EM_TARGETDECINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+17840      %let emexceptionString =;
+17841      %let EMEXCEPTIONSTRING=;
+17842      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+17843      * UPDATE: Tree;
+MPRINT(EM_DIAGRAM):   * UPDATE: Tree;
+17844      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+17845      %let EM_ACTION = UPDATE;
+17846      %let syscc = 0;
+17847      %macro main;
+17848      
+17849        %if %upcase(&EM_ACTION) = CREATE %then %do;
+17850          filename temp catalog 'sashelp.emmodl.tree_create.source';
+17851          %include temp;
+17852          filename temp;
+17853      
+17854          %em_tree_create;
+17855        %end;
+17856      
+17857         %else
+17858         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+17859      
+17860             filename temp catalog 'sashelp.emmodl.tree_train.source';
+17861             %include temp;
+17862             filename temp;
+17863             %em_tree_train;
+17864         %end;
+17865      
+17866        %else
+17867        %if %upcase(&EM_ACTION) = SCORE %then %do;
+17868          filename temp catalog 'sashelp.emmodl.tree_score.source';
+17869          %include temp;
+17870          filename temp;
+17871      
+17872          %em_tree_score;
+17873      
+17874        %end;
+17875      
+17876        %else
+17877        %if %upcase(&EM_ACTION) = REPORT %then %do;
+17878      
+17879             filename temp catalog 'sashelp.emmodl.tree_report.source';
+17880             %include temp;
+17881             filename temp;
+17882      
+17883             %em_tree_report;
+17884         %end;
+17885      
+17886        %else
+17887        %if %upcase(&EM_ACTION) = OPENINT %then %do;
+17888      
+17889             filename temp catalog 'sashelp.emmodl.tree_actions.source';
+17890             %include temp;
+17891             filename temp;
+17892             %EM_TREE_OPENTREEVIEWER;
+17893      
+17894         %end;
+17895      
+17896        %else
+17897        %if %upcase(&EM_ACTION) = CLOSEINT %then %do;
+17898      
+17899             filename temp catalog 'sashelp.emmodl.tree_actions.source';
+17900             %include temp;
+17901             filename temp;
+17902             %EM_TREE_CLOSETREEVIEWER;
+17903      
+17904         %end;
+17905      
+17906      
+17907         %doendm:
+17908      %mend main;
+17909      
+17910      %main;
+MPRINT(EM_DIAGRAM):    
+MPRINT(EM_DIAGRAM):  ;
+17911      
+17912      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+17913      * End UPDATE: Tree;
+MPRINT(EM_DIAGRAM):   * End UPDATE: Tree;
+17914      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+17915      %em_delMacro;
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_DIAGRAM):  ;
+
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Tree\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+17917      %let _HPDMGRIDHOST=;
+17918      %let _HPDMGRIDINSTALLLOC=;
+17919      %let _HPDMGRIDDATASERVER=;
+17920      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Tree : End update 
+* datetime : 09MAR2024:14:39:04 
+* 
+*------------------------------------------------------------* 
+17921      %em_getactionstatus(emlib =EMWS1, nodeid=Tree);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+17922      %let em_filemodtime=;
+17923      data _null_;
+MPRINT(EM_GETACTIONSTATUS):   data _null_;
+17924      format modate best.;
+MPRINT(EM_GETACTIONSTATUS):   format modate best.;
+17925      set sashelp.Vextfl;
+MPRINT(EM_GETACTIONSTATUS):   set sashelp.Vextfl;
+17926      where fileref eq "#LN00314";
+MPRINT(EM_GETACTIONSTATUS):   where fileref eq "#LN00314";
+17927      call symput('EM_FILEMODTIME', put(modate, best.));
+MPRINT(EM_GETACTIONSTATUS):   call symput('EM_FILEMODTIME', put(modate, best.));
+17928      run;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: There were 1 observations read from the data set SASHELP.VEXTFL.
+      WHERE fileref='#LN00314';
+NOTE: DATA statement used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.01 seconds
+      
+
+17929      %symdel em_filemodtime;
+WARNING: Attempt to delete macro variable EM_FILEMODTIME failed. Variable not found.
+17930      %let em_Train = N;
+17931      %let em_Score = N;
+17932      %let em_Report = N;
+17933      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.21 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):     
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Tree" has already run. 
+Node "Tree" succeeded. 
+17934      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17935      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17936      put '<Node Id="Tree" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Tree" Event="Complete" Pid="11268" Gridid=""/>';
+17937      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+17938      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+17939      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+17940      put '<Node Id="Tree2" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Tree2" Event="Run" Pid="11268" Gridid=""/>';
+17941      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 52.
+      The maximum record length was 52.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+17942      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Tree2 : Beginning update before running 
+* datetime : 09MAR2024:14:39:05 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Tree2_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" "SCORE" "TRANSACTION" "DOCUMENT" "RULES" "REPORTFIT" "RANK" "SCOREDIST" "ESTIMATE" "TREE" "CLUSSTAT" "CLUSMEAN" "VARMAP" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DIAGRAM):   label DECISION1= "PREDIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION2= "NO DIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION3= "DIABETES";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Tree2: Generation of macros and macro variables;
+MPRINT(EM_DIAGRAM):   * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Tree2: EM Macro Variables and Macros;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * System Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   length string $2000;
+MPRINT(EM_DIAGRAM):   string = 'SV.PredictiveAnalysis';
+MPRINT(EM_DIAGRAM):   call symput('EM_PROJECTNAME', trim(string));
+MPRINT(EM_DIAGRAM):   string = 'Zeta.Predective';
+MPRINT(EM_DIAGRAM):   call symput('EM_WSNAME', trim(string));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Properties Macro Variables ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Files Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Import Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Export Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Decision Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_decdata.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DECDATA):   proc display cat=sashelp.emutil.makedecdata.scl;
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   *------------------------------------------------------------*;
+MPRINT(EM_DECDATA):   * Tree2: Create decision matrix;
+MPRINT(EM_DECDATA):   *------------------------------------------------------------*;
+MPRINT(EM_DECDATA):   data WORK.Diabetes_Prediction;
+MPRINT(EM_DECDATA):   length Diabetes_Prediction $ 32 COUNT 8 DATAPRIOR 8 TRAINPRIOR 8 DECPRIOR 8 DECISION1 8 DECISION2 8 DECISION3 8 ;
+MPRINT(EM_DECDATA):   label COUNT= "Level Counts" DATAPRIOR= "Data Proportions" TRAINPRIOR= "Training Proportions" DECPRIOR= "Decision Priors" DECISION1= "PREDIABETES" DECISION2= "NO DIABETES" DECISION3= "DIABETES" ;
+MPRINT(EM_DECDATA):   format COUNT 10. ;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="PREDIABETES";
+MPRINT(EM_DECDATA):   COUNT=3641;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.01815299167884;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.01815299167884;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=1;
+MPRINT(EM_DECDATA):   DECISION2=0;
+MPRINT(EM_DECDATA):   DECISION3=0;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="NO DIABETES";
+MPRINT(EM_DECDATA):   COUNT=169538;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.84526830630244;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.84526830630244;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=0;
+MPRINT(EM_DECDATA):   DECISION2=1;
+MPRINT(EM_DECDATA):   DECISION3=0;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="DIABETES";
+MPRINT(EM_DECDATA):   COUNT=27394;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.13657870201871;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.13657870201871;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=0;
+MPRINT(EM_DECDATA):   DECISION2=0;
+MPRINT(EM_DECDATA):   DECISION3=1;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   ;
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   proc datasets lib=work nolist;
+MPRINT(EM_DECDATA):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DECDATA):   label DECISION1= 'PREDIABETES';
+MPRINT(EM_DECDATA):   label DECISION2= 'NO DIABETES';
+MPRINT(EM_DECDATA):   label DECISION3= 'DIABETES';
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   quit;
+MPRINT(EM_DECDATA):   
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DIAGRAM):   label DECISION1= "PREDIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION2= "NO DIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION3= "DIABETES";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Statement Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   set EMWS1.Ids5_EMINFO;
+MPRINT(EM_DIAGRAM):   where key in('HPDMSAMPLE', 'IDSTABLE');
+MPRINT(EM_DIAGRAM):   if key = 'HPDMSAMPLE' then call symput('_ForceGrid', '1');
+MPRINT(EM_DIAGRAM):   else call symput('_IDS_TABLE', DATA);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+MPRINT(HPDM_ISGRID):  ;
+MPRINT(HPDM_PERFORMANCE):  ;
+PERFORMANCE  DETAILS
+MPRINT(EM_DIAGRAM):  ;
+18360      data EM_TARGETDECINFO;
+MPRINT(EM_DIAGRAM):    data EM_TARGETDECINFO;
+18361      length TARGET $32 DECDATA DECMETA $43;
+MPRINT(EM_DIAGRAM):   length TARGET $32 DECDATA DECMETA $43;
+18362      TARGET="Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   TARGET="Diabetes_Prediction";
+18363      DECDATA="EMWS1.Ids5_Diabetes_Predict_DD";
+MPRINT(EM_DIAGRAM):   DECDATA="EMWS1.Ids5_Diabetes_Predict_DD";
+18364      DECMETA="EMWS1.Ids5_Diabetes_Predict_DM";
+MPRINT(EM_DIAGRAM):   DECMETA="EMWS1.Ids5_Diabetes_Predict_DM";
+18365      output;
+MPRINT(EM_DIAGRAM):   output;
+18366      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set WORK.EM_TARGETDECINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.01 seconds
+      
+
+18367      %let emexceptionString =;
+18368      %let EMEXCEPTIONSTRING=;
+18369      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+18370      * UPDATE: Tree2;
+MPRINT(EM_DIAGRAM):   * UPDATE: Tree2;
+18371      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+18372      %let EM_ACTION = UPDATE;
+18373      %let syscc = 0;
+18374      %macro main;
+18375      
+18376        %if %upcase(&EM_ACTION) = CREATE %then %do;
+18377          filename temp catalog 'sashelp.emmodl.tree_create.source';
+18378          %include temp;
+18379          filename temp;
+18380      
+18381          %em_tree_create;
+18382        %end;
+18383      
+18384         %else
+18385         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+18386      
+18387             filename temp catalog 'sashelp.emmodl.tree_train.source';
+18388             %include temp;
+18389             filename temp;
+18390             %em_tree_train;
+18391         %end;
+18392      
+18393        %else
+18394        %if %upcase(&EM_ACTION) = SCORE %then %do;
+18395          filename temp catalog 'sashelp.emmodl.tree_score.source';
+18396          %include temp;
+18397          filename temp;
+18398      
+18399          %em_tree_score;
+18400      
+18401        %end;
+18402      
+18403        %else
+18404        %if %upcase(&EM_ACTION) = REPORT %then %do;
+18405      
+18406             filename temp catalog 'sashelp.emmodl.tree_report.source';
+18407             %include temp;
+18408             filename temp;
+18409      
+18410             %em_tree_report;
+18411         %end;
+18412      
+18413        %else
+18414        %if %upcase(&EM_ACTION) = OPENINT %then %do;
+18415      
+18416             filename temp catalog 'sashelp.emmodl.tree_actions.source';
+18417             %include temp;
+18418             filename temp;
+18419             %EM_TREE_OPENTREEVIEWER;
+18420      
+18421         %end;
+18422      
+18423        %else
+18424        %if %upcase(&EM_ACTION) = CLOSEINT %then %do;
+18425      
+18426             filename temp catalog 'sashelp.emmodl.tree_actions.source';
+18427             %include temp;
+18428             filename temp;
+18429             %EM_TREE_CLOSETREEVIEWER;
+18430      
+18431         %end;
+18432      
+18433      
+18434         %doendm:
+18435      %mend main;
+18436      
+18437      %main;
+MPRINT(EM_DIAGRAM):    
+MPRINT(EM_DIAGRAM):  ;
+18438      
+18439      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+18440      * End UPDATE: Tree2;
+MPRINT(EM_DIAGRAM):   * End UPDATE: Tree2;
+18441      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+18442      %em_delMacro;
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_DIAGRAM):  ;
+
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Tree2\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+18444      %let _HPDMGRIDHOST=;
+18445      %let _HPDMGRIDINSTALLLOC=;
+18446      %let _HPDMGRIDDATASERVER=;
+18447      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Tree2 : End update 
+* datetime : 09MAR2024:14:39:07 
+* 
+*------------------------------------------------------------* 
+18448      %em_getactionstatus(emlib =EMWS1, nodeid=Tree2);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+18449      %let em_filemodtime=;
+18450      data _null_;
+MPRINT(EM_GETACTIONSTATUS):   data _null_;
+18451      format modate best.;
+MPRINT(EM_GETACTIONSTATUS):   format modate best.;
+18452      set sashelp.Vextfl;
+MPRINT(EM_GETACTIONSTATUS):   set sashelp.Vextfl;
+18453      where fileref eq "#LN00343";
+MPRINT(EM_GETACTIONSTATUS):   where fileref eq "#LN00343";
+18454      call symput('EM_FILEMODTIME', put(modate, best.));
+MPRINT(EM_GETACTIONSTATUS):   call symput('EM_FILEMODTIME', put(modate, best.));
+18455      run;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: There were 1 observations read from the data set SASHELP.VEXTFL.
+      WHERE fileref='#LN00343';
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+18456      %symdel em_filemodtime;
+WARNING: Attempt to delete macro variable EM_FILEMODTIME failed. Variable not found.
+18457      %let em_Train = N;
+18458      %let em_Score = N;
+18459      %let em_Report = N;
+18460      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):     
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Tree2" has already run. 
+Node "Tree2" succeeded. 
+18461      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+18462      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+18463      put '<Node Id="Tree2" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Tree2" Event="Complete" Pid="11268" Gridid=""/>';
+18464      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 57.
+      The maximum record length was 57.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+18465      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+18466      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+18467      put '<Node Id="Tree3" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Tree3" Event="Run" Pid="11268" Gridid=""/>';
+18468      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 52.
+      The maximum record length was 52.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+18469      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Tree3 : Beginning update before running 
+* datetime : 09MAR2024:14:39:08 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Tree3_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" "SCORE" "TRANSACTION" "DOCUMENT" "RULES" "REPORTFIT" "RANK" "SCOREDIST" "ESTIMATE" "TREE" "CLUSSTAT" "CLUSMEAN" "VARMAP" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DIAGRAM):   label DECISION1= "PREDIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION2= "NO DIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION3= "DIABETES";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Tree3: Generation of macros and macro variables;
+MPRINT(EM_DIAGRAM):   * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Tree3: EM Macro Variables and Macros;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * System Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   length string $2000;
+MPRINT(EM_DIAGRAM):   string = 'SV.PredictiveAnalysis';
+MPRINT(EM_DIAGRAM):   call symput('EM_PROJECTNAME', trim(string));
+MPRINT(EM_DIAGRAM):   string = 'Zeta.Predective';
+MPRINT(EM_DIAGRAM):   call symput('EM_WSNAME', trim(string));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Properties Macro Variables ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Files Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Import Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Export Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Decision Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_decdata.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DECDATA):   proc display cat=sashelp.emutil.makedecdata.scl;
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   *------------------------------------------------------------*;
+MPRINT(EM_DECDATA):   * Tree3: Create decision matrix;
+MPRINT(EM_DECDATA):   *------------------------------------------------------------*;
+MPRINT(EM_DECDATA):   data WORK.Diabetes_Prediction;
+MPRINT(EM_DECDATA):   length Diabetes_Prediction $ 32 COUNT 8 DATAPRIOR 8 TRAINPRIOR 8 DECPRIOR 8 DECISION1 8 DECISION2 8 DECISION3 8 ;
+MPRINT(EM_DECDATA):   label COUNT= "Level Counts" DATAPRIOR= "Data Proportions" TRAINPRIOR= "Training Proportions" DECPRIOR= "Decision Priors" DECISION1= "PREDIABETES" DECISION2= "NO DIABETES" DECISION3= "DIABETES" ;
+MPRINT(EM_DECDATA):   format COUNT 10. ;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="PREDIABETES";
+MPRINT(EM_DECDATA):   COUNT=3641;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.01815299167884;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.01815299167884;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=1;
+MPRINT(EM_DECDATA):   DECISION2=0;
+MPRINT(EM_DECDATA):   DECISION3=0;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="NO DIABETES";
+MPRINT(EM_DECDATA):   COUNT=169538;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.84526830630244;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.84526830630244;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=0;
+MPRINT(EM_DECDATA):   DECISION2=1;
+MPRINT(EM_DECDATA):   DECISION3=0;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="DIABETES";
+MPRINT(EM_DECDATA):   COUNT=27394;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.13657870201871;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.13657870201871;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=0;
+MPRINT(EM_DECDATA):   DECISION2=0;
+MPRINT(EM_DECDATA):   DECISION3=1;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   ;
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   proc datasets lib=work nolist;
+MPRINT(EM_DECDATA):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DECDATA):   label DECISION1= 'PREDIABETES';
+MPRINT(EM_DECDATA):   label DECISION2= 'NO DIABETES';
+MPRINT(EM_DECDATA):   label DECISION3= 'DIABETES';
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   quit;
+MPRINT(EM_DECDATA):   
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DIAGRAM):   label DECISION1= "PREDIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION2= "NO DIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION3= "DIABETES";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Statement Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   set EMWS1.Ids5_EMINFO;
+MPRINT(EM_DIAGRAM):   where key in('HPDMSAMPLE', 'IDSTABLE');
+MPRINT(EM_DIAGRAM):   if key = 'HPDMSAMPLE' then call symput('_ForceGrid', '1');
+MPRINT(EM_DIAGRAM):   else call symput('_IDS_TABLE', DATA);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+MPRINT(HPDM_ISGRID):  ;
+MPRINT(HPDM_PERFORMANCE):  ;
+PERFORMANCE  DETAILS
+MPRINT(EM_DIAGRAM):  ;
+18887      data EM_TARGETDECINFO;
+MPRINT(EM_DIAGRAM):    data EM_TARGETDECINFO;
+18888      length TARGET $32 DECDATA DECMETA $43;
+MPRINT(EM_DIAGRAM):   length TARGET $32 DECDATA DECMETA $43;
+18889      TARGET="Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   TARGET="Diabetes_Prediction";
+18890      DECDATA="EMWS1.Ids5_Diabetes_Predict_DD";
+MPRINT(EM_DIAGRAM):   DECDATA="EMWS1.Ids5_Diabetes_Predict_DD";
+18891      DECMETA="EMWS1.Ids5_Diabetes_Predict_DM";
+MPRINT(EM_DIAGRAM):   DECMETA="EMWS1.Ids5_Diabetes_Predict_DM";
+18892      output;
+MPRINT(EM_DIAGRAM):   output;
+18893      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set WORK.EM_TARGETDECINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+18894      %let emexceptionString =;
+18895      %let EMEXCEPTIONSTRING=;
+18896      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+18897      * UPDATE: Tree3;
+MPRINT(EM_DIAGRAM):   * UPDATE: Tree3;
+18898      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+18899      %let EM_ACTION = UPDATE;
+18900      %let syscc = 0;
+18901      %macro main;
+18902      
+18903        %if %upcase(&EM_ACTION) = CREATE %then %do;
+18904          filename temp catalog 'sashelp.emmodl.tree_create.source';
+18905          %include temp;
+18906          filename temp;
+18907      
+18908          %em_tree_create;
+18909        %end;
+18910      
+18911         %else
+18912         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+18913      
+18914             filename temp catalog 'sashelp.emmodl.tree_train.source';
+18915             %include temp;
+18916             filename temp;
+18917             %em_tree_train;
+18918         %end;
+18919      
+18920        %else
+18921        %if %upcase(&EM_ACTION) = SCORE %then %do;
+18922          filename temp catalog 'sashelp.emmodl.tree_score.source';
+18923          %include temp;
+18924          filename temp;
+18925      
+18926          %em_tree_score;
+18927      
+18928        %end;
+18929      
+18930        %else
+18931        %if %upcase(&EM_ACTION) = REPORT %then %do;
+18932      
+18933             filename temp catalog 'sashelp.emmodl.tree_report.source';
+18934             %include temp;
+18935             filename temp;
+18936      
+18937             %em_tree_report;
+18938         %end;
+18939      
+18940        %else
+18941        %if %upcase(&EM_ACTION) = OPENINT %then %do;
+18942      
+18943             filename temp catalog 'sashelp.emmodl.tree_actions.source';
+18944             %include temp;
+18945             filename temp;
+18946             %EM_TREE_OPENTREEVIEWER;
+18947      
+18948         %end;
+18949      
+18950        %else
+18951        %if %upcase(&EM_ACTION) = CLOSEINT %then %do;
+18952      
+18953             filename temp catalog 'sashelp.emmodl.tree_actions.source';
+18954             %include temp;
+18955             filename temp;
+18956             %EM_TREE_CLOSETREEVIEWER;
+18957      
+18958         %end;
+18959      
+18960      
+18961         %doendm:
+18962      %mend main;
+18963      
+18964      %main;
+MPRINT(EM_DIAGRAM):    
+MPRINT(EM_DIAGRAM):  ;
+18965      
+18966      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+18967      * End UPDATE: Tree3;
+MPRINT(EM_DIAGRAM):   * End UPDATE: Tree3;
+18968      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+18969      %em_delMacro;
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_DIAGRAM):  ;
+
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Tree3\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+18971      %let _HPDMGRIDHOST=;
+18972      %let _HPDMGRIDINSTALLLOC=;
+18973      %let _HPDMGRIDDATASERVER=;
+18974      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Tree3 : End update 
+* datetime : 09MAR2024:14:39:10 
+* 
+*------------------------------------------------------------* 
+18975      %em_getactionstatus(emlib =EMWS1, nodeid=Tree3);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+18976      %let em_filemodtime=;
+18977      data _null_;
+MPRINT(EM_GETACTIONSTATUS):   data _null_;
+18978      format modate best.;
+MPRINT(EM_GETACTIONSTATUS):   format modate best.;
+18979      set sashelp.Vextfl;
+MPRINT(EM_GETACTIONSTATUS):   set sashelp.Vextfl;
+18980      where fileref eq "#LN00372";
+MPRINT(EM_GETACTIONSTATUS):   where fileref eq "#LN00372";
+18981      call symput('EM_FILEMODTIME', put(modate, best.));
+MPRINT(EM_GETACTIONSTATUS):   call symput('EM_FILEMODTIME', put(modate, best.));
+18982      run;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: There were 1 observations read from the data set SASHELP.VEXTFL.
+      WHERE fileref='#LN00372';
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+18983      %symdel em_filemodtime;
+WARNING: Attempt to delete macro variable EM_FILEMODTIME failed. Variable not found.
+18984      %let em_Train = N;
+18985      %let em_Score = N;
+18986      %let em_Report = N;
+18987      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.10 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):     
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Tree3" has already run. 
+Node "Tree3" succeeded. 
+18988      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+18989      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+18990      put '<Node Id="Tree3" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Tree3" Event="Complete" Pid="11268" Gridid=""/>';
+18991      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 57.
+      The maximum record length was 57.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+18992      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+18993      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+18994      put '<Node Id="Tree4" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Tree4" Event="Run" Pid="11268" Gridid=""/>';
+18995      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 52.
+      The maximum record length was 52.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+18996      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Tree4 : Beginning update before running 
+* datetime : 09MAR2024:14:39:11 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Tree4_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" "SCORE" "TRANSACTION" "DOCUMENT" "RULES" "REPORTFIT" "RANK" "SCOREDIST" "ESTIMATE" "TREE" "CLUSSTAT" "CLUSMEAN" "VARMAP" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DIAGRAM):   label DECISION1= "PREDIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION2= "NO DIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION3= "DIABETES";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Tree4: Generation of macros and macro variables;
+MPRINT(EM_DIAGRAM):   * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Tree4: EM Macro Variables and Macros;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * System Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   length string $2000;
+MPRINT(EM_DIAGRAM):   string = 'SV.PredictiveAnalysis';
+MPRINT(EM_DIAGRAM):   call symput('EM_PROJECTNAME', trim(string));
+MPRINT(EM_DIAGRAM):   string = 'Zeta.Predective';
+MPRINT(EM_DIAGRAM):   call symput('EM_WSNAME', trim(string));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Properties Macro Variables ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Files Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Import Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Export Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Decision Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_decdata.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DECDATA):   proc display cat=sashelp.emutil.makedecdata.scl;
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   *------------------------------------------------------------*;
+MPRINT(EM_DECDATA):   * Tree4: Create decision matrix;
+MPRINT(EM_DECDATA):   *------------------------------------------------------------*;
+MPRINT(EM_DECDATA):   data WORK.Diabetes_Prediction;
+MPRINT(EM_DECDATA):   length Diabetes_Prediction $ 32 COUNT 8 DATAPRIOR 8 TRAINPRIOR 8 DECPRIOR 8 DECISION1 8 DECISION2 8 DECISION3 8 ;
+MPRINT(EM_DECDATA):   label COUNT= "Level Counts" DATAPRIOR= "Data Proportions" TRAINPRIOR= "Training Proportions" DECPRIOR= "Decision Priors" DECISION1= "PREDIABETES" DECISION2= "NO DIABETES" DECISION3= "DIABETES" ;
+MPRINT(EM_DECDATA):   format COUNT 10. ;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="PREDIABETES";
+MPRINT(EM_DECDATA):   COUNT=3641;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.01815299167884;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.01815299167884;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=1;
+MPRINT(EM_DECDATA):   DECISION2=0;
+MPRINT(EM_DECDATA):   DECISION3=0;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="NO DIABETES";
+MPRINT(EM_DECDATA):   COUNT=169538;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.84526830630244;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.84526830630244;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=0;
+MPRINT(EM_DECDATA):   DECISION2=1;
+MPRINT(EM_DECDATA):   DECISION3=0;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   Diabetes_Prediction="DIABETES";
+MPRINT(EM_DECDATA):   COUNT=27394;
+MPRINT(EM_DECDATA):   DATAPRIOR=0.13657870201871;
+MPRINT(EM_DECDATA):   TRAINPRIOR=0.13657870201871;
+MPRINT(EM_DECDATA):   DECPRIOR=.;
+MPRINT(EM_DECDATA):   DECISION1=0;
+MPRINT(EM_DECDATA):   DECISION2=0;
+MPRINT(EM_DECDATA):   DECISION3=1;
+MPRINT(EM_DECDATA):   output;
+MPRINT(EM_DECDATA):   ;
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   proc datasets lib=work nolist;
+MPRINT(EM_DECDATA):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DECDATA):   label DECISION1= 'PREDIABETES';
+MPRINT(EM_DECDATA):   label DECISION2= 'NO DIABETES';
+MPRINT(EM_DECDATA):   label DECISION3= 'DIABETES';
+MPRINT(EM_DECDATA):   run;
+MPRINT(EM_DECDATA):   quit;
+MPRINT(EM_DECDATA):   
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   modify Diabetes_Prediction(type=PROFIT label= Diabetes_Prediction);
+MPRINT(EM_DIAGRAM):   label DECISION1= "PREDIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION2= "NO DIABETES";
+MPRINT(EM_DIAGRAM):   label DECISION3= "DIABETES";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Statement Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   set EMWS1.Ids5_EMINFO;
+MPRINT(EM_DIAGRAM):   where key in('HPDMSAMPLE', 'IDSTABLE');
+MPRINT(EM_DIAGRAM):   if key = 'HPDMSAMPLE' then call symput('_ForceGrid', '1');
+MPRINT(EM_DIAGRAM):   else call symput('_IDS_TABLE', DATA);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+MPRINT(HPDM_ISGRID):  ;
+MPRINT(HPDM_PERFORMANCE):  ;
+PERFORMANCE  DETAILS
+MPRINT(EM_DIAGRAM):  ;
+19414      data EM_TARGETDECINFO;
+MPRINT(EM_DIAGRAM):    data EM_TARGETDECINFO;
+19415      length TARGET $32 DECDATA DECMETA $43;
+MPRINT(EM_DIAGRAM):   length TARGET $32 DECDATA DECMETA $43;
+19416      TARGET="Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   TARGET="Diabetes_Prediction";
+19417      DECDATA="EMWS1.Ids5_Diabetes_Predict_DD";
+MPRINT(EM_DIAGRAM):   DECDATA="EMWS1.Ids5_Diabetes_Predict_DD";
+19418      DECMETA="EMWS1.Ids5_Diabetes_Predict_DM";
+MPRINT(EM_DIAGRAM):   DECMETA="EMWS1.Ids5_Diabetes_Predict_DM";
+19419      output;
+MPRINT(EM_DIAGRAM):   output;
+19420      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set WORK.EM_TARGETDECINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+19421      %let emexceptionString =;
+19422      %let EMEXCEPTIONSTRING=;
+19423      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+19424      * UPDATE: Tree4;
+MPRINT(EM_DIAGRAM):   * UPDATE: Tree4;
+19425      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+19426      %let EM_ACTION = UPDATE;
+19427      %let syscc = 0;
+19428      %macro main;
+19429      
+19430        %if %upcase(&EM_ACTION) = CREATE %then %do;
+19431          filename temp catalog 'sashelp.emmodl.tree_create.source';
+19432          %include temp;
+19433          filename temp;
+19434      
+19435          %em_tree_create;
+19436        %end;
+19437      
+19438         %else
+19439         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+19440      
+19441             filename temp catalog 'sashelp.emmodl.tree_train.source';
+19442             %include temp;
+19443             filename temp;
+19444             %em_tree_train;
+19445         %end;
+19446      
+19447        %else
+19448        %if %upcase(&EM_ACTION) = SCORE %then %do;
+19449          filename temp catalog 'sashelp.emmodl.tree_score.source';
+19450          %include temp;
+19451          filename temp;
+19452      
+19453          %em_tree_score;
+19454      
+19455        %end;
+19456      
+19457        %else
+19458        %if %upcase(&EM_ACTION) = REPORT %then %do;
+19459      
+19460             filename temp catalog 'sashelp.emmodl.tree_report.source';
+19461             %include temp;
+19462             filename temp;
+19463      
+19464             %em_tree_report;
+19465         %end;
+19466      
+19467        %else
+19468        %if %upcase(&EM_ACTION) = OPENINT %then %do;
+19469      
+19470             filename temp catalog 'sashelp.emmodl.tree_actions.source';
+19471             %include temp;
+19472             filename temp;
+19473             %EM_TREE_OPENTREEVIEWER;
+19474      
+19475         %end;
+19476      
+19477        %else
+19478        %if %upcase(&EM_ACTION) = CLOSEINT %then %do;
+19479      
+19480             filename temp catalog 'sashelp.emmodl.tree_actions.source';
+19481             %include temp;
+19482             filename temp;
+19483             %EM_TREE_CLOSETREEVIEWER;
+19484      
+19485         %end;
+19486      
+19487      
+19488         %doendm:
+19489      %mend main;
+19490      
+19491      %main;
+MPRINT(EM_DIAGRAM):    
+MPRINT(EM_DIAGRAM):  ;
+19492      
+19493      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+19494      * End UPDATE: Tree4;
+MPRINT(EM_DIAGRAM):   * End UPDATE: Tree4;
+19495      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+19496      %em_delMacro;
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_DIAGRAM):  ;
+
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Tree4\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19498      %let _HPDMGRIDHOST=;
+19499      %let _HPDMGRIDINSTALLLOC=;
+19500      %let _HPDMGRIDDATASERVER=;
+19501      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Tree4 : End update 
+* datetime : 09MAR2024:14:39:13 
+* 
+*------------------------------------------------------------* 
+19502      %em_getactionstatus(emlib =EMWS1, nodeid=Tree4);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19503      %let em_filemodtime=;
+19504      data _null_;
+MPRINT(EM_GETACTIONSTATUS):   data _null_;
+19505      format modate best.;
+MPRINT(EM_GETACTIONSTATUS):   format modate best.;
+19506      set sashelp.Vextfl;
+MPRINT(EM_GETACTIONSTATUS):   set sashelp.Vextfl;
+19507      where fileref eq "#LN00401";
+MPRINT(EM_GETACTIONSTATUS):   where fileref eq "#LN00401";
+19508      call symput('EM_FILEMODTIME', put(modate, best.));
+MPRINT(EM_GETACTIONSTATUS):   call symput('EM_FILEMODTIME', put(modate, best.));
+19509      run;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: There were 1 observations read from the data set SASHELP.VEXTFL.
+      WHERE fileref='#LN00401';
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+19510      %symdel em_filemodtime;
+WARNING: Attempt to delete macro variable EM_FILEMODTIME failed. Variable not found.
+19511      %let em_Train = N;
+19512      %let em_Score = N;
+19513      %let em_Report = N;
+19514      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):     
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Tree4" has already run. 
+Node "Tree4" succeeded. 
+19515      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19516      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19517      put '<Node Id="Tree4" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Tree4" Event="Complete" Pid="11268" Gridid=""/>';
+19518      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 57.
+      The maximum record length was 57.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+19519      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19520      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19521      put '<Node Id="Reg" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Reg" Event="Run" Pid="11268" Gridid=""/>';
+19522      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 50.
+      The maximum record length was 50.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+19523      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Reg : Beginning update before running 
+* datetime : 09MAR2024:14:39:14 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Reg_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Reg\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19543      %let _HPDMGRIDHOST=;
+19544      %let _HPDMGRIDINSTALLLOC=;
+19545      %let _HPDMGRIDDATASERVER=;
+19546      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Reg : End update 
+* datetime : 09MAR2024:14:39:15 
+* 
+*------------------------------------------------------------* 
+19547      %em_getactionstatus(emlib =EMWS1, nodeid=Reg);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19548      %let em_Train = N;
+19549      %let em_Score = N;
+19550      %let em_Report = N;
+19551      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Reg" has already run. 
+Node "Reg" succeeded. 
+19552      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19553      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19554      put '<Node Id="Reg" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Reg" Event="Complete" Pid="11268" Gridid=""/>';
+19555      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 55.
+      The maximum record length was 55.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+19556      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19557      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19558      put '<Node Id="Reg2" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Reg2" Event="Run" Pid="11268" Gridid=""/>';
+19559      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+19560      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Reg2 : Beginning update before running 
+* datetime : 09MAR2024:14:39:15 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Reg2_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Reg2\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19580      %let _HPDMGRIDHOST=;
+19581      %let _HPDMGRIDINSTALLLOC=;
+19582      %let _HPDMGRIDDATASERVER=;
+19583      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Reg2 : End update 
+* datetime : 09MAR2024:14:39:16 
+* 
+*------------------------------------------------------------* 
+19584      %em_getactionstatus(emlib =EMWS1, nodeid=Reg2);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19585      %let em_Train = N;
+19586      %let em_Score = N;
+19587      %let em_Report = N;
+19588      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.06 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Reg2" has already run. 
+Node "Reg2" succeeded. 
+19589      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19590      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19591      put '<Node Id="Reg2" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Reg2" Event="Complete" Pid="11268" Gridid=""/>';
+19592      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+19593      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19594      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19595      put '<Node Id="Reg3" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Reg3" Event="Run" Pid="11268" Gridid=""/>';
+19596      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+19597      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Reg3 : Beginning update before running 
+* datetime : 09MAR2024:14:39:17 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Reg3_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Reg3\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19617      %let _HPDMGRIDHOST=;
+19618      %let _HPDMGRIDINSTALLLOC=;
+19619      %let _HPDMGRIDDATASERVER=;
+19620      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Reg3 : End update 
+* datetime : 09MAR2024:14:39:17 
+* 
+*------------------------------------------------------------* 
+19621      %em_getactionstatus(emlib =EMWS1, nodeid=Reg3);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19622      %let em_Train = N;
+19623      %let em_Score = N;
+19624      %let em_Report = N;
+19625      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Reg3" has already run. 
+Node "Reg3" succeeded. 
+19626      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19627      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19628      put '<Node Id="Reg3" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Reg3" Event="Complete" Pid="11268" Gridid=""/>';
+19629      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP2" 
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+19630      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19631      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19632      put '<Node Id="Reg4" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Reg4" Event="Run" Pid="11268" Gridid=""/>';
+19633      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+19634      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Reg4 : Beginning update before running 
+* datetime : 09MAR2024:14:39:18 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Reg4_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Part_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Reg4\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19654      %let _HPDMGRIDHOST=;
+19655      %let _HPDMGRIDINSTALLLOC=;
+19656      %let _HPDMGRIDDATASERVER=;
+19657      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Reg4 : End update 
+* datetime : 09MAR2024:14:39:19 
+* 
+*------------------------------------------------------------* 
+19658      %em_getactionstatus(emlib =EMWS1, nodeid=Reg4);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19659      %let em_Train = N;
+19660      %let em_Score = N;
+19661      %let em_Report = N;
+19662      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.04 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Reg4" has already run. 
+Node "Reg4" succeeded. 
+19663      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19664      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19665      put '<Node Id="Reg4" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Reg4" Event="Complete" Pid="11268" Gridid=""/>';
+19666      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+traverser_readyNode_note 
+19667      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19668      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19669      put '<Node Id="MdlComp4" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="MdlComp4" Event="Run" Pid="11268" Gridid=""/>';
+19670      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 55.
+      The maximum record length was 55.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+19671      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* MdlComp4 : Beginning update before running 
+* datetime : 09MAR2024:14:39:20 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.MdlComp4_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT export needupdate;
+MPRINT(EM_DIAGRAM):   set EMWS1.Neural7_exportSet EMWS1.Neural4_exportSet EMWS1.Neural2_exportSet EMWS1.Neural_exportSet ;
+MPRINT(EM_DIAGRAM):   where EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   drop export needupdate;
+MPRINT(EM_DIAGRAM):   port = upcase(trim(NODELABEL)!!'_'!!left(NODEPORT));
+MPRINT(EM_DIAGRAM):   if port = upcase("NEURAL_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL_ESTIMATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL2_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL2_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL2_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL2_ESTIMATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL4_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL4_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL4_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL4_ESTIMATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL7_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL7_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL7_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("NEURAL7_ESTIMATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else USE="Y";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc sql;
+MPRINT(EM_DIAGRAM):   create view work._base3N6G8WN as select * from WORK.M09RD5IN order by PORT;
+MPRINT(EM_DIAGRAM):   create view work._comp3N6G8WN as select * from WORK.M3VYJI4L order by PORT;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    proc compare data=work._base3N6G8WN compare=work._comp3N6G8WN out=WORK._DIFF1JXL9JG noprint outnoequal outbase outcomp outdiff;
+MPRINT(EM_DIAGRAM):   id PORT;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp4\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19728      %let _HPDMGRIDHOST=;
+19729      %let _HPDMGRIDINSTALLLOC=;
+19730      %let _HPDMGRIDDATASERVER=;
+19731      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* MdlComp4 : End update 
+* datetime : 09MAR2024:14:39:21 
+* 
+*------------------------------------------------------------* 
+19732      %em_getactionstatus(emlib =EMWS1, nodeid=MdlComp4);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19733      %let em_Train = N;
+19734      %let em_Score = N;
+19735      %let em_Report = N;
+19736      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.04 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "MdlComp4" has already run. 
+Node "MdlComp4" succeeded. 
+19737      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19738      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19739      put '<Node Id="MdlComp4" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="MdlComp4" Event="Complete" Pid="11268" Gridid=""/>';
+19740      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 60.
+      The maximum record length was 60.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+traverser_readyNode_note 
+19741      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19742      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19743      put '<Node Id="MdlComp" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="MdlComp" Event="Run" Pid="11268" Gridid=""/>';
+19744      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 54.
+      The maximum record length was 54.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+19745      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* MdlComp : Beginning update before running 
+* datetime : 09MAR2024:14:39:22 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.MdlComp_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT export needupdate;
+MPRINT(EM_DIAGRAM):   set EMWS1.Tree_exportSet EMWS1.Tree2_exportSet EMWS1.Tree3_exportSet EMWS1.Tree4_exportSet ;
+MPRINT(EM_DIAGRAM):   where EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   drop export needupdate;
+MPRINT(EM_DIAGRAM):   port = upcase(trim(NODELABEL)!!'_'!!left(NODEPORT));
+MPRINT(EM_DIAGRAM):   if port = upcase("TREE4_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE4_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE4_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE4_TREE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE3_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE3_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE3_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE3_TREE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE2_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE2_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE2_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE2_TREE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("TREE_TREE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else USE="Y";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc sql;
+MPRINT(EM_DIAGRAM):   create view work._base3W0ZAWB as select * from WORK.M15EUEWM order by PORT;
+MPRINT(EM_DIAGRAM):   create view work._comp3W0ZAWB as select * from WORK.M1LUAAZW order by PORT;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    proc compare data=work._base3W0ZAWB compare=work._comp3W0ZAWB out=WORK._DIFF148IXJP noprint outnoequal outbase outcomp outdiff;
+MPRINT(EM_DIAGRAM):   id PORT;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19802      %let _HPDMGRIDHOST=;
+19803      %let _HPDMGRIDINSTALLLOC=;
+19804      %let _HPDMGRIDDATASERVER=;
+19805      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* MdlComp : End update 
+* datetime : 09MAR2024:14:39:23 
+* 
+*------------------------------------------------------------* 
+19806      %em_getactionstatus(emlib =EMWS1, nodeid=MdlComp);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19807      %let em_Train = N;
+19808      %let em_Score = N;
+19809      %let em_Report = N;
+19810      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "MdlComp" has already run. 
+Node "MdlComp" succeeded. 
+19811      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19812      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19813      put '<Node Id="MdlComp" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="MdlComp" Event="Complete" Pid="11268" Gridid=""/>';
+19814      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 59.
+      The maximum record length was 59.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: WaitingNode "MDLCOMP3" 
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+19815      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19816      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19817      put '<Node Id="MdlComp2" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="MdlComp2" Event="Run" Pid="11268" Gridid=""/>';
+19818      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 55.
+      The maximum record length was 55.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+19819      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* MdlComp2 : Beginning update before running 
+* datetime : 09MAR2024:14:39:24 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.MdlComp2_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT export needupdate;
+MPRINT(EM_DIAGRAM):   set EMWS1.Reg_exportSet EMWS1.Reg2_exportSet EMWS1.Reg3_exportSet EMWS1.Reg4_exportSet ;
+MPRINT(EM_DIAGRAM):   where EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   drop export needupdate;
+MPRINT(EM_DIAGRAM):   port = upcase(trim(NODELABEL)!!'_'!!left(NODEPORT));
+MPRINT(EM_DIAGRAM):   if port = upcase("REG4_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG4_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG4_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG4_ESTIMATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG3_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG3_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG3_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG3_ESTIMATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG2_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG2_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG2_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG2_ESTIMATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("REG_ESTIMATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else USE="Y";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc sql;
+MPRINT(EM_DIAGRAM):   create view work._base1XX0ZQ7 as select * from WORK.M1HWDJ4M order by PORT;
+MPRINT(EM_DIAGRAM):   create view work._comp1XX0ZQ7 as select * from WORK.M1XJ03HE order by PORT;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    proc compare data=work._base1XX0ZQ7 compare=work._comp1XX0ZQ7 out=WORK._DIFF112C28L noprint outnoequal outbase outcomp outdiff;
+MPRINT(EM_DIAGRAM):   id PORT;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp2\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19876      %let _HPDMGRIDHOST=;
+19877      %let _HPDMGRIDINSTALLLOC=;
+19878      %let _HPDMGRIDDATASERVER=;
+19879      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* MdlComp2 : End update 
+* datetime : 09MAR2024:14:39:25 
+* 
+*------------------------------------------------------------* 
+19880      %em_getactionstatus(emlib =EMWS1, nodeid=MdlComp2);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19881      %let em_Train = N;
+19882      %let em_Score = N;
+19883      %let em_Report = N;
+19884      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "MdlComp2" has already run. 
+Node "MdlComp2" succeeded. 
+19885      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19886      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19887      put '<Node Id="MdlComp2" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="MdlComp2" Event="Complete" Pid="11268" Gridid=""/>';
+19888      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 60.
+      The maximum record length was 60.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "SCORE" 
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+19889      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19890      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19891      put '<Node Id="MdlComp3" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="MdlComp3" Event="Run" Pid="11268" Gridid=""/>';
+19892      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 55.
+      The maximum record length was 55.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+19893      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* MdlComp3 : Beginning update before running 
+* datetime : 09MAR2024:14:39:26 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.MdlComp3_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT export needupdate;
+MPRINT(EM_DIAGRAM):   set EMWS1.MdlComp2_exportSet EMWS1.MdlComp_exportSet EMWS1.MdlComp4_exportSet ;
+MPRINT(EM_DIAGRAM):   where EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   drop export needupdate;
+MPRINT(EM_DIAGRAM):   port = upcase(trim(NODELABEL)!!'_'!!left(NODEPORT));
+MPRINT(EM_DIAGRAM):   if port = upcase("MDLCOMP4_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP4_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP4_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP4_RANK") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP4_SCOREDIST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP4_REPORTFIT") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP_RANK") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP_SCOREDIST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP_REPORTFIT") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP2_TRAIN") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP2_VALIDATE") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP2_TEST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP2_RANK") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP2_SCOREDIST") then USE="Y";
+MPRINT(EM_DIAGRAM):   else if port = upcase("MDLCOMP2_REPORTFIT") then USE="Y";
+MPRINT(EM_DIAGRAM):   else USE="Y";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc sql;
+MPRINT(EM_DIAGRAM):   create view work._base2VD81FW as select * from WORK.M30QU3YT order by PORT;
+MPRINT(EM_DIAGRAM):   create view work._comp2VD81FW as select * from WORK.M2FJQFC0 order by PORT;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    proc compare data=work._base2VD81FW compare=work._comp2VD81FW out=WORK._DIFF1IOF89F noprint outnoequal outbase outcomp outdiff;
+MPRINT(EM_DIAGRAM):   id PORT;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\MdlComp3\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19953      %let _HPDMGRIDHOST=;
+19954      %let _HPDMGRIDINSTALLLOC=;
+19955      %let _HPDMGRIDDATASERVER=;
+19956      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* MdlComp3 : End update 
+* datetime : 09MAR2024:14:39:27 
+* 
+*------------------------------------------------------------* 
+19957      %em_getactionstatus(emlib =EMWS1, nodeid=MdlComp3);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19958      %let em_Train = N;
+19959      %let em_Score = N;
+19960      %let em_Report = N;
+19961      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.04 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "MdlComp3" has already run. 
+Node "MdlComp3" succeeded. 
+19962      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19963      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19964      put '<Node Id="MdlComp3" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="MdlComp3" Event="Complete" Pid="11268" Gridid=""/>';
+19965      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 60.
+      The maximum record length was 60.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "REPORT" 
+traverser_readyNode_note 
+19966      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+19967      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+19968      put '<Node Id="Score" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Score" Event="Run" Pid="11268" Gridid=""/>';
+19969      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 52.
+      The maximum record length was 52.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+19970      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Score : Beginning update before running 
+* datetime : 09MAR2024:14:39:28 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Score_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.MdlComp3_exportSet EMWS1.Ids6_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" "SCORE" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Score\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+19992      %let _HPDMGRIDHOST=;
+19993      %let _HPDMGRIDINSTALLLOC=;
+19994      %let _HPDMGRIDDATASERVER=;
+19995      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Score : End update 
+* datetime : 09MAR2024:14:39:28 
+* 
+*------------------------------------------------------------* 
+19996      %em_getactionstatus(emlib =EMWS1, nodeid=Score);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+19997      %let em_Train = N;
+19998      %let em_Score = N;
+19999      %let em_Report = N;
+20000      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.04 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Score" has already run. 
+Node "Score" succeeded. 
+20001      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+20002      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+20003      put '<Node Id="Score" Event="Complete" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Score" Event="Complete" Pid="11268" Gridid=""/>';
+20004      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 57.
+      The maximum record length was 57.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+traverser_readyNode_note 
+20005      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+20006      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+20007      put '<Node Id="Report" Event="Run" Pid="11268" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Report" Event="Run" Pid="11268" Gridid=""/>';
+20008      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=nutvdiwin104-15,
+      Local Host IP addr=fe80::3b7f:6ac4:278f:fc1d%4,
+      Peer Hostname Name=nutvdiwin104-15.uisad.uis.edu,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=62245,Lrecl=32767,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 53.
+      The maximum record length was 53.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+20009      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Report : Beginning update before running 
+* datetime : 09MAR2024:14:39:29 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Report_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Score_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" "SCORE" "TRANSACTION" "DOCUMENT" "RULES" "REPORTFIT" "RANK" "SCOREDIST" "ESTIMATE" "TREE" "CLUSSTAT" "CLUSMEAN" "VARMAP" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+NOTE: This SAS session is using a registry in WORK.  All changes will be lost at the end of this session.
+20040      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+20041      set EMWS1.Score_CMeta_TRAIN (obs=1);
+MPRINT(EM_DIAGRAM):   set EMWS1.Score_CMeta_TRAIN (obs=1);
+20042      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 1 observations read from the data set EMWS1.SCORE_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+20043      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+20044      set EMWS1.Score_CMeta_TRAIN (obs=1);
+MPRINT(EM_DIAGRAM):   set EMWS1.Score_CMeta_TRAIN (obs=1);
+20045      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 1 observations read from the data set EMWS1.SCORE_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+20046      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+20047      set EMWS1.Score_CMeta_TRAIN (obs=1);
+MPRINT(EM_DIAGRAM):   set EMWS1.Score_CMeta_TRAIN (obs=1);
+20048      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 1 observations read from the data set EMWS1.SCORE_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+20049      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+20050      * Report: Update Variables Set;
+MPRINT(EM_DIAGRAM):   * Report: Update Variables Set;
+20051      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+20052      data EMWS1.Report_VariableSet;
+MPRINT(EM_DIAGRAM):    data EMWS1.Report_VariableSet;
+20053      length USE $1;
+MPRINT(EM_DIAGRAM):   length USE $1;
+20054      label USE = "Use";
+MPRINT(EM_DIAGRAM):   label USE = "Use";
+20055      length REPORT $1;
+MPRINT(EM_DIAGRAM):   length REPORT $1;
+20056      label REPORT = "Report";
+MPRINT(EM_DIAGRAM):   label REPORT = "Report";
+20057      set EMWS1.Score_CMeta_TRAIN;
+MPRINT(EM_DIAGRAM):   set EMWS1.Score_CMeta_TRAIN;
+20058      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Variable USE is uninitialized.
+NOTE: There were 46 observations read from the data set EMWS1.SCORE_CMETA_TRAIN.
+NOTE: The data set EMWS1.REPORT_VARIABLESET has 46 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.06 seconds
+      
+
+20059      * Report: End of Update Variables Set;
+MPRINT(EM_DIAGRAM):    * Report: End of Update Variables Set;
+20060      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Report: Generation of macros and macro variables;
+MPRINT(EM_DIAGRAM):   * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Report: EM Macro Variables and Macros;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * System Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   length string $2000;
+MPRINT(EM_DIAGRAM):   string = 'SV.PredictiveAnalysis';
+MPRINT(EM_DIAGRAM):   call symput('EM_PROJECTNAME', trim(string));
+MPRINT(EM_DIAGRAM):   string = 'Zeta.Predective';
+MPRINT(EM_DIAGRAM):   call symput('EM_WSNAME', trim(string));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Properties Macro Variables ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Files Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Import Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Export Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Decision Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Statement Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   set EMWS1.Tree4_EMINFO;
+MPRINT(EM_DIAGRAM):   where key in('HPDMSAMPLE', 'IDSTABLE');
+MPRINT(EM_DIAGRAM):   if key = 'HPDMSAMPLE' then call symput('_ForceGrid', '1');
+MPRINT(EM_DIAGRAM):   else call symput('_IDS_TABLE', DATA);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+MPRINT(HPDM_ISGRID):  ;
+MPRINT(HPDM_PERFORMANCE):  ;
+PERFORMANCE  DETAILS
+MPRINT(EM_DIAGRAM):  ;
+20273      %let emexceptionString =;
+20274      %let EMEXCEPTIONSTRING=;
+20275      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+20276      * UPDATE: Report;
+MPRINT(EM_DIAGRAM):   * UPDATE: Report;
+20277      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+20278      %let EM_ACTION = UPDATE;
+20279      %let syscc = 0;
+20280      %macro main;
+20281      
+20282        filename temp catalog 'sashelp.emutil.reporter_macros.source';
+20283        %include temp;
+20284        filename temp;
+20285      
+20286        %setProperties;
+20287      
+20288        %if %upcase(&EM_ACTION) = CREATE %then %do;
+20289          filename temp catalog 'sashelp.emutil.reporter_create.source';
+20290          %include temp;
+20291          filename temp;
+20292      
+20293          %create;
+20294        %end;
+20295      
+20296         %else
+20297         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+20298      
+20299             filename temp catalog 'sashelp.emutil.reporter_train.source';
+20300             %include temp;
+20301             filename temp;
+20302             %train;
+20303         %end;
+20304      
+20305         %doendm:
+20306      %mend main;
+20307      
+20308      %main;
+MPRINT(EM_DIAGRAM):    
+MPRINT(MAIN):   filename temp catalog 'sashelp.emutil.reporter_macros.source';
+NOTE: %INCLUDE (level 1) file TEMP is file SASHELP.EMUTIL.REPORTER_MACROS.SOURCE.
+20311     +%macro SetProperties;
+20313     +     /* reporting options */
+20314     +     %em_checkmacro(name=EM_PROPERTY_FORMAT,         value=PDF , global=Y);
+20315     +     %em_checkmacro(name=EM_PROPERTY_NODES ,         value=PATH, global=Y);
+20316     +     %em_checkmacro(name=EM_PROPERTY_STYLE ,         value=DEFAULT, global=Y);
+20317     +     %em_checkmacro(name=EM_PROPERTY_SHOWALL,        value=N, global=Y);
+20319     +     %em_checkmacro(name=EM_PROPERTY_SUMMARIZATION,  value=Y, global=Y);
+20320     +     %em_checkmacro(name=EM_PROPERTY_VARRANKING,     value=Y, global=Y);
+20321     +     %em_checkmacro(name=EM_PROPERTY_CLASSIFICATION, value=Y, global=Y);
+20322     +     %em_checkmacro(name=EM_PROPERTY_CROSSTABS,      value=Y, global=Y);
+20323     +     %em_checkmacro(name=EM_PROPERTY_LIFTCHART,      value=Y, global=Y);
+20324     +     %em_checkmacro(name=EM_PROPERTY_FITSTAT,        value=Y, global=Y);
+20325     +     %em_checkmacro(name=EM_PROPERTY_COMPAREMDL,     value=Y, global=Y);
+20327     +     %em_checkmacro(name=EM_PROPERTY_BASICOUTPUT,    value=N, global=Y);
+20329     +    %em_checkmacro(name=EM_PROPERTY_textfont,   value=Arial, global=Y);
+20330     +    %em_checkmacro(name=EM_PROPERTY_headersize, value=8, global=Y);
+20331     +    %em_checkmacro(name=EM_PROPERTY_textsize,   value=6, global=Y);
+20332     +    %em_checkmacro(name=EM_PROPERTY_titlesize,  value=10, global=Y);
+20334     +%mend SetProperties;
+NOTE: %INCLUDE (level 1) ending.
+MPRINT(MAIN):   filename temp;
+NOTE: Fileref TEMP has been deassigned.
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(SETPROPERTIES):  ;
+MPRINT(MAIN):  ;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * End UPDATE: Report;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+20335      *------------------------------------------------------------*;
+20336      * End UPDATE: Report;
+20337      *------------------------------------------------------------*;
+20338      
+
+20339      %em_delMacro;
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_DIAGRAM):  ;
+
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Report\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+20341      %let _HPDMGRIDHOST=;
+20342      %let _HPDMGRIDINSTALLLOC=;
+20343      %let _HPDMGRIDDATASERVER=;
+20344      %hpdm_gridSetOPtions;
+MPRINT(EM_DIAGRAM):   
+MPRINT(HPDM_GRIDSETOPTIONS):   data _null_;
+MPRINT(HPDM_GRIDSETOPTIONS):   length optionString string $2000;
+MPRINT(HPDM_GRIDSETOPTIONS):   optionString = reverse(getoption('SET'));
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDHOST'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   host = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDHOST', strip(host));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDINSTALLLOC'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   install = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDINSTALLLOC', strip(install));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   index = index(optionString, reverse('GRIDDATASERVER'));
+MPRINT(HPDM_GRIDSETOPTIONS):   if index then do;
+MPRINT(HPDM_GRIDSETOPTIONS):   string = reverse(substr(optionString, 1, index-4));
+MPRINT(HPDM_GRIDSETOPTIONS):   server = '"'!!strip(tranwrd(scan(string, 1, ']'), '"', ''))!!'"';
+MPRINT(HPDM_GRIDSETOPTIONS):   call symput('_HPDMGRIDDATASERVER', strip(server));
+MPRINT(HPDM_GRIDSETOPTIONS):   end;
+MPRINT(HPDM_GRIDSETOPTIONS):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):  ;
+
+*------------------------------------------------------------* 
+* 
+* Report : End update 
+* datetime : 09MAR2024:14:39:31 
+* 
+*------------------------------------------------------------* 
+20345      %em_getactionstatus(emlib =EMWS1, nodeid=Report);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+20346      %let em_Train = Y;
+20347      %let em_Report = Y;
+20348      %let em_Score = Y;
+20349      %let em_Run = Y;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+20350      %let emloopmode =;
+20351      %let emloopnumber =0;
+20352      %let emloopId =Report;
+*------------------------------------------------------------* 
+* 
+* Report : Running 
+* datetime : 09MAR2024:14:39:31 
+* 
+*------------------------------------------------------------* 
+20353      %let SYSCC =0;
+20354      %let EMGROUPMODE =;
+20355      %let EMGROUPID =;
+MPRINT(EM_DIAGRAM):      filename temp catalog 'sashelp.emutil.em_vardist.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_classdist.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_checksetinit.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_checkerror.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_odsliston.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_odslistoff.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_getvarname.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emassmt.em_assess.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):    filename L1BTGE8J "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Report\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto log=L1BTGE8J new;
+MPRINT(EM_DIAGRAM):   run;

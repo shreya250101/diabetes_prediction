@@ -1,0 +1,195 @@
+*------------------------------------------------------------*
+User:                shre2
+Date:                March 04, 2024
+Time:                12:37:23
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+           Measurement    Frequency
+ Role         Level         Count
+ 
+SEGMENT      NOMINAL          2
+TARGET       NOMINAL          1
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Score Input Variables
+ 
+                                                                                          Used in
+                                                                              Variable     Score
+Variable Name           Role     Creator    Comment           Label            Hidden      Code
+ 
+BMI                    INPUT                                                     N           Y
+Diabetes_Prediction    TARGET                          Diabetes Prediction       N           N
+GenHlth                INPUT                                                     N           Y
+HighBP                 INPUT                                                     N           Y
+HighChol               INPUT                                                     N           Y
+ 
+ 
+ 
+ 
+Score Output Variables
+ 
+Variable Name                       Function          Creator    Label
+ 
+EM_CLASSIFICATION                   CLASSIFICATION     Score     Prediction for Diabetes_Prediction
+EM_EVENTPROBABILITY                 PREDICT            Score     Probability for level PREDIABETES of Diabetes_Prediction
+EM_PROBABILITY                      PREDICT            Score     Probability of Classification
+EM_SEGMENT                          TRANSFORM          Score     Node
+I_Diabetes_Prediction               CLASSIFICATION     Tree4     Into: Diabetes_Prediction
+P_Diabetes_Predictiondiabetes       PREDICT            Tree4     Predicted: Diabetes_Prediction=diabetes
+P_Diabetes_Predictionno_diabetes    PREDICT            Tree4     Predicted: Diabetes_Prediction=no diabetes
+P_Diabetes_Predictionprediabetes    PREDICT            Tree4     Predicted: Diabetes_Prediction=prediabetes
+Q_Diabetes_Predictiondiabetes       TRANSFORM          Tree4     Unadjusted P: Diabetes_Prediction=diabetes
+Q_Diabetes_Predictionno_diabetes    TRANSFORM          Tree4     Unadjusted P: Diabetes_Prediction=no diabetes
+Q_Diabetes_Predictionprediabetes    TRANSFORM          Tree4     Unadjusted P: Diabetes_Prediction=prediabetes
+U_Diabetes_Prediction               CLASSIFICATION     Tree4     Unnormalized Into: Diabetes_Prediction
+V_Diabetes_Predictiondiabetes       PREDICT            Tree4     Validated: Diabetes_Prediction=diabetes
+V_Diabetes_Predictionno_diabetes    PREDICT            Tree4     Validated: Diabetes_Prediction=no diabetes
+V_Diabetes_Predictionprediabetes    PREDICT            Tree4     Validated: Diabetes_Prediction=prediabetes
+_NODE_                              TRANSFORM          Tree4     Node
+_WARN_                              ASSESS             Tree4     Warnings
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Class Variable Summary Statistics
+ 
+Data Role=TEST Output Type=CLASSIFICATION
+ 
+                         Numeric     Formatted     Frequency
+      Variable            Value        Value         Count      Percent
+ 
+I_Diabetes_Prediction       .       DIABETES          1600       2.6589
+I_Diabetes_Prediction       .       NO DIABETES      58576      97.3411
+ 
+ 
+Data Role=TEST Output Type=SEGMENT
+ 
+            Numeric    Formatted    Frequency
+Variable     Value       Value        Count      Percent
+ 
+ _NODE_         2         2           32165      53.4515
+ _NODE_         3         3           17845      29.6547
+ _NODE_        10         10           3496       5.8096
+ _NODE_        23         23            829       1.3776
+ _NODE_        24         24           3504       5.8229
+ _NODE_        64         64           1600       2.6589
+ _NODE_        65         65            737       1.2247
+ 
+ 
+Data Role=TRAIN Output Type=CLASSIFICATION
+ 
+                         Numeric     Formatted     Frequency
+      Variable            Value        Value         Count      Percent
+ 
+I_Diabetes_Prediction       .       DIABETES          2136       2.6624
+I_Diabetes_Prediction       .       NO DIABETES      78092      97.3376
+ 
+ 
+Data Role=TRAIN Output Type=SEGMENT
+ 
+            Numeric    Formatted    Frequency
+Variable     Value       Value        Count      Percent
+ 
+ _NODE_         2         2           42730      53.2607
+ _NODE_         3         3           23897      29.7864
+ _NODE_        10         10           4557       5.6801
+ _NODE_        23         23           1201       1.4970
+ _NODE_        24         24           4735       5.9019
+ _NODE_        64         64           2136       2.6624
+ _NODE_        65         65            972       1.2115
+ 
+ 
+Data Role=VALIDATE Output Type=CLASSIFICATION
+ 
+                         Numeric     Formatted     Frequency
+      Variable            Value        Value         Count      Percent
+ 
+I_Diabetes_Prediction       .       DIABETES          1640       2.7257
+I_Diabetes_Prediction       .       NO DIABETES      58529      97.2743
+ 
+ 
+Data Role=VALIDATE Output Type=SEGMENT
+ 
+            Numeric    Formatted    Frequency
+Variable     Value       Value        Count      Percent
+ 
+ _NODE_         2         2           32095      53.3414
+ _NODE_         3         3           17939      29.8144
+ _NODE_        10         10           3461       5.7521
+ _NODE_        23         23            835       1.3878
+ _NODE_        24         24           3477       5.7787
+ _NODE_        64         64           1640       2.7257
+ _NODE_        65         65            722       1.2000
+ 
+ 
+ 
+ 
+Interval Variable Summary Statistics
+ 
+Variable Name=P_Diabetes_Predictiondiabetes
+ 
+Statistics    Label                    TRAIN    VALIDATE        TEST
+ 
+  MEAN        Mean                      0.14        0.14        0.14
+  STD         Standard Deviation        0.11        0.11        0.11
+  N           Non Missing           80228.00    60169.00    60176.00
+  MIN         Minimum                   0.06        0.06        0.06
+  P25         25th Percentile           0.06        0.06        0.06
+  MEDIAN      Median                    0.06        0.06        0.06
+  P75         75th Percentile           0.18        0.18        0.18
+  MAX         Maximum                   0.56        0.56        0.56
+ 
+ 
+Variable Name=P_Diabetes_Predictionno_diabetes
+ 
+Statistics    Label                    TRAIN    VALIDATE        TEST
+ 
+  MEAN        Mean                      0.85        0.85        0.85
+  STD         Standard Deviation        0.12        0.12        0.12
+  N           Non Missing           80228.00    60169.00    60176.00
+  MIN         Minimum                   0.40        0.40        0.40
+  P25         25th Percentile           0.80        0.80        0.80
+  MEDIAN      Median                    0.93        0.93        0.93
+  P75         75th Percentile           0.93        0.93        0.93
+  MAX         Maximum                   0.93        0.93        0.93
+ 
+ 
+Variable Name=P_Diabetes_Predictionprediabetes
+ 
+Statistics    Label                    TRAIN    VALIDATE        TEST
+ 
+  MEAN        Mean                      0.02        0.02        0.02
+  STD         Standard Deviation        0.01        0.01        0.01
+  N           Non Missing           80228.00    60169.00    60176.00
+  MIN         Minimum                   0.01        0.01        0.01
+  P25         25th Percentile           0.01        0.01        0.01
+  MEDIAN      Median                    0.01        0.01        0.01
+  P75         75th Percentile           0.02        0.02        0.02
+  MAX         Maximum                   0.05        0.05        0.05

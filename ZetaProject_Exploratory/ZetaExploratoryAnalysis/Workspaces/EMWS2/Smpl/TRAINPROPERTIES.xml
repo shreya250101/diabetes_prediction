@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  Method="DEFAULT" SizeType="PERCENT" SizePercent="90" SizeObs="." RandomSeed="12345"
+ Alpha="0.01" Pvalue="0.01" AdjustFreq="N" FreqMiss="N" FreqCount="N" StratifyCriterion="PROPORTIONAL"
+ MinStrataSize="5" IgnoreSmallStrata="N" ClusterMethod="RANDOM" LevelProportion="100"
+ LevelSampleProportion="50" LevelSelection="EVENT" OutputType="DATA" IntervalDistribution="Y"
+ ClassDistribution="Y" ForceRun="N" RunAction="Train" Component="Sample" RawCreateTime="2025111683.5"
+ CreateTime="03MAR2024:19:01:23" RunId="854b84b1-402f-452e-ae83-4abee89d9975" RawLastTimeRun="2025115529.4"
+ RawRunTime="14.204999924" LastTimeRun="03MAR2024:20:05:29" RunTime="0 Hr. 0 Min. 14.20 Sec."
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

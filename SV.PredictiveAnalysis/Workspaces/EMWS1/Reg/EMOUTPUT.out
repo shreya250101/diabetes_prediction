@@ -1,0 +1,738 @@
+*------------------------------------------------------------*
+User:                shre2
+Date:                March 04, 2024
+Time:                12:22:34
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      BINARY            14
+INPUT      INTERVAL           2
+INPUT      ORDINAL            5
+TARGET     NOMINAL            1
+ 
+ 
+ 
+ 
+Model Events
+ 
+                                                     Number
+                                      Measurement      of
+      Target              Event          Level       Levels      Order              Label
+ 
+Diabetes_Prediction    PREDIABETES      NOMINAL         3      Descending    Diabetes Prediction
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type         Variable                            Label
+ 
+TARGET       Diabetes_Prediction                 Diabetes Prediction
+PREDICTED    P_Diabetes_Predictionprediabetes    Predicted: Diabetes_Prediction=prediabetes
+RESIDUAL     R_Diabetes_Predictionprediabetes    Residual: Diabetes_Prediction=prediabetes
+PREDICTED    P_Diabetes_Predictionno_diabetes    Predicted: Diabetes_Prediction=no diabetes
+RESIDUAL     R_Diabetes_Predictionno_diabetes    Residual: Diabetes_Prediction=no diabetes
+PREDICTED    P_Diabetes_Predictiondiabetes       Predicted: Diabetes_Prediction=diabetes
+RESIDUAL     R_Diabetes_Predictiondiabetes       Residual: Diabetes_Prediction=diabetes
+FROM         F_Diabetes_Prediction               From: Diabetes_Prediction
+INTO         I_Diabetes_Prediction               Into: Diabetes_Prediction
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+                           Model Information
+ 
+Training Data Set              WORK.EM_DMREG.VIEW
+DMDB Catalog                   WORK.REG_DMDB
+Target Variable                Diabetes_Prediction (Diabetes Prediction)
+Target Measurement Level       Nominal
+Number of Target Categories    3
+Error                          MBernoulli
+Link Function                  Logit
+Number of Model Parameters     186
+Number of Observations         80228
+ 
+ 
+            Target Profile
+ 
+ Ordered     Diabetes_           Total
+   Value     Prediction      Frequency
+ 
+       1     prediabetes          1456
+       2     no diabetes         67815
+       3     diabetes            10957
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Dual Quasi-Newton Optimization
+ 
+Dual Broyden - Fletcher - Goldfarb - Shanno Update (DBFGS)
+ 
+Parameter Estimates             186
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                 Objective     Max Abs                Slope of
+                     Function         Active        Objective     Function    Gradient       Step       Search
+Iter     Restarts       Calls    Constraints         Function       Change     Element       Size    Direction
+ 
+   1            0           5              0            32980       6070.9      3864.9      0.965       -14030
+   2            0           7              0            32105        874.9      1246.5      1.000      -2702.7
+   3            0           9              0            31924        180.4       518.7      1.000       -449.0
+   4            0          13              0            31820        104.5       286.1      2.048       -167.8
+   5            0          16              0            31757      62.9579       216.4      0.266       -496.5
+   6            0          18              0            31705      51.8888       123.1      0.590       -266.9
+   7            0          23              0            31696       8.9125       102.5      0.582      -63.362
+   8            0          25              0            31685      11.0741     64.0483      0.262      -84.882
+   9            0          27              0            31676       8.5063     50.5316      0.354      -78.216
+  10            0          32              0            31673       3.1566     34.7364      0.696      -10.874
+  11            0          35              0            31672       1.2586     18.1865      0.575       -5.285
+  12            0          38              0            31672       0.4713      8.0781      0.525       -1.591
+  13            0          41              0            31671       0.0793      3.0597      0.426       -0.344
+  14            0          44              0            31671       0.0442      2.1375      0.619       -0.142
+  15            0          47              0            31671       0.0257      2.3294      0.852      -0.0597
+  16            0          49              0            31671       0.0205      1.7245      0.702      -0.0914
+  17            0          51              0            31671       0.0299      1.1581      0.729      -0.0704
+  18            0          54              0            31671       0.0177      1.0566      0.557      -0.0644
+  19            0          56              0            31671       0.0167      1.5963      1.078      -0.0411
+ 
+                                            Optimization Results
+ 
+Iterations                                         19  Function Calls                                     58
+Gradient Calls                                     25  Active Constraints                                  0
+Objective Function                       31671.309388  Max Abs Gradient Element                 1.5963484652
+Slope of Search Direction                -0.041061766
+ 
+Convergence criterion (FCONV=0.0001) satisfied.
+ 
+NOTE: At least one element of the gradient is greater than 1e-3.
+ 
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63342.619     14758.4991      184         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2      794.3066        <.0001
+AnyHealthcare              2        0.5363        0.7648
+BMI                        2     1767.8766        <.0001
+CholCheck                  2       97.4488        <.0001
+DiffWalk                   2        3.7692        0.1519
+Education                 10       38.9964        <.0001
+Fruits                     2        3.0923        0.2131
+GenHlth                    8     1362.5491        <.0001
+HeartDiseaseorAttack       2       37.6047        <.0001
+HighBP                     2      683.4170        <.0001
+HighChol                   2      647.0663        <.0001
+HvyAlcoholConsump          2      126.0967        <.0001
+Income                    14      100.4647        <.0001
+MentHlth                  59    72083.7701        <.0001
+NoDocbcCost                2       14.5660        0.0007
+PhysActivity               2        4.6529        0.0976
+PhysHlth                  60       56.4625        0.6058
+Sex                        2      116.6397        <.0001
+Smoker                     2        3.2902        0.1930
+Stroke                     2       19.2771        <.0001
+Veggies                    2        0.1589        0.9236
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -2.9222      1.5036          3.78        0.0520                       0.054
+Intercept                           no diabetes     1      6.2656      0.2358        705.82        <.0001                     526.177
+Age                                 prediabetes     1     0.00342      0.0126          0.07        0.7866         0.00575       1.003
+Age                                 no diabetes     1     -0.1375     0.00519        702.72        <.0001         -0.2312       0.872
+AnyHealthcare        0              prediabetes     1      0.0477      0.0685          0.49        0.4861                       1.049
+AnyHealthcare        0              no diabetes     1      0.0133      0.0298          0.20        0.6548                       1.013
+BMI                                 prediabetes     1     -0.0174     0.00491         12.61        0.0004         -0.0538       0.983
+BMI                                 no diabetes     1     -0.0843     0.00205       1688.69        <.0001         -0.2600       0.919
+CholCheck            0              prediabetes     1      0.1354      0.1277          1.12        0.2890                       1.145
+CholCheck            0              no diabetes     1      0.5331      0.0568         88.19        <.0001                       1.704
+DiffWalk             0              prediabetes     1      0.0275      0.0380          0.52        0.4706                       1.028
+DiffWalk             0              no diabetes     1      0.0297      0.0154          3.73        0.0533                       1.030
+Education            1              prediabetes     1     -3.1299      5.2397          0.36        0.5503                       0.044
+Education            1              no diabetes     1      0.2058      0.3497          0.35        0.5563                       1.228
+Education            2              prediabetes     1      0.6466      1.0568          0.37        0.5406                       1.909
+Education            2              no diabetes     1     -0.2301      0.0918          6.28        0.0122                       0.794
+Education            3              prediabetes     1      0.7671      1.0525          0.53        0.4661                       2.153
+Education            3              no diabetes     1    -0.00613      0.0821          0.01        0.9405                       0.994
+Education            4              prediabetes     1      0.6491      1.0494          0.38        0.5362                       1.914
+Education            4              no diabetes     1      0.0575      0.0737          0.61        0.4356                       1.059
+Education            5              prediabetes     1      0.5161      1.0496          0.24        0.6229                       1.676
+Education            5              no diabetes     1     -0.0691      0.0740          0.87        0.3504                       0.933
+Fruits               0              prediabetes     1    -0.00118      0.0302          0.00        0.9688                       0.999
+Fruits               0              no diabetes     1     -0.0207      0.0123          2.84        0.0920                       0.979
+GenHlth              1              prediabetes     1      0.5408      0.1016         28.33        <.0001                       1.717
+GenHlth              1              no diabetes     1      1.1851      0.0477        617.95        <.0001                       3.271
+GenHlth              2              prediabetes     1      0.1546      0.0632          5.98        0.0145                       1.167
+GenHlth              2              no diabetes     1      0.4605      0.0266        298.74        <.0001                       1.585
+GenHlth              3              prediabetes     1     -0.0986      0.0530          3.45        0.0631                       0.906
+GenHlth              3              no diabetes     1     -0.2113      0.0221         91.20        <.0001                       0.810
+GenHlth              4              prediabetes     1     -0.2144      0.0620         11.94        0.0005                       0.807
+GenHlth              4              no diabetes     1     -0.6476      0.0258        630.92        <.0001                       0.523
+HeartDiseaseorAttack 0              prediabetes     1      0.1314      0.0424          9.60        0.0019                       1.140
+HeartDiseaseorAttack 0              no diabetes     1      0.0955      0.0162         34.73        <.0001                       1.100
+HighBP               0              prediabetes     1      0.1712      0.0321         28.47        <.0001                       1.187
+HighBP               0              no diabetes     1      0.3424      0.0132        670.02        <.0001                       1.408
+HighChol             0              prediabetes     1      0.0433      0.0302          2.05        0.1518                       1.044
+HighChol             0              no diabetes     1      0.3000      0.0122        600.20        <.0001                       1.350
+HvyAlcoholConsump    0              prediabetes     1     -0.2114      0.0751          7.93        0.0049                       0.809
+HvyAlcoholConsump    0              no diabetes     1     -0.3759      0.0339        123.20        <.0001                       0.687
+Income               1              prediabetes     1      0.0833      0.1023          0.66        0.4156                       1.087
+Income               1              no diabetes     1     -0.2049      0.0450         20.71        <.0001                       0.815
+Income               2              prediabetes     1     -0.0568      0.0980          0.34        0.5623                       0.945
+Income               2              no diabetes     1     -0.1019      0.0402          6.42        0.0113                       0.903
+Income               3              prediabetes     1     -0.0992      0.0890          1.24        0.2653                       0.906
+Income               3              no diabetes     1     -0.0841      0.0361          5.43        0.0198                       0.919
+Income               4              prediabetes     1     -0.0201      0.0804          0.06        0.8021                       0.980
+Income               4              no diabetes     1     -0.0600      0.0332          3.26        0.0709                       0.942
+Income               5              prediabetes     1     -0.0510      0.0776          0.43        0.5108                       0.950
+Income               5              no diabetes     1      0.0371      0.0312          1.41        0.2352                       1.038
+Income               6              prediabetes     1      0.0331      0.0695          0.23        0.6339                       1.034
+Income               6              no diabetes     1      0.0666      0.0286          5.44        0.0197                       1.069
+Income               7              prediabetes     1      0.1263      0.0699          3.26        0.0710                       1.135
+Income               7              no diabetes     1      0.1144      0.0293         15.23        <.0001                       1.121
+MentHlth             0              prediabetes     1      1.0187      0.8224          1.53        0.2155                       2.770
+MentHlth             0              no diabetes     1     -0.1819      0.1917          0.90        0.3425                       0.834
+MentHlth             1              prediabetes     1      1.4644      0.8362          3.07        0.0799                       4.325
+MentHlth             1              no diabetes     1      0.0627      0.2044          0.09        0.7592                       1.065
+MentHlth             2              prediabetes     1      1.2568      0.8300          2.29        0.1300                       3.514
+MentHlth             2              no diabetes     1     -0.1294      0.1979          0.43        0.5130                       0.879
+MentHlth             3              prediabetes     1      0.9812      0.8393          1.37        0.2424                       2.668
+MentHlth             3              no diabetes     1     -0.1377      0.2022          0.46        0.4959                       0.871
+MentHlth             4              prediabetes     1      1.2150      0.8505          2.04        0.1531                       3.370
+MentHlth             4              no diabetes     1     -0.0834      0.2133          0.15        0.6957                       0.920
+MentHlth             5              prediabetes     1      1.2784      0.8325          2.36        0.1246                       3.591
+MentHlth             5              no diabetes     1     -0.1412      0.1999          0.50        0.4801                       0.868
+MentHlth             6              prediabetes     1      1.2812      0.8923          2.06        0.1511                       3.601
+MentHlth             6              no diabetes     1     -0.3874      0.2498          2.40        0.1210                       0.679
+MentHlth             7              prediabetes     1      1.1875      0.8550          1.93        0.1649                       3.279
+MentHlth             7              no diabetes     1     -0.1263      0.2161          0.34        0.5590                       0.881
+MentHlth             8              prediabetes     1      0.4393      1.0859          0.16        0.6858                       1.552
+MentHlth             8              no diabetes     1     -0.2219      0.2955          0.56        0.4528                       0.801
+MentHlth             9              prediabetes     1      1.7320      1.3809          1.57        0.2098                       5.652
+MentHlth             9              no diabetes     1      0.3370      0.6272          0.29        0.5911                       1.401
+MentHlth             10             prediabetes     1      1.1745      0.8359          1.97        0.1600                       3.236
+MentHlth             10             no diabetes     1     -0.1653      0.2016          0.67        0.4122                       0.848
+MentHlth             11             prediabetes     1      6.6588      5.1692          1.66        0.1977                     779.616
+MentHlth             11             no diabetes     1      4.1491      5.0641          0.67        0.4126                      63.374
+MentHlth             12             prediabetes     1      0.1714      1.2879          0.02        0.8941                       1.187
+MentHlth             12             no diabetes     1     -0.0767      0.3302          0.05        0.8163                       0.926
+MentHlth             13             prediabetes     1     -3.9990     12.4661          0.10        0.7484                       0.018
+MentHlth             13             no diabetes     1     -2.0346      0.7018          8.41        0.0037                       0.131
+MentHlth             14             prediabetes     1      1.4681      0.8726          2.83        0.0925                       4.341
+MentHlth             14             no diabetes     1     -0.3329      0.2396          1.93        0.1647                       0.717
+MentHlth             15             prediabetes     1      1.3232      0.8370          2.50        0.1139                       3.756
+MentHlth             15             no diabetes     1     -0.0150      0.2035          0.01        0.9414                       0.985
+MentHlth             16             prediabetes     1      1.7358      1.3738          1.60        0.2064                       5.673
+MentHlth             16             no diabetes     1      0.4433      0.6013          0.54        0.4610                       1.558
+MentHlth             17             prediabetes     1     -2.6884     12.4185          0.05        0.8286                       0.068
+MentHlth             17             no diabetes     1      0.0975      0.6968          0.02        0.8888                       1.102
+MentHlth             18             prediabetes     1      1.9943      1.3642          2.14        0.1438                       7.347
+MentHlth             18             no diabetes     1      0.4464      0.6131          0.53        0.4666                       1.563
+MentHlth             19             prediabetes     1    -29.3375           .           .           .                   .       0.000
+MentHlth             19             no diabetes     1     -0.5529      1.0826          0.26        0.6096                       0.575
+MentHlth             20             prediabetes     1      1.4830      0.8426          3.10        0.0784                       4.406
+MentHlth             20             no diabetes     1     -0.1475      0.2102          0.49        0.4829                       0.863
+MentHlth             21             prediabetes     1      0.4661      1.2920          0.13        0.7183                       1.594
+MentHlth             21             no diabetes     1     -0.2427      0.3552          0.47        0.4943                       0.784
+MentHlth             22             prediabetes     1      2.9380      1.2318          5.69        0.0171                      18.879
+MentHlth             22             no diabetes     1     -0.2802      0.7264          0.15        0.6997                       0.756
+MentHlth             23             prediabetes     1     -3.6010     12.9279          0.08        0.7806                       0.027
+MentHlth             23             no diabetes     1     -1.1840      0.7038          2.83        0.0925                       0.306
+MentHlth             24             prediabetes     1      2.4876      1.4846          2.81        0.0938                      12.033
+MentHlth             24             no diabetes     1     -0.5835      0.8857          0.43        0.5100                       0.558
+MentHlth             25             prediabetes     1      1.3117      0.8745          2.25        0.1336                       3.712
+MentHlth             25             no diabetes     1     -0.2637      0.2327          1.28        0.2572                       0.768
+MentHlth             26             prediabetes     1      2.8590      1.6427          3.03        0.0818                      17.445
+MentHlth             26             no diabetes     1      0.3774      1.0642          0.13        0.7229                       1.459
+MentHlth             27             prediabetes     1      1.6208      1.3585          1.42        0.2328                       5.057
+MentHlth             27             no diabetes     1      0.1234      0.5514          0.05        0.8229                       1.131
+MentHlth             28             prediabetes     1      0.5324      1.2939          0.17        0.6807                       1.703
+MentHlth             28             no diabetes     1      0.1392      0.3535          0.16        0.6937                       1.149
+MentHlth             29             prediabetes     1     -1.7262      7.2385          0.06        0.8115                       0.178
+MentHlth             29             no diabetes     1      1.2677      0.6978          3.30        0.0693                       3.553
+NoDocbcCost          0              prediabetes     1     -0.1209      0.0468          6.67        0.0098                       0.886
+NoDocbcCost          0              no diabetes     1      0.0381      0.0206          3.41        0.0648                       1.039
+PhysActivity         0              prediabetes     1     0.00566      0.0318          0.03        0.8590                       1.006
+PhysActivity         0              no diabetes     1     -0.0260      0.0130          4.00        0.0456                       0.974
+PhysHlth             0              prediabetes     1      0.1531      0.6603          0.05        0.8166                       1.165
+PhysHlth             0              no diabetes     1      0.0273      0.0729          0.14        0.7086                       1.028
+PhysHlth             1              prediabetes     1     -0.0110      0.6748          0.00        0.9869                       0.989
+PhysHlth             1              no diabetes     1     -0.0569      0.0913          0.39        0.5333                       0.945
+PhysHlth             2              prediabetes     1     -0.1126      0.6695          0.03        0.8665                       0.894
+PhysHlth             2              no diabetes     1     -0.0463      0.0837          0.31        0.5805                       0.955
+PhysHlth             3              prediabetes     1     -0.0679      0.6765          0.01        0.9201                       0.934
+PhysHlth             3              no diabetes     1      0.0895      0.0912          0.96        0.3262                       1.094
+PhysHlth             4              prediabetes     1      0.2186      0.6819          0.10        0.7485                       1.244
+PhysHlth             4              no diabetes     1     -0.0231      0.1039          0.05        0.8240                       0.977
+PhysHlth             5              prediabetes     1      0.1826      0.6723          0.07        0.7859                       1.200
+PhysHlth             5              no diabetes     1      0.0588      0.0906          0.42        0.5163                       1.061
+PhysHlth             6              prediabetes     1      0.2121      0.7177          0.09        0.7676                       1.236
+PhysHlth             6              no diabetes     1     -0.0732      0.1440          0.26        0.6115                       0.929
+PhysHlth             7              prediabetes     1     -0.0197      0.6871          0.00        0.9771                       0.980
+PhysHlth             7              no diabetes     1     0.00769      0.1038          0.01        0.9410                       1.008
+PhysHlth             8              prediabetes     1      0.6894      0.7412          0.87        0.3523                       1.993
+PhysHlth             8              no diabetes     1      0.1992      0.1883          1.12        0.2903                       1.220
+PhysHlth             9              prediabetes     1     -0.1109      1.2158          0.01        0.9273                       0.895
+PhysHlth             9              no diabetes     1      0.1702      0.3925          0.19        0.6647                       1.185
+PhysHlth             10             prediabetes     1     -0.0134      0.6765          0.00        0.9842                       0.987
+PhysHlth             10             no diabetes     1     -0.0495      0.0934          0.28        0.5965                       0.952
+PhysHlth             11             prediabetes     1      1.2269      1.3878          0.78        0.3766                       3.411
+PhysHlth             11             no diabetes     1     -0.0481      0.8431          0.00        0.9545                       0.953
+PhysHlth             12             prediabetes     1      0.7420      0.7613          0.95        0.3298                       2.100
+PhysHlth             12             no diabetes     1      0.2185      0.2116          1.07        0.3016                       1.244
+PhysHlth             13             prediabetes     1      1.0667      1.0535          1.03        0.3113                       2.906
+PhysHlth             13             no diabetes     1     -0.1928      0.5048          0.15        0.7025                       0.825
+PhysHlth             14             prediabetes     1      0.2681      0.6920          0.15        0.6985                       1.307
+PhysHlth             14             no diabetes     1      0.0652      0.1185          0.30        0.5824                       1.067
+PhysHlth             15             prediabetes     1      0.0779      0.6754          0.01        0.9082                       1.081
+PhysHlth             15             no diabetes     1     -0.0367      0.0938          0.15        0.6959                       0.964
+PhysHlth             16             prediabetes     1     -0.0919      1.2122          0.01        0.9395                       0.912
+PhysHlth             16             no diabetes     1     -0.4978      0.4316          1.33        0.2488                       0.608
+PhysHlth             17             prediabetes     1     -3.9894      7.0623          0.32        0.5722                       0.019
+PhysHlth             17             no diabetes     1     -0.3102      0.4266          0.53        0.4672                       0.733
+PhysHlth             18             prediabetes     1      0.3529      1.0033          0.12        0.7251                       1.423
+PhysHlth             18             no diabetes     1     -0.0202      0.3733          0.00        0.9569                       0.980
+PhysHlth             19             prediabetes     1      1.5256      1.3474          1.28        0.2575                       4.598
+PhysHlth             19             no diabetes     1     -0.2233      0.8778          0.06        0.7992                       0.800
+PhysHlth             20             prediabetes     1     -0.3632      0.6954          0.27        0.6014                       0.695
+PhysHlth             20             no diabetes     1      0.0795      0.1028          0.60        0.4391                       1.083
+PhysHlth             21             prediabetes     1     -0.2297      0.8304          0.08        0.7821                       0.795
+PhysHlth             21             no diabetes     1     -0.0721      0.1943          0.14        0.7105                       0.930
+PhysHlth             22             prediabetes     1      0.7727      0.9224          0.70        0.4022                       2.166
+PhysHlth             22             no diabetes     1     -0.6418      0.4321          2.21        0.1375                       0.526
+PhysHlth             23             prediabetes     1      0.6072      1.2826          0.22        0.6359                       1.835
+PhysHlth             23             no diabetes     1     0.00778      0.5742          0.00        0.9892                       1.008
+PhysHlth             24             prediabetes     1     -4.9154     18.1207          0.07        0.7862                       0.007
+PhysHlth             24             no diabetes     1      1.5197      0.7483          4.12        0.0423                       4.571
+PhysHlth             25             prediabetes     1     -0.0211      0.7220          0.00        0.9767                       0.979
+PhysHlth             25             no diabetes     1      0.0933      0.1366          0.47        0.4945                       1.098
+PhysHlth             26             prediabetes     1      0.9352      1.0430          0.80        0.3699                       2.548
+PhysHlth             26             no diabetes     1     -0.3241      0.5062          0.41        0.5221                       0.723
+PhysHlth             27             prediabetes     1      0.4716      1.2640          0.14        0.7091                       1.603
+PhysHlth             27             no diabetes     1      0.4226      0.5264          0.64        0.4220                       1.526
+PhysHlth             28             prediabetes     1      0.0891      0.8023          0.01        0.9116                       1.093
+PhysHlth             28             no diabetes     1      0.1083      0.1975          0.30        0.5833                       1.114
+PhysHlth             29             prediabetes     1      0.2972      0.8897          0.11        0.7383                       1.346
+PhysHlth             29             no diabetes     1     -0.5372      0.2991          3.23        0.0725                       0.584
+Sex                  0              prediabetes     1      0.1063      0.0300         12.56        0.0004                       1.112
+Sex                  0              no diabetes     1      0.1319      0.0122        116.60        <.0001                       1.141
+Smoker               0              prediabetes     1     0.00353      0.0291          0.01        0.9034                       1.004
+Smoker               0              no diabetes     1      0.0209      0.0119          3.09        0.0787                       1.021
+Stroke               0              prediabetes     1      0.1393      0.0606          5.28        0.0216                       1.150
+Stroke               0              no diabetes     1      0.0939      0.0225         17.41        <.0001                       1.098
+Veggies              0              prediabetes     1    -0.00848      0.0354          0.06        0.8106                       0.992
+Veggies              0              no diabetes     1    -0.00540      0.0144          0.14        0.7074                       0.995
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       1.003
+Age                              no diabetes       0.872
+AnyHealthcare        0 vs 1      prediabetes       1.100
+AnyHealthcare        0 vs 1      no diabetes       1.027
+BMI                              prediabetes       0.983
+BMI                              no diabetes       0.919
+CholCheck            0 vs 1      prediabetes       1.311
+CholCheck            0 vs 1      no diabetes       2.904
+DiffWalk             0 vs 1      prediabetes       1.056
+DiffWalk             0 vs 1      no diabetes       1.061
+Education            1 vs 6      prediabetes       0.025
+Education            1 vs 6      no diabetes       1.178
+Education            2 vs 6      prediabetes       1.100
+Education            2 vs 6      no diabetes       0.762
+Education            3 vs 6      prediabetes       1.241
+Education            3 vs 6      no diabetes       0.953
+Education            4 vs 6      prediabetes       1.103
+Education            4 vs 6      no diabetes       1.016
+Education            5 vs 6      prediabetes       0.966
+Education            5 vs 6      no diabetes       0.895
+Fruits               0 vs 1      prediabetes       0.998
+Fruits               0 vs 1      no diabetes       0.959
+GenHlth              1 vs 5      prediabetes       2.517
+GenHlth              1 vs 5      no diabetes       7.184
+GenHlth              2 vs 5      prediabetes       1.711
+GenHlth              2 vs 5      no diabetes       3.481
+GenHlth              3 vs 5      prediabetes       1.328
+GenHlth              3 vs 5      no diabetes       1.778
+GenHlth              4 vs 5      prediabetes       1.183
+GenHlth              4 vs 5      no diabetes       1.149
+HeartDiseaseorAttack 0 vs 1      prediabetes       1.301
+HeartDiseaseorAttack 0 vs 1      no diabetes       1.210
+HighBP               0 vs 1      prediabetes       1.408
+HighBP               0 vs 1      no diabetes       1.983
+HighChol             0 vs 1      prediabetes       1.090
+HighChol             0 vs 1      no diabetes       1.822
+HvyAlcoholConsump    0 vs 1      prediabetes       0.655
+HvyAlcoholConsump    0 vs 1      no diabetes       0.471
+Income               1 vs 8      prediabetes       1.104
+Income               1 vs 8      no diabetes       0.646
+Income               2 vs 8      prediabetes       0.960
+Income               2 vs 8      no diabetes       0.716
+Income               3 vs 8      prediabetes       0.920
+Income               3 vs 8      no diabetes       0.728
+Income               4 vs 8      prediabetes       0.995
+Income               4 vs 8      no diabetes       0.746
+Income               5 vs 8      prediabetes       0.965
+Income               5 vs 8      no diabetes       0.822
+Income               6 vs 8      prediabetes       1.050
+Income               6 vs 8      no diabetes       0.847
+Income               7 vs 8      prediabetes       1.152
+Income               7 vs 8      no diabetes       0.888
+MentHlth             0 vs 30     prediabetes       0.775
+MentHlth             0 vs 30     no diabetes       0.974
+MentHlth             1 vs 30     prediabetes       1.211
+MentHlth             1 vs 30     no diabetes       1.244
+MentHlth             2 vs 30     prediabetes       0.984
+MentHlth             2 vs 30     no diabetes       1.026
+MentHlth             3 vs 30     prediabetes       0.747
+MentHlth             3 vs 30     no diabetes       1.018
+MentHlth             4 vs 30     prediabetes       0.944
+MentHlth             4 vs 30     no diabetes       1.075
+MentHlth             5 vs 30     prediabetes       1.005
+MentHlth             5 vs 30     no diabetes       1.014
+MentHlth             6 vs 30     prediabetes       1.008
+MentHlth             6 vs 30     no diabetes       0.793
+MentHlth             7 vs 30     prediabetes       0.918
+MentHlth             7 vs 30     no diabetes       1.030
+MentHlth             8 vs 30     prediabetes       0.434
+MentHlth             8 vs 30     no diabetes       0.936
+MentHlth             9 vs 30     prediabetes       1.582
+MentHlth             9 vs 30     no diabetes       1.636
+MentHlth             10 vs 30    prediabetes       0.906
+MentHlth             10 vs 30    no diabetes       0.990
+MentHlth             11 vs 30    prediabetes     218.281
+MentHlth             11 vs 30    no diabetes      74.027
+MentHlth             12 vs 30    prediabetes       0.332
+MentHlth             12 vs 30    no diabetes       1.082
+MentHlth             13 vs 30    prediabetes       0.005
+MentHlth             13 vs 30    no diabetes       0.153
+MentHlth             14 vs 30    prediabetes       1.215
+MentHlth             14 vs 30    no diabetes       0.837
+MentHlth             15 vs 30    prediabetes       1.052
+MentHlth             15 vs 30    no diabetes       1.151
+MentHlth             16 vs 30    prediabetes       1.588
+MentHlth             16 vs 30    no diabetes       1.820
+MentHlth             17 vs 30    prediabetes       0.019
+MentHlth             17 vs 30    no diabetes       1.288
+MentHlth             18 vs 30    prediabetes       2.057
+MentHlth             18 vs 30    no diabetes       1.825
+MentHlth             19 vs 30    prediabetes      <0.001
+MentHlth             19 vs 30    no diabetes       0.672
+MentHlth             20 vs 30    prediabetes       1.234
+MentHlth             20 vs 30    no diabetes       1.008
+MentHlth             21 vs 30    prediabetes       0.446
+MentHlth             21 vs 30    no diabetes       0.916
+MentHlth             22 vs 30    prediabetes       5.286
+MentHlth             22 vs 30    no diabetes       0.883
+MentHlth             23 vs 30    prediabetes       0.008
+MentHlth             23 vs 30    no diabetes       0.358
+MentHlth             24 vs 30    prediabetes       3.369
+MentHlth             24 vs 30    no diabetes       0.652
+MentHlth             25 vs 30    prediabetes       1.039
+MentHlth             25 vs 30    no diabetes       0.897
+MentHlth             26 vs 30    prediabetes       4.884
+MentHlth             26 vs 30    no diabetes       1.704
+MentHlth             27 vs 30    prediabetes       1.416
+MentHlth             27 vs 30    no diabetes       1.322
+MentHlth             28 vs 30    prediabetes       0.477
+MentHlth             28 vs 30    no diabetes       1.343
+MentHlth             29 vs 30    prediabetes       0.050
+MentHlth             29 vs 30    no diabetes       4.150
+NoDocbcCost          0 vs 1      prediabetes       0.785
+NoDocbcCost          0 vs 1      no diabetes       1.079
+PhysActivity         0 vs 1      prediabetes       1.011
+PhysActivity         0 vs 1      no diabetes       0.949
+PhysHlth             0 vs 30     prediabetes       1.100
+PhysHlth             0 vs 30     no diabetes       0.943
+PhysHlth             1 vs 30     prediabetes       0.934
+PhysHlth             1 vs 30     no diabetes       0.867
+PhysHlth             2 vs 30     prediabetes       0.844
+PhysHlth             2 vs 30     no diabetes       0.876
+PhysHlth             3 vs 30     prediabetes       0.882
+PhysHlth             3 vs 30     no diabetes       1.004
+PhysHlth             4 vs 30     prediabetes       1.175
+PhysHlth             4 vs 30     no diabetes       0.897
+PhysHlth             5 vs 30     prediabetes       1.133
+PhysHlth             5 vs 30     no diabetes       0.974
+PhysHlth             6 vs 30     prediabetes       1.167
+PhysHlth             6 vs 30     no diabetes       0.853
+PhysHlth             7 vs 30     prediabetes       0.926
+PhysHlth             7 vs 30     no diabetes       0.925
+PhysHlth             8 vs 30     prediabetes       1.882
+PhysHlth             8 vs 30     no diabetes       1.120
+PhysHlth             9 vs 30     prediabetes       0.845
+PhysHlth             9 vs 30     no diabetes       1.088
+PhysHlth             10 vs 30    prediabetes       0.932
+PhysHlth             10 vs 30    no diabetes       0.874
+PhysHlth             11 vs 30    prediabetes       3.221
+PhysHlth             11 vs 30    no diabetes       0.875
+PhysHlth             12 vs 30    prediabetes       1.983
+PhysHlth             12 vs 30    no diabetes       1.142
+PhysHlth             13 vs 30    prediabetes       2.744
+PhysHlth             13 vs 30    no diabetes       0.757
+PhysHlth             14 vs 30    prediabetes       1.235
+PhysHlth             14 vs 30    no diabetes       0.980
+PhysHlth             15 vs 30    prediabetes       1.021
+PhysHlth             15 vs 30    no diabetes       0.885
+PhysHlth             16 vs 30    prediabetes       0.861
+PhysHlth             16 vs 30    no diabetes       0.558
+PhysHlth             17 vs 30    prediabetes       0.017
+PhysHlth             17 vs 30    no diabetes       0.673
+PhysHlth             18 vs 30    prediabetes       1.344
+PhysHlth             18 vs 30    no diabetes       0.900
+PhysHlth             19 vs 30    prediabetes       4.342
+PhysHlth             19 vs 30    no diabetes       0.734
+PhysHlth             20 vs 30    prediabetes       0.657
+PhysHlth             20 vs 30    no diabetes       0.994
+PhysHlth             21 vs 30    prediabetes       0.750
+PhysHlth             21 vs 30    no diabetes       0.854
+PhysHlth             22 vs 30    prediabetes       2.045
+PhysHlth             22 vs 30    no diabetes       0.483
+PhysHlth             23 vs 30    prediabetes       1.733
+PhysHlth             23 vs 30    no diabetes       0.925
+PhysHlth             24 vs 30    prediabetes       0.007
+PhysHlth             24 vs 30    no diabetes       4.196
+PhysHlth             25 vs 30    prediabetes       0.925
+PhysHlth             25 vs 30    no diabetes       1.008
+PhysHlth             26 vs 30    prediabetes       2.406
+PhysHlth             26 vs 30    no diabetes       0.664
+PhysHlth             27 vs 30    prediabetes       1.513
+PhysHlth             27 vs 30    no diabetes       1.401
+PhysHlth             28 vs 30    prediabetes       1.032
+PhysHlth             28 vs 30    no diabetes       1.023
+PhysHlth             29 vs 30    prediabetes       1.271
+PhysHlth             29 vs 30    no diabetes       0.536
+Sex                  0 vs 1      prediabetes       1.237
+Sex                  0 vs 1      no diabetes       1.302
+Smoker               0 vs 1      prediabetes       1.007
+Smoker               0 vs 1      no diabetes       1.043
+Stroke               0 vs 1      prediabetes       1.321
+Stroke               0 vs 1      no diabetes       1.207
+Veggies              0 vs 1      prediabetes       0.983
+Veggies              0 vs 1      no diabetes       0.989
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+   Fit
+Statistics    Statistics Label                      Train    Validation         Test
+ 
+ _AIC_        Akaike's Information Criterion     63714.62           .            .
+ _ASE_        Average Squared Error                  0.07          0.07         0.07
+ _AVERR_      Average Error Function                 0.26          0.26         0.26
+ _DFE_        Degrees of Freedom for Error      160270.00           .            .
+ _DFM_        Model Degrees of Freedom             186.00           .            .
+ _DFT_        Total Degrees of Freedom          160456.00           .            .
+ _DIV_        Divisor for ASE                   240684.00     180507.00    180528.00
+ _ERR_        Error Function                     63342.62      47431.90     47387.22
+ _FPE_        Final Prediction Error                 0.07           .            .
+ _MAX_        Maximum Absolute Error                 1.00          1.00         1.00
+ _MSE_        Mean Square Error                      0.07          0.07         0.07
+ _NOBS_       Sum of Frequencies                 80228.00      60169.00     60176.00
+ _NW_         Number of Estimate Weights           186.00           .            .
+ _RASE_       Root Average Sum of Squares            0.27          0.27         0.27
+ _RFPE_       Root Final Prediction Error            0.27           .            .
+ _RMSE_       Root Mean Squared Error                0.27          0.27         0.27
+ _SBC_        Schwarz's Bayesian Criterion       65571.97           .            .
+ _SSE_        Sum of Squared Errors              17754.36      13281.74     13247.56
+ _SUMW_       Sum of Case Weights Times Freq    240684.00     180507.00    180528.00
+ _MISC_       Misclassification Rate                 0.15          0.15         0.15
+ 
+ 
+ 
+ 
+Classification Table
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                Target        Outcome     Frequency       Total
+  Target         Outcome      Percentage    Percentage      Count      Percentage
+ 
+DIABETES       DIABETES         53.6157       16.9846        1861         2.3196
+NO DIABETES    DIABETES         42.5814        2.1795        1478         1.8422
+PREDIABETES    DIABETES          3.8029        9.0659         132         0.1645
+DIABETES       NO DIABETES      11.8504       83.0154        9096        11.3377
+NO DIABETES    NO DIABETES      86.4247       97.8205       66337        82.6856
+PREDIABETES    NO DIABETES       1.7249       90.9341        1324         1.6503
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                Target        Outcome     Frequency       Total
+  Target         Outcome      Percentage    Percentage      Count      Percentage
+ 
+DIABETES       DIABETES          54.004       16.9871        1396         2.3201
+NO DIABETES    DIABETES          41.857        2.1274        1082         1.7983
+PREDIABETES    DIABETES           4.139        9.8075         107         0.1778
+DIABETES       NO DIABETES       11.847       83.0129        6822        11.3381
+NO DIABETES    NO DIABETES       86.444       97.8706       49777        82.7286
+PREDIABETES    NO DIABETES        1.709       90.1925         984         1.6354
+NO DIABETES    PREDIABETES      100.000        0.0020           1         0.0017
+ 
+ 
+ 
+ 
+Event Classification Table
+ 
+Data Role=TRAIN Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+  False       True        False       True
+Negative    Negative    Positive    Positive
+ 
+  1456        78772         .           0
+ 
+ 
+Data Role=VALIDATE Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+  False       True        False       True
+Negative    Negative    Positive    Positive
+ 
+  1091        59077         1           0
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                                                                           Mean
+                               Cumulative        %       Cumulative      Number of      Posterior
+Depth       Gain      Lift        Lift       Response    % Response    Observations    Probability
+ 
+   5     181.551    2.81551      2.81551      5.10967      5.10967         4012          0.056933
+  10     147.933    2.14307      2.47933      3.88930      4.49956         4011          0.041230
+  15     133.501    2.04640      2.33501      3.71386      4.23764         4012          0.035260
+  20     121.835    1.86832      2.21835      3.39068      4.02593         4011          0.031025
+  25     113.736    1.81337      2.13736      3.29095      3.87895         4011          0.027624
+  30     102.376    1.45583      2.02376      2.64207      3.67277         4012          0.024621
+  35      94.072    1.44245      1.94072      2.61780      3.52208         4011          0.021996
+  40      82.173    0.98886      1.82173      1.79462      3.30612         4012          0.019552
+  45      73.228    1.01658      1.73228      1.84493      3.14378         4011          0.017350
+  50      63.599    0.76931      1.63599      1.39616      2.96904         4011          0.015328
+  55      56.716    0.87899      1.56716      1.59521      2.84413         4012          0.013473
+  60      47.893    0.50829      1.47893      0.92246      2.68401         4011          0.011783
+  65      41.270    0.61804      1.41270      1.12164      2.56381         4012          0.010236
+  70      34.026    0.39839      1.34026      0.72301      2.43234         4011          0.008830
+  75      27.198    0.31597      1.27198      0.57342      2.30842         4011          0.007500
+  80      20.792    0.24722      1.20792      0.44865      2.19217         4012          0.006271
+  85      15.061    0.23354      1.15061      0.42383      2.08816         4011          0.005156
+  90       9.813    0.20601      1.09813      0.37388      1.99291         4012          0.004145
+  95       4.757    0.13738      1.04757      0.24931      1.90115         4011          0.003146
+ 100       0.000    0.09616      1.00000      0.17452      1.81483         4011          0.001897
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                                                                           Mean
+                               Cumulative        %       Cumulative      Number of      Posterior
+Depth       Gain      Lift        Lift       Response    % Response    Observations    Probability
+ 
+   5     162.097    2.62097      2.62097      4.75241      4.75241         3009          0.056820
+  10     140.143    2.18181      2.40143      3.95612      4.35433         3008          0.040982
+  15     122.410    1.86950      2.22410      3.38983      4.03279         3009          0.035176
+  20     109.437    1.70511      2.09437      3.09176      3.79757         3008          0.030954
+  25     101.273    1.68622      2.01273      3.05749      3.64954         3009          0.027491
+  30      92.481    1.48510      1.92481      2.69282      3.49011         3008          0.024616
+  35      82.001    1.19135      1.82001      2.16019      3.30009         3009          0.022023
+  40      78.045    1.50343      1.78045      2.72606      3.22835         3008          0.019599
+  45      70.276    1.08138      1.70276      1.96078      3.08749         3009          0.017396
+  50      63.334    1.00840      1.63334      1.82846      2.96161         3008          0.015368
+  55      55.487    0.77005      1.55487      1.39628      2.81933         3008          0.013501
+  60      48.027    0.65982      1.48027      1.19641      2.68406         3009          0.011799
+  65      41.436    0.62337      1.41436      1.13032      2.56456         3008          0.010207
+  70      33.820    0.34824      1.33820      0.63144      2.42646         3009          0.008784
+  75      27.955    0.45836      1.27955      0.83112      2.32012         3008          0.007478
+  80      21.904    0.31158      1.21904      0.56497      2.21040         3009          0.006251
+  85      15.705    0.16501      1.15705      0.29920      2.09800         3008          0.005133
+  90       9.785    0.09164      1.09785      0.16617      1.99066         3009          0.004109
+  95       4.587    0.11001      1.04587      0.19947      1.89640         3008          0.003112
+ 100       0.000    0.12834      1.00000      0.23271      1.81323         3008          0.001895
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+ Posterior     Number                     Mean
+Probability      of      Number of     Posterior
+   Range       Events    Nonevents    Probability    Percentage
+ 
+ 0.35-0.40         1           1        0.36620         0.0025
+ 0.25-0.30         1           1        0.26563         0.0025
+ 0.20-0.25         1           3        0.22399         0.0050
+ 0.15-0.20         2          10        0.17098         0.0150
+ 0.10-0.15         3          54        0.12078         0.0710
+ 0.05-0.10       134        2300        0.06006         3.0339
+ 0.00-0.05      1314       76403        0.01673        96.8702
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+ Posterior     Number                     Mean
+Probability      of      Number of     Posterior
+   Range       Events    Nonevents    Probability    Percentage
+ 
+ 0.40-0.45         0           1        0.43450         0.0017
+ 0.30-0.35         0           2        0.31588         0.0033
+ 0.25-0.30         0           3        0.28270         0.0050
+ 0.20-0.25         0           3        0.22500         0.0050
+ 0.15-0.20         0           8        0.17197         0.0133
+ 0.10-0.15         1          29        0.11422         0.0499
+ 0.05-0.10        86        1733        0.06012         3.0232
+ 0.00-0.05      1004       57299        0.01671        96.8987

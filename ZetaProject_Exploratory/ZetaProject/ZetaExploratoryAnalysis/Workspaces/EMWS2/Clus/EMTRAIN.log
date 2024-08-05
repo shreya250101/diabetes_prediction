@@ -1,0 +1,730 @@
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "March 09, 2024" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "15:45:13" );
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Training Log";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+*------------------------------------------------------------*
+* Training Log
+Date:                March 09, 2024
+Time:                15:45:13
+*------------------------------------------------------------*
+MPRINT(EM_DIAGRAM):    filename O1T2XFZA "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O1T2XFZA new;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOG "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMLOG.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "March 09, 2024" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "15:45:13" );
+MPRINT(EM_DIAGRAM):   file _LOG;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "User:                bkris2";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "Site:                70080107";
+MPRINT(EM_DIAGRAM):   put "Platform:            X64_10PRO";
+MPRINT(EM_DIAGRAM):   put "Maintenance Release: 9.04.01M7P080520";
+MPRINT(EM_DIAGRAM):   put "EM Version:          15.2";
+MPRINT(EM_DIAGRAM):   put "* ";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_COPYFILE):   data _null_;
+MPRINT(EM_COPYFILE):   length line $20000;
+MPRINT(EM_COPYFILE):   file _LOG MOD lrecl=20000;
+MPRINT(EM_COPYFILE):   fid=fopen("_LOGIN",'i',20000,'v');
+MPRINT(EM_COPYFILE):   if fid > 0 then do;
+MPRINT(EM_COPYFILE):   do while(^fread(fid));
+MPRINT(EM_COPYFILE):   rlen = frlen(fid);
+MPRINT(EM_COPYFILE):   rc= fget(fid,line,20000);
+MPRINT(EM_COPYFILE):   start = length(line)-length(left(line))+1;
+MPRINT(EM_COPYFILE):   line=strip(line);
+MPRINT(EM_COPYFILE):   put @start line;
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   if fid > 0 then rc=fclose(fid);
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   run;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _LOGIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _LOG mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   filename _LOGIN "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMSCORE.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   file _LOG mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMREPORT.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _LOGIN;
+MPRINT(EM_DIAGRAM):    filename _LOG;
+MPRINT(EM_DIAGRAM):    filename _OUT "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMOUTPUT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "March 09, 2024" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "15:45:13" );
+MPRINT(EM_DIAGRAM):   file _OUT;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "User:                bkris2";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Training Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_COPYFILE):   data _null_;
+MPRINT(EM_COPYFILE):   length line $20000;
+MPRINT(EM_COPYFILE):   file _OUT MOD lrecl=20000;
+MPRINT(EM_COPYFILE):   fid=fopen("_OUTIN",'i',20000,'v');
+MPRINT(EM_COPYFILE):   if fid > 0 then do;
+MPRINT(EM_COPYFILE):   do while(^fread(fid));
+MPRINT(EM_COPYFILE):   rlen = frlen(fid);
+MPRINT(EM_COPYFILE):   rc= fget(fid,line,20000);
+MPRINT(EM_COPYFILE):   start = length(line)-length(left(line))+1;
+MPRINT(EM_COPYFILE):   line=strip(line);
+MPRINT(EM_COPYFILE):   put @start line;
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   if fid > 0 then rc=fclose(fid);
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   run;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _OUT mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   put // "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Score Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _OUT mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   put // "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Report Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMREPORT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    filename _OUT;
+MPRINT(EM_DIAGRAM):    filename _emtool_ '\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\EMRUNSTATUS.xml' encoding="UTF-8" NOBOM;
+28404      proc freq data=EMWS2.Clus_VariableSet noprint;
+MPRINT(EM_DIAGRAM):    proc freq data=EMWS2.Clus_VariableSet noprint;
+28405      table ROLE*LEVEL/out=WORK.ClusMETA;
+MPRINT(EM_DIAGRAM):   table ROLE*LEVEL/out=WORK.ClusMETA;
+28406      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 21 observations read from the data set EMWS2.CLUS_VARIABLESET.
+NOTE: The data set WORK.CLUSMETA has 3 observations and 4 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.10 seconds
+      
+
+28407      proc print data=WORK.ClusMETA label noobs;
+MPRINT(EM_DIAGRAM):   proc print data=WORK.ClusMETA label noobs;
+28408      var ROLE LEVEL COUNT;
+MPRINT(EM_DIAGRAM):   var ROLE LEVEL COUNT;
+28409      label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label ROLE = "Role" LEVEL = "Measurement Level" COUNT = "Frequency Count";
+28410      title9 ' ';
+MPRINT(EM_DIAGRAM):   title9 ' ';
+28411      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title10 "Variable Summary";
+MPRINT(EM_DIAGRAM):   run;
+28412      run;
+
+NOTE: There were 3 observations read from the data set WORK.CLUSMETA.
+NOTE: The PROCEDURE PRINT printed page 3.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28413      title10;
+MPRINT(EM_DIAGRAM):   title10;
+28414      data WORK.M1PAYZW0;
+MPRINT(EM_DIAGRAM):    data WORK.M1PAYZW0;
+28415      set WORK.M1PAYZW0;
+MPRINT(EM_DIAGRAM):   set WORK.M1PAYZW0;
+28416      if role eq 'REJECTED' then role = 'INPUT';
+MPRINT(EM_DIAGRAM):   if role eq 'REJECTED' then role = 'INPUT';
+28417      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 21 observations read from the data set WORK.M1PAYZW0.
+NOTE: The data set WORK.M1PAYZW0 has 21 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Clus: Preparing metadata for training;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data WORK.M1PAYZW0;
+MPRINT(EM_DIAGRAM):   set WORK.M1PAYZW0;
+MPRINT(EM_DIAGRAM):   if role eq 'REJECTED' then role = 'INPUT';
+MPRINT(EM_DIAGRAM):   run;
+28426      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+28427      * Clus: Preliminary Clustering;
+MPRINT(EM_DIAGRAM):   * Clus: Preliminary Clustering;
+28428      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28429      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28430      * Clus: DMDBClass Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: DMDBClass Macro ;
+28431      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28432      %macro DMDBClass;
+28433          AnyHealthcare(ASC) CholCheck(ASC) DiffWalk(ASC) Education(ASC) Fruits(ASC)
+28434         GenHlth(ASC) HeartDiseaseorAttack(ASC) HighBP(ASC) HighChol(ASC)
+28435         HvyAlcoholConsump(ASC) Income(ASC) MentHlth(ASC) NoDocbcCost(ASC)
+28436         PhysActivity(ASC) PhysHlth(ASC) Sex(ASC) Smoker(ASC) Stroke(ASC) Veggies(ASC)
+28437      %mend DMDBClass;
+28438      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28439      * Clus: DMDBVar Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: DMDBVar Macro ;
+28440      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28441      %macro DMDBVar;
+28442          Age BMI
+28443      %mend DMDBVar;
+28444      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28445      * Clus: Create DMDB;
+MPRINT(EM_DIAGRAM):   * Clus: Create DMDB;
+28446      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28447      proc dmdb batch data=EMWS2.Varsel_TRAIN
+28448      dmdbcat=WORK.Clus_DMDB
+28449      maxlevel = 513
+28450      out=WORK.Clus_DMDB
+28451      ;
+MPRINT(EM_DIAGRAM):   proc dmdb batch data=EMWS2.Varsel_TRAIN dmdbcat=WORK.Clus_DMDB maxlevel = 513 out=WORK.Clus_DMDB ;
+MPRINT(EM_DIAGRAM):   class
+28452      class %DMDBClass;
+MPRINT(DMDBCLASS):   AnyHealthcare(ASC) CholCheck(ASC) DiffWalk(ASC) Education(ASC) Fruits(ASC) GenHlth(ASC) HeartDiseaseorAttack(ASC) HighBP(ASC) HighChol(ASC) HvyAlcoholConsump(ASC) Income(ASC) MentHlth(ASC) NoDocbcCost(ASC) PhysActivity(ASC) 
+PhysHlth(ASC) Sex(ASC) Smoker(ASC) Stroke(ASC) Veggies(ASC)
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   var
+28453      var %DMDBVar;
+MPRINT(DMDBVAR):   Age BMI
+MPRINT(EM_DIAGRAM):  ;
+28454      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Records processed = 100000   Memory used = 511K.
+NOTE: Records processed = 200000   Memory used = 511K.
+NOTE: Records processed = 247875   Memory used = 511K.
+NOTE: There were 250716 observations read from the data set ZETADATA.ZETADIABITIES_TRAIN.
+NOTE: There were 250716 observations read from the data set EMWS2.IDS_DATA.
+NOTE: View EMWS2.VARSEL_TRAIN.VIEW used (Total process time):
+      real time           1.18 seconds
+      cpu time            1.15 seconds
+      
+NOTE: There were 247875 observations read from the data set EMWS2.FILTER_TRAIN.
+NOTE: There were 247875 observations read from the data set EMWS2.VARSEL_TRAIN.
+NOTE: The data set WORK.CLUS_DMDB has 247875 observations and 21 variables.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           1.21 seconds
+      cpu time            1.18 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):   *--- end code ---*;
+28455      quit;
+28456      *--- end code ---*;
+
+28457      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------* ;
+28458      * Clus: Interval Inputs Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: Interval Inputs Macro ;
+28459      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28460      %macro DMVQINTERVAL;
+28461          Age BMI
+28462      %mend DMVQINTERVAL;
+28463      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28464      * Clus: Nominal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: Nominal Inputs Macro ;
+28465      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28466      %macro DMVQNOMINAL;
+28467          AnyHealthcare CholCheck DiffWalk Fruits HeartDiseaseorAttack HighBP HighChol
+28468         HvyAlcoholConsump NoDocbcCost PhysActivity Sex Smoker Stroke Veggies
+28469      %mend DMVQNOMINAL;
+28470      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28471      * Clus: Ordinal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: Ordinal Inputs Macro ;
+28472      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28473      %macro DMVQORDINAL;
+28474          Education GenHlth Income MentHlth PhysHlth
+28475      %mend DMVQORDINAL;
+28476      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28477      * Clus: Run DMVQ procedure;
+MPRINT(EM_DIAGRAM):   * Clus: Run DMVQ procedure;
+28478      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28479      title;
+MPRINT(EM_DIAGRAM):   title;
+28480      options nodate;
+MPRINT(EM_DIAGRAM):   options nodate;
+28481      proc dmvq data=WORK.Clus_DMDB dmdbcat=WORK.Clus_DMDB std=STD nominal=GLM ordinal=RANK
+28482      ;
+MPRINT(EM_DIAGRAM):   proc dmvq data=WORK.Clus_DMDB dmdbcat=WORK.Clus_DMDB std=STD nominal=GLM ordinal=RANK ;
+NOTE: The training set WORK.CLUS_DMDB.DATA has 21 variable(s).
+NOTE: The DMVQ statement has finished with return code=0 and status=begin.
+MPRINT(EM_DIAGRAM):   input
+28483      input %DMVQINTERVAL / level=interval;
+MPRINT(DMVQINTERVAL):   Age BMI
+MPRINT(EM_DIAGRAM):   / level=interval;
+NOTE: 2 input variable(s) defined for ID=I1.
+NOTE: The INPUT statement has finished with return code=0 and status=variables.
+MPRINT(EM_DIAGRAM):   input
+28484      input %DMVQNOMINAL / level=nominal;
+MPRINT(DMVQNOMINAL):   AnyHealthcare CholCheck DiffWalk Fruits HeartDiseaseorAttack HighBP HighChol HvyAlcoholConsump NoDocbcCost PhysActivity Sex Smoker Stroke Veggies
+MPRINT(EM_DIAGRAM):   / level=nominal;
+NOTE: 14 input variable(s) defined for ID=I2.
+NOTE: The INPUT statement has finished with return code=0 and status=variables.
+MPRINT(EM_DIAGRAM):   input
+28485      input %DMVQORDINAL / level=ordinal;
+MPRINT(DMVQORDINAL):   Education GenHlth Income MentHlth PhysHlth
+MPRINT(EM_DIAGRAM):   / level=ordinal;
+NOTE: 5 input variable(s) defined for ID=I3.
+NOTE: The INPUT statement has finished with return code=0 and status=variables.
+28486      VQ maxc = 50 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
+MPRINT(EM_DIAGRAM):   VQ maxc = 50 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
+NOTE: A maximum of 50 clusters have been requested.
+NOTE: The VQ statement has finished with return code=0 and status=architecture.
+28487      MAKE outvar=EMWS2.Clus_OUTVAR;
+MPRINT(EM_DIAGRAM):   MAKE outvar=EMWS2.Clus_OUTVAR;
+
+NOTE: 21 input variable(s).
+NOTE: Number of cases=247875
+NOTE: Sum of frequencies=247875
+NOTE: Sum of weights=247875
+NOTE: VARDEF=DF      
+NOTE: Maximum number of categories=31
+NOTE: The total number of variables is 21 with dimensionality 35.
+NOTE: 21 variables will be used for clustering.
+NOTE: Open output data set EMWS2.CLUS_OUTVAR.DATA with 36 variables.
+NOTE: The data set EMWS2.CLUS_OUTVAR has 4 observations and 36 variables.
+NOTE: The MAKE statement has finished with return code=0 and status=made.
+28488      INITIAL radius=0
+28489      ;
+MPRINT(EM_DIAGRAM):   INITIAL radius=0 ;
+NOTE: 50 seeds were selected from data set WORK.CLUS_DMDB.DATA using the SEPARATE algorithm.
+NOTE: The INITIAL statement has finished with return code=0 and status=initialized.
+28490      TRAIN tech=FORGY
+28491      ;
+MPRINT(EM_DIAGRAM):   TRAIN tech=FORGY ;
+WARNING: The limit of 10 iterations was reached without convergence.
+NOTE: The TRAIN statement has finished with return code=0 and status=trained.
+28492      SAVE outstat=WORK.Clus_OUTSTAT outmean=EMWS2.Clus_OUTMEAN;
+MPRINT(EM_DIAGRAM):   SAVE outstat=WORK.Clus_OUTSTAT outmean=EMWS2.Clus_OUTMEAN;
+NOTE: The data set WORK.CLUS_OUTSTAT has 316 observations and 38 variables.
+NOTE: The data set EMWS2.CLUS_OUTMEAN has 50 observations and 44 variables.
+NOTE: The SAVE statement has finished with return code=0 and status=statistics.
+28493      code file="\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\DMVQSCORECODE.sas"
+28494      group=Clus
+28495      ;
+MPRINT(EM_DIAGRAM):   code file="\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\DMVQSCORECODE.sas" group=Clus ;
+NOTE: External file \\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\DMVQSCORECODE.sas opened.
+NOTE: The CODE statement has finished with return code=0 and status=statistics.
+28496      run;
+MPRINT(EM_DIAGRAM):   run;
+
+28497      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: There were 247875 observations read from the data set WORK.CLUS_DMDB.
+NOTE: PROCEDURE DMVQ used (Total process time):
+      real time           8.56 seconds
+      cpu time            8.25 seconds
+      
+
+28498      proc transpose data=EMWS2.Clus_OUTVAR out=WORK.Clus_OUTVAR(where=(COL1 ^in('IMPUTED','OMITTED')));
+MPRINT(EM_DIAGRAM):    proc transpose data=EMWS2.Clus_OUTVAR out=WORK.Clus_OUTVAR(where=(COL1 ^in('IMPUTED','OMITTED')));
+28499      var Age--T_PhysHlth;
+MPRINT(EM_DIAGRAM):   var Age--T_PhysHlth;
+28500      where _TYPE_ in('TYPE' 'VARIABLE');
+MPRINT(EM_DIAGRAM):   where _TYPE_ in('TYPE' 'VARIABLE');
+28501      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 2 observations read from the data set EMWS2.CLUS_OUTVAR.
+      WHERE _TYPE_ in ('TYPE', 'VARIABLE');
+NOTE: The data set WORK.CLUS_OUTVAR has 35 observations and 4 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.03 seconds
+      
+
+28502      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------* ;
+28503      * Clus: DMVQ Variables;
+MPRINT(EM_DIAGRAM):   * Clus: DMVQ Variables;
+28504      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28505      %macro dmvqvars;
+28506          Age BMI AnyHealthcare0 AnyHealthcare1 CholCheck0 CholCheck1 DiffWalk0
+28507         DiffWalk1 Fruits0 Fruits1 HeartDiseaseorAttack0 HeartDiseaseorAttack1 HighBP0
+28508         HighBP1 HighChol0 HighChol1 HvyAlcoholConsump0 HvyAlcoholConsump1 NoDocbcCost0
+28509         NoDocbcCost1 PhysActivity0 PhysActivity1 Sex0 Sex1 Smoker0 Smoker1 Stroke0
+28510         Stroke1 Veggies0 Veggies1 T_Education T_GenHlth T_Income T_MentHlth T_PhysHlth
+28511      %mend ;
+28512      
+28513      
+
+28514      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+28515      * Clus: Determining the number of clusters;
+MPRINT(EM_DIAGRAM):   * Clus: Determining the number of clusters;
+28516      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28517      proc cluster data=EMWS2.Clus_OUTMEAN method=WARD pseudo outtree=EMWS2.Clus_CLUSSEED
+WARNING: The SAS/STAT product with which CLUSTER is associated will be expiring soon, and is currently in warning mode to indicate this upcoming expiration. Please run PROC SETINIT to obtain more information on your warning period.
+28518      ;
+MPRINT(EM_DIAGRAM):   proc cluster data=EMWS2.Clus_OUTMEAN method=WARD pseudo outtree=EMWS2.Clus_CLUSSEED ;
+MPRINT(EM_DIAGRAM):   var
+28519      var %dmvqvars;
+MPRINT(DMVQVARS):   Age BMI AnyHealthcare0 AnyHealthcare1 CholCheck0 CholCheck1 DiffWalk0 DiffWalk1 Fruits0 Fruits1 HeartDiseaseorAttack0 HeartDiseaseorAttack1 HighBP0 HighBP1 HighChol0 HighChol1 HvyAlcoholConsump0 HvyAlcoholConsump1 NoDocbcCost0 
+NoDocbcCost1 PhysActivity0 PhysActivity1 Sex0 Sex1 Smoker0 Smoker1 Stroke0 Stroke1 Veggies0 Veggies1 T_Education T_GenHlth T_Income T_MentHlth T_PhysHlth
+MPRINT(EM_DIAGRAM):  ;
+28520      copy _SEGMENT_;
+MPRINT(EM_DIAGRAM):   copy _SEGMENT_;
+28521      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set EMWS2.CLUS_CLUSSEED has 99 observations and 52 variables.
+NOTE: The PROCEDURE CLUSTER printed page 4.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.06 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+28522      quit;
+28523      proc sort data =EMWS2.Clus_CLUSSEED out=WORK._SEED_;
+MPRINT(EM_DIAGRAM):   proc sort data =EMWS2.Clus_CLUSSEED out=WORK._SEED_;
+28524      by _ncl_;
+MPRINT(EM_DIAGRAM):   by _ncl_;
+28525      where (_ccc_ > -99999.0);
+MPRINT(EM_DIAGRAM):   where (_ccc_ > -99999.0);
+28526      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 49 observations read from the data set EMWS2.CLUS_CLUSSEED.
+      WHERE _ccc_>-99999;
+NOTE: The data set WORK._SEED_ has 49 observations and 52 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.03 seconds
+      
+
+28527      data WORK._SEED2_;
+MPRINT(EM_DIAGRAM):   data WORK._SEED2_;
+28528      retain oJump occc oncl;
+MPRINT(EM_DIAGRAM):   retain oJump occc oncl;
+28529      set WORK._SEED_;
+MPRINT(EM_DIAGRAM):   set WORK._SEED_;
+28530      _lccc_=lag(_ccc_);
+MPRINT(EM_DIAGRAM):   _lccc_=lag(_ccc_);
+28531      if _lccc_ > . then jump = _ccc_ - _lccc_;
+MPRINT(EM_DIAGRAM):   if _lccc_ > . then jump = _ccc_ - _lccc_;
+28532      if jump<0 and ojump>0 then do;
+MPRINT(EM_DIAGRAM):   if jump<0 and ojump>0 then do;
+28533      * Have a local Max;
+MPRINT(EM_DIAGRAM):   * Have a local Max;
+28534      numclus = oncl;
+MPRINT(EM_DIAGRAM):   numclus = oncl;
+28535      cccvalue = occc;
+MPRINT(EM_DIAGRAM):   cccvalue = occc;
+28536      output;
+MPRINT(EM_DIAGRAM):   output;
+28537      end;
+MPRINT(EM_DIAGRAM):   end;
+28538      ojump = jump;
+MPRINT(EM_DIAGRAM):   ojump = jump;
+28539      occc = _ccc_;
+MPRINT(EM_DIAGRAM):   occc = _ccc_;
+28540      oncl = _ncl_;
+MPRINT(EM_DIAGRAM):   oncl = _ncl_;
+28541      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 49 observations read from the data set WORK._SEED_.
+NOTE: The data set WORK._SEED2_ has 2 observations and 59 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+
+28542      proc print data=WORK._SEED2_ label;
+MPRINT(EM_DIAGRAM):   proc print data=WORK._SEED2_ label;
+28543      var numclus cccvalue;
+MPRINT(EM_DIAGRAM):   var numclus cccvalue;
+28544      label numclus="%sysfunc(sasmsg(sashelp.dmine, rpt_numclus_vlabel ,  NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label numclus= "Number of Clusters";
+28545      label cccvalue="%sysfunc(sasmsg(sashelp.dmine, rpt_ccc_vlabel ,     NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label cccvalue= "Clustering Cubic Criterion";
+28546      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_OptClus_title, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title10 "Candidates for Optimum Number of Clusters";
+MPRINT(EM_DIAGRAM):   run;
+28547      run;
+
+NOTE: There were 2 observations read from the data set WORK._SEED2_.
+NOTE: The PROCEDURE PRINT printed page 5.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28548      title10;
+MPRINT(EM_DIAGRAM):   title10;
+28549      data WORK._SEED2_;
+MPRINT(EM_DIAGRAM):    data WORK._SEED2_;
+28550      length msg $200;
+MPRINT(EM_DIAGRAM):   length msg $200;
+28551      set WORK._SEED2_ end=eof;
+MPRINT(EM_DIAGRAM):   set WORK._SEED2_ end=eof;
+28552      retain select cccSelect 0 numSel;
+MPRINT(EM_DIAGRAM):   retain select cccSelect 0 numSel;
+28553      if _N_=1 then numSel = numClus;
+MPRINT(EM_DIAGRAM):   if _N_=1 then numSel = numClus;
+28554      if cccvalue>=3 then do;
+MPRINT(EM_DIAGRAM):   if cccvalue>=3 then do;
+28555      if 20>= numclus >= 2 and cccSelect<1 then do;
+MPRINT(EM_DIAGRAM):   if 20>= numclus >= 2 and cccSelect<1 then do;
+28556      cccSelect = 1;
+MPRINT(EM_DIAGRAM):   cccSelect = 1;
+28557      select =1;
+MPRINT(EM_DIAGRAM):   select =1;
+28558      numSel = numClus;
+MPRINT(EM_DIAGRAM):   numSel = numClus;
+28559      end;
+MPRINT(EM_DIAGRAM):   end;
+28560      end;
+MPRINT(EM_DIAGRAM):   end;
+28561      else if 20>= numclus >= 2 and select<1 then do;
+MPRINT(EM_DIAGRAM):   else if 20>= numclus >= 2 and select<1 then do;
+28562      select = 1;
+MPRINT(EM_DIAGRAM):   select = 1;
+28563      numSel = numClus;
+MPRINT(EM_DIAGRAM):   numSel = numClus;
+28564      end;
+MPRINT(EM_DIAGRAM):   end;
+28565      if eof then do;
+MPRINT(EM_DIAGRAM):   if eof then do;
+28566      if ^(select=1 and cccselect=1) then do;
+MPRINT(EM_DIAGRAM):   if ^(select=1 and cccselect=1) then do;
+28567      put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+28568      put '*;';
+MPRINT(EM_DIAGRAM):   put '*;';
+28569      put "WARNING: The number of clusters selected based on the CCC values may not be valid.  Please refer to the documentation on the Cubic Clustering Criterion.";
+MPRINT(EM_DIAGRAM):   put "WARNING: The number of clusters selected based on the CCC values may not be valid.  Please refer to the documentation on the Cubic Clustering Criterion.";
+28570      put '*;';
+MPRINT(EM_DIAGRAM):   put '*;';
+28571      put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+28572      end;
+MPRINT(EM_DIAGRAM):   end;
+28573      if select<1 then do;
+MPRINT(EM_DIAGRAM):   if select<1 then do;
+28574      msg = sasmsg('sashelp.dmine', 'rpt_noCCCclusternum_note', 'NOQUOTE');
+MPRINT(EM_DIAGRAM):   msg = sasmsg('sashelp.dmine', 'rpt_noCCCclusternum_note', 'NOQUOTE');
+28575      put msg;
+MPRINT(EM_DIAGRAM):   put msg;
+28576      end;
+MPRINT(EM_DIAGRAM):   end;
+28577      if cccselect<1 then do;
+MPRINT(EM_DIAGRAM):   if cccselect<1 then do;
+28578      msg = sasmsg('sashelp.dmine', 'rpt_noValidclusterNum_note', 'NOQUOTE');
+MPRINT(EM_DIAGRAM):   msg = sasmsg('sashelp.dmine', 'rpt_noValidclusterNum_note', 'NOQUOTE');
+28579      put msg;
+MPRINT(EM_DIAGRAM):   put msg;
+28580      end;
+MPRINT(EM_DIAGRAM):   end;
+28581      call symput('em_maxC', strip(put(numSel,best.)));
+MPRINT(EM_DIAGRAM):   call symput('em_maxC', strip(put(numSel,best.)));
+28582      end;
+MPRINT(EM_DIAGRAM):   end;
+28583      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 2 observations read from the data set WORK._SEED2_.
+NOTE: The data set WORK._SEED2_ has 2 observations and 63 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+28584      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+28585      * Clus: Training;
+MPRINT(EM_DIAGRAM):   * Clus: Training;
+28586      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28587      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28588      * Clus: Run DMVQ procedure;
+MPRINT(EM_DIAGRAM):   * Clus: Run DMVQ procedure;
+28589      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28590      title;
+MPRINT(EM_DIAGRAM):   title;
+28591      options nodate;
+MPRINT(EM_DIAGRAM):   options nodate;
+28592      proc dmvq data=WORK.Clus_DMDB dmdbcat=WORK.Clus_DMDB std=STD nominal=GLM ordinal=RANK
+28593      ;
+MPRINT(EM_DIAGRAM):   proc dmvq data=WORK.Clus_DMDB dmdbcat=WORK.Clus_DMDB std=STD nominal=GLM ordinal=RANK ;
+NOTE: The training set WORK.CLUS_DMDB.DATA has 21 variable(s).
+NOTE: The DMVQ statement has finished with return code=0 and status=begin.
+MPRINT(EM_DIAGRAM):   input
+28594      input %DMVQINTERVAL / level=interval;
+MPRINT(DMVQINTERVAL):   Age BMI
+MPRINT(EM_DIAGRAM):   / level=interval;
+NOTE: 2 input variable(s) defined for ID=I1.
+NOTE: The INPUT statement has finished with return code=0 and status=variables.
+MPRINT(EM_DIAGRAM):   input
+28595      input %DMVQNOMINAL / level=nominal;
+MPRINT(DMVQNOMINAL):   AnyHealthcare CholCheck DiffWalk Fruits HeartDiseaseorAttack HighBP HighChol HvyAlcoholConsump NoDocbcCost PhysActivity Sex Smoker Stroke Veggies
+MPRINT(EM_DIAGRAM):   / level=nominal;
+NOTE: 14 input variable(s) defined for ID=I2.
+NOTE: The INPUT statement has finished with return code=0 and status=variables.
+MPRINT(EM_DIAGRAM):   input
+28596      input %DMVQORDINAL / level=ordinal;
+MPRINT(DMVQORDINAL):   Education GenHlth Income MentHlth PhysHlth
+MPRINT(EM_DIAGRAM):   / level=ordinal;
+NOTE: 5 input variable(s) defined for ID=I3.
+NOTE: The INPUT statement has finished with return code=0 and status=variables.
+28597      VQ maxc = 3 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
+MPRINT(EM_DIAGRAM):   VQ maxc = 3 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
+NOTE: A maximum of 3 clusters have been requested.
+NOTE: The VQ statement has finished with return code=0 and status=architecture.
+28598      MAKE outvar=EMWS2.Clus_OUTVAR;
+MPRINT(EM_DIAGRAM):   MAKE outvar=EMWS2.Clus_OUTVAR;
+
+NOTE: 21 input variable(s).
+NOTE: Number of cases=247875
+NOTE: Sum of frequencies=247875
+NOTE: Sum of weights=247875
+NOTE: VARDEF=DF      
+NOTE: Maximum number of categories=31
+NOTE: The total number of variables is 21 with dimensionality 35.
+NOTE: 21 variables will be used for clustering.
+NOTE: Open output data set EMWS2.CLUS_OUTVAR.DATA with 36 variables.
+NOTE: The data set EMWS2.CLUS_OUTVAR has 4 observations and 36 variables.
+NOTE: The MAKE statement has finished with return code=0 and status=made.
+28599      INITIAL radius=0
+28600      ;
+MPRINT(EM_DIAGRAM):   INITIAL radius=0 ;
+NOTE: 3 seeds were selected from data set WORK.CLUS_DMDB.DATA using the SEPARATE algorithm.
+NOTE: The INITIAL statement has finished with return code=0 and status=initialized.
+28601      TRAIN tech=FORGY
+28602      ;
+MPRINT(EM_DIAGRAM):   TRAIN tech=FORGY ;
+WARNING: The limit of 10 iterations was reached without convergence.
+NOTE: The TRAIN statement has finished with return code=0 and status=trained.
+28603      SAVE outstat=EMWS2.Clus_OUTSTAT outmean=EMWS2.Clus_OUTMEAN;
+MPRINT(EM_DIAGRAM):   SAVE outstat=EMWS2.Clus_OUTSTAT outmean=EMWS2.Clus_OUTMEAN;
+NOTE: The data set EMWS2.CLUS_OUTSTAT has 34 observations and 38 variables.
+NOTE: The data set EMWS2.CLUS_OUTMEAN has 3 observations and 44 variables.
+NOTE: The SAVE statement has finished with return code=0 and status=statistics.
+28604      code file="\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\DMVQSCORECODE.sas"
+28605      group=Clus
+28606      ;
+MPRINT(EM_DIAGRAM):   code file="\\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\DMVQSCORECODE.sas" group=Clus ;
+NOTE: External file \\uisnutvdiprof1a\redirected$\bkris2\Documents\ZetaProject\ZetaExploratoryAnalysis\Workspaces\EMWS2\Clus\DMVQSCORECODE.sas opened.
+NOTE: The CODE statement has finished with return code=0 and status=statistics.
+28607      run;
+MPRINT(EM_DIAGRAM):   run;
+
+28608      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: There were 247875 observations read from the data set WORK.CLUS_DMDB.
+NOTE: PROCEDURE DMVQ used (Total process time):
+      real time           3.32 seconds
+      cpu time            3.09 seconds
+      
+
+28609      libname _spdslib;
+MPRINT(EM_DIAGRAM):    libname _spdslib;
+WARNING: Libref _SPDSLIB is not assigned.
+28610      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+28611      * Clus: Cluster Label;
+MPRINT(EM_DIAGRAM):   * Clus: Cluster Label;
+28612      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28613      data EMWS2.Clus_LABEL;
+MPRINT(EM_DIAGRAM):   data EMWS2.Clus_LABEL;
+28614      length _SEGMENT_ 8 Label $80;
+MPRINT(EM_DIAGRAM):   length _SEGMENT_ 8 Label $80;
+28615      format _SEGMENT_ 4.;
+MPRINT(EM_DIAGRAM):   format _SEGMENT_ 4.;
+28616      label _SEGMENT_ = "%sysfunc(sasmsg(sashelp.dmine, rpt_segmentName_vlabel,  NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label _SEGMENT_ = "Segment Name";
+28617      label Label = "%sysfunc(sasmsg(sashelp.dmine, rpt_segmentLabel_vlabel,  NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label Label = "Segment Label";
+28618      _SEGMENT_= 1;
+MPRINT(EM_DIAGRAM):   _SEGMENT_= 1;
+28619      Label='Cluster1';
+MPRINT(EM_DIAGRAM):   Label='Cluster1';
+28620      output;
+MPRINT(EM_DIAGRAM):   output;
+28621      _SEGMENT_= 2;
+MPRINT(EM_DIAGRAM):   _SEGMENT_= 2;
+28622      Label='Cluster2';
+MPRINT(EM_DIAGRAM):   Label='Cluster2';
+28623      output;
+MPRINT(EM_DIAGRAM):   output;
+28624      _SEGMENT_= 3;
+MPRINT(EM_DIAGRAM):   _SEGMENT_= 3;
+28625      Label='Cluster3';
+MPRINT(EM_DIAGRAM):   Label='Cluster3';
+28626      output;
+MPRINT(EM_DIAGRAM):   output;
+28627      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set EMWS2.CLUS_LABEL has 3 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.16 seconds
+      cpu time            0.09 seconds
+      
+
+MPRINT(EM_DIAGRAM):    proc printto;
+MPRINT(EM_DIAGRAM):   run;

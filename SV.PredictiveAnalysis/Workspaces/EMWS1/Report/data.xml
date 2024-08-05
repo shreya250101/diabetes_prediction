@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SASReport version="1.2" xmlns:style="http://www.sas.com/sasreportmodel/styles">
+<Data version="9.4">
+  <DataModel name="StatGraphDataModelIDX">
+    <IQData type="2DEmbedded" name="StatGraphDataIDX">
+      <EmbeddedData>
+      <Variables>
+        <Variable name="NODE" label="Node Id" type="Numeric" encoding="Text"/>
+        <Variable name="PARENT" label="Parent Id" type="Numeric" encoding="Text"/>
+        <Variable name="NODECOLOR" label="Node Color" type="Numeric" encoding="Text"/>
+        <Variable name="N" label="N" type="Numeric" encoding="Text"/>
+      </Variables>
+        <ValuesList valuesCount="13">
+          <V>1</V>
+          <V M="."></V>
+          <V>0.84527845639926</V>
+          <V>80228</V>
+          <V>2</V>
+          <V>1</V>
+          <V>0.73447300096268</V>
+          <V>34279</V>
+          <V>3</V>
+          <V>1</V>
+          <V>0.92794184857124</V>
+          <V>45949</V>
+          <V>4</V>
+          <V>2</V>
+          <V>0.8602142251676</V>
+          <V>12977</V>
+          <V>5</V>
+          <V>2</V>
+          <V>0.65787250023471</V>
+          <V>21302</V>
+          <V>10</V>
+          <V>5</V>
+          <V>0.6029314767314</V>
+          <V>13645</V>
+          <V>11</V>
+          <V>5</V>
+          <V>0.75577902572809</V>
+          <V>7657</V>
+          <V>20</V>
+          <V>10</V>
+          <V>0.67413837781808</V>
+          <V>7718</V>
+          <V>21</V>
+          <V>10</V>
+          <V>0.51020752488611</V>
+          <V>5927</V>
+          <V>42</V>
+          <V>21</V>
+          <V>0.59073107049608</V>
+          <V>3064</V>
+          <V>43</V>
+          <V>21</V>
+          <V>0.53405518686692</V>
+          <V>2863</V>
+          <V>86</V>
+          <V>43</V>
+          <V>0.54255319148936</V>
+          <V>376</V>
+          <V>87</V>
+          <V>43</V>
+          <V>0.55327704061117</V>
+          <V>2487</V>
+        </ValuesList>
+      </EmbeddedData>
+    </IQData>
+  </DataModel>
+</Data>
+</SASReport>

@@ -1,0 +1,86 @@
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "March 04, 2024" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "12:07:01" );
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Score Log";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+*------------------------------------------------------------*
+* Score Log
+Date:                March 04, 2024
+Time:                12:07:01
+*------------------------------------------------------------*
+MPRINT(EM_DIAGRAM):    filename O2IJCWWA "\\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\Workspaces\EMWS1\Ids5\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O2IJCWWA new;
+MPRINT(EM_DIAGRAM):   run;
+28723      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+28724      * Ids5: Computing metadata for DATA data;
+MPRINT(EM_DIAGRAM):   * Ids5: Computing metadata for DATA data;
+28725      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+28726      data EMWS1.Ids5_EMINFO;
+MPRINT(EM_DIAGRAM):    data EMWS1.Ids5_EMINFO;
+28727      length TARGET KEY $32 DATA $43;
+MPRINT(EM_DIAGRAM):   length TARGET KEY $32 DATA $43;
+28728      TARGET="";
+MPRINT(EM_DIAGRAM):   TARGET="";
+28729      KEY="IDSTABLE";
+MPRINT(EM_DIAGRAM):   KEY="IDSTABLE";
+28730      DATA="ZETADATA.ZETADIABETES_TRAIN";
+MPRINT(EM_DIAGRAM):   DATA="ZETADATA.ZETADIABETES_TRAIN";
+28731      output;
+MPRINT(EM_DIAGRAM):   output;
+28732      TARGET="Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   TARGET="Diabetes_Prediction";
+28733      KEY="DECDATA";
+MPRINT(EM_DIAGRAM):   KEY="DECDATA";
+28734      DATA="EMWS1.Ids5_Diabetes_Predict_DD";
+MPRINT(EM_DIAGRAM):   DATA="EMWS1.Ids5_Diabetes_Predict_DD";
+28735      output;
+MPRINT(EM_DIAGRAM):   output;
+28736      TARGET="Diabetes_Prediction";
+MPRINT(EM_DIAGRAM):   TARGET="Diabetes_Prediction";
+28737      KEY="DECMETA";
+MPRINT(EM_DIAGRAM):   KEY="DECMETA";
+28738      DATA="EMWS1.Ids5_Diabetes_Predict_DM";
+MPRINT(EM_DIAGRAM):   DATA="EMWS1.Ids5_Diabetes_Predict_DM";
+28739      output;
+MPRINT(EM_DIAGRAM):   output;
+28740      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set EMWS1.IDS5_EMINFO has 3 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.03 seconds
+      
+
+28741      data EMWS1.Ids5_CMeta_DATA;
+MPRINT(EM_DIAGRAM):    data EMWS1.Ids5_CMeta_DATA;
+28742      set EMWS1.Ids5_VariableSet;
+MPRINT(EM_DIAGRAM):   set EMWS1.Ids5_VariableSet;
+28743      drop DROP;
+MPRINT(EM_DIAGRAM):   drop DROP;
+28744      where DROP='N';
+MPRINT(EM_DIAGRAM):   where DROP='N';
+28745      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 22 observations read from the data set EMWS1.IDS5_VARIABLESET.
+      WHERE DROP='N';
+NOTE: The data set EMWS1.IDS5_CMETA_DATA has 22 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.06 seconds
+      
+
+MPRINT(EM_DIAGRAM):    proc printto;
+MPRINT(EM_DIAGRAM):   run;

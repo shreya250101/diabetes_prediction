@@ -1,0 +1,37 @@
+*------------------------------------------------------------*
+User:                shre2
+Date:                March 04, 2024
+Time:                11:18:47
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+         Measurement    Frequency
+Role        Level         Count
+ 
+INPUT     INTERVAL          21
+INPUT     NOMINAL            1
+ 
+ 
+ 
+Saved Data Properties
+ 
+  Data                                                                                                                                Total           Saved        Number of
+Library                                                       Output Location                                                      Observations    Observations    Variables
+ 
+ZETADATA    \\uisnutvdiprof1a\redirected$\shre2\Documents\SV.SAS EM Assignments\SV.PredictiveAnalysis\ZDiabestes_TRAIN.sas7bdat       250716           MAX            22
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

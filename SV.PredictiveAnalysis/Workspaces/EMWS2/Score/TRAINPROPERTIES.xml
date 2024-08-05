@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  OutputType="VIEW" FixedOutputNames="Y" HideVariables="N" HideInput="Y" HideTarget="Y"
+ HideRejected="Y" HideAssess="Y" HidePredict="Y" HideFreq="Y" HideClassification="Y"
+ HideResidual="Y" HideOther="Y" ScoreValidate="N" ScoreTest="N" CScore="N" JScore="N"
+ PackageName="DEFAULT" UserPackageName="" PreferenceName="" OptimizedCode="Y" GraphReports="Y"
+ ForceRun="N" RunAction="Train" Component="Score" RawCreateTime="2024274689.4" CreateTime="23FEB2024:02:31:29"
+ RunId="7f763144-b0b2-45d2-bb47-c10f3590c396" RawLastTimeRun="2025136170.4" RawRunTime="30.164999962"
+ LastTimeRun="04MAR2024:01:49:30" RunTime="0 Hr. 0 Min. 30.16 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+EMNOTES
+]]>
+</FILEPROPERTIES><EMTARGETATTRIBUTES/>
+</_ROOT_>

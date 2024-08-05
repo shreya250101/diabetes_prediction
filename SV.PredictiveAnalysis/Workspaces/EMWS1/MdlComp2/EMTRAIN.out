@@ -1,0 +1,294 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+TARGET      NOMINAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                                          BINNED_KS_
+                                                                                 _KS_PROB_                   PROB_
+Obs          TARGET               TARGETLABEL        _AUR_    _GINI_      KS       CUTOFF     _KS_BIN_      CUTOFF
+
+ 1     Diabetes_Prediction    Diabetes Prediction    0.714     0.429    0.336       0.02        0.334        0.02   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                    _VKS_              _VBINNED_
+                                                                                    PROB_     _VKS_     KS_PROB_
+Obs          TARGET               TARGETLABEL        _VAUR_    _VGINI_     VKS     CUTOFF_     BIN_     CUTOFF_
+
+ 1     Diabetes_Prediction    Diabetes Prediction     0.72       0.44     0.335     0.017     0.335      0.018  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                    _TKS_              _TBINNED_
+                                                                                    PROB_     _TKS_     KS_PROB_
+Obs          TARGET               TARGETLABEL        _TAUR_    _TGINI_     TKS     CUTOFF_     BIN_     CUTOFF_
+
+ 1     Diabetes_Prediction    Diabetes Prediction     0.697     0.394     0.304     0.015     0.303      0.018  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                                          BINNED_KS_
+                                                                                 _KS_PROB_                   PROB_
+Obs          TARGET               TARGETLABEL        _AUR_    _GINI_      KS       CUTOFF     _KS_BIN_      CUTOFF
+
+ 1     Diabetes_Prediction    Diabetes Prediction    0.714     0.429    0.336       0.02        0.334        0.02   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                    _VKS_              _VBINNED_
+                                                                                    PROB_     _VKS_     KS_PROB_
+Obs          TARGET               TARGETLABEL        _VAUR_    _VGINI_     VKS     CUTOFF_     BIN_     CUTOFF_
+
+ 1     Diabetes_Prediction    Diabetes Prediction     0.72       0.44     0.335     0.017     0.335      0.018  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                    _TKS_              _TBINNED_
+                                                                                    PROB_     _TKS_     KS_PROB_
+Obs          TARGET               TARGETLABEL        _TAUR_    _TGINI_     TKS     CUTOFF_     BIN_     CUTOFF_
+
+ 1     Diabetes_Prediction    Diabetes Prediction     0.697     0.394     0.304     0.015     0.303      0.018  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                                          BINNED_KS_
+                                                                                 _KS_PROB_                   PROB_
+Obs          TARGET               TARGETLABEL        _AUR_    _GINI_      KS       CUTOFF     _KS_BIN_      CUTOFF
+
+ 1     Diabetes_Prediction    Diabetes Prediction    0.714     0.429    0.336       0.02        0.334        0.02   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                    _VKS_              _VBINNED_
+                                                                                    PROB_     _VKS_     KS_PROB_
+Obs          TARGET               TARGETLABEL        _VAUR_    _VGINI_     VKS     CUTOFF_     BIN_     CUTOFF_
+
+ 1     Diabetes_Prediction    Diabetes Prediction     0.72       0.44     0.335     0.017     0.335      0.018  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                    _TKS_              _TBINNED_
+                                                                                    PROB_     _TKS_     KS_PROB_
+Obs          TARGET               TARGETLABEL        _TAUR_    _TGINI_     TKS     CUTOFF_     BIN_     CUTOFF_
+
+ 1     Diabetes_Prediction    Diabetes Prediction     0.697     0.394     0.304     0.015     0.303      0.018  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                                         BINNED_KS_
+                                                                                _KS_PROB_                   PROB_
+Obs          TARGET               TARGETLABEL        _AUR_    _GINI_     KS       CUTOFF     _KS_BIN_      CUTOFF
+
+ 1     Diabetes_Prediction    Diabetes Prediction    0.721     0.442    0.34       0.02        0.336        0.017  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                    _VKS_              _VBINNED_
+                                                                                    PROB_     _VKS_     KS_PROB_
+Obs          TARGET               TARGETLABEL        _VAUR_    _VGINI_     VKS     CUTOFF_     BIN_     CUTOFF_
+
+ 1     Diabetes_Prediction    Diabetes Prediction     0.712     0.423     0.327     0.017     0.323      0.015  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                    _TKS_              _TBINNED_
+                                                                                    PROB_     _TKS_     KS_PROB_
+Obs          TARGET               TARGETLABEL        _TAUR_    _TGINI_     TKS     CUTOFF_     BIN_     CUTOFF_
+
+ 1     Diabetes_Prediction    Diabetes Prediction     0.693     0.387     0.308     0.015     0.303      0.017  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+
+
+
+
+
+
+Fit Statistics
+Model Selection based on Valid: Misclassification Rate (_VMISC_)
+
+                                                                    Train:                           Valid:
+                                                    Valid:          Average          Train:          Average
+Selected    Model                             Misclassification     Squared    Misclassification     Squared
+ Model      Node       Model Description             Rate            Error            Rate            Error
+
+   Y        Reg      Exhaustive Regression         0.14951         0.073766         0.14995         0.073580
+            Reg2     Forward Regression            0.14958         0.073887         0.15078         0.073475
+            Reg3     Backward Regression           0.14958         0.073887         0.15078         0.073475
+            Reg4     Stepwise Regression           0.14958         0.073887         0.15078         0.073475
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+
+
+
+
+
+
+Fit Statistics Table
+Target: Diabetes_Prediction
+
+Data Role=Train
+
+Statistics                                                              Reg         Reg2         Reg3         Reg4
+
+Train: Bin-Based Two-Way Kolmogorov-Smirnov Probability Cutoff         0.02         0.02         0.02         0.02
+Train: Kolmogorov-Smirnov Statistic                                    0.34         0.34         0.34         0.34
+Train: Akaike's Information Criterion                              63714.62     63598.69     63598.69     63598.69
+Train: Average Squared Error                                           0.07         0.07         0.07         0.07
+Train: Roc Index                                                       0.72         0.71         0.71         0.71
+Train: Average Error Function                                          0.26         0.26         0.26         0.26
+Train: Cumulative Percent Captured Response                           24.79        23.90        23.90        23.90
+Train: Percent Captured Response                                      10.71        11.06        11.06        11.06
+Selection Criterion: Valid: Misclassification Rate                     0.15         0.15         0.15         0.15
+Train: Degrees of Freedom for Error                               160270.00    160400.00    160400.00    160400.00
+Train: Model Degrees of Freedom                                      186.00        56.00        56.00        56.00
+Train: Total Degrees of Freedom                                   160456.00    160456.00    160456.00    160456.00
+Train: Divisor for ASE                                            240684.00    240684.00    240684.00    240684.00
+Train: Error Function                                              63342.62     63486.69     63486.69     63486.69
+Train: Final Prediction Error                                          0.07         0.07         0.07         0.07
+Train: Gain                                                          147.93       139.01       139.01       139.01
+Train: Gini Coefficient                                                0.44         0.43         0.43         0.43
+Train: Bin-Based Two-Way Kolmogorov-Smirnov Statistic                  0.34         0.33         0.33         0.33
+Train: Kolmogorov-Smirnov Probability Cutoff                           0.02         0.02         0.02         0.02
+Train: Cumulative Lift                                                 2.48         2.39         2.39         2.39
+Train: Lift                                                            2.14         2.21         2.21         2.21
+Train: Maximum Absolute Error                                          1.00         1.00         1.00         1.00
+Train: Misclassification Rate                                          0.15         0.15         0.15         0.15
+Train: Mean Square Error                                               0.07         0.07         0.07         0.07
+Train: Sum of Frequencies                                          80228.00     80228.00     80228.00     80228.00
+Train: Number of Estimate Weights                                    186.00        56.00        56.00        56.00
+Train: Root Average Sum of Squares                                     0.27         0.27         0.27         0.27
+Train: Cumulative Percent Response                                     4.50         4.34         4.34         4.34
+Train: Percent Response                                                3.89         4.01         4.01         4.01
+Train: Root Final Prediction Error                                     0.27         0.27         0.27         0.27
+Train: Root Mean Squared Error                                         0.27         0.27         0.27         0.27
+Train: Schwarz's Bayesian Criterion                                65571.97     64157.90     64157.90     64157.90
+Train: Sum of Squared Errors                                       17754.36     17783.49     17783.49     17783.49
+Train: Sum of Case Weights Times Freq                             240684.00    240684.00    240684.00    240684.00
+
+
+Data Role=Valid
+
+Statistics                                                              Reg         Reg2         Reg3         Reg4
+
+Valid: Kolmogorov-Smirnov Statistic                                    0.33         0.34         0.34         0.34
+Valid: Average Squared Error                                           0.07         0.07         0.07         0.07
+Valid: Roc Index                                                       0.71         0.72         0.72         0.72
+Valid: Average Error Function                                          0.26         0.26         0.26         0.26
+Valid: Bin-Based Two-Way Kolmogorov-Smirnov Probability Cutoff         0.02         0.02         0.02         0.02
+Valid: Cumulative Percent Captured Response                           24.01        24.11        24.11        24.11
+Valid: Percent Captured Response                                      10.91        11.18        11.18        11.18
+Valid: Divisor for VASE                                           180507.00    180507.00    180507.00    180507.00
+Valid: Error Function                                              47431.90     47288.47     47288.47     47288.47
+Valid: Gain                                                          140.14       141.06       141.06       141.06
+Valid: Gini Coefficient                                                0.42         0.44         0.44         0.44
+Valid: Bin-Based Two-Way Kolmogorov-Smirnov Statistic                  0.32         0.34         0.34         0.34
+Valid: Kolmogorov-Smirnov Probability Cutoff                           0.02         0.02         0.02         0.02
+Valid: Cumulative Lift                                                 2.40         2.41         2.41         2.41
+Valid: Lift                                                            2.18         2.24         2.24         2.24
+Valid: Maximum Absolute Error                                          1.00         1.00         1.00         1.00
+Valid: Misclassification Rate                                          0.15         0.15         0.15         0.15
+Valid: Mean Square Error                                               0.07         0.07         0.07         0.07
+Valid: Sum of Frequencies                                          60169.00     60169.00     60169.00     60169.00
+Valid: Root Average Squared Error                                      0.27         0.27         0.27         0.27
+Valid: Cumulative Percent Response                                     4.35         4.37         4.37         4.37
+Valid: Percent Response                                                3.96         4.06         4.06         4.06
+Valid: Root Mean Square Error                                          0.27         0.27         0.27         0.27
+Valid: Sum of Square Errors                                        13281.74     13262.82     13262.82     13262.82
+Valid: Sum of Case Weights Times Freq                             180507.00    180507.00    180507.00    180507.00
+
+
+Data Role=Test
+
+Statistics                                                              Reg         Reg2         Reg3         Reg4
+
+Test:  Kolmogorov-Smirnov Statistic                                    0.31         0.30         0.30         0.30
+Test: Average Squared Error                                            0.07         0.07         0.07         0.07
+Test:  Roc Index                                                       0.69         0.70         0.70         0.70
+Test: Average Error Function                                           0.26         0.26         0.26         0.26
+Test:  Bin-Based Two-Way Kolmogorov-Smirnov Probability Cutoff         0.02         0.02         0.02         0.02
+Test: Cumulative Percent Captured Response                            19.93        20.29        20.29        20.29
+Test: Percent Captured Response                                        9.69         9.78         9.78         9.78
+Test: Divisor for TASE                                            180528.00    180528.00    180528.00    180528.00
+Test: Error Function                                               47387.22     47321.97     47321.97     47321.97
+Test: Gain                                                            99.26       102.91       102.91       102.91
+Test:  Gini Coefficient                                                0.39         0.39         0.39         0.39
+Test:  Bin-Based Two-Way Kolmogorov-Smirnov Statistic                  0.30         0.30         0.30         0.30
+Test:  Kolmogorov-Smirnov Probability Cutoff                           0.02         0.02         0.02         0.02
+Test: Cumulative Lift                                                  1.99         2.03         2.03         2.03
+Test: Lift                                                             1.94         1.96         1.96         1.96
+Test: Maximum Absolute Error                                           1.00         1.00         1.00         1.00
+Test: Misclassification Rate                                           0.15         0.15         0.15         0.15
+Test: Lower 95% Conf. Limit for TMISC                                  0.15         0.15         0.15         0.15
+Test: Upper 95% Conf. Limit for TMISC                                  0.15         0.15         0.15         0.15
+Test: Mean Square Error                                                0.07         0.07         0.07         0.07
+Test: Sum of Frequencies                                           60176.00     60176.00     60176.00     60176.00
+Test: Root Average Squared Error                                       0.27         0.27         0.27         0.27
+Test: Cumulative Percent Response                                      3.62         3.69         3.69         3.69
+Test: Percent Response                                                 3.52         3.56         3.56         3.56
+Test: Root Mean Square Error                                           0.27         0.27         0.27         0.27
+Test: Sum of Square Errors                                         13247.56     13237.69     13237.69     13237.69
+Test: Sum of Case Weights Times Freq                              180528.00    180528.00    180528.00    180528.00
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+
+
+
+
+
+
+Event Classification Table
+Model Selection based on Valid: Misclassification Rate (_VMISC_)
+
+Model                             Data                                                        False       True        False       True
+Node       Model Description      Role              Target              Target Label        Negative    Negative    Positive    Positive
+
+Reg4     Stepwise Regression      TRAIN       Diabetes_Prediction    Diabetes Prediction      1456        78772         0           0   
+Reg4     Stepwise Regression      VALIDATE    Diabetes_Prediction    Diabetes Prediction      1091        59078         0           0   
+Reg3     Backward Regression      TRAIN       Diabetes_Prediction    Diabetes Prediction      1456        78772         0           0   
+Reg3     Backward Regression      VALIDATE    Diabetes_Prediction    Diabetes Prediction      1091        59078         0           0   
+Reg2     Forward Regression       TRAIN       Diabetes_Prediction    Diabetes Prediction      1456        78772         0           0   
+Reg2     Forward Regression       VALIDATE    Diabetes_Prediction    Diabetes Prediction      1091        59078         0           0   
+Reg      Exhaustive Regression    TRAIN       Diabetes_Prediction    Diabetes Prediction      1456        78772         .           0   
+Reg      Exhaustive Regression    VALIDATE    Diabetes_Prediction    Diabetes Prediction      1091        59077         1           0   

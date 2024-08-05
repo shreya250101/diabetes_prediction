@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  Location="CATALOG" Catalog="SASHELP.EMUTIL.REPORTER.SOURCE" Format="PDF" Style="JOURNAL"
+ Nodes="PATH" ShowAll="N" Summarization="Y" VarRanking="Y" Classification="Y" CrossTabs="Y"
+ LiftChart="Y" FitStat="Y" CompareMdl="Y" basicoutput="Y" headersize="8" textsize="6"
+ titlesize="10" ForceRun="N" RunAction="Train" Component="Reporter" DataNeeded="Y"
+ textfont="Arial" RawCreateTime="2025614285.6" CreateTime="09MAR2024:14:38:06" RunId="aca6cf5d-3494-4dd7-a4cb-472ca9a1bec7"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+USERTRAINCODE
+USERSCORECODE
+USERREPORTCODE
+]]>
+</FILEPROPERTIES></_ROOT_>

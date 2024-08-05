@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="zetadiabetestrain" Scope="LOCAL" Role="RAW" Library="ZETADATA" Table="ZETADIABETES_TRAIN"
+ NCols="23" NObs="200573" NBytes="38667264" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="zetadiabetestrain"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="shre2" DsCreateDate="2025170943.4"
+ DsModifiedBy="shre2" DsModifyDate="2025170943.7" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="2025170953.3" CreateTime="04MAR2024:11:29:13"
+ Description="" Data="ZETADATA.ZETADIABETES_TRAIN" CMeta="WORK.M0KTH0MB" RunId="932530d0-57bc-4b21-bdf7-c21b09aadbe4"
+ RawLastTimeRun="2025173209.9" RawRunTime="14.369999886" LastTimeRun="04MAR2024:12:06:50"
+ RunTime="0 Hr. 0 Min. 14.37 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

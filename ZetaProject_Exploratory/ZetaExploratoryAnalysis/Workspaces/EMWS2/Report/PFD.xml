@@ -1,0 +1,24 @@
+<PFDNode x="713" y="181" id="Clus" title="Ward Clustering"></PFDNode>
+<PFDNode x="707" y="275" id="Clus2" title="Centroid Clustering"></PFDNode>
+<PFDNode x="707" y="366" id="Clus3" title="Average Clustering"></PFDNode>
+<PFDNode x="834" y="466" id="Clus4" title="90% Ward Clustering"></PFDNode>
+<PFDNode x="840" y="551" id="Clus5" title="90% Centroid Clustering"></PFDNode>
+<PFDNode x="845" y="635" id="Clus6" title="90% Average Clustering"></PFDNode>
+<PFDNode x="422" y="244" id="Filter" title="Filter"></PFDNode>
+<PFDNode x="165" y="242" id="Ids" title="ZETADIABITIES_TRAIN"></PFDNode>
+<PFDNode x="1318" y="362" id="Report" title="Reporter"></PFDNode>
+<PFDNode x="597" y="513" id="Smpl" title="Sample"></PFDNode>
+<PFDLink id='1' fromId='Filter' toId='Smpl'></PFDLink>
+<PFDLink id='2' fromId='Filter' toId='Clus'></PFDLink>
+<PFDLink id='3' fromId='Filter' toId='Clus2'></PFDLink>
+<PFDLink id='4' fromId='Filter' toId='Clus3'></PFDLink>
+<PFDLink id='5' fromId='Smpl' toId='Clus4'></PFDLink>
+<PFDLink id='6' fromId='Smpl' toId='Clus5'></PFDLink>
+<PFDLink id='7' fromId='Smpl' toId='Clus6'></PFDLink>
+<PFDLink id='8' fromId='Ids' toId='Filter'></PFDLink>
+<PFDLink id='9' fromId='Clus' toId='Report'></PFDLink>
+<PFDLink id='10' fromId='Clus2' toId='Report'></PFDLink>
+<PFDLink id='11' fromId='Clus3' toId='Report'></PFDLink>
+<PFDLink id='12' fromId='Clus4' toId='Report'></PFDLink>
+<PFDLink id='13' fromId='Clus5' toId='Report'></PFDLink>
+<PFDLink id='14' fromId='Clus6' toId='Report'></PFDLink>

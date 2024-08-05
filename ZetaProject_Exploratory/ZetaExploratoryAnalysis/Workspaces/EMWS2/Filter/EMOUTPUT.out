@@ -1,0 +1,95 @@
+*------------------------------------------------------------*
+User:                bkris2
+Date:                March 03, 2024
+Time:                20:00:17
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+INPUT        BINARY            8
+INPUT        INTERVAL          2
+INPUT        ORDINAL           5
+REJECTED     BINARY            6
+REJECTED     NOMINAL           1
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+Filter Limits for Interval Variables
+(maximum 500 observations printed)
+ 
+                                                       Keep
+                                            Filter    Missing
+Variable    Role      Minimum    Maximum    Method    Values     Label
+ 
+  Age       INPUT     -1.1256    17.2143    STDDEV       Y
+  BMI       INPUT     11.1980    44.8472    STDDEV       Y
+ 
+ 
+ 
+Excluded Class Values
+(maximum 500 observations printed)
+ 
+                                    Train      Train              Filter
+Variable     Role     Level         Count     Percent    Label    Method
+ 
+Education    INPUT      1             167    0.066609             MINPCT
+ 
+ 
+ 
+ 
+Number Of Observations
+ 
+Data
+Role     Filtered    Excluded     DATA
+ 
+TRAIN     247875       2841      250716
+ 
+ 
+ 
+Statistics for Original and FILTERED Data
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN Variable=Age
+ 
+Statistics              Original      Filtered
+ 
+Non Missing            250716.00     247875.00
+Missing                     0.00          0.00
+Minimum                     1.00          1.00
+Maximum                    13.00         13.00
+Mean                        8.04          8.05
+Standard Deviation          3.06          3.06
+Skewness                   -0.36         -0.37
+Kurtosis                   -0.58         -0.58
+ 
+ 
+Data Role=TRAIN Variable=BMI
+ 
+Statistics             Original     Filtered
+ 
+Non Missing           250716.00    247875.00
+Missing                    0.00         0.00
+Minimum                   12.00        12.00
+Maximum                   48.00        44.00
+Mean                      28.02        27.83
+Standard Deviation         5.61         5.30
+Skewness                   0.80         0.63
+Kurtosis                   0.68         0.18
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

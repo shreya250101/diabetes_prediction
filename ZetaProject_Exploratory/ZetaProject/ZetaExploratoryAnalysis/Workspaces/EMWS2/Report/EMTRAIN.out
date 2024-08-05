@@ -1,0 +1,32 @@
+ 
+                                                                                                      
+ 
+ 
+Variable Summary
+
+            Measurement    Frequency
+Role           Level         Count
+
+INPUT        BINARY            14   
+INPUT        INTERVAL           2   
+INPUT        ORDINAL            5   
+REJECTED     INTERVAL           1   
+REJECTED     NOMINAL            1   
+SEGMENT      NOMINAL            1   
+
+
+
+                                                                                               16
+User       = bkris2
+Date       = 15:50:13  March 09
+Project    = ZetaExploratoryAnalysis
+Diagram    = ZetaExploratoryAnalysis
+
+Start Node = Report
+Node label = 90% Ward Clustering
+Nodes      = PATH
+Showall    = N
+
+Format     = PDF
+Graphics   = GIF
+Style      = JOURNAL

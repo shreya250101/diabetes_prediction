@@ -1,0 +1,88 @@
+*------------------------------------------------------------*
+ Node = 2
+*------------------------------------------------------------*
+if GenHlth <= 2 or MISSING
+then 
+ Tree Node Identifier   = 2
+ Number of Observations = 42730
+ Predicted: Diabetes_Prediction=prediabetes = 0.01
+ Predicted: Diabetes_Prediction=no diabetes = 0.93
+ Predicted: Diabetes_Prediction=diabetes = 0.06
+ 
+*------------------------------------------------------------*
+ Node = 3
+*------------------------------------------------------------*
+if GenHlth >= 3 AND GenHlth <= 3
+then 
+ Tree Node Identifier   = 3
+ Number of Observations = 23897
+ Predicted: Diabetes_Prediction=prediabetes = 0.02
+ Predicted: Diabetes_Prediction=no diabetes = 0.80
+ Predicted: Diabetes_Prediction=diabetes = 0.18
+ 
+*------------------------------------------------------------*
+ Node = 10
+*------------------------------------------------------------*
+if HighBP IS ONE OF: 0
+AND GenHlth >= 4
+then 
+ Tree Node Identifier   = 10
+ Number of Observations = 4557
+ Predicted: Diabetes_Prediction=prediabetes = 0.03
+ Predicted: Diabetes_Prediction=no diabetes = 0.80
+ Predicted: Diabetes_Prediction=diabetes = 0.18
+ 
+*------------------------------------------------------------*
+ Node = 23
+*------------------------------------------------------------*
+if HighBP IS ONE OF: 1 or MISSING
+AND GenHlth >= 4
+AND BMI < 23.5
+then 
+ Tree Node Identifier   = 23
+ Number of Observations = 1201
+ Predicted: Diabetes_Prediction=prediabetes = 0.02
+ Predicted: Diabetes_Prediction=no diabetes = 0.77
+ Predicted: Diabetes_Prediction=diabetes = 0.21
+ 
+*------------------------------------------------------------*
+ Node = 24
+*------------------------------------------------------------*
+if HighBP IS ONE OF: 1 or MISSING
+AND GenHlth >= 4
+AND BMI < 32.5 AND BMI >= 23.5 or MISSING
+then 
+ Tree Node Identifier   = 24
+ Number of Observations = 4735
+ Predicted: Diabetes_Prediction=prediabetes = 0.04
+ Predicted: Diabetes_Prediction=no diabetes = 0.60
+ Predicted: Diabetes_Prediction=diabetes = 0.37
+ 
+*------------------------------------------------------------*
+ Node = 64
+*------------------------------------------------------------*
+if HighChol IS ONE OF: 1 or MISSING
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth >= 4
+AND BMI >= 32.5
+then 
+ Tree Node Identifier   = 64
+ Number of Observations = 2136
+ Predicted: Diabetes_Prediction=prediabetes = 0.04
+ Predicted: Diabetes_Prediction=no diabetes = 0.40
+ Predicted: Diabetes_Prediction=diabetes = 0.56
+ 
+*------------------------------------------------------------*
+ Node = 65
+*------------------------------------------------------------*
+if HighChol IS ONE OF: 0
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth >= 4
+AND BMI >= 32.5
+then 
+ Tree Node Identifier   = 65
+ Number of Observations = 972
+ Predicted: Diabetes_Prediction=prediabetes = 0.05
+ Predicted: Diabetes_Prediction=no diabetes = 0.59
+ Predicted: Diabetes_Prediction=diabetes = 0.36
+ 

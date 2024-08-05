@@ -1,0 +1,202 @@
+*------------------------------------------------------------*
+ Node = 3
+*------------------------------------------------------------*
+if CholCheck IS ONE OF: 0
+then 
+ Tree Node Identifier   = 3
+ Number of Observations = 8419
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=1  = 1.00
+ Predicted: _SEGMENT_=5  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 5
+*------------------------------------------------------------*
+if CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 0
+then 
+ Tree Node Identifier   = 5
+ Number of Observations = 9292
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ Predicted: _SEGMENT_=4  = 1.00
+ 
+*------------------------------------------------------------*
+ Node = 13
+*------------------------------------------------------------*
+if GenHlth >= 3 or MISSING
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 13
+ Number of Observations = 28615
+ Predicted: _SEGMENT_=2  = 0.97
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.02
+ Predicted: _SEGMENT_=3  = 0.01
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 17
+*------------------------------------------------------------*
+if PhysHlth >= 1
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 17
+ Number of Observations = 2242
+ Predicted: _SEGMENT_=2  = 0.89
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.00
+ Predicted: _SEGMENT_=3  = 0.10
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 20
+*------------------------------------------------------------*
+if PhysHlth <= 9 or MISSING
+AND HighBP IS ONE OF: 1
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 20
+ Number of Observations = 59552
+ Predicted: _SEGMENT_=2  = 0.03
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.82
+ Predicted: _SEGMENT_=3  = 0.15
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 22
+*------------------------------------------------------------*
+if HighBP IS ONE OF: 0 or MISSING
+AND GenHlth <= 3 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 22
+ Number of Observations = 98727
+ Predicted: _SEGMENT_=2  = 0.01
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.18
+ Predicted: _SEGMENT_=3  = 0.81
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 24
+*------------------------------------------------------------*
+if PhysHlth <= 0 or MISSING
+AND MentHlth <= 0 or MISSING
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 24
+ Number of Observations = 2222
+ Predicted: _SEGMENT_=2  = 0.16
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.61
+ Predicted: _SEGMENT_=3  = 0.23
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 25
+*------------------------------------------------------------*
+if PhysHlth <= 0 or MISSING
+AND MentHlth >= 1
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 25
+ Number of Observations = 584
+ Predicted: _SEGMENT_=2  = 0.75
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.03
+ Predicted: _SEGMENT_=3  = 0.22
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 34
+*------------------------------------------------------------*
+if PhysHlth >= 10
+AND MentHlth <= 1 or MISSING
+AND HighBP IS ONE OF: 1
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 34
+ Number of Observations = 4190
+ Predicted: _SEGMENT_=2  = 0.20
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.75
+ Predicted: _SEGMENT_=3  = 0.05
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 35
+*------------------------------------------------------------*
+if PhysHlth >= 10
+AND MentHlth >= 2
+AND HighBP IS ONE OF: 1
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 35
+ Number of Observations = 3238
+ Predicted: _SEGMENT_=2  = 0.77
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.18
+ Predicted: _SEGMENT_=3  = 0.05
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 38
+*------------------------------------------------------------*
+if MentHlth <= 0 or MISSING
+AND HighBP IS ONE OF: 0 or MISSING
+AND GenHlth >= 4
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 38
+ Number of Observations = 3164
+ Predicted: _SEGMENT_=2  = 0.10
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.62
+ Predicted: _SEGMENT_=3  = 0.27
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 39
+*------------------------------------------------------------*
+if MentHlth >= 1
+AND HighBP IS ONE OF: 0 or MISSING
+AND GenHlth >= 4
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 39
+ Number of Observations = 2843
+ Predicted: _SEGMENT_=2  = 0.52
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=5  = 0.14
+ Predicted: _SEGMENT_=3  = 0.34
+ Predicted: _SEGMENT_=4  = 0.00
+ 

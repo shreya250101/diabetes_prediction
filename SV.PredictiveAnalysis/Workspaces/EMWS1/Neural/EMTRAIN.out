@@ -1,0 +1,1062 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      BINARY            14   
+INPUT      INTERVAL           2   
+INPUT      ORDINAL            5   
+TARGET     NOMINAL            1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Model Events
+
+                                                     Number
+                                      Measurement      of
+      Target              Event          Level       Levels      Order              Label
+
+Diabetes_Prediction    PREDIABETES      NOMINAL         3      Descending    Diabetes Prediction
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type         Variable                            Label
+
+TARGET       Diabetes_Prediction                 Diabetes Prediction                       
+PREDICTED    P_Diabetes_Predictionprediabetes    Predicted: Diabetes_Prediction=prediabetes
+RESIDUAL     R_Diabetes_Predictionprediabetes    Residual: Diabetes_Prediction=prediabetes 
+PREDICTED    P_Diabetes_Predictionno_diabetes    Predicted: Diabetes_Prediction=no diabetes
+RESIDUAL     R_Diabetes_Predictionno_diabetes    Residual: Diabetes_Prediction=no diabetes 
+PREDICTED    P_Diabetes_Predictiondiabetes       Predicted: Diabetes_Prediction=diabetes   
+RESIDUAL     R_Diabetes_Predictiondiabetes       Residual: Diabetes_Prediction=diabetes    
+FROM         F_Diabetes_Prediction               From: Diabetes_Prediction                 
+INTO         I_Diabetes_Prediction               Into: Diabetes_Prediction                 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The NEURAL Procedure
+
+                                         Optimization Start
+                                         Parameter Estimates
+                                                            Gradient           Lower           Upper
+                                                           Objective           Bound           Bound
+  N Parameter                               Estimate        Function      Constraint      Constraint
+
+  1 Age_H11                                -0.004481               0               .               .
+  2 BMI_H11                                -0.010424               0               .               .
+  3 Age_H12                                -0.025386               0               .               .
+  4 BMI_H12                                -0.023172               0               .               .
+  5 Age_H13                                 0.007666               0               .               .
+  6 BMI_H13                                 0.052062               0               .               .
+  7 AnyHealthcare0_H11                     -0.158595               0               .               .
+  8 CholCheck0_H11                          0.082551               0               .               .
+  9 DiffWalk0_H11                           0.059657               0               .               .
+ 10 Fruits0_H11                             0.018319               0               .               .
+ 11 HeartDiseaseorAttack0_H11              -0.150507               0               .               .
+ 12 HighBP0_H11                             0.046798               0               .               .
+ 13 HighChol0_H11                          -0.067161               0               .               .
+ 14 HvyAlcoholConsump0_H11                  0.177148               0               .               .
+ 15 NoDocbcCost0_H11                        0.003275               0               .               .
+ 16 PhysActivity0_H11                       0.100502               0               .               .
+ 17 Sex0_H11                                0.063059               0               .               .
+ 18 Smoker0_H11                             0.031695               0               .               .
+ 19 Stroke0_H11                             0.088886               0               .               .
+ 20 Veggies0_H11                            0.075910               0               .               .
+ 21 AnyHealthcare0_H12                      0.018909               0               .               .
+ 22 CholCheck0_H12                          0.064834               0               .               .
+ 23 DiffWalk0_H12                          -0.107467               0               .               .
+ 24 Fruits0_H12                             0.051144               0               .               .
+ 25 HeartDiseaseorAttack0_H12               0.153559               0               .               .
+ 26 HighBP0_H12                             0.192083               0               .               .
+ 27 HighChol0_H12                          -0.117896               0               .               .
+ 28 HvyAlcoholConsump0_H12                 -0.162266               0               .               .
+ 29 NoDocbcCost0_H12                       -0.143626               0               .               .
+ 30 PhysActivity0_H12                      -0.116031               0               .               .
+ 31 Sex0_H12                                0.038196               0               .               .
+ 32 Smoker0_H12                            -0.116317               0               .               .
+ 33 Stroke0_H12                             0.052754               0               .               .
+ 34 Veggies0_H12                           -0.003621               0               .               .
+ 35 AnyHealthcare0_H13                     -0.047349               0               .               .
+ 36 CholCheck0_H13                         -0.080611               0               .               .
+ 37 DiffWalk0_H13                          -0.082139               0               .               .
+ 38 Fruits0_H13                            -0.053871               0               .               .
+ 39 HeartDiseaseorAttack0_H13              -0.054462               0               .               .
+ 40 HighBP0_H13                            -0.057286               0               .               .
+ 41 HighChol0_H13                          -0.108191               0               .               .
+ 42 HvyAlcoholConsump0_H13                  0.060230               0               .               .
+ 43 NoDocbcCost0_H13                       -0.080987               0               .               .
+ 44 PhysActivity0_H13                       0.168445               0               .               .
+ 45 Sex0_H13                                0.041936               0               .               .
+ 46 Smoker0_H13                            -0.149277               0               .               .
+ 47 Stroke0_H13                            -0.037511               0               .               .
+ 48 Veggies0_H13                            0.213226               0               .               .
+ 49 Education1_H11                          0.030836               0           1E-10               .
+ 50 Education2_H11                          0.157253               0           1E-10               .
+ 51 Education3_H11                          0.176162               0           1E-10               .
+ 52 Education4_H11                          0.063632               0           1E-10               .
+ 53 Education5_H11                          0.050068               0           1E-10               .
+ 54 GenHlth1_H11                            0.253523               0           1E-10               .
+ 55 GenHlth2_H11                            0.031857               0           1E-10               .
+ 56 GenHlth3_H11                            0.020160               0           1E-10               .
+ 57 GenHlth4_H11                            0.107519               0           1E-10               .
+ 58 Income1_H11                             0.123271               0           1E-10               .
+ 59 Income2_H11                             0.019595               0           1E-10               .
+ 60 Income3_H11                             0.147980               0           1E-10               .
+ 61 Income4_H11                             0.022954               0           1E-10               .
+ 62 Income5_H11                             0.041407               0           1E-10               .
+ 63 Income6_H11                             0.135888               0           1E-10               .
+ 64 Income7_H11                             0.083725               0           1E-10               .
+ 65 MentHlth0_H11                           0.088196               0           1E-10               .
+ 66 MentHlth1_H11                           0.025227               0           1E-10               .
+ 67 MentHlth2_H11                           0.108543               0           1E-10               .
+ 68 MentHlth3_H11                           0.083125               0           1E-10               .
+ 69 MentHlth4_H11                           0.160203               0           1E-10               .
+ 70 MentHlth5_H11                           0.057261               0           1E-10               .
+ 71 MentHlth6_H11                           0.007439               0           1E-10               .
+ 72 MentHlth7_H11                           0.049326               0           1E-10               .
+ 73 MentHlth8_H11                           0.008609               0           1E-10               .
+ 74 MentHlth9_H11                           0.110030               0           1E-10               .
+ 75 MentHlth10_H11                          0.034334               0           1E-10               .
+ 76 MentHlth11_H11                          0.072730               0           1E-10               .
+ 77 MentHlth12_H11                          0.183049               0           1E-10               .
+ 78 MentHlth13_H11                          0.094333               0           1E-10               .
+ 79 MentHlth14_H11                          0.077061               0           1E-10               .
+ 80 MentHlth15_H11                          0.007085               0           1E-10               .
+ 81 MentHlth16_H11                          0.041718               0           1E-10               .
+ 82 MentHlth17_H11                          0.066946               0           1E-10               .
+ 83 MentHlth18_H11                          0.061082               0           1E-10               .
+ 84 MentHlth19_H11                          0.005220               0           1E-10               .
+ 85 MentHlth20_H11                          0.059849               0           1E-10               .
+ 86 MentHlth21_H11                          0.182868               0           1E-10               .
+ 87 MentHlth22_H11                          0.114227               0           1E-10               .
+ 88 MentHlth23_H11                          0.038884               0           1E-10               .
+ 89 MentHlth24_H11                          0.067149               0           1E-10               .
+ 90 MentHlth25_H11                          0.110896               0           1E-10               .
+ 91 MentHlth26_H11                          0.065575               0           1E-10               .
+ 92 MentHlth27_H11                          0.021147               0           1E-10               .
+ 93 MentHlth28_H11                          0.133258               0           1E-10               .
+ 94 MentHlth29_H11                          0.037054               0           1E-10               .
+ 95 PhysHlth0_H11                           0.024254               0           1E-10               .
+ 96 PhysHlth1_H11                           0.009194               0           1E-10               .
+ 97 PhysHlth2_H11                           0.105327               0           1E-10               .
+ 98 PhysHlth3_H11                           0.040834               0           1E-10               .
+ 99 PhysHlth4_H11                           0.197265               0           1E-10               .
+100 PhysHlth5_H11                           0.150852               0           1E-10               .
+101 PhysHlth6_H11                           0.052694               0           1E-10               .
+102 PhysHlth7_H11                           0.032935               0           1E-10               .
+103 PhysHlth8_H11                           0.062014               0           1E-10               .
+104 PhysHlth9_H11                           0.048145               0           1E-10               .
+105 PhysHlth10_H11                          0.067309               0           1E-10               .
+106 PhysHlth11_H11                          0.239342               0           1E-10               .
+107 PhysHlth12_H11                          0.109875               0           1E-10               .
+108 PhysHlth13_H11                          0.067291               0           1E-10               .
+109 PhysHlth14_H11                          0.079732               0           1E-10               .
+110 PhysHlth15_H11                          0.127361               0           1E-10               .
+111 PhysHlth16_H11                          0.173100               0           1E-10               .
+112 PhysHlth17_H11                          0.171460               0           1E-10               .
+113 PhysHlth18_H11                          0.087611               0           1E-10               .
+114 PhysHlth19_H11                          0.095979               0           1E-10               .
+115 PhysHlth20_H11                          0.074109               0           1E-10               .
+116 PhysHlth21_H11                          0.080660               0           1E-10               .
+117 PhysHlth22_H11                          0.066061               0           1E-10               .
+118 PhysHlth23_H11                          0.176975               0           1E-10               .
+119 PhysHlth24_H11                          0.036834               0           1E-10               .
+120 PhysHlth25_H11                          0.034796               0           1E-10               .
+121 PhysHlth26_H11                          0.029528               0           1E-10               .
+122 PhysHlth27_H11                          0.126810               0           1E-10               .
+123 PhysHlth28_H11                          0.098130               0           1E-10               .
+124 PhysHlth29_H11                          0.004619               0           1E-10               .
+125 Education1_H12                          0.070991               0           1E-10               .
+126 Education2_H12                          0.067983               0           1E-10               .
+127 Education3_H12                          0.010855               0           1E-10               .
+128 Education4_H12                          0.136758               0           1E-10               .
+129 Education5_H12                          0.036888               0           1E-10               .
+130 GenHlth1_H12                            0.106600               0           1E-10               .
+131 GenHlth2_H12                            0.045097               0           1E-10               .
+132 GenHlth3_H12                            0.074931               0           1E-10               .
+133 GenHlth4_H12                            0.068813               0           1E-10               .
+134 Income1_H12                             0.158388               0           1E-10               .
+135 Income2_H12                             0.024622               0           1E-10               .
+136 Income3_H12                             0.007364               0           1E-10               .
+137 Income4_H12                             0.012798               0           1E-10               .
+138 Income5_H12                             0.038816               0           1E-10               .
+139 Income6_H12                             0.105925               0           1E-10               .
+140 Income7_H12                             0.128475               0           1E-10               .
+141 MentHlth0_H12                           0.088071               0           1E-10               .
+142 MentHlth1_H12                           0.004758               0           1E-10               .
+143 MentHlth2_H12                           0.046418               0           1E-10               .
+144 MentHlth3_H12                           0.104471               0           1E-10               .
+145 MentHlth4_H12                           0.011143               0           1E-10               .
+146 MentHlth5_H12                           0.009693               0           1E-10               .
+147 MentHlth6_H12                           0.035891               0           1E-10               .
+148 MentHlth7_H12                           0.071386               0           1E-10               .
+149 MentHlth8_H12                           0.125061               0           1E-10               .
+150 MentHlth9_H12                           0.130230               0           1E-10               .
+151 MentHlth10_H12                          0.191604               0           1E-10               .
+152 MentHlth11_H12                          0.305310               0           1E-10               .
+153 MentHlth12_H12                          0.203366               0           1E-10               .
+154 MentHlth13_H12                          0.074283               0           1E-10               .
+155 MentHlth14_H12                          0.074128               0           1E-10               .
+156 MentHlth15_H12                          0.054496               0           1E-10               .
+157 MentHlth16_H12                          0.032738               0           1E-10               .
+158 MentHlth17_H12                          0.144831               0           1E-10               .
+159 MentHlth18_H12                          0.210686               0           1E-10               .
+160 MentHlth19_H12                          0.114112               0           1E-10               .
+161 MentHlth20_H12                          0.127828               0           1E-10               .
+162 MentHlth21_H12                          0.141320               0           1E-10               .
+163 MentHlth22_H12                          0.303127               0           1E-10               .
+164 MentHlth23_H12                          0.050300               0           1E-10               .
+165 MentHlth24_H12                          0.165021               0           1E-10               .
+166 MentHlth25_H12                          0.057296               0           1E-10               .
+167 MentHlth26_H12                          0.057254               0           1E-10               .
+168 MentHlth27_H12                          0.043271               0           1E-10               .
+169 MentHlth28_H12                          0.007130               0           1E-10               .
+170 MentHlth29_H12                          0.227305               0           1E-10               .
+171 PhysHlth0_H12                           0.116560               0           1E-10               .
+172 PhysHlth1_H12                           0.018470               0           1E-10               .
+173 PhysHlth2_H12                           0.036623               0           1E-10               .
+174 PhysHlth3_H12                           0.097142               0           1E-10               .
+175 PhysHlth4_H12                           0.084466               0           1E-10               .
+176 PhysHlth5_H12                           0.017750               0           1E-10               .
+177 PhysHlth6_H12                           0.102492               0           1E-10               .
+178 PhysHlth7_H12                           0.066461               0           1E-10               .
+179 PhysHlth8_H12                           0.050054               0           1E-10               .
+180 PhysHlth9_H12                           0.112570               0           1E-10               .
+181 PhysHlth10_H12                          0.107913               0           1E-10               .
+182 PhysHlth11_H12                          0.115500               0           1E-10               .
+183 PhysHlth12_H12                          0.028082               0           1E-10               .
+184 PhysHlth13_H12                          0.079719               0           1E-10               .
+185 PhysHlth14_H12                          0.001810               0           1E-10               .
+186 PhysHlth15_H12                          0.038173               0           1E-10               .
+187 PhysHlth16_H12                          0.039151               0           1E-10               .
+188 PhysHlth17_H12                          0.095524               0           1E-10               .
+189 PhysHlth18_H12                          0.096911               0           1E-10               .
+190 PhysHlth19_H12                          0.049757               0           1E-10               .
+191 PhysHlth20_H12                          0.047777               0           1E-10               .
+192 PhysHlth21_H12                          0.167264               0           1E-10               .
+193 PhysHlth22_H12                          0.183066               0           1E-10               .
+194 PhysHlth23_H12                          0.108801               0           1E-10               .
+195 PhysHlth24_H12                          0.077619               0           1E-10               .
+196 PhysHlth25_H12                          0.056368               0           1E-10               .
+197 PhysHlth26_H12                          0.065496               0           1E-10               .
+198 PhysHlth27_H12                          0.142027               0           1E-10               .
+199 PhysHlth28_H12                          0.003565               0           1E-10               .
+200 PhysHlth29_H12                          0.014146               0           1E-10               .
+201 Education1_H13                          0.026890               0           1E-10               .
+202 Education2_H13                          0.011298               0           1E-10               .
+203 Education3_H13                          0.098460               0           1E-10               .
+204 Education4_H13                          0.054564               0           1E-10               .
+205 Education5_H13                          0.082865               0           1E-10               .
+206 GenHlth1_H13                            0.082875               0           1E-10               .
+207 GenHlth2_H13                            0.020987               0           1E-10               .
+208 GenHlth3_H13                            0.044815               0           1E-10               .
+209 GenHlth4_H13                            0.032768               0           1E-10               .
+210 Income1_H13                             0.129431               0           1E-10               .
+211 Income2_H13                             0.093676               0           1E-10               .
+212 Income3_H13                             0.120738               0           1E-10               .
+213 Income4_H13                             0.039803               0           1E-10               .
+214 Income5_H13                             0.049147               0           1E-10               .
+215 Income6_H13                             0.220863               0           1E-10               .
+216 Income7_H13                             0.100027               0           1E-10               .
+217 MentHlth0_H13                           0.007706               0           1E-10               .
+218 MentHlth1_H13                           0.005247               0           1E-10               .
+219 MentHlth2_H13                           0.050907               0           1E-10               .
+220 MentHlth3_H13                           0.046252               0           1E-10               .
+221 MentHlth4_H13                           0.023553               0           1E-10               .
+222 MentHlth5_H13                           0.179818               0           1E-10               .
+223 MentHlth6_H13                           0.060891               0           1E-10               .
+224 MentHlth7_H13                           0.016166               0           1E-10               .
+225 MentHlth8_H13                           0.023341               0           1E-10               .
+226 MentHlth9_H13                           0.038227               0           1E-10               .
+227 MentHlth10_H13                          0.170559               0           1E-10               .
+228 MentHlth11_H13                          0.117606               0           1E-10               .
+229 MentHlth12_H13                          0.015964               0           1E-10               .
+230 MentHlth13_H13                          0.020153               0           1E-10               .
+231 MentHlth14_H13                          0.000337               0           1E-10               .
+232 MentHlth15_H13                          0.095487               0           1E-10               .
+233 MentHlth16_H13                          0.057193               0           1E-10               .
+234 MentHlth17_H13                          0.142211               0           1E-10               .
+235 MentHlth18_H13                          0.057322               0           1E-10               .
+236 MentHlth19_H13                          0.143125               0           1E-10               .
+237 MentHlth20_H13                          0.077741               0           1E-10               .
+238 MentHlth21_H13                          0.007484               0           1E-10               .
+239 MentHlth22_H13                          0.199448               0           1E-10               .
+240 MentHlth23_H13                          0.072365               0           1E-10               .
+241 MentHlth24_H13                          0.183837               0           1E-10               .
+242 MentHlth25_H13                          0.023363               0           1E-10               .
+243 MentHlth26_H13                          0.105092               0           1E-10               .
+244 MentHlth27_H13                          0.013025               0           1E-10               .
+245 MentHlth28_H13                          0.064349               0           1E-10               .
+246 MentHlth29_H13                          0.187706               0           1E-10               .
+247 PhysHlth0_H13                           0.036406               0           1E-10               .
+248 PhysHlth1_H13                           0.297558               0           1E-10               .
+249 PhysHlth2_H13                           0.268624               0           1E-10               .
+250 PhysHlth3_H13                           0.084846               0           1E-10               .
+251 PhysHlth4_H13                           0.063622               0           1E-10               .
+252 PhysHlth5_H13                           0.098212               0           1E-10               .
+253 PhysHlth6_H13                           0.009583               0           1E-10               .
+254 PhysHlth7_H13                           0.085009               0           1E-10               .
+255 PhysHlth8_H13                           0.045740               0           1E-10               .
+256 PhysHlth9_H13                           0.049216               0           1E-10               .
+257 PhysHlth10_H13                          0.074493               0           1E-10               .
+258 PhysHlth11_H13                          0.096121               0           1E-10               .
+259 PhysHlth12_H13                          0.037803               0           1E-10               .
+260 PhysHlth13_H13                          0.079649               0           1E-10               .
+261 PhysHlth14_H13                          0.056938               0           1E-10               .
+262 PhysHlth15_H13                          0.040613               0           1E-10               .
+263 PhysHlth16_H13                          0.034640               0           1E-10               .
+264 PhysHlth17_H13                          0.120892               0           1E-10               .
+265 PhysHlth18_H13                          0.107541               0           1E-10               .
+266 PhysHlth19_H13                          0.058884               0           1E-10               .
+267 PhysHlth20_H13                          0.048233               0           1E-10               .
+268 PhysHlth21_H13                          0.215192               0           1E-10               .
+269 PhysHlth22_H13                          0.140324               0           1E-10               .
+270 PhysHlth23_H13                          0.013544               0           1E-10               .
+271 PhysHlth24_H13                          0.094111               0           1E-10               .
+272 PhysHlth25_H13                          0.060146               0           1E-10               .
+273 PhysHlth26_H13                          0.021449               0           1E-10               .
+274 PhysHlth27_H13                          0.051664               0           1E-10               .
+275 PhysHlth28_H13                          0.034150               0           1E-10               .
+276 PhysHlth29_H13                          0.040877               0           1E-10               .
+277 BIAS_H11                                0.324870               0               .               .
+278 BIAS_H12                                0.517462               0               .               .
+279 BIAS_H13                               -1.219286               0               .               .
+280 H11_Diabetes_Predictionprediabet               0       -0.001091               .               .
+281 H12_Diabetes_Predictionprediabet               0       -0.000681               .               .
+282 H13_Diabetes_Predictionprediabet               0       -0.000651               .               .
+283 H11_Diabetes_Predictionnodiabete               0        0.014111               .               .
+284 H12_Diabetes_Predictionnodiabete               0        0.005492               .               .
+285 H13_Diabetes_Predictionnodiabete               0        0.008255               .               .
+286 BIAS_Diabetes_Predictionprediabe       -2.018286    -2.85846E-16               .               .
+287 BIAS_Diabetes_Predictionnodiabet        1.822805    -6.40057E-16               .               .
+
+Value of Objective Function = 0.3244965094
+
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The NEURAL Procedure
+
+Dual Quasi-Newton Optimization
+
+
+Minimum Iterations                                    0
+Maximum Iterations                                   50
+Maximum Function Calls                       2147483647
+Maximum CPU Time                                  14400
+ABSGCONV Gradient Criterion                     0.00001
+GCONV Gradient Criterion                           1E-8
+ABSFCONV Function Criterion                           0
+FCONV Function Criterion                         0.0001
+FCONV2 Function Criterion                             0
+FSIZE Parameter                                       0
+ABSXCONV Parameter Change Criterion                   0
+XCONV Parameter Change Criterion                      0
+XSIZE Parameter                                       0
+ABSCONV Function Criterion                 0.0041121086
+Line Search Method                                    2
+Starting Alpha for Line Search                        1
+Line Search Precision LSPRECISION                   0.4
+DAMPSTEP Parameter for Line Search                    .
+Singularity Tolerance (SINGULAR)                   1E-8
+Constraint Precision (LCEPS)                       1E-8
+Linearly Dependent Constraints (LCSING)            1E-8
+Releasing Active Constraints (LCDEACT)                .
+
+Dual Quasi-Newton Optimization
+
+Dual Broyden - Fletcher - Goldfarb - Shanno Update (DBFGS)
+
+Parameter Estimates             287
+Lower Bounds                    228
+Upper Bounds                      0
+
+                                             Optimization Start
+
+Active Constraints                                  0  Objective Function                       0.3244965094
+Max Abs Gradient Element                 0.0141105012                                                       
+
+
+                                                                 Objective     Max Abs                Slope of
+                     Function         Active        Objective     Function    Gradient       Step       Search
+Iter     Restarts       Calls    Constraints         Function       Change     Element       Size    Direction
+
+   1            0           6              0          0.32173      0.00276      0.0164      0.200      -0.0299
+   2            0           9              1          0.31652      0.00522      0.0218      0.174      -0.0234
+   3            0          12              2          0.30773      0.00879      0.0274    0.00442       -1.728
+   4            0          15              3          0.30349      0.00423      0.0279    0.00015      -28.407
+   5            0          18              4          0.30254     0.000954      0.0279    1.67E-6       -573.1
+   6            0          21              5          0.29919      0.00335      0.0272     0.0272       -0.126
+   7            0          24              6          0.29767      0.00152      0.0269     0.0145       -0.109
+   8            0          27              7          0.29416      0.00351      0.0249     0.0476      -0.0779
+   9            0          30              8          0.29064      0.00352      0.0223      0.112      -0.0335
+  10            0          33              9          0.28920      0.00144      0.0210     0.0519      -0.0284
+  11            0          36             10          0.28911     0.000083      0.0209    0.00181      -0.0457
+  12            0          39             11          0.28704      0.00208      0.0189    0.00682       -0.305
+  13            0          42             12          0.28554      0.00150      0.0174    0.00300       -0.504
+  14            0          45             13          0.28540     0.000139      0.0172    0.00200      -0.0694
+  15            0          48             14          0.28117      0.00423      0.0122     0.0855      -0.0533
+  16            0          51             15          0.28029     0.000878      0.0111     0.0432      -0.0209
+  17            0          54             16          0.27966     0.000637      0.0107     0.0456      -0.0143
+  18            0          57             17          0.27945     0.000202      0.0105     0.0143      -0.0142
+  19            0          60             18          0.27944     0.000017      0.0105    0.00109      -0.0160
+  20            0          63             19          0.27925     0.000192      0.0104    0.00990      -0.0195
+  21            0          66             20          0.27864     0.000603     0.00997     0.0257      -0.0238
+  22            0          69             21          0.27821     0.000430     0.00963     0.0148      -0.0291
+  23            0          72             22          0.27735     0.000859     0.00901     0.0231      -0.0377
+  24            0          75             23          0.27726     0.000095     0.00893    0.00201      -0.0473
+  25            0          78             24          0.27690     0.000355     0.00864    0.00540      -0.0659
+  26            0          81             25          0.27683     0.000068     0.00858    0.00065       -0.105
+  27            0          84             26          0.27669     0.000147     0.00847    0.00087       -0.170
+  28            0          87             27          0.27614     0.000552     0.00803    0.00185       -0.299
+  29            0          90             28          0.27597     0.000164     0.00789    0.00077       -0.213
+  30            0          93             29          0.27596     0.000015     0.00788    0.00010       -0.150
+  31            0          96             30          0.27594     0.000015     0.00787    0.00008       -0.179
+  32            0          99             31          0.27516     0.000778     0.00723    0.00306       -0.255
+  33            0         102             32          0.27491     0.000257     0.00699    0.00205       -0.126
+  34            0         105             33          0.27484     0.000072     0.00693    0.00103      -0.0701
+  35            0         108             34          0.27434     0.000492     0.00630    0.00816      -0.0606
+  36            0         111             35          0.27419     0.000151     0.00619    0.00300      -0.0504
+  37            0         114             36          0.27410     0.000096     0.00610    0.00247      -0.0388
+  38            0         117             37          0.27395     0.000148     0.00598    0.00395      -0.0375
+  39            0         120             38          0.27393     0.000022     0.00595    0.00063      -0.0359
+  40            0         123             39          0.27385     0.000081     0.00587    0.00229      -0.0356
+  41            0         126             40          0.27383     0.000017     0.00586    0.00048      -0.0361
+  42            0         129             41          0.27370     0.000127     0.00573    0.00343      -0.0370
+  43            0         132             42          0.27361     0.000091     0.00565    0.00248      -0.0367
+  44            0         135             43          0.27349     0.000121     0.00552    0.00333      -0.0363
+  45            0         138             44          0.27344     0.000054     0.00547    0.00151      -0.0356
+  46            0         141             45          0.27332     0.000117     0.00536    0.00328      -0.0358
+  47            0         144             46          0.27300     0.000316     0.00505    0.00862      -0.0369
+  48            0         147             47          0.27291     0.000092     0.00504    0.00263      -0.0349
+  49            0         150             48          0.27291     3.246E-6     0.00504    0.00010      -0.0335
+  50            0         153             49          0.27290     6.956E-6     0.00504    0.00019      -0.0370
+
+                                            Optimization Results
+
+Iterations                                         50  Function Calls                                    155
+Gradient Calls                                    102  Active Constraints                                 49
+Objective Function                       0.2729007474  Max Abs Gradient Element                 0.0050374898
+Slope of Search Direction                -0.036986297                                                       
+
+QUANEW needs more than 50 iterations or 2147483647 function calls.                                
+
+WARNING: QUANEW Optimization cannot be completed.
+
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The NEURAL Procedure
+
+                                Optimization Results
+                                 Parameter Estimates
+                                                            Gradient    Active
+                                                           Objective    Bound
+  N Parameter                               Estimate        Function    Constraint
+
+  1 Age_H11                                 0.337034       -0.003632                
+  2 BMI_H11                                 0.401019       -0.001271                
+  3 Age_H12                                -0.067777     0.000043649                
+  4 BMI_H12                                -0.081580       -0.000521                
+  5 Age_H13                                -0.033619    -7.626467E-9                
+  6 BMI_H13                                 0.003186       -0.000301                
+  7 AnyHealthcare0_H11                     -0.095315       -0.004803                
+  8 CholCheck0_H11                         -0.012535       -0.001367                
+  9 DiffWalk0_H11                          -0.040183    -0.000050953                
+ 10 Fruits0_H11                             0.017464        0.000936                
+ 11 HeartDiseaseorAttack0_H11              -0.290517        0.000839                
+ 12 HighBP0_H11                            -0.249337        0.002432                
+ 13 HighChol0_H11                          -0.275974       -0.004262                
+ 14 HvyAlcoholConsump0_H11                  0.234959        0.002373                
+ 15 NoDocbcCost0_H11                       -0.012096        0.002414                
+ 16 PhysActivity0_H11                       0.093245        0.003311                
+ 17 Sex0_H11                               -0.031538        0.004155                
+ 18 Smoker0_H11                            -0.012340       -0.001329                
+ 19 Stroke0_H11                            -0.011892        0.004231                
+ 20 Veggies0_H11                            0.065021        0.000127                
+ 21 AnyHealthcare0_H12                      0.144284       -0.001592                
+ 22 CholCheck0_H12                          0.207983       -0.001380                
+ 23 DiffWalk0_H12                          -0.127494     0.000054893                
+ 24 Fruits0_H12                             0.079724       -0.000147                
+ 25 HeartDiseaseorAttack0_H12               0.052414        0.001149                
+ 26 HighBP0_H12                             0.222907        0.000419                
+ 27 HighChol0_H12                          -0.140066        0.000185                
+ 28 HvyAlcoholConsump0_H12                 -0.289324        0.001372                
+ 29 NoDocbcCost0_H12                       -0.245152        0.001067                
+ 30 PhysActivity0_H12                      -0.044473     0.000079307                
+ 31 Sex0_H12                                0.046703        0.000688                
+ 32 Smoker0_H12                            -0.104054       -0.000457                
+ 33 Stroke0_H12                            -0.082242        0.001615                
+ 34 Veggies0_H12                            0.074461       -0.000514                
+ 35 AnyHealthcare0_H13                      0.031222       -0.002136                
+ 36 CholCheck0_H13                          0.008126       -0.002212                
+ 37 DiffWalk0_H13                          -0.041460       -0.000720                
+ 38 Fruits0_H13                            -0.055509    -0.000075178                
+ 39 HeartDiseaseorAttack0_H13              -0.077907        0.001446                
+ 40 HighBP0_H13                             0.000423     0.000032496                
+ 41 HighChol0_H13                          -0.063850       -0.000266                
+ 42 HvyAlcoholConsump0_H13                 -0.026003        0.002125                
+ 43 NoDocbcCost0_H13                       -0.105731        0.000912                
+ 44 PhysActivity0_H13                       0.124137        0.000762                
+ 45 Sex0_H13                                0.031834        0.000891                
+ 46 Smoker0_H13                            -0.102919       -0.001174                
+ 47 Stroke0_H13                            -0.105759        0.002026                
+ 48 Veggies0_H13                            0.202505       -0.000354                
+ 49 Education1_H11                             1E-10        0.002118     Lower BC   
+ 50 Education2_H11                          0.083357        0.002823                
+ 51 Education3_H11                          0.090226        0.003475                
+ 52 Education4_H11                          0.002958        0.002757                
+ 53 Education5_H11                             1E-10        0.002036     Lower BC   
+ 54 GenHlth1_H11                            0.338579        0.001393                
+ 55 GenHlth2_H11                            0.316099       -0.002051                
+ 56 GenHlth3_H11                            0.186704       -0.001128                
+ 57 GenHlth4_H11                            0.126412       -0.000675                
+ 58 Income1_H11                             0.050694        0.002428                
+ 59 Income2_H11                                1E-10        0.002860     Lower BC   
+ 60 Income3_H11                             0.045131        0.003159                
+ 61 Income4_H11                                1E-10        0.003474     Lower BC   
+ 62 Income5_H11                                1E-10        0.003247     Lower BC   
+ 63 Income6_H11                                1E-10        0.002977     Lower BC   
+ 64 Income7_H11                                1E-10        0.001989     Lower BC   
+ 65 MentHlth0_H11                           0.024175        0.001904                
+ 66 MentHlth1_H11                              1E-10        0.001792     Lower BC   
+ 67 MentHlth2_H11                           0.041810        0.001773                
+ 68 MentHlth3_H11                           0.017578        0.001690                
+ 69 MentHlth4_H11                           0.093944        0.001642                
+ 70 MentHlth5_H11                              1E-10        0.001471     Lower BC   
+ 71 MentHlth6_H11                              1E-10        0.001515     Lower BC   
+ 72 MentHlth7_H11                              1E-10        0.001464     Lower BC   
+ 73 MentHlth8_H11                              1E-10        0.001456     Lower BC   
+ 74 MentHlth9_H11                           0.034510        0.001453                
+ 75 MentHlth10_H11                             1E-10        0.001223     Lower BC   
+ 76 MentHlth11_H11                             1E-10        0.001224     Lower BC   
+ 77 MentHlth12_H11                          0.109555        0.001211                
+ 78 MentHlth13_H11                          0.019892        0.001222                
+ 79 MentHlth14_H11                          0.000173        0.001207                
+ 80 MentHlth15_H11                             1E-10        0.000838     Lower BC   
+ 81 MentHlth16_H11                             1E-10        0.000825     Lower BC   
+ 82 MentHlth17_H11                          0.002425        0.000825                
+ 83 MentHlth18_H11                             1E-10        0.000822     Lower BC   
+ 84 MentHlth19_H11                             1E-10        0.000822     Lower BC   
+ 85 MentHlth20_H11                             1E-10        0.000642     Lower BC   
+ 86 MentHlth21_H11                          0.123162        0.000627                
+ 87 MentHlth22_H11                          0.053920        0.000632                
+ 88 MentHlth23_H11                             1E-10        0.000632     Lower BC   
+ 89 MentHlth24_H11                          0.006523        0.000634                
+ 90 MentHlth25_H11                          0.056974        0.000513                
+ 91 MentHlth26_H11                          0.012105        0.000507                
+ 92 MentHlth27_H11                             1E-10        0.000490     Lower BC   
+ 93 MentHlth28_H11                          0.083653        0.000443                
+ 94 MentHlth29_H11                             1E-10        0.000425     Lower BC   
+ 95 PhysHlth0_H11                           0.000716        0.001877                
+ 96 PhysHlth1_H11                              1E-10        0.001888     Lower BC   
+ 97 PhysHlth2_H11                           0.067250        0.001994                
+ 98 PhysHlth3_H11                           0.001817        0.001899                
+ 99 PhysHlth4_H11                           0.150878        0.001915                
+100 PhysHlth5_H11                           0.098294        0.001776                
+101 PhysHlth6_H11                              1E-10        0.001796     Lower BC   
+102 PhysHlth7_H11                              1E-10        0.001699     Lower BC   
+103 PhysHlth8_H11                           0.003244        0.001651                
+104 PhysHlth9_H11                              1E-10        0.001647     Lower BC   
+105 PhysHlth10_H11                             1E-10        0.001578     Lower BC   
+106 PhysHlth11_H11                          0.163261        0.001582                
+107 PhysHlth12_H11                          0.033663        0.001558                
+108 PhysHlth13_H11                             1E-10        0.001565     Lower BC   
+109 PhysHlth14_H11                          0.003628        0.001435                
+110 PhysHlth15_H11                          0.041699        0.001262                
+111 PhysHlth16_H11                          0.085304        0.001277                
+112 PhysHlth17_H11                          0.083429        0.001277                
+113 PhysHlth18_H11                             1E-10        0.001264     Lower BC   
+114 PhysHlth19_H11                          0.007719        0.001268                
+115 PhysHlth20_H11                             1E-10        0.001038     Lower BC   
+116 PhysHlth21_H11                          0.001932        0.000994                
+117 PhysHlth22_H11                             1E-10        0.001001     Lower BC   
+118 PhysHlth23_H11                          0.097355        0.000999                
+119 PhysHlth24_H11                             1E-10        0.000981     Lower BC   
+120 PhysHlth25_H11                             1E-10        0.000849     Lower BC   
+121 PhysHlth26_H11                             1E-10        0.000847     Lower BC   
+122 PhysHlth27_H11                          0.057585        0.000832                
+123 PhysHlth28_H11                          0.031062        0.000790                
+124 PhysHlth29_H11                             1E-10        0.000774     Lower BC   
+125 Education1_H12                             1E-10        0.000881     Lower BC   
+126 Education2_H12                             1E-10        0.000917     Lower BC   
+127 Education3_H12                             1E-10        0.000840     Lower BC   
+128 Education4_H12                          0.132234        0.000310                
+129 Education5_H12                          0.077732       -0.000206                
+130 GenHlth1_H12                            0.045457        0.000875                
+131 GenHlth2_H12                               1E-10        0.000482     Lower BC   
+132 GenHlth3_H12                            0.085006    -0.000029844                
+133 GenHlth4_H12                            0.138784       -0.000519                
+134 Income1_H12                             0.100568        0.000690                
+135 Income2_H12                                1E-10        0.000568     Lower BC   
+136 Income3_H12                                1E-10        0.000484     Lower BC   
+137 Income4_H12                                1E-10        0.000383     Lower BC   
+138 Income5_H12                             0.048253        0.000220                
+139 Income6_H12                             0.139517    -0.000003626                
+140 Income7_H12                             0.178136       -0.000237                
+141 MentHlth0_H12                           0.100677        0.000258                
+142 MentHlth1_H12                           0.019318        0.000247                
+143 MentHlth2_H12                           0.063460        0.000232                
+144 MentHlth3_H12                           0.123197        0.000222                
+145 MentHlth4_H12                           0.031063        0.000210                
+146 MentHlth5_H12                           0.030942        0.000178                
+147 MentHlth6_H12                           0.057350        0.000179                
+148 MentHlth7_H12                           0.092500        0.000175                
+149 MentHlth8_H12                           0.146496        0.000172                
+150 MentHlth9_H12                           0.151688        0.000172                
+151 MentHlth10_H12                          0.212487        0.000143                
+152 MentHlth11_H12                          0.326081        0.000144                
+153 MentHlth12_H12                          0.224047        0.000142                
+154 MentHlth13_H12                          0.094788        0.000144                
+155 MentHlth14_H12                          0.093476        0.000146                
+156 MentHlth15_H12                          0.074841     0.000062991                
+157 MentHlth16_H12                          0.053217     0.000060288                
+158 MentHlth17_H12                          0.165359     0.000059036                
+159 MentHlth18_H12                          0.231391     0.000056185                
+160 MentHlth19_H12                          0.134798     0.000056493                
+161 MentHlth20_H12                          0.148968     0.000004249                
+162 MentHlth21_H12                          0.162368     0.000001756                
+163 MentHlth22_H12                          0.324108     0.000001780                
+164 MentHlth23_H12                          0.071233     0.000002172                
+165 MentHlth24_H12                          0.185905     0.000002284                
+166 MentHlth25_H12                          0.079106    -0.000025611                
+167 MentHlth26_H12                          0.079152    -0.000027362                
+168 MentHlth27_H12                          0.065190    -0.000030304                
+169 MentHlth28_H12                          0.029568    -0.000042920                
+170 MentHlth29_H12                          0.250010    -0.000048851                
+171 PhysHlth0_H12                           0.127963        0.000277                
+172 PhysHlth1_H12                           0.033015        0.000266                
+173 PhysHlth2_H12                           0.055627        0.000263                
+174 PhysHlth3_H12                           0.118981        0.000244                
+175 PhysHlth4_H12                           0.108010        0.000240                
+176 PhysHlth5_H12                           0.043261        0.000224                
+177 PhysHlth6_H12                           0.128174        0.000227                
+178 PhysHlth7_H12                           0.092728        0.000214                
+179 PhysHlth8_H12                           0.076412        0.000211                
+180 PhysHlth9_H12                           0.138993        0.000210                
+181 PhysHlth10_H12                          0.136282        0.000187                
+182 PhysHlth11_H12                          0.143763        0.000189                
+183 PhysHlth12_H12                          0.056090        0.000187                
+184 PhysHlth13_H12                          0.107572        0.000188                
+185 PhysHlth14_H12                          0.029089        0.000172                
+186 PhysHlth15_H12                          0.065725        0.000146                
+187 PhysHlth16_H12                          0.066656        0.000146                
+188 PhysHlth17_H12                          0.123091        0.000145                
+189 PhysHlth18_H12                          0.124426        0.000144                
+190 PhysHlth19_H12                          0.077308        0.000144                
+191 PhysHlth20_H12                          0.075886     0.000092985                
+192 PhysHlth21_H12                          0.195112     0.000085617                
+193 PhysHlth22_H12                          0.210801     0.000086991                
+194 PhysHlth23_H12                          0.136412     0.000087434                
+195 PhysHlth24_H12                          0.105487     0.000082233                
+196 PhysHlth25_H12                          0.085559     0.000046577                
+197 PhysHlth26_H12                          0.094571     0.000047055                
+198 PhysHlth27_H12                          0.171207     0.000043123                
+199 PhysHlth28_H12                          0.033116     0.000029787                
+200 PhysHlth29_H12                          0.043317     0.000031692                
+201 Education1_H13                             1E-10        0.001304     Lower BC   
+202 Education2_H13                             1E-10        0.001312     Lower BC   
+203 Education3_H13                          0.056389        0.001126                
+204 Education4_H13                          0.050086        0.000356                
+205 Education5_H13                          0.104316       -0.000429                
+206 GenHlth1_H13                            0.023071        0.001399                
+207 GenHlth2_H13                               1E-10        0.001111     Lower BC   
+208 GenHlth3_H13                            0.017591        0.000542                
+209 GenHlth4_H13                            0.043609       -0.000261                
+210 Income1_H13                             0.091091        0.000945                
+211 Income2_H13                             0.068290        0.000690                
+212 Income3_H13                             0.107399        0.000480                
+213 Income4_H13                             0.036590        0.000271                
+214 Income5_H13                             0.055629     0.000053218                
+215 Income6_H13                             0.237111       -0.000178                
+216 Income7_H13                             0.131186       -0.000535                
+217 MentHlth0_H13                              1E-10        0.000499     Lower BC   
+218 MentHlth1_H13                              1E-10        0.000492     Lower BC   
+219 MentHlth2_H13                           0.041715        0.000486                
+220 MentHlth3_H13                           0.037596        0.000478                
+221 MentHlth4_H13                           0.015010        0.000474                
+222 MentHlth5_H13                           0.171611        0.000462                
+223 MentHlth6_H13                           0.052891        0.000462                
+224 MentHlth7_H13                           0.008430        0.000454                
+225 MentHlth8_H13                           0.015715        0.000452                
+226 MentHlth9_H13                           0.030553        0.000452                
+227 MentHlth10_H13                          0.162522        0.000434                
+228 MentHlth11_H13                          0.109536        0.000434                
+229 MentHlth12_H13                          0.007951        0.000431                
+230 MentHlth13_H13                          0.011960        0.000433                
+231 MentHlth14_H13                             1E-10        0.000430     Lower BC   
+232 MentHlth15_H13                          0.086124        0.000372                
+233 MentHlth16_H13                          0.047883        0.000370                
+234 MentHlth17_H13                          0.132857        0.000370                
+235 MentHlth18_H13                          0.047998        0.000368                
+236 MentHlth19_H13                          0.133758        0.000368                
+237 MentHlth20_H13                          0.067878        0.000312                
+238 MentHlth21_H13                             1E-10        0.000313     Lower BC   
+239 MentHlth22_H13                          0.189169        0.000314                
+240 MentHlth23_H13                          0.062083        0.000314                
+241 MentHlth24_H13                          0.173591        0.000313                
+242 MentHlth25_H13                          0.013686        0.000268                
+243 MentHlth26_H13                          0.095339        0.000268                
+244 MentHlth27_H13                          0.003524        0.000261                
+245 MentHlth28_H13                          0.055392        0.000242                
+246 MentHlth29_H13                          0.178930        0.000237                
+247 PhysHlth0_H13                           0.023502        0.000521                
+248 PhysHlth1_H13                           0.285259        0.000518                
+249 PhysHlth2_H13                           0.257898        0.000517                
+250 PhysHlth3_H13                           0.075307        0.000508                
+251 PhysHlth4_H13                           0.054681        0.000505                
+252 PhysHlth5_H13                           0.090718        0.000495                
+253 PhysHlth6_H13                           0.002316        0.000494                
+254 PhysHlth7_H13                           0.077860        0.000487                
+255 PhysHlth8_H13                           0.038798        0.000485                
+256 PhysHlth9_H13                           0.042301        0.000484                
+257 PhysHlth10_H13                          0.068886        0.000469                
+258 PhysHlth11_H13                          0.090495        0.000468                
+259 PhysHlth12_H13                          0.032285        0.000466                
+260 PhysHlth13_H13                          0.074077        0.000467                
+261 PhysHlth14_H13                          0.051163        0.000453                
+262 PhysHlth15_H13                          0.035470        0.000429                
+263 PhysHlth16_H13                          0.029504        0.000430                
+264 PhysHlth17_H13                          0.115655        0.000430                
+265 PhysHlth18_H13                          0.102357        0.000429                
+266 PhysHlth19_H13                          0.053690        0.000429                
+267 PhysHlth20_H13                          0.043286        0.000376                
+268 PhysHlth21_H13                          0.210214        0.000366                
+269 PhysHlth22_H13                          0.135318        0.000366                
+270 PhysHlth23_H13                          0.008538        0.000365                
+271 PhysHlth24_H13                          0.089220        0.000360                
+272 PhysHlth25_H13                          0.056130        0.000313                
+273 PhysHlth26_H13                          0.017390        0.000312                
+274 PhysHlth27_H13                          0.047909        0.000305                
+275 PhysHlth28_H13                          0.030989        0.000281                
+276 PhysHlth29_H13                          0.037339        0.000281                
+277 BIAS_H11                                0.207259        0.004154                
+278 BIAS_H12                                0.352439        0.001743                
+279 BIAS_H13                               -1.326847        0.002575                
+280 H11_Diabetes_Predictionprediabet       -0.036248        0.001917                
+281 H12_Diabetes_Predictionprediabet        0.061093        0.000708                
+282 H13_Diabetes_Predictionprediabet        0.034467       -0.000324                
+283 H11_Diabetes_Predictionnodiabete       -1.739912       -0.000229                
+284 H12_Diabetes_Predictionnodiabete       -0.355088       -0.004939                
+285 H13_Diabetes_Predictionnodiabete       -0.754663        0.002783                
+286 BIAS_Diabetes_Predictionprediabe       -1.913390        0.000731                
+287 BIAS_Diabetes_Predictionnodiabet        1.078188       -0.005037                
+
+Value of Objective Function = 0.2729007474
+
+
+
+                First Order Lagrange Multipliers
+                                
+ 
+                                                        Lagrange
+               Active Constraint                      Multiplier
+
+ Lower BC       Education1_H11                          0.002118
+ Lower BC       Education5_H11                          0.002036
+ Lower BC       Income2_H11                             0.002860
+ Lower BC       Income4_H11                             0.003474
+ Lower BC       Income5_H11                             0.003247
+ Lower BC       Income6_H11                             0.002977
+ Lower BC       Income7_H11                             0.001989
+ Lower BC       MentHlth1_H11                           0.001792
+ Lower BC       MentHlth5_H11                           0.001471
+ Lower BC       MentHlth6_H11                           0.001515
+ Lower BC       MentHlth7_H11                           0.001464
+ Lower BC       MentHlth8_H11                           0.001456
+ Lower BC       MentHlth10_H11                          0.001223
+ Lower BC       MentHlth11_H11                          0.001224
+ Lower BC       MentHlth15_H11                          0.000838
+ Lower BC       MentHlth16_H11                          0.000825
+ Lower BC       MentHlth18_H11                          0.000822
+ Lower BC       MentHlth19_H11                          0.000822
+ Lower BC       MentHlth20_H11                          0.000642
+ Lower BC       MentHlth23_H11                          0.000632
+ Lower BC       MentHlth27_H11                          0.000490
+ Lower BC       MentHlth29_H11                          0.000425
+ Lower BC       PhysHlth1_H11                           0.001888
+ Lower BC       PhysHlth6_H11                           0.001796
+ Lower BC       PhysHlth7_H11                           0.001699
+ Lower BC       PhysHlth9_H11                           0.001647
+ Lower BC       PhysHlth10_H11                          0.001578
+ Lower BC       PhysHlth13_H11                          0.001565
+ Lower BC       PhysHlth18_H11                          0.001264
+ Lower BC       PhysHlth20_H11                          0.001038
+ Lower BC       PhysHlth22_H11                          0.001001
+ Lower BC       PhysHlth24_H11                          0.000981
+ Lower BC       PhysHlth25_H11                          0.000849
+ Lower BC       PhysHlth26_H11                          0.000847
+ Lower BC       PhysHlth29_H11                          0.000774
+ Lower BC       Education1_H12                          0.000881
+ Lower BC       Education2_H12                          0.000917
+ Lower BC       Education3_H12                          0.000840
+ Lower BC       GenHlth2_H12                            0.000482
+ Lower BC       Income2_H12                             0.000568
+ Lower BC       Income3_H12                             0.000484
+ Lower BC       Income4_H12                             0.000383
+ Lower BC       Education1_H13                          0.001304
+ Lower BC       Education2_H13                          0.001312
+ Lower BC       GenHlth2_H13                            0.001111
+ Lower BC       MentHlth0_H13                           0.000499
+ Lower BC       MentHlth1_H13                           0.000492
+ Lower BC       MentHlth14_H13                          0.000430
+ Lower BC       MentHlth21_H13                          0.000313
+
+
+  Projected Gradient
+ 
+     Free    Projected
+Dimension     Gradient
+
+        1    -0.003632
+        2    -0.001271
+        3  0.000043649
+        4    -0.000521
+        5 -7.626467E-9
+        6    -0.000301
+        7    -0.004803
+        8    -0.001367
+        9 -0.000050953
+       10     0.000936
+       11     0.000839
+       12     0.002432
+       13    -0.004262
+       14     0.002373
+       15     0.002414
+       16     0.003311
+       17     0.004155
+       18    -0.001329
+       19     0.004231
+       20     0.000127
+       21    -0.001592
+       22    -0.001380
+       23  0.000054893
+       24    -0.000147
+       25     0.001149
+       26     0.000419
+       27     0.000185
+       28     0.001372
+       29     0.001067
+       30  0.000079307
+       31     0.000688
+       32    -0.000457
+       33     0.001615
+       34    -0.000514
+       35    -0.002136
+       36    -0.002212
+       37    -0.000720
+       38 -0.000075178
+       39     0.001446
+       40  0.000032496
+       41    -0.000266
+       42     0.002125
+       43     0.000912
+       44     0.000762
+       45     0.000891
+       46    -0.001174
+       47     0.002026
+       48    -0.000354
+       49     0.002823
+       50     0.003475
+       51     0.002757
+       52     0.001393
+       53    -0.002051
+       54    -0.001128
+       55    -0.000675
+       56     0.002428
+       57     0.003159
+       58     0.001904
+       59     0.001773
+       60     0.001690
+       61     0.001642
+       62     0.001453
+       63     0.001211
+       64     0.001222
+       65     0.001207
+       66     0.000825
+       67     0.000627
+       68     0.000632
+       69     0.000634
+       70     0.000513
+       71     0.000507
+       72     0.000443
+       73     0.001877
+       74     0.001994
+       75     0.001899
+       76     0.001915
+       77     0.001776
+       78     0.001651
+       79     0.001582
+       80     0.001558
+       81     0.001435
+       82     0.001262
+       83     0.001277
+       84     0.001277
+       85     0.001268
+       86     0.000994
+       87     0.000999
+       88     0.000832
+       89     0.000790
+       90     0.000310
+       91    -0.000206
+       92     0.000875
+       93 -0.000029844
+       94    -0.000519
+       95     0.000690
+       96     0.000220
+       97 -0.000003626
+       98    -0.000237
+       99     0.000258
+      100     0.000247
+      101     0.000232
+      102     0.000222
+      103     0.000210
+      104     0.000178
+      105     0.000179
+      106     0.000175
+      107     0.000172
+      108     0.000172
+      109     0.000143
+      110     0.000144
+      111     0.000142
+      112     0.000144
+      113     0.000146
+      114  0.000062991
+      115  0.000060288
+      116  0.000059036
+      117  0.000056185
+      118  0.000056493
+      119  0.000004249
+      120  0.000001756
+      121  0.000001780
+      122  0.000002172
+      123  0.000002284
+      124 -0.000025611
+      125 -0.000027362
+      126 -0.000030304
+      127 -0.000042920
+      128 -0.000048851
+      129     0.000277
+      130     0.000266
+      131     0.000263
+      132     0.000244
+      133     0.000240
+      134     0.000224
+      135     0.000227
+      136     0.000214
+      137     0.000211
+      138     0.000210
+      139     0.000187
+      140     0.000189
+      141     0.000187
+      142     0.000188
+      143     0.000172
+      144     0.000146
+      145     0.000146
+      146     0.000145
+      147     0.000144
+      148     0.000144
+      149  0.000092985
+      150  0.000085617
+      151  0.000086991
+      152  0.000087434
+      153  0.000082233
+      154  0.000046577
+      155  0.000047055
+      156  0.000043123
+      157  0.000029787
+      158  0.000031692
+      159     0.001126
+      160     0.000356
+      161    -0.000429
+      162     0.001399
+      163     0.000542
+      164    -0.000261
+      165     0.000945
+      166     0.000690
+      167     0.000480
+      168     0.000271
+      169  0.000053218
+      170    -0.000178
+      171    -0.000535
+      172     0.000486
+      173     0.000478
+      174     0.000474
+      175     0.000462
+      176     0.000462
+      177     0.000454
+      178     0.000452
+      179     0.000452
+      180     0.000434
+      181     0.000434
+      182     0.000431
+      183     0.000433
+      184     0.000372
+      185     0.000370
+      186     0.000370
+      187     0.000368
+      188     0.000368
+      189     0.000312
+      190     0.000314
+      191     0.000314
+      192     0.000313
+      193     0.000268
+      194     0.000268
+      195     0.000261
+      196     0.000242
+      197     0.000237
+      198     0.000521
+      199     0.000518
+      200     0.000517
+      201     0.000508
+      202     0.000505
+      203     0.000495
+      204     0.000494
+      205     0.000487
+      206     0.000485
+      207     0.000484
+      208     0.000469
+      209     0.000468
+      210     0.000466
+      211     0.000467
+      212     0.000453
+      213     0.000429
+      214     0.000430
+      215     0.000430
+      216     0.000429
+      217     0.000429
+      218     0.000376
+      219     0.000366
+      220     0.000366
+      221     0.000365
+      222     0.000360
+      223     0.000313
+      224     0.000312
+      225     0.000305
+      226     0.000281
+      227     0.000281
+      228     0.004154
+      229     0.001743
+      230     0.002575
+      231     0.001917
+      232     0.000708
+      233    -0.000324
+      234    -0.000229
+      235    -0.004939
+      236     0.002783
+      237     0.000731
+      238    -0.005037

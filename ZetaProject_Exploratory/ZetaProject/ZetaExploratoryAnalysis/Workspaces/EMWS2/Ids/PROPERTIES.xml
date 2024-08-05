@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="zetadiabitiestrain" Scope="LOCAL" Role="RAW" Library="ZETADATA" Table="ZETADIABITIES_TRAIN"
+ NCols="22" NObs="250716" NBytes="44303360" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="zetadiabitiestrain"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="bkris2" DsCreateDate="2025037600.8"
+ DsModifiedBy="bkris2" DsModifyDate="2025037601.1" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="2025110992.9" CreateTime="03MAR2024:18:49:53"
+ Description="" Data="ZETADATA.ZETADIABITIES_TRAIN" CMeta="WORK.M3LPL574" RunId="dc395880-8984-40a6-aac9-990177209c0f"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

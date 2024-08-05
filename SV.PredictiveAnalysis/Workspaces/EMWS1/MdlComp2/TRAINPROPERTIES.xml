@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  NumberOfReportedLevels="1E-6" NormalizeReportingVariables="Y" DecileBin="20" LiftEpsilon="1E-6"
+ ProfitEpsilon="1E-6" RoiEpsilon="1E-6" ScoreDistBin="20" RocChart="Y" RocEpsilon="0.01"
+ AssessAllTargetLevels="N" SelectionData="DEFAULT" HPCriteria="DEFAULT" intervalViyaCriteria="DEFAULT"
+ classViyaCriteria="DEFAULT" SelectionTable="TRAIN" SelectionCriteria="DEFAULT" SelectionDepth="10"
+ NumberofBins="20" RecomputeAssess="N" TargetName="Diabetes_Prediction" ModelId="Reg"
+ ModelDescription="Exhaustive Regression" ModelCriteria="Valid: Misclassification Rate"
+ ForceRun="N" RunAction="Train" Component="ModelCompare" RawCreateTime="2024271543.5"
+ CreateTime="23FEB2024:01:39:03" RunId="ad14beb8-6b6b-48e7-926c-f1c7aeb64fc6" StatisticUsed="_VMISC_"
+ TargetLabel="Diabetes Prediction" RawLastTimeRun="2025174718.7" RawRunTime="87.79399991"
+ LastTimeRun="04MAR2024:12:31:59" RunTime="0 Hr. 1 Min. 27.79 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

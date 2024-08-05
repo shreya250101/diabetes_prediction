@@ -1,0 +1,217 @@
+*------------------------------------------------------------*
+ Node = 7
+*------------------------------------------------------------*
+if DiffWalk IS ONE OF: 0 or MISSING
+AND AnyHealthcare IS ONE OF: 0
+then 
+ Tree Node Identifier   = 7
+ Number of Observations = 9171
+ Predicted: _SEGMENT_=1  = 0.01
+ Predicted: _SEGMENT_=2  = 0.99
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 9
+*------------------------------------------------------------*
+if DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 0
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 9
+ Number of Observations = 584
+ Predicted: _SEGMENT_=1  = 0.26
+ Predicted: _SEGMENT_=2  = 0.74
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 11
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 1 or MISSING
+AND DiffWalk IS ONE OF: 1
+AND AnyHealthcare IS ONE OF: 0
+then 
+ Tree Node Identifier   = 11
+ Number of Observations = 890
+ Predicted: _SEGMENT_=1  = 0.13
+ Predicted: _SEGMENT_=2  = 0.87
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 13
+*------------------------------------------------------------*
+if DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 0
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 13
+ Number of Observations = 6350
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=2  = 1.00
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 17
+*------------------------------------------------------------*
+if GenHlth >= 3 or MISSING
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 17
+ Number of Observations = 28615
+ Predicted: _SEGMENT_=1  = 0.97
+ Predicted: _SEGMENT_=2  = 0.01
+ Predicted: _SEGMENT_=3  = 0.03
+ 
+*------------------------------------------------------------*
+ Node = 20
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 0
+AND HighBP IS ONE OF: 1 or MISSING
+AND DiffWalk IS ONE OF: 1
+AND AnyHealthcare IS ONE OF: 0
+then 
+ Tree Node Identifier   = 20
+ Number of Observations = 430
+ Predicted: _SEGMENT_=1  = 0.77
+ Predicted: _SEGMENT_=2  = 0.23
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 21
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 0
+AND HighBP IS ONE OF: 0
+AND DiffWalk IS ONE OF: 1
+AND AnyHealthcare IS ONE OF: 0
+then 
+ Tree Node Identifier   = 21
+ Number of Observations = 286
+ Predicted: _SEGMENT_=1  = 0.23
+ Predicted: _SEGMENT_=2  = 0.77
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 31
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 1
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 31
+ Number of Observations = 398
+ Predicted: _SEGMENT_=1  = 0.66
+ Predicted: _SEGMENT_=2  = 0.32
+ Predicted: _SEGMENT_=3  = 0.02
+ 
+*------------------------------------------------------------*
+ Node = 36
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 0 or MISSING
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 36
+ Number of Observations = 101589
+ Predicted: _SEGMENT_=1  = 0.03
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=3  = 0.97
+ 
+*------------------------------------------------------------*
+ Node = 38
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 1
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 38
+ Number of Observations = 8505
+ Predicted: _SEGMENT_=1  = 0.14
+ Predicted: _SEGMENT_=2  = 0.76
+ Predicted: _SEGMENT_=3  = 0.10
+ 
+*------------------------------------------------------------*
+ Node = 39
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 1
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 39
+ Number of Observations = 704
+ Predicted: _SEGMENT_=1  = 0.84
+ Predicted: _SEGMENT_=2  = 0.12
+ Predicted: _SEGMENT_=3  = 0.04
+ 
+*------------------------------------------------------------*
+ Node = 46
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 0 or MISSING
+AND Income <= 6 or MISSING
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 46
+ Number of Observations = 2820
+ Predicted: _SEGMENT_=1  = 0.82
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=3  = 0.18
+ 
+*------------------------------------------------------------*
+ Node = 47
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 0 or MISSING
+AND Income >= 7
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 47
+ Number of Observations = 1830
+ Predicted: _SEGMENT_=1  = 0.44
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=3  = 0.56
+ 
+*------------------------------------------------------------*
+ Node = 54
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 0 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 54
+ Number of Observations = 53420
+ Predicted: _SEGMENT_=1  = 0.29
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=3  = 0.71
+ 
+*------------------------------------------------------------*
+ Node = 55
+*------------------------------------------------------------*
+if NoDocbcCost IS ONE OF: 0 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+AND AnyHealthcare IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 55
+ Number of Observations = 7496
+ Predicted: _SEGMENT_=1  = 0.84
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=3  = 0.16
+ 

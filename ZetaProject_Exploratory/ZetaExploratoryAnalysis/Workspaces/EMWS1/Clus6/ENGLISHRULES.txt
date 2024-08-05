@@ -1,0 +1,202 @@
+*------------------------------------------------------------*
+ Node = 3
+*------------------------------------------------------------*
+if CholCheck IS ONE OF: 0
+then 
+ Tree Node Identifier   = 3
+ Number of Observations = 8419
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=2  = 1.00
+ Predicted: _SEGMENT_=5  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 5
+*------------------------------------------------------------*
+if HvyAlcoholConsump IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 5
+ Number of Observations = 11949
+ Predicted: _SEGMENT_=1  = 0.01
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ Predicted: _SEGMENT_=4  = 0.99
+ 
+*------------------------------------------------------------*
+ Node = 15
+*------------------------------------------------------------*
+if HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND GenHlth >= 3 or MISSING
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 15
+ Number of Observations = 28849
+ Predicted: _SEGMENT_=1  = 0.96
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.03
+ Predicted: _SEGMENT_=3  = 0.02
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 21
+*------------------------------------------------------------*
+if PhysHlth >= 1
+AND HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 21
+ Number of Observations = 2213
+ Predicted: _SEGMENT_=1  = 0.85
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.02
+ Predicted: _SEGMENT_=3  = 0.14
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 24
+*------------------------------------------------------------*
+if HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND HighBP IS ONE OF: 1
+AND GenHlth <= 3 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 24
+ Number of Observations = 55419
+ Predicted: _SEGMENT_=1  = 0.02
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.79
+ Predicted: _SEGMENT_=3  = 0.19
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 26
+*------------------------------------------------------------*
+if HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND HighBP IS ONE OF: 0 or MISSING
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 26
+ Number of Observations = 71821
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.12
+ Predicted: _SEGMENT_=3  = 0.88
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 30
+*------------------------------------------------------------*
+if PhysHlth <= 0 or MISSING
+AND HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 30
+ Number of Observations = 1562
+ Predicted: _SEGMENT_=1  = 0.46
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.46
+ Predicted: _SEGMENT_=3  = 0.08
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 31
+*------------------------------------------------------------*
+if PhysHlth <= 0 or MISSING
+AND HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND HighBP IS ONE OF: 0
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 31
+ Number of Observations = 1182
+ Predicted: _SEGMENT_=1  = 0.30
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.18
+ Predicted: _SEGMENT_=3  = 0.52
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 40
+*------------------------------------------------------------*
+if Stroke IS ONE OF: 0 or MISSING
+AND HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND HighBP IS ONE OF: 1
+AND GenHlth >= 4
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 40
+ Number of Observations = 8821
+ Predicted: _SEGMENT_=1  = 0.20
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.79
+ Predicted: _SEGMENT_=3  = 0.01
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 41
+*------------------------------------------------------------*
+if Stroke IS ONE OF: 1
+AND HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND HighBP IS ONE OF: 1
+AND GenHlth >= 4
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 41
+ Number of Observations = 928
+ Predicted: _SEGMENT_=1  = 0.80
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.20
+ Predicted: _SEGMENT_=3  = 0.00
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 44
+*------------------------------------------------------------*
+if HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND HighBP IS ONE OF: 0 or MISSING
+AND GenHlth >= 3
+AND Education <= 4
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 44
+ Number of Observations = 10905
+ Predicted: _SEGMENT_=1  = 0.09
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.70
+ Predicted: _SEGMENT_=3  = 0.21
+ Predicted: _SEGMENT_=4  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 45
+*------------------------------------------------------------*
+if HvyAlcoholConsump IS ONE OF: 0 or MISSING
+AND HighBP IS ONE OF: 0 or MISSING
+AND GenHlth >= 3
+AND Education >= 5 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+AND CholCheck IS ONE OF: 1 or MISSING
+then 
+ Tree Node Identifier   = 45
+ Number of Observations = 21020
+ Predicted: _SEGMENT_=1  = 0.04
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=5  = 0.32
+ Predicted: _SEGMENT_=3  = 0.64
+ Predicted: _SEGMENT_=4  = 0.00
+ 

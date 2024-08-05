@@ -1,0 +1,471 @@
+*------------------------------------------------------------*
+ Node = 14
+*------------------------------------------------------------*
+if Income <= 7 or MISSING
+AND GenHlth >= 3 or MISSING
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 14
+ Number of Observations = 30026
+ Predicted: _SEGMENT_=1  = 0.99
+ Predicted: _SEGMENT_=2  = 0.01
+ 
+*------------------------------------------------------------*
+ Node = 21
+*------------------------------------------------------------*
+if Income <= 6 or MISSING
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 21
+ Number of Observations = 23690
+ Predicted: _SEGMENT_=1  = 0.81
+ Predicted: _SEGMENT_=2  = 0.19
+ 
+*------------------------------------------------------------*
+ Node = 25
+*------------------------------------------------------------*
+if Income <= 6 or MISSING
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 25
+ Number of Observations = 2199
+ Predicted: _SEGMENT_=1  = 0.94
+ Predicted: _SEGMENT_=2  = 0.06
+ 
+*------------------------------------------------------------*
+ Node = 31
+*------------------------------------------------------------*
+if PhysHlth >= 1 or MISSING
+AND Income >= 8
+AND GenHlth >= 3 or MISSING
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 31
+ Number of Observations = 2881
+ Predicted: _SEGMENT_=1  = 0.94
+ Predicted: _SEGMENT_=2  = 0.06
+ 
+*------------------------------------------------------------*
+ Node = 32
+*------------------------------------------------------------*
+if Income <= 6
+AND HighBP IS ONE OF: 0
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 32
+ Number of Observations = 653
+ Predicted: _SEGMENT_=1  = 0.35
+ Predicted: _SEGMENT_=2  = 0.65
+ 
+*------------------------------------------------------------*
+ Node = 33
+*------------------------------------------------------------*
+if Income <= 6
+AND HighBP IS ONE OF: 1 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 33
+ Number of Observations = 1290
+ Predicted: _SEGMENT_=1  = 0.78
+ Predicted: _SEGMENT_=2  = 0.22
+ 
+*------------------------------------------------------------*
+ Node = 34
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 1 or MISSING
+AND Income >= 7 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 34
+ Number of Observations = 2157
+ Predicted: _SEGMENT_=1  = 0.14
+ Predicted: _SEGMENT_=2  = 0.86
+ 
+*------------------------------------------------------------*
+ Node = 35
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 0
+AND Income >= 7 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 35
+ Number of Observations = 316
+ Predicted: _SEGMENT_=1  = 0.58
+ Predicted: _SEGMENT_=2  = 0.42
+ 
+*------------------------------------------------------------*
+ Node = 37
+*------------------------------------------------------------*
+if Stroke IS ONE OF: 0 or MISSING
+AND PhysActivity IS ONE OF: 1 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 37
+ Number of Observations = 104208
+ Predicted: _SEGMENT_=1  = 0.02
+ Predicted: _SEGMENT_=2  = 0.98
+ 
+*------------------------------------------------------------*
+ Node = 39
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 0
+AND HighBP IS ONE OF: 0 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 39
+ Number of Observations = 11622
+ Predicted: _SEGMENT_=1  = 0.07
+ Predicted: _SEGMENT_=2  = 0.93
+ 
+*------------------------------------------------------------*
+ Node = 41
+*------------------------------------------------------------*
+if PhysHlth >= 2
+AND Income <= 6 or MISSING
+AND HighBP IS ONE OF: 0
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 41
+ Number of Observations = 7805
+ Predicted: _SEGMENT_=1  = 0.68
+ Predicted: _SEGMENT_=2  = 0.32
+ 
+*------------------------------------------------------------*
+ Node = 44
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 1 or MISSING
+AND Income >= 7
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 44
+ Number of Observations = 25733
+ Predicted: _SEGMENT_=1  = 0.11
+ Predicted: _SEGMENT_=2  = 0.89
+ 
+*------------------------------------------------------------*
+ Node = 47
+*------------------------------------------------------------*
+if PhysHlth >= 1
+AND Income >= 7
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 47
+ Number of Observations = 1524
+ Predicted: _SEGMENT_=1  = 0.91
+ Predicted: _SEGMENT_=2  = 0.09
+ 
+*------------------------------------------------------------*
+ Node = 49
+*------------------------------------------------------------*
+if PhysHlth >= 2
+AND Income <= 6 or MISSING
+AND HighBP IS ONE OF: 0
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 49
+ Number of Observations = 650
+ Predicted: _SEGMENT_=1  = 0.90
+ Predicted: _SEGMENT_=2  = 0.10
+ 
+*------------------------------------------------------------*
+ Node = 52
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 1 or MISSING
+AND Income >= 7
+AND HighBP IS ONE OF: 0
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 52
+ Number of Observations = 782
+ Predicted: _SEGMENT_=1  = 0.17
+ Predicted: _SEGMENT_=2  = 0.83
+ 
+*------------------------------------------------------------*
+ Node = 53
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 0
+AND Income >= 7
+AND HighBP IS ONE OF: 0
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 53
+ Number of Observations = 306
+ Predicted: _SEGMENT_=1  = 0.53
+ Predicted: _SEGMENT_=2  = 0.47
+ 
+*------------------------------------------------------------*
+ Node = 55
+*------------------------------------------------------------*
+if PhysHlth >= 1
+AND Income >= 7
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 55
+ Number of Observations = 491
+ Predicted: _SEGMENT_=1  = 0.87
+ Predicted: _SEGMENT_=2  = 0.13
+ 
+*------------------------------------------------------------*
+ Node = 60
+*------------------------------------------------------------*
+if PhysHlth <= 0
+AND Income >= 8
+AND HighBP IS ONE OF: 0
+AND GenHlth >= 3 or MISSING
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 60
+ Number of Observations = 349
+ Predicted: _SEGMENT_=1  = 0.37
+ Predicted: _SEGMENT_=2  = 0.63
+ 
+*------------------------------------------------------------*
+ Node = 61
+*------------------------------------------------------------*
+if PhysHlth <= 0
+AND Income >= 8
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth >= 3 or MISSING
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 61
+ Number of Observations = 635
+ Predicted: _SEGMENT_=1  = 0.81
+ Predicted: _SEGMENT_=2  = 0.19
+ 
+*------------------------------------------------------------*
+ Node = 70
+*------------------------------------------------------------*
+if Stroke IS ONE OF: 1
+AND PhysActivity IS ONE OF: 1 or MISSING
+AND Income <= 6
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 70
+ Number of Observations = 517
+ Predicted: _SEGMENT_=1  = 0.52
+ Predicted: _SEGMENT_=2  = 0.48
+ 
+*------------------------------------------------------------*
+ Node = 71
+*------------------------------------------------------------*
+if Stroke IS ONE OF: 1
+AND PhysActivity IS ONE OF: 1 or MISSING
+AND Income >= 7 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 71
+ Number of Observations = 590
+ Predicted: _SEGMENT_=1  = 0.12
+ Predicted: _SEGMENT_=2  = 0.88
+ 
+*------------------------------------------------------------*
+ Node = 74
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 0
+AND Income <= 6
+AND HighBP IS ONE OF: 1
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 74
+ Number of Observations = 2883
+ Predicted: _SEGMENT_=1  = 0.57
+ Predicted: _SEGMENT_=2  = 0.43
+ 
+*------------------------------------------------------------*
+ Node = 75
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 0
+AND Income >= 7 or MISSING
+AND HighBP IS ONE OF: 1
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth <= 2 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 75
+ Number of Observations = 2977
+ Predicted: _SEGMENT_=1  = 0.15
+ Predicted: _SEGMENT_=2  = 0.85
+ 
+*------------------------------------------------------------*
+ Node = 78
+*------------------------------------------------------------*
+if PhysHlth <= 1 or MISSING
+AND PhysActivity IS ONE OF: 0
+AND Income <= 6 or MISSING
+AND HighBP IS ONE OF: 0
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 78
+ Number of Observations = 3558
+ Predicted: _SEGMENT_=1  = 0.50
+ Predicted: _SEGMENT_=2  = 0.50
+ 
+*------------------------------------------------------------*
+ Node = 79
+*------------------------------------------------------------*
+if PhysHlth <= 1 or MISSING
+AND PhysActivity IS ONE OF: 1 or MISSING
+AND Income <= 6 or MISSING
+AND HighBP IS ONE OF: 0
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 79
+ Number of Observations = 9060
+ Predicted: _SEGMENT_=1  = 0.14
+ Predicted: _SEGMENT_=2  = 0.86
+ 
+*------------------------------------------------------------*
+ Node = 88
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 0
+AND Income >= 7
+AND HighBP IS ONE OF: 0 or MISSING
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 88
+ Number of Observations = 3713
+ Predicted: _SEGMENT_=1  = 0.22
+ Predicted: _SEGMENT_=2  = 0.78
+ 
+*------------------------------------------------------------*
+ Node = 89
+*------------------------------------------------------------*
+if PhysActivity IS ONE OF: 0
+AND Income >= 7
+AND HighBP IS ONE OF: 1
+AND HeartDiseaseorAttack IS ONE OF: 0 or MISSING
+AND GenHlth >= 3
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 89
+ Number of Observations = 3676
+ Predicted: _SEGMENT_=1  = 0.63
+ Predicted: _SEGMENT_=2  = 0.37
+ 
+*------------------------------------------------------------*
+ Node = 90
+*------------------------------------------------------------*
+if PhysHlth <= 0 or MISSING
+AND Income >= 7
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND GenHlth >= 3
+AND Education <= 5 or MISSING
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 90
+ Number of Observations = 1060
+ Predicted: _SEGMENT_=1  = 0.75
+ Predicted: _SEGMENT_=2  = 0.25
+ 
+*------------------------------------------------------------*
+ Node = 91
+*------------------------------------------------------------*
+if PhysHlth <= 0 or MISSING
+AND Income >= 7
+AND HeartDiseaseorAttack IS ONE OF: 1
+AND GenHlth >= 3
+AND Education >= 6
+AND DiffWalk IS ONE OF: 0 or MISSING
+then 
+ Tree Node Identifier   = 91
+ Number of Observations = 976
+ Predicted: _SEGMENT_=1  = 0.37
+ Predicted: _SEGMENT_=2  = 0.63
+ 
+*------------------------------------------------------------*
+ Node = 94
+*------------------------------------------------------------*
+if PhysHlth <= 1 or MISSING
+AND PhysActivity IS ONE OF: 1 or MISSING
+AND Income <= 6 or MISSING
+AND HighBP IS ONE OF: 0
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 94
+ Number of Observations = 584
+ Predicted: _SEGMENT_=1  = 0.42
+ Predicted: _SEGMENT_=2  = 0.58
+ 
+*------------------------------------------------------------*
+ Node = 95
+*------------------------------------------------------------*
+if PhysHlth <= 1 or MISSING
+AND PhysActivity IS ONE OF: 0
+AND Income <= 6 or MISSING
+AND HighBP IS ONE OF: 0
+AND GenHlth <= 2
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 95
+ Number of Observations = 340
+ Predicted: _SEGMENT_=1  = 0.85
+ Predicted: _SEGMENT_=2  = 0.15
+ 
+*------------------------------------------------------------*
+ Node = 102
+*------------------------------------------------------------*
+if PhysHlth <= 0 or MISSING
+AND Income >= 7
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth <= 2
+AND Education <= 5
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 102
+ Number of Observations = 265
+ Predicted: _SEGMENT_=1  = 0.70
+ Predicted: _SEGMENT_=2  = 0.30
+ 
+*------------------------------------------------------------*
+ Node = 103
+*------------------------------------------------------------*
+if PhysHlth <= 0 or MISSING
+AND Income >= 7
+AND HighBP IS ONE OF: 1 or MISSING
+AND GenHlth <= 2
+AND Education >= 6 or MISSING
+AND DiffWalk IS ONE OF: 1
+then 
+ Tree Node Identifier   = 103
+ Number of Observations = 359
+ Predicted: _SEGMENT_=1  = 0.30
+ Predicted: _SEGMENT_=2  = 0.70
+ 

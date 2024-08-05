@@ -1,0 +1,22 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+         Measurement    Frequency
+Role        Level         Count
+
+INPUT     INTERVAL          21   
+INPUT     NOMINAL            1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Sampling Summary
+
+                                Number of
+ Type         Data Set        Observations
+
+DATA      EMWS1.Ids3_DATA        250716   
+SAMPLE    EMWS1.Smpl2_DATA        50143   

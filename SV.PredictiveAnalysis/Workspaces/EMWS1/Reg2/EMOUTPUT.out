@@ -1,0 +1,2494 @@
+*------------------------------------------------------------*
+User:                shre2
+Date:                March 04, 2024
+Time:                12:21:00
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      BINARY            14
+INPUT      INTERVAL           2
+INPUT      ORDINAL            5
+TARGET     NOMINAL            1
+ 
+ 
+ 
+ 
+Model Events
+ 
+                                                     Number
+                                      Measurement      of
+      Target              Event          Level       Levels      Order              Label
+ 
+Diabetes_Prediction    PREDIABETES      NOMINAL         3      Descending    Diabetes Prediction
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type         Variable                            Label
+ 
+TARGET       Diabetes_Prediction                 Diabetes Prediction
+PREDICTED    P_Diabetes_Predictionprediabetes    Predicted: Diabetes_Prediction=prediabetes
+RESIDUAL     R_Diabetes_Predictionprediabetes    Residual: Diabetes_Prediction=prediabetes
+PREDICTED    P_Diabetes_Predictionno_diabetes    Predicted: Diabetes_Prediction=no diabetes
+RESIDUAL     R_Diabetes_Predictionno_diabetes    Residual: Diabetes_Prediction=no diabetes
+PREDICTED    P_Diabetes_Predictiondiabetes       Predicted: Diabetes_Prediction=diabetes
+RESIDUAL     R_Diabetes_Predictiondiabetes       Residual: Diabetes_Prediction=diabetes
+FROM         F_Diabetes_Prediction               From: Diabetes_Prediction
+INTO         I_Diabetes_Prediction               Into: Diabetes_Prediction
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+                           Model Information
+ 
+Training Data Set              WORK.EM_DMREG.VIEW
+DMDB Catalog                   WORK.REG2_DMDB
+Target Variable                Diabetes_Prediction (Diabetes Prediction)
+Target Measurement Level       Nominal
+Number of Target Categories    3
+Error                          MBernoulli
+Link Function                  Logit
+Number of Model Parameters     186
+Number of Observations         80228
+ 
+ 
+            Target Profile
+ 
+ Ordered     Diabetes_           Total
+   Value     Prediction      Frequency
+ 
+       1     prediabetes          1456
+       2     no diabetes         67815
+       3     diabetes            10957
+ 
+ 
+ 
+ 
+Forward Selection Procedure
+ 
+ 
+Step 0: Intercepts entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates               2
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7.702572E-11
+ 
+                                            Optimization Results
+ 
+Iterations                                          0  Function Calls                                      3
+Hessian Calls                                       1  Active Constraints                                  0
+Objective Function                       39050.558935  Max Abs Gradient Element                 7.702572E-11
+Ridge                                               0  Actual Over Pred Change                             0
+ 
+Convergence criterion (ABSGCONV=0.00001) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       78101.118         0.0000        0          .
+ 
+ 
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -2.0183      0.0279       5235.30        <.0001                       0.133
+Intercept                           no diabetes     1      1.8228      0.0103      31341.94        <.0001                       6.189
+ 
+ 
+ 
+ 
+Step 1: Effect GenHlth entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              10
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 2887.9611108
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            35979       3071.8      2409.3         0        0.840
+   2            0           3              0            35439        539.4       177.3         0        1.060
+   3            0           4              0            35424      14.9170     11.8381         0        1.068
+   4            0           5              0            35424       0.1899      0.1754         0        1.010
+   5            0           6              0            35424     0.000045    0.000043         0        1.001
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       35424.226126  Max Abs Gradient Element                 0.0000429064
+Ridge                                               0  Actual Over Pred Change                  1.0009060189
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       70848.452      7252.6656        8         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+GenHlth                    8     5856.1344        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.9300      0.0349       3063.39        <.0001                       0.145
+Intercept                           no diabetes     1      1.8086      0.0147      15187.07        <.0001                       6.102
+GenHlth              1              prediabetes     1      0.6815      0.0941         52.42        <.0001                       1.977
+GenHlth              1              no diabetes     1      1.8679      0.0443       1777.32        <.0001                       6.475
+GenHlth              2              prediabetes     1      0.2122      0.0562         14.27        0.0002                       1.236
+GenHlth              2              no diabetes     1      0.7384      0.0231       1021.91        <.0001                       2.092
+GenHlth              3              prediabetes     1     -0.1203      0.0496          5.88        0.0153                       0.887
+GenHlth              3              no diabetes     1     -0.2991      0.0197        230.10        <.0001                       0.742
+GenHlth              4              prediabetes     1     -0.2886      0.0572         25.47        <.0001                       0.749
+GenHlth              4              no diabetes     1     -1.0303      0.0226       2084.19        <.0001                       0.357
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+GenHlth              1 vs 5      prediabetes       3.210
+GenHlth              1 vs 5      no diabetes      23.215
+GenHlth              2 vs 5      prediabetes       2.008
+GenHlth              2 vs 5      no diabetes       7.503
+GenHlth              3 vs 5      prediabetes       1.440
+GenHlth              3 vs 5      no diabetes       2.659
+GenHlth              4 vs 5      prediabetes       1.217
+GenHlth              4 vs 5      no diabetes       1.280
+ 
+ 
+Step 2: Effect HighBP entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              12
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            34704       4346.4      3178.8         0        0.863
+   2            0           3              0            33970        733.8       265.7         0        1.068
+   3            0           4              0            33946      24.5203     18.8317         0        1.073
+   4            0           5              0            33945       0.3857      0.3458         0        1.014
+   5            0           6              0            33945     0.000176    0.000163         0        1.000
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       33945.427195  Max Abs Gradient Element                 0.0001626435
+Ridge                                               0  Actual Over Pred Change                  1.0003752626
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       67890.854     10210.2635       10         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+GenHlth                    8     3856.4961        <.0001
+HighBP                     2     2715.8690        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.8635      0.0357       2721.69        <.0001                       0.155
+Intercept                           no diabetes     1      1.8940      0.0154      15114.21        <.0001                       6.646
+GenHlth              1              prediabetes     1      0.5750      0.0954         36.33        <.0001                       1.777
+GenHlth              1              no diabetes     1      1.5568      0.0449       1203.15        <.0001                       4.744
+GenHlth              2              prediabetes     1      0.1789      0.0564         10.05        0.0015                       1.196
+GenHlth              2              no diabetes     1      0.6261      0.0235        712.45        <.0001                       1.870
+GenHlth              3              prediabetes     1     -0.1014      0.0497          4.16        0.0413                       0.904
+GenHlth              3              no diabetes     1     -0.2519      0.0201        156.79        <.0001                       0.777
+GenHlth              4              prediabetes     1     -0.2335      0.0578         16.34        <.0001                       0.792
+GenHlth              4              no diabetes     1     -0.8613      0.0232       1373.08        <.0001                       0.423
+HighBP               0              prediabetes     1      0.2124      0.0302         49.55        <.0001                       1.237
+HighBP               0              no diabetes     1      0.6182      0.0122       2587.25        <.0001                       1.856
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+GenHlth              1 vs 5      prediabetes       2.702
+GenHlth              1 vs 5      no diabetes      13.825
+GenHlth              2 vs 5      prediabetes       1.818
+GenHlth              2 vs 5      no diabetes       5.451
+GenHlth              3 vs 5      prediabetes       1.374
+GenHlth              3 vs 5      no diabetes       2.265
+GenHlth              4 vs 5      prediabetes       1.204
+GenHlth              4 vs 5      no diabetes       1.232
+HighBP               0 vs 1      prediabetes       1.529
+HighBP               0 vs 1      no diabetes       3.444
+ 
+ 
+Step 3: Effect BMI entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              14
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            34086       4964.5      3503.5         0        0.854
+   2            0           3              0            33240        845.8       302.3         0        1.068
+   3            0           4              0            33211      29.6341     22.4038         0        1.075
+   4            0           5              0            33210       0.5017      0.4438         0        1.016
+   5            0           6              0            33210     0.000289    0.000264         0        1.000
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       33210.073345  Max Abs Gradient Element                  0.000264041
+Ridge                                               0  Actual Over Pred Change                  1.0004403806
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       66420.147     11680.9712       12         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+BMI                        2     1459.4677        <.0001
+GenHlth                    8     3176.1991        <.0001
+HighBP                     2     2198.0359        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.4534      0.1420        104.68        <.0001                       0.234
+Intercept                           no diabetes     1      3.9206      0.0576       4636.87        <.0001                      50.430
+BMI                                 prediabetes     1     -0.0137     0.00463          8.76        0.0031         -0.0422       0.986
+BMI                                 no diabetes     1     -0.0700     0.00188       1392.65        <.0001         -0.2160       0.932
+GenHlth              1              prediabetes     1      0.5418      0.0960         31.82        <.0001                       1.719
+GenHlth              1              no diabetes     1      1.4060      0.0452        968.21        <.0001                       4.080
+GenHlth              2              prediabetes     1      0.1696      0.0565          9.02        0.0027                       1.185
+GenHlth              2              no diabetes     1      0.5914      0.0237        625.32        <.0001                       1.807
+GenHlth              3              prediabetes     1     -0.0906      0.0499          3.30        0.0692                       0.913
+GenHlth              3              no diabetes     1     -0.1922      0.0204         88.49        <.0001                       0.825
+GenHlth              4              prediabetes     1     -0.2158      0.0581         13.80        0.0002                       0.806
+GenHlth              4              no diabetes     1     -0.7808      0.0237       1085.66        <.0001                       0.458
+HighBP               0              prediabetes     1      0.2023      0.0304         44.42        <.0001                       1.224
+HighBP               0              no diabetes     1      0.5650      0.0123       2102.33        <.0001                       1.759
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+BMI                              prediabetes       0.986
+BMI                              no diabetes       0.932
+GenHlth              1 vs 5      prediabetes       2.578
+GenHlth              1 vs 5      no diabetes      11.364
+GenHlth              2 vs 5      prediabetes       1.777
+GenHlth              2 vs 5      no diabetes       5.033
+GenHlth              3 vs 5      prediabetes       1.370
+GenHlth              3 vs 5      no diabetes       2.299
+GenHlth              4 vs 5      prediabetes       1.208
+GenHlth              4 vs 5      no diabetes       1.276
+HighBP               0 vs 1      prediabetes       1.499
+HighBP               0 vs 1      no diabetes       3.096
+ 
+ 
+Step 4: Effect Age entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              16
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            33507       5543.6      3724.3         0        0.883
+   2            0           3              0            32501       1006.4       405.1         0        1.090
+   3            0           4              0            32454      46.9027     33.7250         0        1.074
+   4            0           5              0            32453       0.8032      0.6879         0        1.018
+   5            0           6              0            32453     0.000627    0.000565         0        1.001
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       32452.900681  Max Abs Gradient Element                 0.0005645538
+Ridge                                               0  Actual Over Pred Change                  1.0005871207
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       64905.801     13195.3165       14         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2     1407.2639        <.0001
+BMI                        2     2024.2773        <.0001
+GenHlth                    8     2925.6073        <.0001
+HighBP                     2     1114.6459        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.1926      0.1971         36.61        <.0001                       0.303
+Intercept                           no diabetes     1      5.8464      0.0817       5114.90        <.0001                     345.976
+Age                                 prediabetes     1     -0.0201      0.0113          3.17        0.0748         -0.0339       0.980
+Age                                 no diabetes     1     -0.1662     0.00462       1292.48        <.0001         -0.2795       0.847
+BMI                                 prediabetes     1     -0.0162     0.00477         11.58        0.0007         -0.0501       0.984
+BMI                                 no diabetes     1     -0.0867     0.00197       1929.80        <.0001         -0.2674       0.917
+GenHlth              1              prediabetes     1      0.5395      0.0960         31.61        <.0001                       1.715
+GenHlth              1              no diabetes     1      1.3585      0.0453        897.32        <.0001                       3.890
+GenHlth              2              prediabetes     1      0.1711      0.0565          9.18        0.0024                       1.187
+GenHlth              2              no diabetes     1      0.5755      0.0238        583.15        <.0001                       1.778
+GenHlth              3              prediabetes     1     -0.0893      0.0498          3.21        0.0731                       0.915
+GenHlth              3              no diabetes     1     -0.1905      0.0206         85.37        <.0001                       0.827
+GenHlth              4              prediabetes     1     -0.2145      0.0580         13.65        0.0002                       0.807
+GenHlth              4              no diabetes     1     -0.7522      0.0239        987.32        <.0001                       0.471
+HighBP               0              prediabetes     1      0.1911      0.0314         36.93        <.0001                       1.211
+HighBP               0              no diabetes     1      0.4233      0.0129       1085.00        <.0001                       1.527
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.980
+Age                              no diabetes       0.847
+BMI                              prediabetes       0.984
+BMI                              no diabetes       0.917
+GenHlth              1 vs 5      prediabetes       2.576
+GenHlth              1 vs 5      no diabetes      10.482
+GenHlth              2 vs 5      prediabetes       1.782
+GenHlth              2 vs 5      no diabetes       4.791
+GenHlth              3 vs 5      prediabetes       1.374
+GenHlth              3 vs 5      no diabetes       2.227
+GenHlth              4 vs 5      prediabetes       1.212
+GenHlth              4 vs 5      no diabetes       1.270
+HighBP               0 vs 1      prediabetes       1.465
+HighBP               0 vs 1      no diabetes       2.332
+ 
+ 
+Step 5: Effect HighChol entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              18
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            33223       5827.9      3869.5         0        0.886
+   2            0           3              0            32144       1078.3       440.3         0        1.095
+   3            0           4              0            32090      54.4454     38.5705         0        1.076
+   4            0           5              0            32089       0.9663      0.8158         0        1.019
+   5            0           6              0            32089     0.000841    0.000751         0        1.001
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       32088.919457  Max Abs Gradient Element                 0.0007506832
+Ridge                                               0  Actual Over Pred Change                  1.0006654166
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       64177.839     13923.2790       16         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2     1137.7936        <.0001
+BMI                        2     1943.9420        <.0001
+GenHlth                    8     2650.9415        <.0001
+HighBP                     2      797.5880        <.0001
+HighChol                   2      715.0239        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.1766      0.1990         34.97        <.0001                       0.308
+Intercept                           no diabetes     1      5.7296      0.0829       4776.35        <.0001                     307.837
+Age                                 prediabetes     1     -0.0196      0.0115          2.90        0.0884         -0.0330       0.981
+Age                                 no diabetes     1     -0.1528     0.00472       1047.28        <.0001         -0.2569       0.858
+BMI                                 prediabetes     1     -0.0166     0.00481         11.94        0.0005         -0.0513       0.984
+BMI                                 no diabetes     1     -0.0861     0.00200       1855.57        <.0001         -0.2655       0.918
+GenHlth              1              prediabetes     1      0.5291      0.0962         30.28        <.0001                       1.697
+GenHlth              1              no diabetes     1      1.2969      0.0455        812.43        <.0001                       3.658
+GenHlth              2              prediabetes     1      0.1673      0.0565          8.77        0.0031                       1.182
+GenHlth              2              no diabetes     1      0.5569      0.0239        541.13        <.0001                       1.745
+GenHlth              3              prediabetes     1     -0.0887      0.0498          3.17        0.0752                       0.915
+GenHlth              3              no diabetes     1     -0.1845      0.0207         79.21        <.0001                       0.831
+GenHlth              4              prediabetes     1     -0.2104      0.0581         13.11        0.0003                       0.810
+GenHlth              4              no diabetes     1     -0.7236      0.0241        901.20        <.0001                       0.485
+HighBP               0              prediabetes     1      0.1809      0.0319         32.17        <.0001                       1.198
+HighBP               0              no diabetes     1      0.3655      0.0131        781.29        <.0001                       1.441
+HighChol             0              prediabetes     1      0.0489      0.0300          2.66        0.1031                       1.050
+HighChol             0              no diabetes     1      0.3116      0.0121        665.44        <.0001                       1.366
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.981
+Age                              no diabetes       0.858
+BMI                              prediabetes       0.984
+BMI                              no diabetes       0.918
+GenHlth              1 vs 5      prediabetes       2.526
+GenHlth              1 vs 5      no diabetes       9.418
+GenHlth              2 vs 5      prediabetes       1.759
+GenHlth              2 vs 5      no diabetes       4.493
+GenHlth              3 vs 5      prediabetes       1.362
+GenHlth              3 vs 5      no diabetes       2.141
+GenHlth              4 vs 5      prediabetes       1.206
+GenHlth              4 vs 5      no diabetes       1.249
+HighBP               0 vs 1      prediabetes       1.436
+HighBP               0 vs 1      no diabetes       2.077
+HighChol             0 vs 1      prediabetes       1.103
+HighChol             0 vs 1      no diabetes       1.865
+ 
+ 
+Step 6: Effect HvyAlcoholConsump entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              20
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            33164       5886.2      3895.6         0        0.888
+   2            0           3              0            32069       1095.6       449.6         0        1.097
+   3            0           4              0            32012      56.7288     40.0683         0        1.076
+   4            0           5              0            32011       1.0121      0.8516         0        1.019
+   5            0           6              0            32011     0.000894    0.000797         0        1.001
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       32011.020746  Max Abs Gradient Element                  0.000796844
+Ridge                                               0  Actual Over Pred Change                  1.0006865088
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       64022.041     14079.0764       18         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2     1091.2902        <.0001
+BMI                        2     1888.7666        <.0001
+GenHlth                    8     2614.9265        <.0001
+HighBP                     2      812.4479        <.0001
+HighChol                   2      719.0690        <.0001
+HvyAlcoholConsump          2      132.4672        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.0092      0.2074         23.68        <.0001                       0.365
+Intercept                           no diabetes     1      6.0213      0.0876       4720.73        <.0001                     412.108
+Age                                 prediabetes     1     -0.0180      0.0115          2.44        0.1187         -0.0302       0.982
+Age                                 no diabetes     1     -0.1496     0.00473       1002.54        <.0001         -0.2517       0.861
+BMI                                 prediabetes     1     -0.0161     0.00481         11.24        0.0008         -0.0498       0.984
+BMI                                 no diabetes     1     -0.0850     0.00200       1801.69        <.0001         -0.2622       0.919
+GenHlth              1              prediabetes     1      0.5263      0.0962         29.96        <.0001                       1.693
+GenHlth              1              no diabetes     1      1.2916      0.0455        804.97        <.0001                       3.639
+GenHlth              2              prediabetes     1      0.1655      0.0565          8.58        0.0034                       1.180
+GenHlth              2              no diabetes     1      0.5532      0.0240        532.93        <.0001                       1.739
+GenHlth              3              prediabetes     1     -0.0895      0.0498          3.22        0.0725                       0.914
+GenHlth              3              no diabetes     1     -0.1861      0.0208         80.34        <.0001                       0.830
+GenHlth              4              prediabetes     1     -0.2088      0.0581         12.91        0.0003                       0.812
+GenHlth              4              no diabetes     1     -0.7199      0.0241        889.57        <.0001                       0.487
+HighBP               0              prediabetes     1      0.1827      0.0319         32.75        <.0001                       1.200
+HighBP               0              no diabetes     1      0.3695      0.0131        795.83        <.0001                       1.447
+HighChol             0              prediabetes     1      0.0495      0.0300          2.72        0.0988                       1.051
+HighChol             0              no diabetes     1      0.3129      0.0121        669.38        <.0001                       1.367
+HvyAlcoholConsump    0              prediabetes     1     -0.2095      0.0745          7.92        0.0049                       0.811
+HvyAlcoholConsump    0              no diabetes     1     -0.3806      0.0335        129.16        <.0001                       0.683
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.982
+Age                              no diabetes       0.861
+BMI                              prediabetes       0.984
+BMI                              no diabetes       0.919
+GenHlth              1 vs 5      prediabetes       2.509
+GenHlth              1 vs 5      no diabetes       9.303
+GenHlth              2 vs 5      prediabetes       1.749
+GenHlth              2 vs 5      no diabetes       4.446
+GenHlth              3 vs 5      prediabetes       1.355
+GenHlth              3 vs 5      no diabetes       2.123
+GenHlth              4 vs 5      prediabetes       1.203
+GenHlth              4 vs 5      no diabetes       1.245
+HighBP               0 vs 1      prediabetes       1.441
+HighBP               0 vs 1      no diabetes       2.094
+HighChol             0 vs 1      prediabetes       1.104
+HighChol             0 vs 1      no diabetes       1.870
+HvyAlcoholConsump    0 vs 1      prediabetes       0.658
+HvyAlcoholConsump    0 vs 1      no diabetes       0.467
+ 
+ 
+Step 7: Effect Sex entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              22
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            33132       5918.5      3907.0         0        0.890
+   2            0           3              0            32020       1112.6       458.8         0        1.099
+   3            0           4              0            31960      59.7073     41.9213         0        1.077
+   4            0           5              0            31959       1.0840      0.9074         0        1.019
+   5            0           6              0            31959     0.000993    0.000883         0        1.001
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       31958.723431  Max Abs Gradient Element                 0.0008828411
+Ridge                                               0  Actual Over Pred Change                   1.000721192
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63917.447     14183.6710       20         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2     1121.8363        <.0001
+BMI                        2     1891.4167        <.0001
+GenHlth                    8     2648.3989        <.0001
+HighBP                     2      790.3621        <.0001
+HighChol                   2      711.0387        <.0001
+HvyAlcoholConsump          2      138.7808        <.0001
+Sex                        2      104.5996        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -0.9556      0.2074         21.24        <.0001                       0.385
+Intercept                           no diabetes     1      6.0619      0.0881       4736.01        <.0001                     429.187
+Age                                 prediabetes     1     -0.0212      0.0115          3.39        0.0657         -0.0357       0.979
+Age                                 no diabetes     1     -0.1524     0.00474       1034.83        <.0001         -0.2564       0.859
+BMI                                 prediabetes     1     -0.0169     0.00481         12.40        0.0004         -0.0522       0.983
+BMI                                 no diabetes     1     -0.0855     0.00201       1804.43        <.0001         -0.2636       0.918
+GenHlth              1              prediabetes     1      0.5387      0.0962         31.35        <.0001                       1.714
+GenHlth              1              no diabetes     1      1.3030      0.0456        817.95        <.0001                       3.680
+GenHlth              2              prediabetes     1      0.1692      0.0565          8.96        0.0028                       1.184
+GenHlth              2              no diabetes     1      0.5563      0.0240        538.02        <.0001                       1.744
+GenHlth              3              prediabetes     1     -0.0873      0.0499          3.06        0.0801                       0.916
+GenHlth              3              no diabetes     1     -0.1842      0.0208         78.62        <.0001                       0.832
+GenHlth              4              prediabetes     1     -0.2176      0.0582         14.00        0.0002                       0.804
+GenHlth              4              no diabetes     1     -0.7282      0.0242        907.42        <.0001                       0.483
+HighBP               0              prediabetes     1      0.1771      0.0320         30.72        <.0001                       1.194
+HighBP               0              no diabetes     1      0.3644      0.0131        773.43        <.0001                       1.440
+HighChol             0              prediabetes     1      0.0476      0.0300          2.52        0.1121                       1.049
+HighChol             0              no diabetes     1      0.3112      0.0121        661.08        <.0001                       1.365
+HvyAlcoholConsump    0              prediabetes     1     -0.2219      0.0745          8.86        0.0029                       0.801
+HvyAlcoholConsump    0              no diabetes     1     -0.3912      0.0336        135.64        <.0001                       0.676
+Sex                  0              prediabetes     1      0.1295      0.0283         20.94        <.0001                       1.138
+Sex                  0              no diabetes     1      0.1159      0.0115        102.23        <.0001                       1.123
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.979
+Age                              no diabetes       0.859
+BMI                              prediabetes       0.983
+BMI                              no diabetes       0.918
+GenHlth              1 vs 5      prediabetes       2.564
+GenHlth              1 vs 5      no diabetes       9.487
+GenHlth              2 vs 5      prediabetes       1.772
+GenHlth              2 vs 5      no diabetes       4.496
+GenHlth              3 vs 5      prediabetes       1.371
+GenHlth              3 vs 5      no diabetes       2.144
+GenHlth              4 vs 5      prediabetes       1.204
+GenHlth              4 vs 5      no diabetes       1.245
+HighBP               0 vs 1      prediabetes       1.425
+HighBP               0 vs 1      no diabetes       2.073
+HighChol             0 vs 1      prediabetes       1.100
+HighChol             0 vs 1      no diabetes       1.863
+HvyAlcoholConsump    0 vs 1      prediabetes       0.642
+HvyAlcoholConsump    0 vs 1      no diabetes       0.457
+Sex                  0 vs 1      prediabetes       1.296
+Sex                  0 vs 1      no diabetes       1.261
+ 
+ 
+Step 8: Effect Income entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              36
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            33066       5985.0      3944.6         0        0.890
+   2            0           3              0            31937       1128.7       465.3         0        1.099
+   3            0           4              0            31876      61.2935     42.9178         0        1.078
+   4            0           5              0            31874       1.1360      0.9473         0        1.019
+   5            0           6              0            31874      0.00108    0.000959         0        1.001
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       31874.399777  Max Abs Gradient Element                 0.0009586209
+Ridge                                               0  Actual Over Pred Change                  1.0007514998
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63748.800     14352.3183       34         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2     1035.6861        <.0001
+BMI                        2     1886.6445        <.0001
+GenHlth                    8     2004.4077        <.0001
+HighBP                     2      752.8218        <.0001
+HighChol                   2      717.6174        <.0001
+HvyAlcoholConsump          2      128.3960        <.0001
+Income                    14      169.4671        <.0001
+Sex                        2      147.9745        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -0.9374      0.2087         20.17        <.0001                       0.392
+Intercept                           no diabetes     1      5.9344      0.0887       4477.38        <.0001                     377.816
+Age                                 prediabetes     1     -0.0213      0.0116          3.37        0.0665         -0.0358       0.979
+Age                                 no diabetes     1     -0.1477     0.00477        956.46        <.0001         -0.2484       0.863
+BMI                                 prediabetes     1     -0.0172     0.00480         12.84        0.0003         -0.0530       0.983
+BMI                                 no diabetes     1     -0.0854     0.00201       1801.35        <.0001         -0.2635       0.918
+GenHlth              1              prediabetes     1      0.5511      0.0974         32.04        <.0001                       1.735
+GenHlth              1              no diabetes     1      1.2310      0.0460        716.65        <.0001                       3.425
+GenHlth              2              prediabetes     1      0.1754      0.0579          9.19        0.0024                       1.192
+GenHlth              2              no diabetes     1      0.4977      0.0245        412.12        <.0001                       1.645
+GenHlth              3              prediabetes     1     -0.0877      0.0501          3.06        0.0802                       0.916
+GenHlth              3              no diabetes     1     -0.1999      0.0209         91.55        <.0001                       0.819
+GenHlth              4              prediabetes     1     -0.2251      0.0591         14.50        0.0001                       0.798
+GenHlth              4              no diabetes     1     -0.6771      0.0246        760.28        <.0001                       0.508
+HighBP               0              prediabetes     1      0.1787      0.0320         31.20        <.0001                       1.196
+HighBP               0              no diabetes     1      0.3568      0.0131        738.20        <.0001                       1.429
+HighChol             0              prediabetes     1      0.0471      0.0300          2.47        0.1162                       1.048
+HighChol             0              no diabetes     1      0.3131      0.0121        667.06        <.0001                       1.368
+HvyAlcoholConsump    0              prediabetes     1     -0.2233      0.0746          8.96        0.0028                       0.800
+HvyAlcoholConsump    0              no diabetes     1     -0.3775      0.0336        125.93        <.0001                       0.686
+Income               1              prediabetes     1      0.1303      0.0991          1.73        0.1888                       1.139
+Income               1              no diabetes     1     -0.2330      0.0436         28.49        <.0001                       0.792
+Income               2              prediabetes     1     -0.0330      0.0963          0.12        0.7319                       0.968
+Income               2              no diabetes     1     -0.1249      0.0395         10.01        0.0016                       0.883
+Income               3              prediabetes     1     -0.0628      0.0878          0.51        0.4746                       0.939
+Income               3              no diabetes     1     -0.0947      0.0355          7.11        0.0077                       0.910
+Income               4              prediabetes     1    -0.00203      0.0797          0.00        0.9796                       0.998
+Income               4              no diabetes     1     -0.0631      0.0329          3.68        0.0552                       0.939
+Income               5              prediabetes     1     -0.0571      0.0772          0.55        0.4594                       0.945
+Income               5              no diabetes     1      0.0399      0.0310          1.66        0.1976                       1.041
+Income               6              prediabetes     1      0.0128      0.0686          0.04        0.8516                       1.013
+Income               6              no diabetes     1      0.0773      0.0282          7.54        0.0060                       1.080
+Income               7              prediabetes     1      0.0856      0.0676          1.60        0.2058                       1.089
+Income               7              no diabetes     1      0.1330      0.0284         21.97        <.0001                       1.142
+Sex                  0              prediabetes     1      0.1288      0.0288         19.94        <.0001                       1.137
+Sex                  0              no diabetes     1      0.1422      0.0117        147.41        <.0001                       1.153
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.979
+Age                              no diabetes       0.863
+BMI                              prediabetes       0.983
+BMI                              no diabetes       0.918
+GenHlth              1 vs 5      prediabetes       2.625
+GenHlth              1 vs 5      no diabetes       8.026
+GenHlth              2 vs 5      prediabetes       1.803
+GenHlth              2 vs 5      no diabetes       3.855
+GenHlth              3 vs 5      prediabetes       1.386
+GenHlth              3 vs 5      no diabetes       1.919
+GenHlth              4 vs 5      prediabetes       1.208
+GenHlth              4 vs 5      no diabetes       1.191
+HighBP               0 vs 1      prediabetes       1.430
+HighBP               0 vs 1      no diabetes       2.041
+HighChol             0 vs 1      prediabetes       1.099
+HighChol             0 vs 1      no diabetes       1.871
+HvyAlcoholConsump    0 vs 1      prediabetes       0.640
+HvyAlcoholConsump    0 vs 1      no diabetes       0.470
+Income               1 vs 8      prediabetes       1.226
+Income               1 vs 8      no diabetes       0.608
+Income               2 vs 8      prediabetes       1.042
+Income               2 vs 8      no diabetes       0.677
+Income               3 vs 8      prediabetes       1.011
+Income               3 vs 8      no diabetes       0.698
+Income               4 vs 8      prediabetes       1.074
+Income               4 vs 8      no diabetes       0.720
+Income               5 vs 8      prediabetes       1.017
+Income               5 vs 8      no diabetes       0.798
+Income               6 vs 8      prediabetes       1.090
+Income               6 vs 8      no diabetes       0.829
+Income               7 vs 8      prediabetes       1.173
+Income               7 vs 8      no diabetes       0.876
+Sex                  0 vs 1      prediabetes       1.294
+Sex                  0 vs 1      no diabetes       1.329
+ 
+ 
+Step 9: Effect CholCheck entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Newton-Raphson Ridge Optimization
+ 
+Without Parameter Scaling
+ 
+Parameter Estimates              38
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+ 
+   1            0           2              0            33033       6017.6      3955.4         0        0.892
+   2            0           3              0            31881       1151.5       476.2         0        1.103
+   3            0           4              0            31813      67.9925     47.0875         0        1.083
+   4            0           5              0            31812       1.4282      1.1741         0        1.021
+   5            0           6              0            31812      0.00153     0.00133         0        1.001
+ 
+                                            Optimization Results
+ 
+Iterations                                          5  Function Calls                                      8
+Hessian Calls                                       6  Active Constraints                                  0
+Objective Function                       31812.026728  Max Abs Gradient Element                 0.0013262076
+Ridge                                               0  Actual Over Pred Change                  1.0008159138
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+NOTE: At least one element of the gradient is greater than 1e-3.
+ 
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63624.053     14477.0644       36         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2      988.7184        <.0001
+BMI                        2     1865.1397        <.0001
+CholCheck                  2       96.0271        <.0001
+GenHlth                    8     1995.9490        <.0001
+HighBP                     2      722.5354        <.0001
+HighChol                   2      694.6445        <.0001
+HvyAlcoholConsump          2      125.3659        <.0001
+Income                    14      180.2177        <.0001
+Sex                        2      153.9520        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -0.7959      0.2387         11.12        0.0009                       0.451
+Intercept                           no diabetes     1      6.3942      0.1030       3854.08        <.0001                     598.368
+Age                                 prediabetes     1     -0.0207      0.0116          3.19        0.0742         -0.0348       0.980
+Age                                 no diabetes     1     -0.1445     0.00478        912.96        <.0001         -0.2429       0.865
+BMI                                 prediabetes     1     -0.0171     0.00480         12.76        0.0004         -0.0529       0.983
+BMI                                 no diabetes     1     -0.0850     0.00201       1781.00        <.0001         -0.2622       0.919
+CholCheck            0              prediabetes     1      0.1518      0.1278          1.41        0.2348                       1.164
+CholCheck            0              no diabetes     1      0.5282      0.0564         87.80        <.0001                       1.696
+GenHlth              1              prediabetes     1      0.5509      0.0974         32.01        <.0001                       1.735
+GenHlth              1              no diabetes     1      1.2285      0.0460        713.20        <.0001                       3.416
+GenHlth              2              prediabetes     1      0.1757      0.0579          9.21        0.0024                       1.192
+GenHlth              2              no diabetes     1      0.4973      0.0245        410.98        <.0001                       1.644
+GenHlth              3              prediabetes     1     -0.0874      0.0501          3.04        0.0810                       0.916
+GenHlth              3              no diabetes     1     -0.1995      0.0209         91.05        <.0001                       0.819
+GenHlth              4              prediabetes     1     -0.2255      0.0591         14.56        0.0001                       0.798
+GenHlth              4              no diabetes     1     -0.6775      0.0246        759.92        <.0001                       0.508
+HighBP               0              prediabetes     1      0.1777      0.0320         30.83        <.0001                       1.194
+HighBP               0              no diabetes     1      0.3501      0.0131        709.16        <.0001                       1.419
+HighChol             0              prediabetes     1      0.0468      0.0300          2.43        0.1190                       1.048
+HighChol             0              no diabetes     1      0.3084      0.0121        645.96        <.0001                       1.361
+HvyAlcoholConsump    0              prediabetes     1     -0.2235      0.0746          8.97        0.0027                       0.800
+HvyAlcoholConsump    0              no diabetes     1     -0.3737      0.0337        123.09        <.0001                       0.688
+Income               1              prediabetes     1      0.1301      0.0992          1.72        0.1897                       1.139
+Income               1              no diabetes     1     -0.2399      0.0437         30.08        <.0001                       0.787
+Income               2              prediabetes     1     -0.0340      0.0963          0.12        0.7241                       0.967
+Income               2              no diabetes     1     -0.1300      0.0395         10.83        0.0010                       0.878
+Income               3              prediabetes     1     -0.0632      0.0878          0.52        0.4721                       0.939
+Income               3              no diabetes     1     -0.0987      0.0356          7.69        0.0056                       0.906
+Income               4              prediabetes     1    -0.00180      0.0797          0.00        0.9820                       0.998
+Income               4              no diabetes     1     -0.0631      0.0329          3.67        0.0553                       0.939
+Income               5              prediabetes     1     -0.0570      0.0772          0.55        0.4599                       0.945
+Income               5              no diabetes     1      0.0389      0.0310          1.57        0.2101                       1.040
+Income               6              prediabetes     1      0.0128      0.0686          0.03        0.8517                       1.013
+Income               6              no diabetes     1      0.0800      0.0282          8.06        0.0045                       1.083
+Income               7              prediabetes     1      0.0863      0.0676          1.63        0.2020                       1.090
+Income               7              no diabetes     1      0.1374      0.0284         23.39        <.0001                       1.147
+Sex                  0              prediabetes     1      0.1290      0.0288         20.02        <.0001                       1.138
+Sex                  0              no diabetes     1      0.1452      0.0117        153.49        <.0001                       1.156
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.980
+Age                              no diabetes       0.865
+BMI                              prediabetes       0.983
+BMI                              no diabetes       0.919
+CholCheck            0 vs 1      prediabetes       1.355
+CholCheck            0 vs 1      no diabetes       2.876
+GenHlth              1 vs 5      prediabetes       2.623
+GenHlth              1 vs 5      no diabetes       7.982
+GenHlth              2 vs 5      prediabetes       1.803
+GenHlth              2 vs 5      no diabetes       3.842
+GenHlth              3 vs 5      prediabetes       1.386
+GenHlth              3 vs 5      no diabetes       1.914
+GenHlth              4 vs 5      prediabetes       1.207
+GenHlth              4 vs 5      no diabetes       1.187
+HighBP               0 vs 1      prediabetes       1.427
+HighBP               0 vs 1      no diabetes       2.014
+HighChol             0 vs 1      prediabetes       1.098
+HighChol             0 vs 1      no diabetes       1.853
+HvyAlcoholConsump    0 vs 1      prediabetes       0.640
+HvyAlcoholConsump    0 vs 1      no diabetes       0.474
+Income               1 vs 8      prediabetes       1.225
+Income               1 vs 8      no diabetes       0.597
+Income               2 vs 8      prediabetes       1.040
+Income               2 vs 8      no diabetes       0.667
+Income               3 vs 8      prediabetes       1.010
+Income               3 vs 8      no diabetes       0.688
+Income               4 vs 8      prediabetes       1.074
+Income               4 vs 8      no diabetes       0.713
+Income               5 vs 8      prediabetes       1.016
+Income               5 vs 8      no diabetes       0.789
+Income               6 vs 8      prediabetes       1.090
+Income               6 vs 8      no diabetes       0.822
+Income               7 vs 8      prediabetes       1.173
+Income               7 vs 8      no diabetes       0.871
+Sex                  0 vs 1      prediabetes       1.294
+Sex                  0 vs 1      no diabetes       1.337
+ 
+ 
+Step 10: Effect HeartDiseaseorAttack entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Dual Quasi-Newton Optimization
+ 
+Dual Broyden - Fletcher - Goldfarb - Shanno Update (DBFGS)
+ 
+Parameter Estimates              40
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                 Objective     Max Abs                Slope of
+                     Function         Active        Objective     Function    Gradient       Step       Search
+Iter     Restarts       Calls    Constraints         Function       Change     Element       Size    Direction
+ 
+   1            0           5              0            32994       6056.7      3803.7      0.970       -13696
+   2            0           7              0            32063        930.9       952.8      1.000      -1782.5
+   3            0           9              0            31886        176.9       472.4      1.000       -407.3
+   4            0          11              0            31803      83.2151     78.0916      1.000       -137.5
+   5            0          13              0            31792      10.9187     56.7416      1.000      -22.022
+   6            0          16              0            31788       3.6121     32.4240      1.413       -5.213
+   7            0          19              0            31787       1.2679     24.1032      1.133       -2.284
+   8            0          22              0            31787       0.1438      6.0309      0.932       -0.340
+   9            0          25              0            31787       0.0233      2.8009      1.117      -0.0412
+  10            0          28              0            31787      0.00280      0.8846      1.341      -0.0042
+ 
+                                            Optimization Results
+ 
+Iterations                                         10  Function Calls                                     30
+Gradient Calls                                     13  Active Constraints                                  0
+Objective Function                       31786.865134  Max Abs Gradient Element                 0.8846313395
+Slope of Search Direction                -0.004164831
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+NOTE: At least one element of the gradient is greater than 1e-3.
+ 
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63573.730     14527.3876       38         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2      905.8226        <.0001
+BMI                        2     1868.6940        <.0001
+CholCheck                  2       95.3811        <.0001
+GenHlth                    8     1842.6908        <.0001
+HeartDiseaseorAttack       2       51.0512        <.0001
+HighBP                     2      698.1245        <.0001
+HighChol                   2      661.6495        <.0001
+HvyAlcoholConsump          2      123.6103        <.0001
+Income                    14      174.7470        <.0001
+Sex                        2      131.3301        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -0.9592      0.2429         15.60        <.0001                       0.383
+Intercept                           no diabetes     1      6.2718      0.1044       3611.32        <.0001                     529.416
+Age                                 prediabetes     1     -0.0138      0.0117          1.38        0.2408         -0.0231       0.986
+Age                                 no diabetes     1     -0.1391     0.00484        827.32        <.0001         -0.2340       0.870
+BMI                                 prediabetes     1     -0.0173     0.00480         12.96        0.0003         -0.0533       0.983
+BMI                                 no diabetes     1     -0.0851     0.00202       1784.53        <.0001         -0.2626       0.918
+CholCheck            0              prediabetes     1      0.1469      0.1281          1.32        0.2514                       1.158
+CholCheck            0              no diabetes     1      0.5261      0.0564         87.04        <.0001                       1.692
+GenHlth              1              prediabetes     1      0.5209      0.0977         28.43        <.0001                       1.684
+GenHlth              1              no diabetes     1      1.2055      0.0461        683.12        <.0001                       3.339
+GenHlth              2              prediabetes     1      0.1509      0.0583          6.71        0.0096                       1.163
+GenHlth              2              no diabetes     1      0.4782      0.0247        375.02        <.0001                       1.613
+GenHlth              3              prediabetes     1     -0.0976      0.0502          3.78        0.0520                       0.907
+GenHlth              3              no diabetes     1     -0.2073      0.0210         97.91        <.0001                       0.813
+GenHlth              4              prediabetes     1     -0.2098      0.0593         12.53        0.0004                       0.811
+GenHlth              4              no diabetes     1     -0.6654      0.0247        727.62        <.0001                       0.514
+HeartDiseaseorAttack 0              prediabetes     1      0.1444      0.0418         11.90        0.0006                       1.155
+HeartDiseaseorAttack 0              no diabetes     1      0.1101      0.0159         47.76        <.0001                       1.116
+HighBP               0              prediabetes     1      0.1706      0.0320         28.36        <.0001                       1.186
+HighBP               0              no diabetes     1      0.3448      0.0132        684.08        <.0001                       1.412
+HighChol             0              prediabetes     1      0.0376      0.0301          1.57        0.2109                       1.038
+HighChol             0              no diabetes     1      0.3013      0.0122        611.29        <.0001                       1.352
+HvyAlcoholConsump    0              prediabetes     1     -0.2201      0.0746          8.70        0.0032                       0.802
+HvyAlcoholConsump    0              no diabetes     1     -0.3711      0.0337        121.28        <.0001                       0.690
+Income               1              prediabetes     1      0.1326      0.0992          1.79        0.1814                       1.142
+Income               1              no diabetes     1     -0.2375      0.0438         29.40        <.0001                       0.789
+Income               2              prediabetes     1     -0.0284      0.0963          0.09        0.7683                       0.972
+Income               2              no diabetes     1     -0.1261      0.0396         10.16        0.0014                       0.882
+Income               3              prediabetes     1     -0.0595      0.0879          0.46        0.4981                       0.942
+Income               3              no diabetes     1     -0.0957      0.0356          7.22        0.0072                       0.909
+Income               4              prediabetes     1    -0.00059      0.0797          0.00        0.9941                       0.999
+Income               4              no diabetes     1     -0.0623      0.0330          3.57        0.0588                       0.940
+Income               5              prediabetes     1     -0.0581      0.0772          0.57        0.4514                       0.944
+Income               5              no diabetes     1      0.0382      0.0311          1.51        0.2193                       1.039
+Income               6              prediabetes     1      0.0104      0.0686          0.02        0.8794                       1.010
+Income               6              no diabetes     1      0.0782      0.0282          7.68        0.0056                       1.081
+Income               7              prediabetes     1      0.0837      0.0677          1.53        0.2162                       1.087
+Income               7              no diabetes     1      0.1351      0.0284         22.60        <.0001                       1.145
+Sex                  0              prediabetes     1      0.1158      0.0290         15.90        <.0001                       1.123
+Sex                  0              no diabetes     1      0.1353      0.0118        131.12        <.0001                       1.145
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.986
+Age                              no diabetes       0.870
+BMI                              prediabetes       0.983
+BMI                              no diabetes       0.918
+CholCheck            0 vs 1      prediabetes       1.341
+CholCheck            0 vs 1      no diabetes       2.864
+GenHlth              1 vs 5      prediabetes       2.424
+GenHlth              1 vs 5      no diabetes       7.512
+GenHlth              2 vs 5      prediabetes       1.674
+GenHlth              2 vs 5      no diabetes       3.630
+GenHlth              3 vs 5      prediabetes       1.306
+GenHlth              3 vs 5      no diabetes       1.829
+GenHlth              4 vs 5      prediabetes       1.167
+GenHlth              4 vs 5      no diabetes       1.157
+HeartDiseaseorAttack 0 vs 1      prediabetes       1.335
+HeartDiseaseorAttack 0 vs 1      no diabetes       1.246
+HighBP               0 vs 1      prediabetes       1.407
+HighBP               0 vs 1      no diabetes       1.993
+HighChol             0 vs 1      prediabetes       1.078
+HighChol             0 vs 1      no diabetes       1.827
+HvyAlcoholConsump    0 vs 1      prediabetes       0.644
+HvyAlcoholConsump    0 vs 1      no diabetes       0.476
+Income               1 vs 8      prediabetes       1.237
+Income               1 vs 8      no diabetes       0.602
+Income               2 vs 8      prediabetes       1.053
+Income               2 vs 8      no diabetes       0.673
+Income               3 vs 8      prediabetes       1.021
+Income               3 vs 8      no diabetes       0.694
+Income               4 vs 8      prediabetes       1.083
+Income               4 vs 8      no diabetes       0.717
+Income               5 vs 8      prediabetes       1.022
+Income               5 vs 8      no diabetes       0.793
+Income               6 vs 8      prediabetes       1.095
+Income               6 vs 8      no diabetes       0.825
+Income               7 vs 8      prediabetes       1.178
+Income               7 vs 8      no diabetes       0.874
+Sex                  0 vs 1      prediabetes       1.261
+Sex                  0 vs 1      no diabetes       1.311
+ 
+ 
+Step 11: Effect Education entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Dual Quasi-Newton Optimization
+ 
+Dual Broyden - Fletcher - Goldfarb - Shanno Update (DBFGS)
+ 
+Parameter Estimates              50
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                 Objective     Max Abs                Slope of
+                     Function         Active        Objective     Function    Gradient       Step       Search
+Iter     Restarts       Calls    Constraints         Function       Change     Element       Size    Direction
+ 
+   1            0           5              0            32980       6070.9      3810.1      0.970       -13738
+   2            0           7              0            32043        937.1       951.9      1.000      -1787.1
+   3            0           9              0            31866        176.9       468.4      1.000       -405.7
+   4            0          11              0            31782      84.0523     77.3826      1.000       -140.7
+   5            0          13              0            31771      10.7227     60.3921      1.000      -22.804
+   6            0          16              0            31767       3.8723     31.9981      1.408       -5.521
+   7            0          19              0            31766       1.2942     24.8594      1.169       -2.268
+   8            0          22              0            31766       0.1660      7.8882      0.850       -0.388
+   9            0          25              0            31765       0.0257      3.7867      1.161      -0.0436
+  10            0          28              0            31765      0.00771      1.8577      1.661      -0.0093
+ 
+                                            Optimization Results
+ 
+Iterations                                         10  Function Calls                                     30
+Gradient Calls                                     13  Active Constraints                                  0
+Objective Function                       31765.473511  Max Abs Gradient Element                 1.8577143116
+Slope of Search Direction                   -0.009311
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+NOTE: At least one element of the gradient is greater than 1e-3.
+ 
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63530.947     14570.1708       48         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2      905.9524        <.0001
+BMI                        2     1860.8526        <.0001
+CholCheck                  2       95.6261        <.0001
+Education                 10       41.2910        <.0001
+GenHlth                    8     1799.5631        <.0001
+HeartDiseaseorAttack       2       50.5611        <.0001
+HighBP                     2      698.1776        <.0001
+HighChol                   2      662.6847        <.0001
+HvyAlcoholConsump          2      123.1010        <.0001
+Income                    14      126.1817        <.0001
+Sex                        2      132.0052        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.4399      0.8395          2.94        0.0863                       0.237
+Intercept                           no diabetes     1      6.2749      0.1257       2491.04        <.0001                     531.066
+Age                                 prediabetes     1     -0.0148      0.0117          1.58        0.2088         -0.0248       0.985
+Age                                 no diabetes     1     -0.1396     0.00485        828.73        <.0001         -0.2348       0.870
+BMI                                 prediabetes     1     -0.0174     0.00481         13.17        0.0003         -0.0538       0.983
+BMI                                 no diabetes     1     -0.0850     0.00202       1777.82        <.0001         -0.2623       0.918
+CholCheck            0              prediabetes     1      0.1511      0.1278          1.40        0.2371                       1.163
+CholCheck            0              no diabetes     1      0.5275      0.0564         87.40        <.0001                       1.695
+Education            1              prediabetes     1     -2.6592      4.0173          0.44        0.5080                       0.070
+Education            1              no diabetes     1      0.2285      0.3487          0.43        0.5123                       1.257
+Education            2              prediabetes     1      0.5597      0.8148          0.47        0.4922                       1.750
+Education            2              no diabetes     1     -0.2360      0.0915          6.66        0.0099                       0.790
+Education            3              prediabetes     1      0.6637      0.8094          0.67        0.4122                       1.942
+Education            3              no diabetes     1     -0.0252      0.0818          0.10        0.7577                       0.975
+Education            4              prediabetes     1      0.5510      0.8053          0.47        0.4938                       1.735
+Education            4              no diabetes     1      0.0521      0.0735          0.50        0.4788                       1.053
+Education            5              prediabetes     1      0.4272      0.8055          0.28        0.5959                       1.533
+Education            5              no diabetes     1     -0.0700      0.0737          0.90        0.3423                       0.932
+GenHlth              1              prediabetes     1      0.5303      0.0978         29.41        <.0001                       1.699
+GenHlth              1              no diabetes     1      1.2004      0.0462        675.23        <.0001                       3.321
+GenHlth              2              prediabetes     1      0.1573      0.0584          7.25        0.0071                       1.170
+GenHlth              2              no diabetes     1      0.4751      0.0248        368.24        <.0001                       1.608
+GenHlth              3              prediabetes     1     -0.0973      0.0503          3.74        0.0530                       0.907
+GenHlth              3              no diabetes     1     -0.2089      0.0210         99.14        <.0001                       0.812
+GenHlth              4              prediabetes     1     -0.2164      0.0594         13.28        0.0003                       0.805
+GenHlth              4              no diabetes     1     -0.6628      0.0247        718.05        <.0001                       0.515
+HeartDiseaseorAttack 0              prediabetes     1      0.1435      0.0419         11.76        0.0006                       1.154
+HeartDiseaseorAttack 0              no diabetes     1      0.1097      0.0159         47.32        <.0001                       1.116
+HighBP               0              prediabetes     1      0.1718      0.0321         28.71        <.0001                       1.187
+HighBP               0              no diabetes     1      0.3451      0.0132        684.40        <.0001                       1.412
+HighChol             0              prediabetes     1      0.0374      0.0301          1.55        0.2136                       1.038
+HighChol             0              no diabetes     1      0.3016      0.0122        612.14        <.0001                       1.352
+HvyAlcoholConsump    0              prediabetes     1     -0.2200      0.0746          8.69        0.0032                       0.803
+HvyAlcoholConsump    0              no diabetes     1     -0.3704      0.0337        120.79        <.0001                       0.690
+Income               1              prediabetes     1      0.1032      0.1013          1.04        0.3084                       1.109
+Income               1              no diabetes     1     -0.2185      0.0446         24.00        <.0001                       0.804
+Income               2              prediabetes     1     -0.0499      0.0972          0.26        0.6076                       0.951
+Income               2              no diabetes     1     -0.1162      0.0399          8.47        0.0036                       0.890
+Income               3              prediabetes     1     -0.0780      0.0885          0.78        0.3783                       0.925
+Income               3              no diabetes     1     -0.0900      0.0359          6.29        0.0121                       0.914
+Income               4              prediabetes     1    -0.00793      0.0800          0.01        0.9210                       0.992
+Income               4              no diabetes     1     -0.0628      0.0331          3.60        0.0579                       0.939
+Income               5              prediabetes     1     -0.0523      0.0774          0.46        0.4988                       0.949
+Income               5              no diabetes     1      0.0378      0.0311          1.47        0.2249                       1.039
+Income               6              prediabetes     1      0.0245      0.0691          0.13        0.7232                       1.025
+Income               6              no diabetes     1      0.0731      0.0284          6.62        0.0101                       1.076
+Income               7              prediabetes     1      0.1087      0.0692          2.47        0.1160                       1.115
+Income               7              no diabetes     1      0.1259      0.0290         18.83        <.0001                       1.134
+Sex                  0              prediabetes     1      0.1178      0.0291         16.41        <.0001                       1.125
+Sex                  0              no diabetes     1      0.1359      0.0118        131.73        <.0001                       1.146
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.985
+Age                              no diabetes       0.870
+BMI                              prediabetes       0.983
+BMI                              no diabetes       0.918
+CholCheck            0 vs 1      prediabetes       1.353
+CholCheck            0 vs 1      no diabetes       2.872
+Education            1 vs 6      prediabetes       0.044
+Education            1 vs 6      no diabetes       1.195
+Education            2 vs 6      prediabetes       1.108
+Education            2 vs 6      no diabetes       0.751
+Education            3 vs 6      prediabetes       1.229
+Education            3 vs 6      no diabetes       0.927
+Education            4 vs 6      prediabetes       1.098
+Education            4 vs 6      no diabetes       1.001
+Education            5 vs 6      prediabetes       0.970
+Education            5 vs 6      no diabetes       0.886
+GenHlth              1 vs 5      prediabetes       2.470
+GenHlth              1 vs 5      no diabetes       7.420
+GenHlth              2 vs 5      prediabetes       1.701
+GenHlth              2 vs 5      no diabetes       3.593
+GenHlth              3 vs 5      prediabetes       1.319
+GenHlth              3 vs 5      no diabetes       1.813
+GenHlth              4 vs 5      prediabetes       1.171
+GenHlth              4 vs 5      no diabetes       1.152
+HeartDiseaseorAttack 0 vs 1      prediabetes       1.333
+HeartDiseaseorAttack 0 vs 1      no diabetes       1.245
+HighBP               0 vs 1      prediabetes       1.410
+HighBP               0 vs 1      no diabetes       1.994
+HighChol             0 vs 1      prediabetes       1.078
+HighChol             0 vs 1      no diabetes       1.828
+HvyAlcoholConsump    0 vs 1      prediabetes       0.644
+HvyAlcoholConsump    0 vs 1      no diabetes       0.477
+Income               1 vs 8      prediabetes       1.164
+Income               1 vs 8      no diabetes       0.626
+Income               2 vs 8      prediabetes       0.998
+Income               2 vs 8      no diabetes       0.693
+Income               3 vs 8      prediabetes       0.971
+Income               3 vs 8      no diabetes       0.711
+Income               4 vs 8      prediabetes       1.041
+Income               4 vs 8      no diabetes       0.731
+Income               5 vs 8      prediabetes       0.996
+Income               5 vs 8      no diabetes       0.808
+Income               6 vs 8      prediabetes       1.075
+Income               6 vs 8      no diabetes       0.837
+Income               7 vs 8      prediabetes       1.170
+Income               7 vs 8      no diabetes       0.883
+Sex                  0 vs 1      prediabetes       1.266
+Sex                  0 vs 1      no diabetes       1.312
+ 
+ 
+Step 12: Effect Stroke entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Dual Quasi-Newton Optimization
+ 
+Dual Broyden - Fletcher - Goldfarb - Shanno Update (DBFGS)
+ 
+Parameter Estimates              52
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                 Objective     Max Abs                Slope of
+                     Function         Active        Objective     Function    Gradient       Step       Search
+Iter     Restarts       Calls    Constraints         Function       Change     Element       Size    Direction
+ 
+   1            0           5              0            32976       6074.5      3810.2      0.969       -13788
+   2            0           7              0            32031        944.8       949.7      1.000      -1798.0
+   3            0           9              0            31854        177.3       463.5      1.000       -398.6
+   4            0          11              0            31771      82.8324     76.8060      1.000       -140.3
+   5            0          13              0            31761      10.4578     61.2745      1.000      -22.342
+   6            0          16              0            31757       3.9136     31.0554      1.434       -5.467
+   7            0          19              0            31755       1.2405     25.2963      1.142       -2.227
+   8            0          22              0            31755       0.1692      7.3900      0.853       -0.395
+   9            0          25              0            31755       0.0244      3.8147      1.182      -0.0407
+  10            0          28              0            31755      0.00758      2.1325      1.540      -0.0099
+ 
+                                            Optimization Results
+ 
+Iterations                                         10  Function Calls                                     30
+Gradient Calls                                     13  Active Constraints                                  0
+Objective Function                       31755.277474  Max Abs Gradient Element                 2.1324762018
+Slope of Search Direction                -0.009855418
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+NOTE: At least one element of the gradient is greater than 1e-3.
+ 
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63510.555     14590.5629       50         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2      893.2166        <.0001
+BMI                        2     1867.0875        <.0001
+CholCheck                  2       95.0412        <.0001
+Education                 10       41.2208        <.0001
+GenHlth                    8     1762.2436        <.0001
+HeartDiseaseorAttack       2       40.7513        <.0001
+HighBP                     2      689.4310        <.0001
+HighChol                   2      658.8508        <.0001
+HvyAlcoholConsump          2      122.3231        <.0001
+Income                    14      122.1450        <.0001
+Sex                        2      132.2055        <.0001
+Stroke                     2       20.7903        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.5567      0.8391          3.44        0.0636                       0.211
+Intercept                           no diabetes     1      6.1934      0.1271       2373.45        <.0001                     489.500
+Age                                 prediabetes     1     -0.0134      0.0118          1.30        0.2550         -0.0225       0.987
+Age                                 no diabetes     1     -0.1386     0.00485        815.32        <.0001         -0.2331       0.871
+BMI                                 prediabetes     1     -0.0178     0.00481         13.63        0.0002         -0.0548       0.982
+BMI                                 no diabetes     1     -0.0853     0.00202       1784.55        <.0001         -0.2630       0.918
+CholCheck            0              prediabetes     1      0.1484      0.1279          1.35        0.2459                       1.160
+CholCheck            0              no diabetes     1      0.5256      0.0564         86.77        <.0001                       1.691
+Education            1              prediabetes     1     -2.6581      4.0069          0.44        0.5071                       0.070
+Education            1              no diabetes     1      0.2254      0.3493          0.42        0.5189                       1.253
+Education            2              prediabetes     1      0.5583      0.8128          0.47        0.4921                       1.748
+Education            2              no diabetes     1     -0.2364      0.0916          6.66        0.0099                       0.789
+Education            3              prediabetes     1      0.6654      0.8073          0.68        0.4098                       1.945
+Education            3              no diabetes     1     -0.0229      0.0820          0.08        0.7797                       0.977
+Education            4              prediabetes     1      0.5499      0.8033          0.47        0.4936                       1.733
+Education            4              no diabetes     1      0.0520      0.0736          0.50        0.4803                       1.053
+Education            5              prediabetes     1      0.4270      0.8035          0.28        0.5952                       1.533
+Education            5              no diabetes     1     -0.0695      0.0738          0.89        0.3468                       0.933
+GenHlth              1              prediabetes     1      0.5221      0.0978         28.48        <.0001                       1.686
+GenHlth              1              no diabetes     1      1.1947      0.0462        668.15        <.0001                       3.303
+GenHlth              2              prediabetes     1      0.1486      0.0585          6.45        0.0111                       1.160
+GenHlth              2              no diabetes     1      0.4689      0.0248        357.35        <.0001                       1.598
+GenHlth              3              prediabetes     1     -0.1024      0.0503          4.14        0.0418                       0.903
+GenHlth              3              no diabetes     1     -0.2124      0.0210        102.32        <.0001                       0.809
+GenHlth              4              prediabetes     1     -0.2119      0.0594         12.72        0.0004                       0.809
+GenHlth              4              no diabetes     1     -0.6594      0.0248        709.53        <.0001                       0.517
+HeartDiseaseorAttack 0              prediabetes     1      0.1290      0.0422          9.33        0.0023                       1.138
+HeartDiseaseorAttack 0              no diabetes     1      0.0997      0.0161         38.25        <.0001                       1.105
+HighBP               0              prediabetes     1      0.1690      0.0321         27.75        <.0001                       1.184
+HighBP               0              no diabetes     1      0.3431      0.0132        675.35        <.0001                       1.409
+HighChol             0              prediabetes     1      0.0361      0.0301          1.44        0.2303                       1.037
+HighChol             0              no diabetes     1      0.3007      0.0122        607.98        <.0001                       1.351
+HvyAlcoholConsump    0              prediabetes     1     -0.2182      0.0746          8.54        0.0035                       0.804
+HvyAlcoholConsump    0              no diabetes     1     -0.3691      0.0337        119.99        <.0001                       0.691
+Income               1              prediabetes     1      0.1101      0.1014          1.18        0.2774                       1.116
+Income               1              no diabetes     1     -0.2136      0.0446         22.89        <.0001                       0.808
+Income               2              prediabetes     1     -0.0429      0.0973          0.19        0.6595                       0.958
+Income               2              no diabetes     1     -0.1110      0.0400          7.71        0.0055                       0.895
+Income               3              prediabetes     1     -0.0768      0.0885          0.75        0.3853                       0.926
+Income               3              no diabetes     1     -0.0890      0.0359          6.15        0.0131                       0.915
+Income               4              prediabetes     1    -0.00784      0.0800          0.01        0.9220                       0.992
+Income               4              no diabetes     1     -0.0626      0.0331          3.57        0.0588                       0.939
+Income               5              prediabetes     1     -0.0528      0.0774          0.47        0.4952                       0.949
+Income               5              no diabetes     1      0.0372      0.0312          1.43        0.2320                       1.038
+Income               6              prediabetes     1      0.0204      0.0691          0.09        0.7684                       1.021
+Income               6              no diabetes     1      0.0702      0.0284          6.11        0.0135                       1.073
+Income               7              prediabetes     1      0.1036      0.0692          2.24        0.1346                       1.109
+Income               7              no diabetes     1      0.1220      0.0290         17.67        <.0001                       1.130
+Sex                  0              prediabetes     1      0.1180      0.0291         16.46        <.0001                       1.125
+Sex                  0              no diabetes     1      0.1360      0.0118        131.93        <.0001                       1.146
+Stroke               0              prediabetes     1      0.1412      0.0604          5.47        0.0193                       1.152
+Stroke               0              no diabetes     1      0.0973      0.0224         18.91        <.0001                       1.102
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.987
+Age                              no diabetes       0.871
+BMI                              prediabetes       0.982
+BMI                              no diabetes       0.918
+CholCheck            0 vs 1      prediabetes       1.345
+CholCheck            0 vs 1      no diabetes       2.861
+Education            1 vs 6      prediabetes       0.044
+Education            1 vs 6      no diabetes       1.190
+Education            2 vs 6      prediabetes       1.106
+Education            2 vs 6      no diabetes       0.750
+Education            3 vs 6      prediabetes       1.231
+Education            3 vs 6      no diabetes       0.928
+Education            4 vs 6      prediabetes       1.097
+Education            4 vs 6      no diabetes       1.001
+Education            5 vs 6      prediabetes       0.970
+Education            5 vs 6      no diabetes       0.886
+GenHlth              1 vs 5      prediabetes       2.407
+GenHlth              1 vs 5      no diabetes       7.290
+GenHlth              2 vs 5      prediabetes       1.657
+GenHlth              2 vs 5      no diabetes       3.528
+GenHlth              3 vs 5      prediabetes       1.289
+GenHlth              3 vs 5      no diabetes       1.785
+GenHlth              4 vs 5      prediabetes       1.155
+GenHlth              4 vs 5      no diabetes       1.141
+HeartDiseaseorAttack 0 vs 1      prediabetes       1.294
+HeartDiseaseorAttack 0 vs 1      no diabetes       1.221
+HighBP               0 vs 1      prediabetes       1.402
+HighBP               0 vs 1      no diabetes       1.986
+HighChol             0 vs 1      prediabetes       1.075
+HighChol             0 vs 1      no diabetes       1.825
+HvyAlcoholConsump    0 vs 1      prediabetes       0.646
+HvyAlcoholConsump    0 vs 1      no diabetes       0.478
+Income               1 vs 8      prediabetes       1.178
+Income               1 vs 8      no diabetes       0.631
+Income               2 vs 8      prediabetes       1.011
+Income               2 vs 8      no diabetes       0.699
+Income               3 vs 8      prediabetes       0.977
+Income               3 vs 8      no diabetes       0.715
+Income               4 vs 8      prediabetes       1.047
+Income               4 vs 8      no diabetes       0.734
+Income               5 vs 8      prediabetes       1.001
+Income               5 vs 8      no diabetes       0.811
+Income               6 vs 8      prediabetes       1.077
+Income               6 vs 8      no diabetes       0.838
+Income               7 vs 8      prediabetes       1.170
+Income               7 vs 8      no diabetes       0.883
+Sex                  0 vs 1      prediabetes       1.266
+Sex                  0 vs 1      no diabetes       1.313
+Stroke               0 vs 1      prediabetes       1.326
+Stroke               0 vs 1      no diabetes       1.215
+ 
+ 
+Step 13: Effect NoDocbcCost entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Dual Quasi-Newton Optimization
+ 
+Dual Broyden - Fletcher - Goldfarb - Shanno Update (DBFGS)
+ 
+Parameter Estimates              54
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                 Objective     Max Abs                Slope of
+                     Function         Active        Objective     Function    Gradient       Step       Search
+Iter     Restarts       Calls    Constraints         Function       Change     Element       Size    Direction
+ 
+   1            0           5              0            32972       6078.7      3815.5      0.969       -13801
+   2            0           7              0            32023        948.4       948.8      1.000      -1800.3
+   3            0           9              0            31845        178.3       460.4      1.000       -395.4
+   4            0          11              0            31762      82.8322     75.4789      1.000       -141.8
+   5            0          13              0            31752      10.1622     61.2598      1.000      -21.870
+   6            0          16              0            31748       3.9583     30.4429      1.457       -5.442
+   7            0          19              0            31747       1.2150     24.5825      1.128       -2.205
+   8            0          22              0            31747       0.1694      6.9941      0.862       -0.392
+   9            0          25              0            31747       0.0239      3.8664      1.189      -0.0395
+  10            0          28              0            31747      0.00798      2.1399      1.568      -0.0102
+ 
+                                            Optimization Results
+ 
+Iterations                                         10  Function Calls                                     30
+Gradient Calls                                     13  Active Constraints                                  0
+Objective Function                       31746.838993  Max Abs Gradient Element                 2.1399348972
+Slope of Search Direction                -0.010197411
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+NOTE: At least one element of the gradient is greater than 1e-3.
+ 
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63493.678     14607.4399       52         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2      889.2452        <.0001
+BMI                        2     1865.7155        <.0001
+CholCheck                  2       97.1220        <.0001
+Education                 10       40.8044        <.0001
+GenHlth                    8     1733.4119        <.0001
+HeartDiseaseorAttack       2       40.5075        <.0001
+HighBP                     2      687.9560        <.0001
+HighChol                   2      656.1706        <.0001
+HvyAlcoholConsump          2      122.7381        <.0001
+Income                    14      112.1675        <.0001
+NoDocbcCost                2       17.8505        0.0001
+Sex                        2      132.9209        <.0001
+Stroke                     2       20.7730        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.5424      0.8407          3.37        0.0666                       0.214
+Intercept                           no diabetes     1      6.1870      0.1272       2366.00        <.0001                     486.393
+Age                                 prediabetes     1    -0.00634      0.0120          0.28        0.5988         -0.0107       0.994
+Age                                 no diabetes     1     -0.1402     0.00495        801.77        <.0001         -0.2358       0.869
+BMI                                 prediabetes     1     -0.0178     0.00481         13.77        0.0002         -0.0550       0.982
+BMI                                 no diabetes     1     -0.0852     0.00202       1783.71        <.0001         -0.2629       0.918
+CholCheck            0              prediabetes     1      0.1331      0.1280          1.08        0.2984                       1.142
+CholCheck            0              no diabetes     1      0.5298      0.0565         87.95        <.0001                       1.699
+Education            1              prediabetes     1     -2.6819      4.0152          0.45        0.5042                       0.068
+Education            1              no diabetes     1      0.2313      0.3497          0.44        0.5082                       1.260
+Education            2              prediabetes     1      0.5635      0.8144          0.48        0.4890                       1.757
+Education            2              no diabetes     1     -0.2376      0.0917          6.72        0.0095                       0.788
+Education            3              prediabetes     1      0.6647      0.8090          0.68        0.4113                       1.944
+Education            3              no diabetes     1     -0.0227      0.0820          0.08        0.7822                       0.978
+Education            4              prediabetes     1      0.5583      0.8049          0.48        0.4880                       1.748
+Education            4              no diabetes     1      0.0499      0.0737          0.46        0.4980                       1.051
+Education            5              prediabetes     1      0.4317      0.8051          0.29        0.5919                       1.540
+Education            5              no diabetes     1     -0.0708      0.0739          0.92        0.3377                       0.932
+GenHlth              1              prediabetes     1      0.5364      0.0980         29.98        <.0001                       1.710
+GenHlth              1              no diabetes     1      1.1916      0.0463        663.74        <.0001                       3.292
+GenHlth              2              prediabetes     1      0.1595      0.0586          7.40        0.0065                       1.173
+GenHlth              2              no diabetes     1      0.4663      0.0248        352.25        <.0001                       1.594
+GenHlth              3              prediabetes     1     -0.0978      0.0503          3.78        0.0519                       0.907
+GenHlth              3              no diabetes     1     -0.2137      0.0210        103.49        <.0001                       0.808
+GenHlth              4              prediabetes     1     -0.2184      0.0595         13.48        0.0002                       0.804
+GenHlth              4              no diabetes     1     -0.6579      0.0248        705.58        <.0001                       0.518
+HeartDiseaseorAttack 0              prediabetes     1      0.1309      0.0422          9.61        0.0019                       1.140
+HeartDiseaseorAttack 0              no diabetes     1      0.0992      0.0161         37.83        <.0001                       1.104
+HighBP               0              prediabetes     1      0.1700      0.0321         28.14        <.0001                       1.185
+HighBP               0              no diabetes     1      0.3429      0.0132        674.19        <.0001                       1.409
+HighChol             0              prediabetes     1      0.0378      0.0301          1.58        0.2091                       1.039
+HighChol             0              no diabetes     1      0.3003      0.0122        606.28        <.0001                       1.350
+HvyAlcoholConsump    0              prediabetes     1     -0.2162      0.0746          8.39        0.0038                       0.806
+HvyAlcoholConsump    0              no diabetes     1     -0.3696      0.0337        120.30        <.0001                       0.691
+Income               1              prediabetes     1      0.0971      0.1015          0.92        0.3388                       1.102
+Income               1              no diabetes     1     -0.2103      0.0447         22.16        <.0001                       0.810
+Income               2              prediabetes     1     -0.0567      0.0974          0.34        0.5605                       0.945
+Income               2              no diabetes     1     -0.1080      0.0400          7.29        0.0069                       0.898
+Income               3              prediabetes     1     -0.0901      0.0886          1.03        0.3096                       0.914
+Income               3              no diabetes     1     -0.0860      0.0360          5.72        0.0168                       0.918
+Income               4              prediabetes     1     -0.0173      0.0801          0.05        0.8288                       0.983
+Income               4              no diabetes     1     -0.0602      0.0331          3.30        0.0693                       0.942
+Income               5              prediabetes     1     -0.0539      0.0774          0.49        0.4860                       0.948
+Income               5              no diabetes     1      0.0374      0.0312          1.44        0.2296                       1.038
+Income               6              prediabetes     1      0.0289      0.0692          0.17        0.6763                       1.029
+Income               6              no diabetes     1      0.0682      0.0284          5.75        0.0165                       1.071
+Income               7              prediabetes     1      0.1198      0.0694          2.98        0.0843                       1.127
+Income               7              no diabetes     1      0.1181      0.0291         16.48        <.0001                       1.125
+NoDocbcCost          0              prediabetes     1     -0.1386      0.0454          9.32        0.0023                       0.871
+NoDocbcCost          0              no diabetes     1      0.0361      0.0201          3.22        0.0725                       1.037
+Sex                  0              prediabetes     1      0.1165      0.0291         16.03        <.0001                       1.124
+Sex                  0              no diabetes     1      0.1364      0.0118        132.71        <.0001                       1.146
+Stroke               0              prediabetes     1      0.1419      0.0604          5.52        0.0188                       1.152
+Stroke               0              no diabetes     1      0.0972      0.0224         18.87        <.0001                       1.102
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.994
+Age                              no diabetes       0.869
+BMI                              prediabetes       0.982
+BMI                              no diabetes       0.918
+CholCheck            0 vs 1      prediabetes       1.305
+CholCheck            0 vs 1      no diabetes       2.885
+Education            1 vs 6      prediabetes       0.043
+Education            1 vs 6      no diabetes       1.199
+Education            2 vs 6      prediabetes       1.105
+Education            2 vs 6      no diabetes       0.750
+Education            3 vs 6      prediabetes       1.222
+Education            3 vs 6      no diabetes       0.930
+Education            4 vs 6      prediabetes       1.099
+Education            4 vs 6      no diabetes       1.000
+Education            5 vs 6      prediabetes       0.968
+Education            5 vs 6      no diabetes       0.886
+GenHlth              1 vs 5      prediabetes       2.500
+GenHlth              1 vs 5      no diabetes       7.227
+GenHlth              2 vs 5      prediabetes       1.715
+GenHlth              2 vs 5      no diabetes       3.499
+GenHlth              3 vs 5      prediabetes       1.326
+GenHlth              3 vs 5      no diabetes       1.773
+GenHlth              4 vs 5      prediabetes       1.175
+GenHlth              4 vs 5      no diabetes       1.137
+HeartDiseaseorAttack 0 vs 1      prediabetes       1.299
+HeartDiseaseorAttack 0 vs 1      no diabetes       1.219
+HighBP               0 vs 1      prediabetes       1.405
+HighBP               0 vs 1      no diabetes       1.985
+HighChol             0 vs 1      prediabetes       1.079
+HighChol             0 vs 1      no diabetes       1.823
+HvyAlcoholConsump    0 vs 1      prediabetes       0.649
+HvyAlcoholConsump    0 vs 1      no diabetes       0.478
+Income               1 vs 8      prediabetes       1.133
+Income               1 vs 8      no diabetes       0.637
+Income               2 vs 8      prediabetes       0.972
+Income               2 vs 8      no diabetes       0.706
+Income               3 vs 8      prediabetes       0.940
+Income               3 vs 8      no diabetes       0.721
+Income               4 vs 8      prediabetes       1.011
+Income               4 vs 8      no diabetes       0.740
+Income               5 vs 8      prediabetes       0.974
+Income               5 vs 8      no diabetes       0.816
+Income               6 vs 8      prediabetes       1.058
+Income               6 vs 8      no diabetes       0.842
+Income               7 vs 8      prediabetes       1.159
+Income               7 vs 8      no diabetes       0.885
+NoDocbcCost          0 vs 1      prediabetes       0.758
+NoDocbcCost          0 vs 1      no diabetes       1.075
+Sex                  0 vs 1      prediabetes       1.262
+Sex                  0 vs 1      no diabetes       1.314
+Stroke               0 vs 1      prediabetes       1.328
+Stroke               0 vs 1      no diabetes       1.215
+ 
+ 
+Step 14: Effect PhysActivity entered.
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+Dual Quasi-Newton Optimization
+ 
+Dual Broyden - Fletcher - Goldfarb - Shanno Update (DBFGS)
+ 
+Parameter Estimates              56
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       39050.558935
+Max Abs Gradient Element                 7596.6004138
+ 
+ 
+                                                                 Objective     Max Abs                Slope of
+                     Function         Active        Objective     Function    Gradient       Step       Search
+Iter     Restarts       Calls    Constraints         Function       Change     Element       Size    Direction
+ 
+   1            0           5              0            32969       6081.8      3817.6      0.969       -13811
+   2            0           7              0            32020        948.8       948.4      1.000      -1800.7
+   3            0           9              0            31842        178.2       459.9      1.000       -395.2
+   4            0          11              0            31759      82.8819     75.4023      1.000       -141.9
+   5            0          13              0            31749      10.1630     61.3500      1.000      -21.909
+   6            0          16              0            31745       3.9692     30.2423      1.459       -5.450
+   7            0          19              0            31744       1.2139     24.5576      1.127       -2.204
+   8            0          22              0            31743       0.1704      6.9456      0.862       -0.394
+   9            0          25              0            31743       0.0239      3.8637      1.191      -0.0395
+  10            0          28              0            31743      0.00799      2.1145      1.571      -0.0102
+ 
+                                            Optimization Results
+ 
+Iterations                                         10  Function Calls                                     30
+Gradient Calls                                     13  Active Constraints                                  0
+Objective Function                       31743.346256  Max Abs Gradient Element                 2.1145107385
+Slope of Search Direction                -0.010187841
+ 
+Convergence criterion (GCONV=1E-6) satisfied.
+ 
+NOTE: At least one element of the gradient is greater than 1e-3.
+ 
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63486.693     14614.4254       54         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2      879.0005        <.0001
+BMI                        2     1827.0788        <.0001
+CholCheck                  2       98.0174        <.0001
+Education                 10       40.1230        <.0001
+GenHlth                    8     1666.3509        <.0001
+HeartDiseaseorAttack       2       40.6761        <.0001
+HighBP                     2      687.5488        <.0001
+HighChol                   2      655.7811        <.0001
+HvyAlcoholConsump          2      123.1918        <.0001
+Income                    14      109.2070        <.0001
+NoDocbcCost                2       17.7704        0.0001
+PhysActivity               2        7.0235        0.0298
+Sex                        2      135.3160        <.0001
+Stroke                     2       20.5257        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.5401      0.8412          3.35        0.0671                       0.214
+Intercept                           no diabetes     1      6.1620      0.1276       2333.88        <.0001                     474.365
+Age                                 prediabetes     1    -0.00635      0.0121          0.28        0.5985         -0.0107       0.994
+Age                                 no diabetes     1     -0.1396     0.00496        792.56        <.0001         -0.2347       0.870
+BMI                                 prediabetes     1     -0.0179     0.00483         13.69        0.0002         -0.0552       0.982
+BMI                                 no diabetes     1     -0.0847     0.00203       1747.18        <.0001         -0.2614       0.919
+CholCheck            0              prediabetes     1      0.1333      0.1280          1.08        0.2978                       1.143
+CholCheck            0              no diabetes     1      0.5324      0.0565         88.74        <.0001                       1.703
+Education            1              prediabetes     1     -2.6823      4.0163          0.45        0.5042                       0.068
+Education            1              no diabetes     1      0.2326      0.3496          0.44        0.5058                       1.262
+Education            2              prediabetes     1      0.5631      0.8147          0.48        0.4894                       1.756
+Education            2              no diabetes     1     -0.2355      0.0917          6.60        0.0102                       0.790
+Education            3              prediabetes     1      0.6643      0.8092          0.67        0.4117                       1.943
+Education            3              no diabetes     1     -0.0193      0.0820          0.06        0.8141                       0.981
+Education            4              prediabetes     1      0.5582      0.8051          0.48        0.4881                       1.748
+Education            4              no diabetes     1      0.0504      0.0737          0.47        0.4937                       1.052
+Education            5              prediabetes     1      0.4320      0.8053          0.29        0.5917                       1.540
+Education            5              no diabetes     1     -0.0732      0.0739          0.98        0.3218                       0.929
+GenHlth              1              prediabetes     1      0.5372      0.0983         29.88        <.0001                       1.711
+GenHlth              1              no diabetes     1      1.1836      0.0464        651.62        <.0001                       3.266
+GenHlth              2              prediabetes     1      0.1601      0.0589          7.38        0.0066                       1.174
+GenHlth              2              no diabetes     1      0.4603      0.0250        340.04        <.0001                       1.584
+GenHlth              3              prediabetes     1     -0.0976      0.0504          3.76        0.0526                       0.907
+GenHlth              3              no diabetes     1     -0.2160      0.0210        105.51        <.0001                       0.806
+GenHlth              4              prediabetes     1     -0.2188      0.0596         13.47        0.0002                       0.803
+GenHlth              4              no diabetes     1     -0.6536      0.0248        692.85        <.0001                       0.520
+HeartDiseaseorAttack 0              prediabetes     1      0.1309      0.0422          9.61        0.0019                       1.140
+HeartDiseaseorAttack 0              no diabetes     1      0.0994      0.0161         38.01        <.0001                       1.105
+HighBP               0              prediabetes     1      0.1701      0.0321         28.17        <.0001                       1.185
+HighBP               0              no diabetes     1      0.3428      0.0132        673.83        <.0001                       1.409
+HighChol             0              prediabetes     1      0.0378      0.0301          1.58        0.2087                       1.039
+HighChol             0              no diabetes     1      0.3002      0.0122        605.94        <.0001                       1.350
+HvyAlcoholConsump    0              prediabetes     1     -0.2165      0.0746          8.41        0.0037                       0.805
+HvyAlcoholConsump    0              no diabetes     1     -0.3703      0.0337        120.74        <.0001                       0.691
+Income               1              prediabetes     1      0.0970      0.1015          0.91        0.3391                       1.102
+Income               1              no diabetes     1     -0.2086      0.0447         21.80        <.0001                       0.812
+Income               2              prediabetes     1     -0.0569      0.0974          0.34        0.5589                       0.945
+Income               2              no diabetes     1     -0.1072      0.0400          7.18        0.0074                       0.898
+Income               3              prediabetes     1     -0.0902      0.0886          1.04        0.3088                       0.914
+Income               3              no diabetes     1     -0.0849      0.0360          5.57        0.0182                       0.919
+Income               4              prediabetes     1     -0.0175      0.0801          0.05        0.8275                       0.983
+Income               4              no diabetes     1     -0.0589      0.0332          3.15        0.0757                       0.943
+Income               5              prediabetes     1     -0.0539      0.0774          0.48        0.4865                       0.948
+Income               5              no diabetes     1      0.0375      0.0312          1.45        0.2282                       1.038
+Income               6              prediabetes     1      0.0290      0.0692          0.18        0.6755                       1.029
+Income               6              no diabetes     1      0.0680      0.0284          5.72        0.0168                       1.070
+Income               7              prediabetes     1      0.1201      0.0694          2.99        0.0838                       1.128
+Income               7              no diabetes     1      0.1167      0.0291         16.07        <.0001                       1.124
+NoDocbcCost          0              prediabetes     1     -0.1386      0.0454          9.31        0.0023                       0.871
+NoDocbcCost          0              no diabetes     1      0.0359      0.0201          3.18        0.0744                       1.037
+PhysActivity         0              prediabetes     1     0.00285      0.0311          0.01        0.9271                       1.003
+PhysActivity         0              no diabetes     1     -0.0318      0.0127          6.26        0.0124                       0.969
+Sex                  0              prediabetes     1      0.1166      0.0291         16.04        <.0001                       1.124
+Sex                  0              no diabetes     1      0.1378      0.0119        135.14        <.0001                       1.148
+Stroke               0              prediabetes     1      0.1420      0.0604          5.53        0.0187                       1.153
+Stroke               0              no diabetes     1      0.0965      0.0224         18.59        <.0001                       1.101
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.994
+Age                              no diabetes       0.870
+BMI                              prediabetes       0.982
+BMI                              no diabetes       0.919
+CholCheck            0 vs 1      prediabetes       1.305
+CholCheck            0 vs 1      no diabetes       2.900
+Education            1 vs 6      prediabetes       0.043
+Education            1 vs 6      no diabetes       1.206
+Education            2 vs 6      prediabetes       1.103
+Education            2 vs 6      no diabetes       0.755
+Education            3 vs 6      prediabetes       1.221
+Education            3 vs 6      no diabetes       0.938
+Education            4 vs 6      prediabetes       1.098
+Education            4 vs 6      no diabetes       1.006
+Education            5 vs 6      prediabetes       0.968
+Education            5 vs 6      no diabetes       0.889
+GenHlth              1 vs 5      prediabetes       2.505
+GenHlth              1 vs 5      no diabetes       7.084
+GenHlth              2 vs 5      prediabetes       1.718
+GenHlth              2 vs 5      no diabetes       3.437
+GenHlth              3 vs 5      prediabetes       1.327
+GenHlth              3 vs 5      no diabetes       1.748
+GenHlth              4 vs 5      prediabetes       1.176
+GenHlth              4 vs 5      no diabetes       1.128
+HeartDiseaseorAttack 0 vs 1      prediabetes       1.299
+HeartDiseaseorAttack 0 vs 1      no diabetes       1.220
+HighBP               0 vs 1      prediabetes       1.405
+HighBP               0 vs 1      no diabetes       1.985
+HighChol             0 vs 1      prediabetes       1.079
+HighChol             0 vs 1      no diabetes       1.823
+HvyAlcoholConsump    0 vs 1      prediabetes       0.649
+HvyAlcoholConsump    0 vs 1      no diabetes       0.477
+Income               1 vs 8      prediabetes       1.133
+Income               1 vs 8      no diabetes       0.640
+Income               2 vs 8      prediabetes       0.971
+Income               2 vs 8      no diabetes       0.709
+Income               3 vs 8      prediabetes       0.939
+Income               3 vs 8      no diabetes       0.725
+Income               4 vs 8      prediabetes       1.010
+Income               4 vs 8      no diabetes       0.744
+Income               5 vs 8      prediabetes       0.974
+Income               5 vs 8      no diabetes       0.819
+Income               6 vs 8      prediabetes       1.058
+Income               6 vs 8      no diabetes       0.844
+Income               7 vs 8      prediabetes       1.159
+Income               7 vs 8      no diabetes       0.886
+NoDocbcCost          0 vs 1      prediabetes       0.758
+NoDocbcCost          0 vs 1      no diabetes       1.074
+PhysActivity         0 vs 1      prediabetes       1.006
+PhysActivity         0 vs 1      no diabetes       0.938
+Sex                  0 vs 1      prediabetes       1.263
+Sex                  0 vs 1      no diabetes       1.317
+Stroke               0 vs 1      prediabetes       1.328
+Stroke               0 vs 1      no diabetes       1.213
+ 
+ 
+NOTE: No (additional) effects met the 0.05 significance level for entry into the model.
+ 
+ 
+                         Summary of Forward Selection
+ 
+            Effect                          Number         Score
+    Step    Entered                   DF        In    Chi-Square    Pr > ChiSq
+ 
+       1    GenHlth                    8         1     7312.7779        <.0001
+       2    HighBP                     2         2     2906.9217        <.0001
+       3    BMI                        2         3     1505.9409        <.0001
+       4    Age                        2         4     1449.6705        <.0001
+       5    HighChol                   2         5      725.8706        <.0001
+       6    HvyAlcoholConsump          2         6      137.3742        <.0001
+       7    Sex                        2         7      104.8384        <.0001
+       8    Income                    14         8      170.2454        <.0001
+       9    CholCheck                  2         9      103.1022        <.0001
+      10    HeartDiseaseorAttack       2        10       51.0351        <.0001
+      11    Education                 10        11       42.1844        <.0001
+      12    Stroke                     2        12       20.7254        <.0001
+      13    NoDocbcCost                2        13       17.9059        0.0001
+      14    PhysActivity               2        14        7.0597        0.0293
+ 
+ 
+The selected model is the model trained in the last step (Step 14). It consists of the following effects:
+ 
+Intercept  Age  BMI  CholCheck  Education  GenHlth  HeartDiseaseorAttack  HighBP  HighChol  HvyAlcoholConsump  Income  NoDocbcCost  PhysActivity  Sex  Stroke
+ 
+ 
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+ 
+  78101.118       63486.693     14614.4254       54         <.0001
+ 
+ 
+               Type 3 Analysis of Effects
+ 
+                                      Wald
+Effect                    DF    Chi-Square    Pr > ChiSq
+ 
+Age                        2      879.0005        <.0001
+BMI                        2     1827.0788        <.0001
+CholCheck                  2       98.0174        <.0001
+Education                 10       40.1230        <.0001
+GenHlth                    8     1666.3509        <.0001
+HeartDiseaseorAttack       2       40.6761        <.0001
+HighBP                     2      687.5488        <.0001
+HighChol                   2      655.7811        <.0001
+HvyAlcoholConsump          2      123.1918        <.0001
+Income                    14      109.2070        <.0001
+NoDocbcCost                2       17.7704        0.0001
+PhysActivity               2        7.0235        0.0298
+Sex                        2      135.3160        <.0001
+Stroke                     2       20.5257        <.0001
+ 
+ 
+                                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Diabetes_                        Standard          Wald                  Standardized
+Parameter                           Prediction     DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+ 
+Intercept                           prediabetes     1     -1.5401      0.8412          3.35        0.0671                       0.214
+Intercept                           no diabetes     1      6.1620      0.1276       2333.88        <.0001                     474.365
+Age                                 prediabetes     1    -0.00635      0.0121          0.28        0.5985         -0.0107       0.994
+Age                                 no diabetes     1     -0.1396     0.00496        792.56        <.0001         -0.2347       0.870
+BMI                                 prediabetes     1     -0.0179     0.00483         13.69        0.0002         -0.0552       0.982
+BMI                                 no diabetes     1     -0.0847     0.00203       1747.18        <.0001         -0.2614       0.919
+CholCheck            0              prediabetes     1      0.1333      0.1280          1.08        0.2978                       1.143
+CholCheck            0              no diabetes     1      0.5324      0.0565         88.74        <.0001                       1.703
+Education            1              prediabetes     1     -2.6823      4.0163          0.45        0.5042                       0.068
+Education            1              no diabetes     1      0.2326      0.3496          0.44        0.5058                       1.262
+Education            2              prediabetes     1      0.5631      0.8147          0.48        0.4894                       1.756
+Education            2              no diabetes     1     -0.2355      0.0917          6.60        0.0102                       0.790
+Education            3              prediabetes     1      0.6643      0.8092          0.67        0.4117                       1.943
+Education            3              no diabetes     1     -0.0193      0.0820          0.06        0.8141                       0.981
+Education            4              prediabetes     1      0.5582      0.8051          0.48        0.4881                       1.748
+Education            4              no diabetes     1      0.0504      0.0737          0.47        0.4937                       1.052
+Education            5              prediabetes     1      0.4320      0.8053          0.29        0.5917                       1.540
+Education            5              no diabetes     1     -0.0732      0.0739          0.98        0.3218                       0.929
+GenHlth              1              prediabetes     1      0.5372      0.0983         29.88        <.0001                       1.711
+GenHlth              1              no diabetes     1      1.1836      0.0464        651.62        <.0001                       3.266
+GenHlth              2              prediabetes     1      0.1601      0.0589          7.38        0.0066                       1.174
+GenHlth              2              no diabetes     1      0.4603      0.0250        340.04        <.0001                       1.584
+GenHlth              3              prediabetes     1     -0.0976      0.0504          3.76        0.0526                       0.907
+GenHlth              3              no diabetes     1     -0.2160      0.0210        105.51        <.0001                       0.806
+GenHlth              4              prediabetes     1     -0.2188      0.0596         13.47        0.0002                       0.803
+GenHlth              4              no diabetes     1     -0.6536      0.0248        692.85        <.0001                       0.520
+HeartDiseaseorAttack 0              prediabetes     1      0.1309      0.0422          9.61        0.0019                       1.140
+HeartDiseaseorAttack 0              no diabetes     1      0.0994      0.0161         38.01        <.0001                       1.105
+HighBP               0              prediabetes     1      0.1701      0.0321         28.17        <.0001                       1.185
+HighBP               0              no diabetes     1      0.3428      0.0132        673.83        <.0001                       1.409
+HighChol             0              prediabetes     1      0.0378      0.0301          1.58        0.2087                       1.039
+HighChol             0              no diabetes     1      0.3002      0.0122        605.94        <.0001                       1.350
+HvyAlcoholConsump    0              prediabetes     1     -0.2165      0.0746          8.41        0.0037                       0.805
+HvyAlcoholConsump    0              no diabetes     1     -0.3703      0.0337        120.74        <.0001                       0.691
+Income               1              prediabetes     1      0.0970      0.1015          0.91        0.3391                       1.102
+Income               1              no diabetes     1     -0.2086      0.0447         21.80        <.0001                       0.812
+Income               2              prediabetes     1     -0.0569      0.0974          0.34        0.5589                       0.945
+Income               2              no diabetes     1     -0.1072      0.0400          7.18        0.0074                       0.898
+Income               3              prediabetes     1     -0.0902      0.0886          1.04        0.3088                       0.914
+Income               3              no diabetes     1     -0.0849      0.0360          5.57        0.0182                       0.919
+Income               4              prediabetes     1     -0.0175      0.0801          0.05        0.8275                       0.983
+Income               4              no diabetes     1     -0.0589      0.0332          3.15        0.0757                       0.943
+Income               5              prediabetes     1     -0.0539      0.0774          0.48        0.4865                       0.948
+Income               5              no diabetes     1      0.0375      0.0312          1.45        0.2282                       1.038
+Income               6              prediabetes     1      0.0290      0.0692          0.18        0.6755                       1.029
+Income               6              no diabetes     1      0.0680      0.0284          5.72        0.0168                       1.070
+Income               7              prediabetes     1      0.1201      0.0694          2.99        0.0838                       1.128
+Income               7              no diabetes     1      0.1167      0.0291         16.07        <.0001                       1.124
+NoDocbcCost          0              prediabetes     1     -0.1386      0.0454          9.31        0.0023                       0.871
+NoDocbcCost          0              no diabetes     1      0.0359      0.0201          3.18        0.0744                       1.037
+PhysActivity         0              prediabetes     1     0.00285      0.0311          0.01        0.9271                       1.003
+PhysActivity         0              no diabetes     1     -0.0318      0.0127          6.26        0.0124                       0.969
+Sex                  0              prediabetes     1      0.1166      0.0291         16.04        <.0001                       1.124
+Sex                  0              no diabetes     1      0.1378      0.0119        135.14        <.0001                       1.148
+Stroke               0              prediabetes     1      0.1420      0.0604          5.53        0.0187                       1.153
+Stroke               0              no diabetes     1      0.0965      0.0224         18.59        <.0001                       1.101
+ 
+ 
+                  Odds Ratio Estimates
+ 
+                                 Diabetes_         Point
+Effect                           Prediction     Estimate
+ 
+Age                              prediabetes       0.994
+Age                              no diabetes       0.870
+BMI                              prediabetes       0.982
+BMI                              no diabetes       0.919
+CholCheck            0 vs 1      prediabetes       1.305
+CholCheck            0 vs 1      no diabetes       2.900
+Education            1 vs 6      prediabetes       0.043
+Education            1 vs 6      no diabetes       1.206
+Education            2 vs 6      prediabetes       1.103
+Education            2 vs 6      no diabetes       0.755
+Education            3 vs 6      prediabetes       1.221
+Education            3 vs 6      no diabetes       0.938
+Education            4 vs 6      prediabetes       1.098
+Education            4 vs 6      no diabetes       1.006
+Education            5 vs 6      prediabetes       0.968
+Education            5 vs 6      no diabetes       0.889
+GenHlth              1 vs 5      prediabetes       2.505
+GenHlth              1 vs 5      no diabetes       7.084
+GenHlth              2 vs 5      prediabetes       1.718
+GenHlth              2 vs 5      no diabetes       3.437
+GenHlth              3 vs 5      prediabetes       1.327
+GenHlth              3 vs 5      no diabetes       1.748
+GenHlth              4 vs 5      prediabetes       1.176
+GenHlth              4 vs 5      no diabetes       1.128
+HeartDiseaseorAttack 0 vs 1      prediabetes       1.299
+HeartDiseaseorAttack 0 vs 1      no diabetes       1.220
+HighBP               0 vs 1      prediabetes       1.405
+HighBP               0 vs 1      no diabetes       1.985
+HighChol             0 vs 1      prediabetes       1.079
+HighChol             0 vs 1      no diabetes       1.823
+HvyAlcoholConsump    0 vs 1      prediabetes       0.649
+HvyAlcoholConsump    0 vs 1      no diabetes       0.477
+Income               1 vs 8      prediabetes       1.133
+Income               1 vs 8      no diabetes       0.640
+Income               2 vs 8      prediabetes       0.971
+Income               2 vs 8      no diabetes       0.709
+Income               3 vs 8      prediabetes       0.939
+Income               3 vs 8      no diabetes       0.725
+Income               4 vs 8      prediabetes       1.010
+Income               4 vs 8      no diabetes       0.744
+Income               5 vs 8      prediabetes       0.974
+Income               5 vs 8      no diabetes       0.819
+Income               6 vs 8      prediabetes       1.058
+Income               6 vs 8      no diabetes       0.844
+Income               7 vs 8      prediabetes       1.159
+Income               7 vs 8      no diabetes       0.886
+NoDocbcCost          0 vs 1      prediabetes       0.758
+NoDocbcCost          0 vs 1      no diabetes       1.074
+PhysActivity         0 vs 1      prediabetes       1.006
+PhysActivity         0 vs 1      no diabetes       0.938
+Sex                  0 vs 1      prediabetes       1.263
+Sex                  0 vs 1      no diabetes       1.317
+Stroke               0 vs 1      prediabetes       1.328
+Stroke               0 vs 1      no diabetes       1.213
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+   Fit
+Statistics    Statistics Label                      Train    Validation         Test
+ 
+ _AIC_        Akaike's Information Criterion     63598.69           .            .
+ _ASE_        Average Squared Error                  0.07          0.07         0.07
+ _AVERR_      Average Error Function                 0.26          0.26         0.26
+ _DFE_        Degrees of Freedom for Error      160400.00           .            .
+ _DFM_        Model Degrees of Freedom              56.00           .            .
+ _DFT_        Total Degrees of Freedom          160456.00           .            .
+ _DIV_        Divisor for ASE                   240684.00     180507.00    180528.00
+ _ERR_        Error Function                     63486.69      47288.47     47321.97
+ _FPE_        Final Prediction Error                 0.07           .            .
+ _MAX_        Maximum Absolute Error                 1.00          1.00         1.00
+ _MSE_        Mean Square Error                      0.07          0.07         0.07
+ _NOBS_       Sum of Frequencies                 80228.00      60169.00     60176.00
+ _NW_         Number of Estimate Weights            56.00           .            .
+ _RASE_       Root Average Sum of Squares            0.27          0.27         0.27
+ _RFPE_       Root Final Prediction Error            0.27           .            .
+ _RMSE_       Root Mean Squared Error                0.27          0.27         0.27
+ _SBC_        Schwarz's Bayesian Criterion       64157.90           .            .
+ _SSE_        Sum of Squared Errors              17783.49      13262.82     13237.69
+ _SUMW_       Sum of Case Weights Times Freq    240684.00     180507.00    180528.00
+ _MISC_       Misclassification Rate                 0.15          0.15         0.15
+ 
+ 
+ 
+ 
+Classification Table
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                Target        Outcome     Frequency       Total
+  Target         Outcome      Percentage    Percentage      Count      Percentage
+ 
+DIABETES       DIABETES         52.6916       16.4370        1801         2.2449
+NO DIABETES    DIABETES         43.4465        2.1898        1485         1.8510
+PREDIABETES    DIABETES          3.8619        9.0659         132         0.1645
+DIABETES       NO DIABETES      11.9203       83.5630        9156        11.4125
+NO DIABETES    NO DIABETES      86.3559       97.8102       66330        82.6769
+PREDIABETES    NO DIABETES       1.7237       90.9341        1324         1.6503
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                Target        Outcome     Frequency       Total
+  Target         Outcome      Percentage    Percentage      Count      Percentage
+ 
+DIABETES       DIABETES         53.9830       16.9871        1396         2.3201
+NO DIABETES    DIABETES         42.0340        2.1372        1087         1.8066
+PREDIABETES    DIABETES          3.9830        9.4409         103         0.1712
+DIABETES       NO DIABETES      11.8472       83.0129        6822        11.3381
+NO DIABETES    NO DIABETES      86.4370       97.8628       49773        82.7220
+PREDIABETES    NO DIABETES       1.7158       90.5591         988         1.6420
+ 
+ 
+ 
+ 
+Event Classification Table
+ 
+Data Role=TRAIN Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+  False       True        False       True
+Negative    Negative    Positive    Positive
+ 
+  1456        78772         0           0
+ 
+ 
+Data Role=VALIDATE Target=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+  False       True        False       True
+Negative    Negative    Positive    Positive
+ 
+  1091        59078         0           0
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                                                                           Mean
+                               Cumulative        %       Cumulative      Number of      Posterior
+Depth       Gain      Lift        Lift       Response    % Response    Observations    Probability
+ 
+   5     156.830    2.56830      2.56830      4.66102      4.66102         4012          0.052627
+  10     139.005    2.21176      2.39005      4.01396      4.33753         4011          0.040861
+  15     119.766    1.81292      2.19766      3.29013      3.98837         4012          0.035463
+  20     114.280    1.97822      2.14280      3.59013      3.88882         4011          0.031435
+  25     106.593    1.75842      2.06593      3.19122      3.74931         4011          0.028074
+  30      97.568    1.52450      1.97568      2.76670      3.58552         4012          0.025092
+  35      92.895    1.64852      1.92895      2.99177      3.50071         4011          0.022370
+  40      82.001    1.05753      1.82001      1.91924      3.30300         4012          0.019908
+  45      71.396    0.86547      1.71396      1.57068      3.11054         4011          0.017672
+  50      61.813    0.75557      1.61813      1.37123      2.93663         4011          0.015621
+  55      55.093    0.87899      1.55093      1.59521      2.81467         4012          0.013712
+  60      47.435    0.63193      1.47435      1.14685      2.67570         4011          0.011975
+  65      41.481    0.70044      1.41481      1.27119      2.56764         4012          0.010400
+  70      34.320    0.41213      1.34320      0.74794      2.43768         4011          0.008977
+  75      27.381    0.30223      1.27381      0.54849      2.31174         4011          0.007649
+  80      20.706    0.20601      1.20706      0.37388      2.19061         4012          0.006414
+  85      14.778    0.19920      1.14778      0.36151      2.08303         4011          0.005290
+  90       9.660    0.22661      1.09660      0.41127      1.99014         4012          0.004267
+  95       4.684    0.15111      1.04684      0.27425      1.89984         4011          0.003279
+ 100       0.000    0.10990      1.00000      0.19945      1.81483         4011          0.002070
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+                                                                                           Mean
+                               Cumulative        %       Cumulative      Number of      Posterior
+Depth       Gain      Lift        Lift       Response    % Response    Observations    Probability
+ 
+   5     158.431    2.58431      2.58431      4.68594      4.68594         3009          0.052621
+  10     141.059    2.23681      2.41059      4.05585      4.37095         3008          0.040795
+  15     130.964    2.10777      2.30964      3.82187      4.18790         3009          0.035376
+  20     120.436    1.88846      2.20436      3.42420      3.99701         3008          0.031349
+  25     108.239    1.59458      2.08239      2.89133      3.77584         3009          0.027968
+  30      99.813    1.57677      1.99813      2.85904      3.62307         3008          0.025061
+  35      83.311    0.84311      1.83311      1.52875      3.32384         3009          0.022453
+  40      80.107    1.57677      1.80107      2.85904      3.26575         3008          0.019928
+  45      73.128    1.17302      1.73128      2.12695      3.13920         3009          0.017668
+  50      65.533    0.97173      1.65533      1.76197      3.00150         3008          0.015618
+  55      58.320    0.86172      1.58320      1.56250      2.87070         3008          0.013736
+  60      50.013    0.58651      1.50013      1.06348      2.72007         3009          0.012008
+  65      42.141    0.47670      1.42141      0.86436      2.57735         3008          0.010399
+  70      36.046    0.56818      1.36046      1.03024      2.46682         3009          0.008939
+  75      29.177    0.33002      1.29177      0.59840      2.34228         3008          0.007606
+  80      22.821    0.27493      1.22821      0.49850      2.22702         3009          0.006371
+  85      16.137    0.09167      1.16137      0.16622      2.10582         3008          0.005246
+  90      10.498    0.14663      1.10498      0.26587      2.00358         3009          0.004217
+  95       5.166    0.09167      1.05166      0.16622      1.90689         3008          0.003240
+ 100       0.000    0.01833      1.00000      0.03324      1.81323         3008          0.002065
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+ Posterior     Number                     Mean
+Probability      of      Number of     Posterior
+   Range       Events    Nonevents    Probability    Percentage
+ 
+ 0.10-0.15         0           2        0.10303         0.0025
+ 0.05-0.10        97        2032        0.05759         2.6537
+ 0.00-0.05      1359       76738        0.01708        97.3438
+ 
+ 
+Data Role=VALIDATE Target Variable=Diabetes_Prediction Target Label=Diabetes Prediction
+ 
+ Posterior     Number                     Mean
+Probability      of      Number of     Posterior
+   Range       Events    Nonevents    Probability    Percentage
+ 
+ 0.05-0.10        72        1520        0.057646        2.6459
+ 0.00-0.05      1019       57558        0.017060       97.3541

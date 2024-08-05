@@ -1,0 +1,58 @@
+*------------------------------------------------------------*
+User:                shre2
+Date:                March 04, 2024
+Time:                01:51:53
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+                  Measurement    Frequency
+Role                 Level         Count
+ 
+ASSESS             INTERVAL           3
+ASSESS             NOMINAL            2
+CLASSIFICATION     NOMINAL            3
+ID                 INTERVAL           1
+INPUT              BINARY             3
+INPUT              INTERVAL           1
+INPUT              ORDINAL            1
+PREDICT            INTERVAL           5
+REJECTED           BINARY            11
+REJECTED           INTERVAL           4
+REJECTED           NOMINAL            1
+REJECTED           ORDINAL            4
+RESIDUAL           INTERVAL           3
+SEGMENT            NOMINAL            3
+TARGET             NOMINAL            1
+ 
+ 
+ 
+                                                                                              172
+User       = shre2
+Date       = 01:51:42  March 04
+Project    = SV.PredictiveAnalysis
+Diagram    = SV.Prediction
+ 
+Start Node = Report
+Node label = Score
+Nodes      = PATH
+Showall    = N
+ 
+Format     = PDF
+Graphics   = GIF
+Style      = LISTING
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
